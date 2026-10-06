@@ -24,7 +24,7 @@ export function PetAgeFields({
   defaultUnit = "years",
   defaultValue = "",
   placeholderYears = "e.g. 3",
-  placeholderMonths = "e.g. 25",
+  placeholderMonths = "e.g. 19",
 }: Props) {
   const labelId = useId();
   const [unit, setUnit] = useState<BookingAgeUnit>(defaultUnit);
