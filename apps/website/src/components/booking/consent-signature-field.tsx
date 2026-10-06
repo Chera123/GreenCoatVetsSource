@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 export function ConsentSignatureField({
   name = "consent_signature_png",
   required = true,
-  label = "OWNER signature",
+  label = "Owner signature",
   hint = "Hint: Sign with your finger or mouse. Required for compliance.",
 }: {
   name?: string;
