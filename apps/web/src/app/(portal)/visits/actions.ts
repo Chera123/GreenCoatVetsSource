@@ -9,9 +9,6 @@ import { formatLabTestsFromEvaluation } from "@/lib/medical-records/lab-tests-fr
 import { upsertMedicalRecordForVisit } from "@/lib/medical-records/upsert-by-visit";
 import { regenerateVisitReportPdfAttachment } from "@/app/(portal)/visits/visit-report-actions";
 
-export { createVisitFromAppointment } from "./create-visit-from-appointment";
-export { ensurePrescriptionForVisit } from "./ensure-prescription";
-
 async function syncMedicalRecordFromVisit(
   supabase: ReturnType<typeof createClient>,
   clinic_id: string,
