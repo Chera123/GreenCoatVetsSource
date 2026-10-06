@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ANDROID_APP_DOWNLOAD_URL, IOS_APP_DOWNLOAD_URL } from "@/lib/app-downloads";
 import type { FooterNavGroup } from "@/lib/marketing/footer-nav";
 import type { SocialLinks } from "@/lib/marketing/defaults";
 
@@ -122,6 +123,31 @@ export function SiteFooter({
             <Link className="text-slate-400 transition-colors hover:text-primary" href="/contact" aria-label="Contact">
               <span className="material-symbols-outlined text-xl">chat</span>
             </Link>
+          </div>
+          <div className="mt-6">
+            <p className="font-headline text-xs font-bold uppercase tracking-widest text-teal-800 dark:text-teal-300">
+              Get the app
+            </p>
+            <div className="mt-3 flex flex-col gap-2">
+              <a
+                href={ANDROID_APP_DOWNLOAD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-slate-800"
+              >
+                <span className="material-symbols-outlined text-lg">android</span>
+                Download Android
+              </a>
+              <a
+                href={IOS_APP_DOWNLOAD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold text-slate-900 transition hover:border-teal-600 hover:text-teal-700 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+              >
+                <span className="material-symbols-outlined text-lg">phone_iphone</span>
+                Download iOS
+              </a>
+            </div>
           </div>
         </div>
 
