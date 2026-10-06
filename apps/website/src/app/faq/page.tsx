@@ -13,7 +13,7 @@ export async function generateMetadata() {
 const FAQ_ITEMS: FaqItem[] = [
   {
     id: "animals",
-    question: "What types of animals do you treat?",
+    question: "What types of animals does GreenCoatVets treat?",
     answer: (
       <>
         <p className="mb-3">
