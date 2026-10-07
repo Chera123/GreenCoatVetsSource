@@ -76,9 +76,7 @@ export function SiteFooter({
         className ?? ""
       }`}
     >
-      {/* =========================================================
-          MAIN FOOTER
-      ========================================================== */}
+      {/* Main Footer */}
       <div className="relative">
         {/* Decorative background */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -88,11 +86,8 @@ export function SiteFooter({
 
         <div className="relative mx-auto max-w-7xl px-6 pb-14 pt-16 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-[0.95fr_1.8fr] lg:gap-20">
-            {/* =====================================================
-                BRAND / ABOUT / IMAGE
-            ====================================================== */}
+            {/* Brand / About */}
             <div className="flex flex-col">
-              {/* Brand */}
               <div>
                 <span className="font-headline text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                   {productName}
@@ -197,9 +192,7 @@ export function SiteFooter({
                 </Link>
               </div>
 
-              {/* =================================================
-                  PET IMAGE
-              ================================================== */}
+              {/* Pet Image */}
               <div className="relative mt-8 h-[230px] overflow-hidden rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50 via-white to-emerald-50 dark:border-teal-900 dark:from-teal-950/50 dark:via-slate-950 dark:to-emerald-950/40">
                 <Image
                   src="/greencoat-vets-footer-pets.png"
@@ -211,9 +204,7 @@ export function SiteFooter({
               </div>
             </div>
 
-            {/* =====================================================
-                RIGHT SIDE
-            ====================================================== */}
+            {/* Right Side */}
             <div>
               {/* Navigation */}
               <div className="grid gap-10 sm:grid-cols-2 xl:grid-cols-4">
@@ -244,44 +235,44 @@ export function SiteFooter({
                   </div>
                 ))}
 
-              <div>
-  <h4 className="mb-5 font-headline text-sm font-bold uppercase tracking-wider text-teal-800 dark:text-teal-300">
-    Visit Us
-  </h4>
+                {/* Visit Us */}
+                <div>
+                  <h4 className="mb-5 font-headline text-sm font-bold uppercase tracking-wider text-teal-800 dark:text-teal-300">
+                    Visit Us
+                  </h4>
 
-  <div className="mb-4 h-0.5 w-8 rounded-full bg-teal-600" />
+                  <div className="mb-4 h-0.5 w-8 rounded-full bg-teal-600" />
 
-  <div className="flex items-start gap-3">
-    <span className="material-symbols-outlined mt-0.5 text-xl text-teal-600">
-      location_on
-    </span>
+                  <div className="flex items-start gap-3">
+                    <span className="material-symbols-outlined mt-0.5 text-xl text-teal-600">
+                      location_on
+                    </span>
 
-    <div>
-      <p className="font-headline text-sm font-semibold text-slate-800 dark:text-slate-200">
-        {clinicName}
-      </p>
+                    <div>
+                      <p className="font-headline text-sm font-semibold text-slate-800 dark:text-slate-200">
+                        {clinicName}
+                      </p>
 
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=SCO+20%2C+9%2C+near+Bestech+Mall%2C+Industrial+Area+Phase+9%2C+Sahibzada+Ajit+Singh+Nagar%2C+Punjab+160062"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-2 block font-body text-sm leading-6 text-slate-500 transition-colors hover:text-teal-600 dark:text-slate-400 dark:hover:text-teal-300"
-      >
-        SCO 20, 9, near Bestech Mall,
-        <br />
-        Industrial Area Phase 9,
-        <br />
-        Sahibzada Ajit Singh Nagar,
-        <br />
-        Punjab 160062
-      </a>
-    </div>
-  </div>
-</div>
+                      <a
+                        href="https://www.google.com/maps/search/?api=1&query=SCO+20%2C+9%2C+near+Bestech+Mall%2C+Industrial+Area+Phase+9%2C+Sahibzada+Ajit+Singh+Nagar%2C+Punjab+160062"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 block font-body text-sm leading-6 text-slate-500 transition-colors hover:text-teal-600 dark:text-slate-400 dark:hover:text-teal-300"
+                      >
+                        SCO 20, 9, near Bestech Mall,
+                        <br />
+                        Industrial Area Phase 9,
+                        <br />
+                        Sahibzada Ajit Singh Nagar,
+                        <br />
+                        Punjab 160062
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-              {/* =================================================
-                  APP DOWNLOAD CARD
-              ================================================== */}
+              {/* App Download Card */}
               <div className="mt-10 overflow-hidden rounded-3xl bg-gradient-to-r from-teal-50 via-emerald-50 to-slate-50 px-6 py-5 shadow-sm ring-1 ring-teal-100 dark:from-teal-950/60 dark:via-emerald-950/40 dark:to-slate-900 dark:ring-teal-900">
                 <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                   <div className="flex items-start gap-4">
@@ -335,9 +326,7 @@ export function SiteFooter({
         </div>
       </div>
 
-      {/* =========================================================
-          TRUST / FEATURES BAR
-      ========================================================== */}
+      {/* Trust Bar */}
       <div className="bg-teal-950 text-white">
         <div className="mx-auto grid max-w-7xl divide-y divide-white/10 px-6 py-7 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4 lg:px-8">
           <div className="flex items-center gap-4 py-4 sm:px-6 sm:py-2 lg:pl-0">
@@ -406,9 +395,7 @@ export function SiteFooter({
         </div>
       </div>
 
-      {/* =========================================================
-          COPYRIGHT BAR
-      ========================================================== */}
+      {/* Copyright */}
       <div className="bg-slate-950">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left lg:px-8">
           <p className="font-body text-sm text-slate-400">
