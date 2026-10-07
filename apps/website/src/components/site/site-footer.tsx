@@ -179,12 +179,12 @@ export function SiteFooter({
           <span className="whitespace-nowrap text-slate-600 dark:text-slate-300">
             Site &amp; platform ·{" "}
             <a
-              href="https://salhantech.com"
+              href="https://nettizerinfotech.com"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-slate-600 underline-offset-2 hover:text-primary hover:underline dark:text-slate-300"
             >
-              @salhantech
+              @Nettizer InfoTech
             </a>
           </span>
         </p>
