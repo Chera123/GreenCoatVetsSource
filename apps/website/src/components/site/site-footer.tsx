@@ -193,7 +193,7 @@ export function SiteFooter({
               {/* Pet Image */}
               <div className="relative mt-8 overflow-hidden rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50 to-emerald-50 dark:border-teal-900 dark:from-teal-950/50 dark:to-emerald-950/40">
                 <Image
-                  src="/images/greencoat-vets-footer-pets.png"
+                  src="/greencoat-vets-footer-pets.png"
                   alt="Happy dog and cat"
                   width={900}
                   height={500}
