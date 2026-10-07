@@ -27,7 +27,10 @@ function FooterNavItem({
         href={href.trim()}
         className={linkClass}
         {...(openInNewTab
-          ? { target: "_blank", rel: "noopener noreferrer" }
+          ? {
+              target: "_blank",
+              rel: "noopener noreferrer",
+            }
           : {})}
       >
         <span className="mr-2 text-teal-600">›</span>
@@ -73,7 +76,9 @@ export function SiteFooter({
         className ?? ""
       }`}
     >
-      {/* Main Footer */}
+      {/* =========================================================
+          MAIN FOOTER
+      ========================================================== */}
       <div className="relative">
         {/* Decorative background */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -82,10 +87,12 @@ export function SiteFooter({
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 pb-14 pt-16 lg:px-8">
-          {/* Top section */}
-          <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr] lg:gap-16">
-            {/* Brand / About */}
+          <div className="grid gap-14 lg:grid-cols-[0.95fr_1.8fr] lg:gap-20">
+            {/* =====================================================
+                BRAND / ABOUT / IMAGE
+            ====================================================== */}
             <div className="flex flex-col">
+              {/* Brand */}
               <div>
                 <span className="font-headline text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                   {productName}
@@ -107,11 +114,11 @@ export function SiteFooter({
                 </p>
               </div>
 
-              {/* Social Links */}
+              {/* Social Icons */}
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 {websiteUrl ? (
                   <a
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all hover:-translate-y-1 hover:border-teal-500 hover:bg-teal-600 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-teal-500 hover:bg-teal-600 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
                     href={websiteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -125,7 +132,7 @@ export function SiteFooter({
 
                 {instagramUrl ? (
                   <a
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all hover:-translate-y-1 hover:border-teal-500 hover:bg-teal-600 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-teal-500 hover:bg-teal-600 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
                     href={instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -139,7 +146,7 @@ export function SiteFooter({
 
                 {facebookUrl ? (
                   <a
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all hover:-translate-y-1 hover:border-teal-500 hover:bg-teal-600 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-teal-500 hover:bg-teal-600 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
                     href={facebookUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -153,7 +160,7 @@ export function SiteFooter({
 
                 {youtubeUrl ? (
                   <a
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all hover:-translate-y-1 hover:border-teal-500 hover:bg-teal-600 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-teal-500 hover:bg-teal-600 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
                     href={youtubeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -167,7 +174,7 @@ export function SiteFooter({
 
                 {linkedinUrl ? (
                   <a
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all hover:-translate-y-1 hover:border-teal-500 hover:bg-teal-600 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-teal-500 hover:bg-teal-600 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
                     href={linkedinUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -180,7 +187,7 @@ export function SiteFooter({
                 ) : null}
 
                 <Link
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all hover:-translate-y-1 hover:border-teal-500 hover:bg-teal-600 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-teal-500 hover:bg-teal-600 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
                   href="/contact"
                   aria-label="Contact"
                 >
@@ -190,20 +197,25 @@ export function SiteFooter({
                 </Link>
               </div>
 
-              {/* Pet Image */}
-              <div className="relative mt-8 overflow-hidden rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50 to-emerald-50 dark:border-teal-900 dark:from-teal-950/50 dark:to-emerald-950/40">
+              {/* =================================================
+                  PET IMAGE
+              ================================================== */}
+              <div className="relative mt-8 h-[230px] overflow-hidden rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50 via-white to-emerald-50 dark:border-teal-900 dark:from-teal-950/50 dark:via-slate-950 dark:to-emerald-950/40">
                 <Image
                   src="/greencoat-vets-footer-pets.png"
                   alt="Happy dog and cat"
-                  width={900}
-                  height={500}
-                  className="h-auto w-full object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
+                  className="object-contain object-bottom"
                 />
               </div>
             </div>
 
-            {/* Navigation + App */}
+            {/* =====================================================
+                RIGHT SIDE
+            ====================================================== */}
             <div>
+              {/* Navigation */}
               <div className="grid gap-10 sm:grid-cols-2 xl:grid-cols-4">
                 {footerNav.map((group) => (
                   <div key={group.id}>
@@ -232,7 +244,7 @@ export function SiteFooter({
                   </div>
                 ))}
 
-                {/* Visit */}
+                {/* Visit Us */}
                 <div>
                   <h4 className="mb-5 font-headline text-sm font-bold uppercase tracking-wider text-teal-800 dark:text-teal-300">
                     Visit Us
@@ -259,8 +271,10 @@ export function SiteFooter({
                 </div>
               </div>
 
-              {/* App Card */}
-              <div className="mt-12 overflow-hidden rounded-3xl bg-gradient-to-r from-teal-50 via-emerald-50 to-slate-50 p-6 shadow-sm ring-1 ring-teal-100 dark:from-teal-950/60 dark:via-emerald-950/40 dark:to-slate-900 dark:ring-teal-900">
+              {/* =================================================
+                  APP DOWNLOAD CARD
+              ================================================== */}
+              <div className="mt-10 overflow-hidden rounded-3xl bg-gradient-to-r from-teal-50 via-emerald-50 to-slate-50 px-6 py-5 shadow-sm ring-1 ring-teal-100 dark:from-teal-950/60 dark:via-emerald-950/40 dark:to-slate-900 dark:ring-teal-900">
                 <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                   <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-teal-700 text-white shadow-sm">
@@ -286,7 +300,7 @@ export function SiteFooter({
                       href={ANDROID_APP_DOWNLOAD_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-slate-800"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-bold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800"
                     >
                       <span className="material-symbols-outlined text-lg">
                         android
@@ -298,7 +312,7 @@ export function SiteFooter({
                       href={IOS_APP_DOWNLOAD_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-slate-900 shadow-sm ring-1 ring-slate-200 transition-all hover:-translate-y-0.5 hover:ring-teal-500 dark:bg-slate-800 dark:text-white dark:ring-slate-700"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-slate-900 shadow-sm ring-1 ring-slate-200 transition-all duration-200 hover:-translate-y-0.5 hover:ring-teal-500 dark:bg-slate-800 dark:text-white dark:ring-slate-700"
                     >
                       <span className="material-symbols-outlined text-lg">
                         phone_iphone
@@ -313,10 +327,12 @@ export function SiteFooter({
         </div>
       </div>
 
-      {/* Trust / Features Bar */}
+      {/* =========================================================
+          TRUST / FEATURES BAR
+      ========================================================== */}
       <div className="bg-teal-950 text-white">
         <div className="mx-auto grid max-w-7xl divide-y divide-white/10 px-6 py-7 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4 lg:px-8">
-          <div className="flex items-center gap-4 py-4 sm:px-6 sm:py-2 lg:first:pl-0">
+          <div className="flex items-center gap-4 py-4 sm:px-6 sm:py-2 lg:pl-0">
             <span className="material-symbols-outlined text-3xl text-teal-300">
               verified_user
             </span>
@@ -325,6 +341,7 @@ export function SiteFooter({
               <p className="font-headline text-sm font-bold">
                 Trusted Care
               </p>
+
               <p className="mt-1 text-xs text-teal-200">
                 Experienced veterinary team
               </p>
@@ -340,6 +357,7 @@ export function SiteFooter({
               <p className="font-headline text-sm font-bold">
                 Modern Facilities
               </p>
+
               <p className="mt-1 text-xs text-teal-200">
                 Advanced treatment &amp; care
               </p>
@@ -355,6 +373,7 @@ export function SiteFooter({
               <p className="font-headline text-sm font-bold">
                 Convenient Access
               </p>
+
               <p className="mt-1 text-xs text-teal-200">
                 In-clinic &amp; via our mobile app
               </p>
@@ -370,6 +389,7 @@ export function SiteFooter({
               <p className="font-headline text-sm font-bold">
                 Healthier, Happier Pets
               </p>
+
               <p className="mt-1 text-xs text-teal-200">
                 We care like family
               </p>
@@ -378,7 +398,9 @@ export function SiteFooter({
         </div>
       </div>
 
-      {/* Copyright */}
+      {/* =========================================================
+          COPYRIGHT BAR
+      ========================================================== */}
       <div className="bg-slate-950">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left lg:px-8">
           <p className="font-body text-sm text-slate-400">
