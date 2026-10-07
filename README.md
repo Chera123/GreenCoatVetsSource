@@ -1,4 +1,4 @@
-# SaaSClinics
+# SaaSClinics for greencoatvets
 
 Monorepo for a multi-tenant Veterinary Clinic Management SaaS:
 - `apps/web` - internal SaaS dashboard
