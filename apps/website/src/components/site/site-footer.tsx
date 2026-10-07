@@ -244,32 +244,40 @@ export function SiteFooter({
                   </div>
                 ))}
 
-                {/* Visit Us */}
-                <div>
-                  <h4 className="mb-5 font-headline text-sm font-bold uppercase tracking-wider text-teal-800 dark:text-teal-300">
-                    Visit Us
-                  </h4>
+              <div>
+  <h4 className="mb-5 font-headline text-sm font-bold uppercase tracking-wider text-teal-800 dark:text-teal-300">
+    Visit Us
+  </h4>
 
-                  <div className="mb-4 h-0.5 w-8 rounded-full bg-teal-600" />
+  <div className="mb-4 h-0.5 w-8 rounded-full bg-teal-600" />
 
-                  <div className="flex items-start gap-3">
-                    <span className="material-symbols-outlined mt-0.5 text-xl text-teal-600">
-                      location_on
-                    </span>
+  <div className="flex items-start gap-3">
+    <span className="material-symbols-outlined mt-0.5 text-xl text-teal-600">
+      location_on
+    </span>
 
-                    <div>
-                      <p className="font-headline text-sm font-semibold text-slate-800 dark:text-slate-200">
-                        {clinicName}
-                      </p>
+    <div>
+      <p className="font-headline text-sm font-semibold text-slate-800 dark:text-slate-200">
+        {clinicName}
+      </p>
 
-                      <p className="mt-2 font-body text-sm leading-6 text-slate-500 dark:text-slate-400">
-                        Visit our clinic for compassionate veterinary care and
-                        professional pet health services.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=SCO+20%2C+9%2C+near+Bestech+Mall%2C+Industrial+Area+Phase+9%2C+Sahibzada+Ajit+Singh+Nagar%2C+Punjab+160062"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-2 block font-body text-sm leading-6 text-slate-500 transition-colors hover:text-teal-600 dark:text-slate-400 dark:hover:text-teal-300"
+      >
+        SCO 20, 9, near Bestech Mall,
+        <br />
+        Industrial Area Phase 9,
+        <br />
+        Sahibzada Ajit Singh Nagar,
+        <br />
+        Punjab 160062
+      </a>
+    </div>
+  </div>
+</div>
 
               {/* =================================================
                   APP DOWNLOAD CARD
