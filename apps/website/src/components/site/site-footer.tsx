@@ -71,7 +71,7 @@ export function SiteFooter({
   } = socialLinks;
 
   const mapsUrl =
-    "https://maps.app.goo.gl/DJ53GyoU3PB1FU4b7";
+    "https://maps.app.goo.gl/DJ53GyoU3PB1FU4b7";  
 
   return (
     <footer
