@@ -71,7 +71,7 @@ export function SiteFooter({
   } = socialLinks;
 
   const mapsUrl =
-    "https://www.google.com/maps/search/?api=1&query=SCO+20%2C+9%2C+near+Bestech+Mall%2C+Industrial+Area+Phase+9%2C+Sahibzada+Ajit+Singh+Nagar%2C+Punjab+160062";
+    "https://maps.app.goo.gl/DJ53GyoU3PB1FU4b7";
 
   return (
     <footer
@@ -259,7 +259,7 @@ export function SiteFooter({
                       </p>
 
                       <p className="mt-2 font-body text-sm leading-6 text-slate-500 dark:text-slate-400">
-                        SCO 20, 9, near Bestech Mall,
+                        SCO 20 ,Bestech Mall,
                         <br />
                         Industrial Area Phase 9,
                         <br />
