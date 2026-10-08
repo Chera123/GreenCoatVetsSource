@@ -70,9 +70,6 @@ export function SiteFooter({
     website_url: websiteUrl,
   } = socialLinks;
 
-  const clinicAddress =
-    "SCO 20, 9, near Bestech Mall, Industrial Area Phase 9, Sahibzada Ajit Singh Nagar, Punjab 160062";
-
   const mapsUrl =
     "https://www.google.com/maps/search/?api=1&query=SCO+20%2C+9%2C+near+Bestech+Mall%2C+Industrial+Area+Phase+9%2C+Sahibzada+Ajit+Singh+Nagar%2C+Punjab+160062";
 
@@ -82,22 +79,17 @@ export function SiteFooter({
         className ?? ""
       }`}
     >
-      {/* =========================================================
-          MAIN FOOTER
-      ========================================================== */}
+      {/* Main Footer */}
       <div className="relative">
         {/* Decorative background */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -right-32 top-10 h-72 w-72 rounded-full bg-teal-50/70 blur-3xl dark:bg-teal-950/30" />
-
           <div className="absolute -left-32 bottom-0 h-64 w-64 rounded-full bg-emerald-50/60 blur-3xl dark:bg-emerald-950/20" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 pb-14 pt-16 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-[0.95fr_1.8fr] lg:gap-20">
-            {/* =====================================================
-                BRAND / ABOUT
-            ====================================================== */}
+            {/* Brand / About */}
             <div className="flex flex-col">
               <div>
                 <span className="font-headline text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
@@ -120,9 +112,7 @@ export function SiteFooter({
                 </p>
               </div>
 
-              {/* =================================================
-                  SOCIAL ICONS
-              ================================================== */}
+              {/* Social Icons */}
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 {websiteUrl ? (
                   <a
@@ -205,9 +195,7 @@ export function SiteFooter({
                 </Link>
               </div>
 
-              {/* =================================================
-                  PET IMAGE
-              ================================================== */}
+              {/* Pet Image */}
               <div className="relative mt-8 h-[230px] overflow-hidden rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50 via-white to-emerald-50 dark:border-teal-900 dark:from-teal-950/50 dark:via-slate-950 dark:to-emerald-950/40">
                 <Image
                   src="/greencoat-vets-footer-pets.png"
@@ -219,13 +207,9 @@ export function SiteFooter({
               </div>
             </div>
 
-            {/* =====================================================
-                RIGHT SIDE
-            ====================================================== */}
+            {/* Right Side */}
             <div>
-              {/* =================================================
-                  NAVIGATION
-              ================================================== */}
+              {/* Navigation */}
               <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 xl:gap-12">
                 {footerNav.map((group) => (
                   <div key={group.id}>
@@ -254,9 +238,7 @@ export function SiteFooter({
                   </div>
                 ))}
 
-                {/* =================================================
-                    VISIT US
-                ================================================== */}
+                {/* Visit Us */}
                 <div>
                   <h4 className="mb-5 font-headline text-sm font-bold uppercase tracking-wider text-teal-800 dark:text-teal-300">
                     Visit Us
@@ -311,9 +293,7 @@ export function SiteFooter({
                 </div>
               </div>
 
-              {/* =================================================
-                  APP DOWNLOAD CARD
-              ================================================== */}
+              {/* App Download Card */}
               <div className="mt-10 overflow-hidden rounded-3xl bg-gradient-to-r from-teal-50 via-emerald-50 to-slate-50 px-6 py-5 shadow-sm ring-1 ring-teal-100 dark:from-teal-950/60 dark:via-emerald-950/40 dark:to-slate-900 dark:ring-teal-900">
                 <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                   <div className="flex items-start gap-4">
@@ -367,9 +347,7 @@ export function SiteFooter({
         </div>
       </div>
 
-      {/* =========================================================
-          TRUST BAR
-      ========================================================== */}
+      {/* Trust Bar */}
       <div className="bg-teal-950 text-white">
         <div className="mx-auto grid max-w-7xl divide-y divide-white/10 px-6 py-7 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4 lg:px-8">
           <div className="flex items-center gap-4 py-4 sm:px-6 sm:py-2 lg:pl-0">
@@ -438,9 +416,7 @@ export function SiteFooter({
         </div>
       </div>
 
-      {/* =========================================================
-          COPYRIGHT
-      ========================================================== */}
+      {/* Copyright */}
       <div className="bg-slate-950">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left lg:px-8">
           <p className="font-body text-sm text-slate-400">
