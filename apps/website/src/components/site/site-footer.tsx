@@ -259,11 +259,11 @@ export function SiteFooter({
                       </p>
 
                       <p className="mt-2 font-body text-sm leading-6 text-slate-500 dark:text-slate-400">
-                        SCO 20 ,Bestech Mall,
+                        SCO-20,Near Bestech Mall,
                         <br />
                         Industrial Area Phase 9,
                         <br />
-                        Sahibzada Ajit Singh Nagar,
+                        Mohali,
                         <br />
                         Punjab 160062
                       </p>
