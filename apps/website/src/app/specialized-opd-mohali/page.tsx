@@ -1,5 +1,6 @@
 
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 
 const pageTitle =
@@ -43,13 +44,13 @@ const concerns = [
   },
   {
     icon: "thermostat",
-    title: "Fever and weakness",
+    title: "Fever, weakness and appetite",
     description:
       "Consultation for fever, low energy and loss of appetite.",
   },
   {
     icon: "gastroenterology",
-    title: "Digestive problems",
+    title: "Vomiting and digestive problems",
     description:
       "Assessment of vomiting and other digestive concerns.",
   },
@@ -67,7 +68,7 @@ const concerns = [
   },
   {
     icon: "directions_walk",
-    title: "Pain and mobility",
+    title: "Pain and mobility problems",
     description:
       "Assessment of discomfort, movement difficulties and mobility changes.",
   },
@@ -156,7 +157,7 @@ function SectionHeading({
 function AppointmentButton({
   children = "Book a Veterinary Consultation",
 }: {
-  children?: React.ReactNode;
+  children?: ReactNode;
 }) {
   return (
     <Link
@@ -174,7 +175,6 @@ function AppointmentButton({
 export default function SpecializedOpdMohaliPage() {
   return (
     <main className="overflow-hidden bg-white text-slate-800">
-      {/* Structured data for FAQs */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -182,7 +182,7 @@ export default function SpecializedOpdMohaliPage() {
         }}
       />
 
-      {/* Breadcrumbs */}
+      {/* Breadcrumb */}
       <nav
         aria-label="Breadcrumb"
         className="border-b border-slate-100 bg-slate-50/70"
@@ -199,7 +199,14 @@ export default function SpecializedOpdMohaliPage() {
                 chevron_right
               </span>
             </li>
-            <li>Services</li>
+            <li>
+              <Link
+                href="/#services"
+                className="transition hover:text-teal-700"
+              >
+                Services
+              </Link>
+            </li>
             <li aria-hidden="true">
               <span className="material-symbols-outlined text-base">
                 chevron_right
@@ -333,7 +340,7 @@ export default function SpecializedOpdMohaliPage() {
         </div>
       </section>
 
-      {/* Consultation */}
+      {/* Veterinary consultation */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div>
@@ -379,7 +386,7 @@ export default function SpecializedOpdMohaliPage() {
         </div>
       </section>
 
-      {/* Conditions */}
+      {/* Veterinary OPD services */}
       <section className="bg-slate-50 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
@@ -412,12 +419,12 @@ export default function SpecializedOpdMohaliPage() {
           <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-slate-500">
             When required, our veterinarians may recommend further diagnostic
             evaluation or treatment. The appropriate care depends on your
-            pet's individual condition.
+            pet&apos;s individual condition.
           </p>
         </div>
       </section>
 
-      {/* Personalized care */}
+      {/* Personalized pet health consultation */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div className="order-2 rounded-3xl bg-slate-900 p-7 text-white sm:p-10 lg:order-1">
@@ -429,7 +436,7 @@ export default function SpecializedOpdMohaliPage() {
             </h3>
             <p className="mt-4 leading-7 text-slate-300">
               Age, breed, lifestyle and medical history can all influence your
-              pet's healthcare needs. Sharing these details helps your
+              pet&apos;s healthcare needs. Sharing these details helps your
               veterinarian understand the bigger picture.
             </p>
             <div className="mt-7">
@@ -445,22 +452,22 @@ export default function SpecializedOpdMohaliPage() {
               Personalized Pet Health Consultation
             </h2>
             <p className="mt-6 leading-8 text-slate-600">
-              Your pet's age, breed, lifestyle and medical history all
+              Your pet&apos;s age, breed, lifestyle and medical history all
               matter. Our pet health consultation in Mohali focuses on your
-              pet's specific needs, helping you understand their condition
-              and the appropriate way forward.
+              pet&apos;s specific needs, helping you understand their
+              condition and the appropriate way forward.
             </p>
             <p className="mt-4 leading-8 text-slate-600">
               We believe good veterinary care starts with listening to both
               pets and their families. We aim to explain recommendations in
               clear, understandable language so you can make informed
-              decisions about your companion's care.
+              decisions about your companion&apos;s care.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Why choose us */}
+      {/* Why choose GreenCoatVets */}
       <section className="border-y border-teal-100 bg-teal-50/60 py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
           <div>
@@ -473,7 +480,7 @@ export default function SpecializedOpdMohaliPage() {
             <p className="mt-6 leading-8 text-slate-600">
               At GreenCoatVets, our veterinary team aims to provide
               professional care with a compassionate approach. We take the
-              time to explain your pet's condition, available treatment
+              time to explain your pet&apos;s condition, available treatment
               options and recommended next steps in simple terms.
             </p>
             <p className="mt-4 leading-8 text-slate-600">
@@ -502,7 +509,7 @@ export default function SpecializedOpdMohaliPage() {
         </div>
       </section>
 
-      {/* Pet clinic CTA */}
+      {/* Appointment CTA */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="rounded-[30px] bg-gradient-to-br from-slate-900 to-teal-950 px-6 py-10 text-center shadow-xl sm:px-12 sm:py-14">
@@ -515,7 +522,7 @@ export default function SpecializedOpdMohaliPage() {
             <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-300">
               If your pet has a health concern or simply needs a routine
               check-up, GreenCoatVets is here to help. Contact our team to
-              discuss your companion's needs and arrange a consultation.
+              discuss your companion&apos;s needs and arrange a consultation.
             </p>
             <div className="mt-8">
               <AppointmentButton>
@@ -559,7 +566,7 @@ export default function SpecializedOpdMohaliPage() {
 
           <div className="mt-10 text-center">
             <p className="mb-5 text-slate-600">
-              Have another question about your pet's health?
+              Have another question about your pet&apos;s health?
             </p>
             <AppointmentButton />
           </div>
