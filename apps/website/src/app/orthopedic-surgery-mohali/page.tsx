@@ -18,6 +18,7 @@ const dogImage = "/orthopedic-dog-fracture-care.png";
 const catImage = "/orthopedic-cat-care.png";
 const appointmentImage = "/orthopedic-appointment-dog.png";
 const bookingUrl = "https://www.greencoatvets.com/book";
+const SpecializedVService = "/ortho-sergery-dog.jpg";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -305,7 +306,7 @@ export default function OrthopedicSurgeryMohaliPage() {
       <section className="py-7 sm:py-9">
         <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 sm:px-6 md:grid-cols-2 lg:gap-8 lg:px-8">
           <ImagePanel
-            src={dogImage}
+            src={SpecializedVService}
             alt="Veterinarian examining a dog receiving orthopedic fracture care"
             className="aspect-[4/3]"
           />
