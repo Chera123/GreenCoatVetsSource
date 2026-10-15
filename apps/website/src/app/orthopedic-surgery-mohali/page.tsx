@@ -18,6 +18,7 @@ const dogImage = "/orthopedic-dog-fracture-care.png";
 const catImage = "/orthopedic-cat-care.png";
 const appointmentImage = "/orthopedic-appointment-dog.png";
 const bookingUrl = "https://www.greencoatvets.com/book";
+const contact = "https://www.greencoatvets.com/contact";
 const SpecializedVService = "/ortho-sergery-dog.jpg";
 
 export const metadata: Metadata = {
@@ -267,10 +268,10 @@ export default function OrthopedicSurgeryMohaliPage() {
             <div className="mt-5 flex flex-wrap gap-3">
               <BookButton />
               <Link
-                href={bookingUrl}
+                href={contact}
                 className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:border-teal-300 hover:text-teal-800"
               >
-                Book Appointment
+                Contact Us
               </Link>
             </div>
 
