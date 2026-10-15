@@ -16,7 +16,7 @@ const pageUrl =
 const bookingUrl = "https://www.greencoatvets.com/book";
 
 // Add the image files to apps/website/public/
-const heroImage = "/emergency-care-pets.png";
+const heroImage = "/hospital-front.jpg";
 const catImage = "/orthopedic-cat-care.png";
 const dogImage = "/orthopedic-dog-fracture-care.png";
 
