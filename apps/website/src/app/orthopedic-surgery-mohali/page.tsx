@@ -137,16 +137,7 @@ function SectionTitle({
   );
 }
 
-function CheckItem({ children }: { children: ReactNode }) {
-  return (
-    <li className="flex items-start gap-2 text-xs leading-5 text-slate-600 sm:text-sm">
-      <span className="material-symbols-outlined mt-0.5 text-base text-teal-700">
-        check_circle
-      </span>
-      <span>{children}</span>
-    </li>
-  );
-}
+
 
 export default function OrthopedicSurgeryMohaliPage() {
   return (
