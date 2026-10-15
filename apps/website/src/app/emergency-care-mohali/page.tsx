@@ -19,6 +19,7 @@ const bookingUrl = "https://www.greencoatvets.com/book";
 const heroImage = "/hospital-front.jpg";
 const catImage = "/orthopedic-cat-care.png";
 const dogImage = "/orthopedic-dog-fracture-care.png";
+const cta = "/orthopedic-appointment-dog.png";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -523,7 +524,7 @@ export default function EmergencyCareMohaliPage() {
           <div className="grid overflow-hidden rounded-2xl bg-gradient-to-r from-teal-900 to-emerald-800 text-white shadow-lg md:grid-cols-[230px_1fr] lg:grid-cols-[280px_1fr]">
             <div className="relative min-h-[190px] md:min-h-full">
               <Image
-                src={heroImage}
+                src={cta}
                 alt="Dog and cat receiving attentive veterinary care"
                 fill
                 sizes="(max-width: 767px) 100vw, 280px"
