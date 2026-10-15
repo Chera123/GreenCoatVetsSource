@@ -16,23 +16,27 @@ const pageUrl =
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  alternates: {
-    canonical: pageUrl,
-  },
+  alternates: { canonical: pageUrl },
   openGraph: {
     type: "website",
     url: pageUrl,
-    title: "Specialized Veterinary OPD in Mohali | GreenCoatVets",
+    title: pageTitle,
     description:
       "Professional veterinary consultation, pet health care and specialized OPD services for dogs and cats in Mohali.",
     siteName: "GreenCoatVets",
     locale: "en_IN",
+    images: [
+      {
+        url: "/specialized-opd-veterinary.png",
+        alt: "GreenCoatVets veterinarian examining pets in a clinic",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Specialized Veterinary OPD in Mohali | GreenCoatVets",
-    description:
-      "Professional veterinary consultation and compassionate pet healthcare for dogs and cats in Mohali.",
+    title: pageTitle,
+    description: pageDescription,
+    images: ["/specialized-opd-veterinary.png"],
   },
 };
 
@@ -45,9 +49,9 @@ const concerns = [
   },
   {
     icon: "thermostat",
-    title: "Fever, weakness and appetite",
+    title: "Fever, weakness and loss of appetite",
     description:
-      "Consultation for fever, low energy and loss of appetite.",
+      "Consultation for fever, low energy and appetite changes.",
   },
   {
     icon: "gastroenterology",
@@ -71,7 +75,7 @@ const concerns = [
     icon: "directions_walk",
     title: "Pain and mobility problems",
     description:
-      "Assessment of discomfort, movement difficulties and mobility changes.",
+      "Assessment of discomfort and movement difficulties.",
   },
   {
     icon: "monitor_weight",
@@ -191,7 +195,7 @@ export default function SpecializedOpdMohaliPage() {
         <div className="mx-auto max-w-7xl px-6 py-4 lg:px-8">
           <ol className="flex flex-wrap items-center gap-2 text-sm text-slate-500">
             <li>
-              <Link href="/" className="transition hover:text-teal-700">
+              <Link href="/" className="hover:text-teal-700">
                 Home
               </Link>
             </li>
@@ -201,10 +205,7 @@ export default function SpecializedOpdMohaliPage() {
               </span>
             </li>
             <li>
-              <Link
-                href="/#services"
-                className="transition hover:text-teal-700"
-              >
+              <Link href="/#services" className="hover:text-teal-700">
                 Services
               </Link>
             </li>
@@ -223,36 +224,92 @@ export default function SpecializedOpdMohaliPage() {
         </div>
       </nav>
 
-      {/* Hero */}
-     
-{/* Hero Image */}
-<div className="relative mx-auto w-full max-w-lg">
-  <div className="absolute -inset-3 rounded-[32px] bg-teal-100/70 blur-xl" />
+      {/* Hero with the GreenCoatVets doctor and pets */}
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-teal-50 via-white to-emerald-50">
+        <div className="pointer-events-none absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-teal-100/60 blur-3xl" />
 
-  <div className="relative overflow-hidden rounded-[28px] border border-teal-100 bg-white p-2 shadow-xl">
-    <Image
-      src="/specialized-opd-veterinary.jpg"
-      alt="Veterinarian providing a health examination for a dog at GreenCoatVets in Mohali"
-      width={800}
-      height={900}
-      priority
-      sizes="(max-width: 1024px) 100vw, 500px"
-      className="h-[350px] w-full rounded-[22px] object-cover sm:h-[460px]"
-    />
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white px-4 py-2 text-sm font-semibold text-teal-800 shadow-sm">
+              <span className="material-symbols-outlined text-lg">
+                medical_services
+              </span>
+              Veterinary consultation in Mohali
+            </span>
 
-    <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/60 bg-white/95 p-4 shadow-lg backdrop-blur-sm">
-      <p className="font-headline text-lg font-bold text-slate-900">
-        Compassionate Veterinary Care
-      </p>
-      <p className="mt-1 text-sm text-slate-600">
-        Professional consultation for dogs and cats in Mohali.
-      </p>
-    </div>
-  </div>
-</div>
+            <h1 className="mt-6 font-headline text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-[52px]">
+              Specialized OPD in Mohali for Dogs &amp; Cats
+            </h1>
 
+            <p className="mt-6 text-lg font-semibold text-teal-800">
+              Expert Veterinary Care for Your Pet in Mohali
+            </p>
 
-      {/* Veterinary consultation */}
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              At GreenCoatVets, our Specialized OPD provides professional and
+              compassionate veterinary care for dogs and cats in Mohali.
+              Whether your pet needs a routine check-up, treatment for a
+              health concern, or ongoing medical care, our veterinary team
+              is here to help.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <AppointmentButton />
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-2 py-3 text-sm font-bold text-slate-700 hover:text-teal-800"
+              >
+                Contact GreenCoatVets
+                <span className="material-symbols-outlined text-lg">
+                  arrow_outward
+                </span>
+              </Link>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-5 text-sm text-slate-600">
+              <span className="inline-flex items-center gap-2">
+                <span className="material-symbols-outlined text-lg text-teal-700">
+                  check_circle
+                </span>
+                Personalized care
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <span className="material-symbols-outlined text-lg text-teal-700">
+                  check_circle
+                </span>
+                Dogs and cats
+              </span>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-xl">
+            <div className="absolute -inset-3 rounded-[32px] bg-teal-200/50 blur-xl" />
+
+            <div className="relative overflow-hidden rounded-[28px] border border-teal-100 bg-white p-2 shadow-2xl shadow-teal-900/10">
+              <Image
+                src="/specialized-opd-veterinary.png"
+                alt="GreenCoatVets veterinarian examining a dog while a cat and their owners are present in the clinic"
+                width={1536}
+                height={1024}
+                priority
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className="h-[340px] w-full rounded-[22px] object-cover sm:h-[440px] lg:h-[480px]"
+              />
+
+              <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-lg backdrop-blur-sm sm:bottom-6 sm:left-6 sm:right-6">
+                <p className="font-headline text-lg font-bold text-slate-900">
+                  Compassionate Veterinary Care
+                </p>
+                <p className="mt-1 text-sm leading-6 text-slate-600">
+                  Professional consultation for dogs and cats in Mohali.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted consultation */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div>
@@ -275,7 +332,7 @@ export default function SpecializedOpdMohaliPage() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50 to-emerald-50/60 p-7 sm:p-9">
+          <div className="rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50 to-emerald-50 p-7 sm:p-9">
             <h3 className="font-headline text-xl font-bold text-slate-900">
               What to expect during a consultation
             </h3>
@@ -298,20 +355,20 @@ export default function SpecializedOpdMohaliPage() {
         </div>
       </section>
 
-      {/* Veterinary OPD services */}
+      {/* Comprehensive veterinary OPD */}
       <section className="bg-slate-50 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
             eyebrow="Outpatient veterinary care"
             title="Comprehensive Veterinary OPD in Mohali"
-            description="Our veterinary OPD in Mohali provides consultation for a wide range of pet health concerns. Your veterinarian can assess the symptoms and advise whether further evaluation or treatment is appropriate."
+            description="Our veterinary OPD in Mohali provides consultation for a wide range of pet health concerns. Your veterinarian can assess symptoms and advise whether further evaluation or treatment is appropriate."
           />
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {concerns.map((item) => (
               <article
                 key={item.title}
-                className="group rounded-2xl border border-slate-200/80 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-teal-200 hover:shadow-lg hover:shadow-teal-900/5"
+                className="group rounded-2xl border border-slate-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-teal-200 hover:shadow-lg hover:shadow-teal-900/5"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
                   <span className="material-symbols-outlined text-2xl">
