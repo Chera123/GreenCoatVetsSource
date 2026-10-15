@@ -15,9 +15,9 @@ const bookingUrl = "https://www.greencoatvets.com/book";
 
 const images = {
   hero: "/dental-care.jpg",
-  cat: "/dental-care-cat.png",
-  examination: "/pet-dental-examination.png",
-  banner: "/dental-care-banner.png",
+  cat: "/dental-care-cat.jpg",
+  examination: "/pet-dental-examination.jpg",
+  banner: "/dental-care-banner.jpg",
 };
 
 export const metadata: Metadata = {
