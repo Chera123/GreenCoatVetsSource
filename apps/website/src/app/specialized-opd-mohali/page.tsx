@@ -300,7 +300,7 @@ export default function SpecializedOpdMohaliPage() {
 
             <div className="relative overflow-hidden rounded-3xl border border-white bg-white p-2 shadow-2xl shadow-slate-900/10">
               <Image
-                src="/specialized-opd-veterinary.png"
+                src="/specialized-opd-veterinary.jpg"
                 alt="GreenCoatVets veterinarian examining a dog and a cat together in a veterinary clinic"
                 width={1536}
                 height={1024}
