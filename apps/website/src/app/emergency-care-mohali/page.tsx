@@ -15,11 +15,13 @@ const pageUrl =
 
 const bookingUrl = "https://www.greencoatvets.com/book";
 
-// Add the image files to apps/website/public/
+// Image files must be inside apps/website/public/
 const heroImage = "/hospital-front.jpg";
 const catImage = "/orthopedic-cat-care.png";
 const dogImage = "/orthopedic-dog-fracture-care.png";
 const cta = "/orthopedic-appointment-dog.png";
+
+const emergencyPhone = "+919608550006";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -107,14 +109,12 @@ const faqSchema = {
 
 function EmergencyButton({
   children = "Call for Emergency Care",
-  href = "/contact",
 }: {
   children?: ReactNode;
-  href?: string;
 }) {
   return (
-    <Link
-      href={href}
+    <a
+      href={`tel:${emergencyPhone}`}
       className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-700 px-4 py-3 text-sm font-bold text-white shadow-md transition hover:from-emerald-600 hover:to-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2"
     >
       <span className="material-symbols-outlined text-lg">
@@ -124,7 +124,7 @@ function EmergencyButton({
       <span className="material-symbols-outlined text-lg">
         arrow_forward
       </span>
-    </Link>
+    </a>
   );
 }
 
@@ -208,30 +208,6 @@ function Feature({
     </div>
   );
 }
-
-
-function EmergencyButton({
-  children = "Call for Emergency Care",
-}: {
-  children?: ReactNode;
-}) {
-  return (
-    <a
-      href="tel:+919608550006"
-      className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-700 px-4 py-3 text-sm font-bold text-white shadow-md transition hover:from-emerald-600 hover:to-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2"
-    >
-      <span className="material-symbols-outlined text-lg">
-        call
-      </span>
-      {children}
-      <span className="material-symbols-outlined text-lg">
-        arrow_forward
-      </span>
-    </a>
-  );
-}
-
-
 
 export default function EmergencyCareMohaliPage() {
   return (
