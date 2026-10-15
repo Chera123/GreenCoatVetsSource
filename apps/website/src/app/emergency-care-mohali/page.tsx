@@ -209,6 +209,30 @@ function Feature({
   );
 }
 
+
+function EmergencyButton({
+  children = "Call for Emergency Care",
+}: {
+  children?: ReactNode;
+}) {
+  return (
+    <a
+      href="tel:+919608550006"
+      className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-700 px-4 py-3 text-sm font-bold text-white shadow-md transition hover:from-emerald-600 hover:to-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2"
+    >
+      <span className="material-symbols-outlined text-lg">
+        call
+      </span>
+      {children}
+      <span className="material-symbols-outlined text-lg">
+        arrow_forward
+      </span>
+    </a>
+  );
+}
+
+
+
 export default function EmergencyCareMohaliPage() {
   return (
     <main className="overflow-hidden bg-white text-slate-800">
