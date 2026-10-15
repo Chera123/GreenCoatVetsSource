@@ -105,7 +105,7 @@ function BookButton({
       </span>
     </Link>
   );
-}
+}   
 
 function SectionTitle({
   eyebrow,
