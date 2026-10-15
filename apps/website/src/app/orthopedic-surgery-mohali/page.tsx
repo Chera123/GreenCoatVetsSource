@@ -13,10 +13,16 @@ const pageDescription =
 const pageUrl =
   "https://www.greencoatvets.com/orthopedic-surgery-mohali/";
 
+const heroImage = "/orthopedic-surgery-hero.png";
+const dogImage = "/orthopedic-dog-fracture-care.png";
+const catImage = "/orthopedic-cat-care.png";
+
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  alternates: { canonical: pageUrl },
+  alternates: {
+    canonical: pageUrl,
+  },
   openGraph: {
     type: "website",
     url: pageUrl,
@@ -27,7 +33,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "/orthopedic-surgery-hero.png",
+        url: heroImage,
         alt: "Veterinary orthopedic surgery for dogs and cats at GreenCoatVets in Mohali",
       },
     ],
@@ -36,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    images: ["/orthopedic-surgery-hero.png"],
+    images: [heroImage],
   },
 };
 
@@ -67,12 +73,12 @@ const faqs = [
   {
     question: "Do you provide dog orthopedic surgery in Mohali?",
     answer:
-      "GreenCoatVets provides orthopedic evaluation and treatment planning for dogs in Mohali. Surgical recommendations depend on your dog's individual condition and treatment needs.",
+      "Yes, GreenCoatVets provides dog orthopedic surgery in Mohali based on your pet's individual condition and treatment needs.",
   },
   {
     question: "How is pet fracture treatment decided?",
     answer:
-      "Treatment depends on the location and severity of the fracture, along with your pet's overall health and specific needs. Assessment may include diagnostic imaging, stabilization, surgery when indicated, medication, and follow-up care.",
+      "Treatment depends on the location and severity of the fracture, along with your pet's overall health and specific needs.",
   },
 ];
 
@@ -96,18 +102,18 @@ function BookButton({
 }) {
   return (
     <Link
-      href="/book"
-      className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-teal-700 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2"
+      href="/contact"
+      className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-700 px-4 py-2.5 text-xs font-bold text-white shadow-md transition hover:from-emerald-600 hover:to-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2 sm:text-sm"
     >
       {children}
-      <span className="material-symbols-outlined text-lg">
+      <span className="material-symbols-outlined text-base">
         arrow_forward
       </span>
     </Link>
   );
-}   
+}
 
-function SectionTitle({
+function SectionHeading({
   eyebrow,
   title,
   description,
@@ -121,15 +127,15 @@ function SectionTitle({
   return (
     <div className={centered ? "mx-auto max-w-2xl text-center" : ""}>
       {eyebrow && (
-        <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-teal-700 sm:text-xs">
+        <p className="mb-1.5 text-[9px] font-bold uppercase tracking-[0.16em] text-teal-700 sm:text-[10px]">
           {eyebrow}
         </p>
       )}
-      <h2 className="font-headline text-xl font-bold leading-tight tracking-tight text-slate-900 sm:text-2xl lg:text-3xl">
+      <h2 className="font-headline text-lg font-bold leading-tight tracking-tight text-slate-900 sm:text-xl lg:text-2xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-2 text-xs leading-6 text-slate-600 sm:text-sm sm:leading-7">
+        <p className="mt-2 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
           {description}
         </p>
       )}
@@ -137,7 +143,51 @@ function SectionTitle({
   );
 }
 
+function Feature({
+  icon,
+  title,
+}: {
+  icon: string;
+  title: string;
+}) {
+  return (
+    <div className="flex min-w-0 flex-col items-center justify-center rounded-lg border border-teal-100 bg-white px-2 py-3 text-center">
+      <span className="material-symbols-outlined text-xl text-teal-700">
+        {icon}
+      </span>
+      <p className="mt-1.5 text-[9px] font-semibold leading-4 text-slate-700 sm:text-[10px]">
+        {title}
+      </p>
+    </div>
+  );
+}
 
+function ImagePanel({
+  src,
+  alt,
+  className = "",
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  priority?: boolean;
+}) {
+  return (
+    <div
+      className={`relative min-w-0 overflow-hidden rounded-xl border border-teal-100 bg-teal-50 ${className}`}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        priority={priority}
+        sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 600px"
+        className="object-cover"
+      />
+    </div>
+  );
+}
 
 export default function OrthopedicSurgeryMohaliPage() {
   return (
@@ -154,8 +204,11 @@ export default function OrthopedicSurgeryMohaliPage() {
         aria-label="Breadcrumb"
         className="border-b border-slate-100 bg-white"
       >
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-1.5 px-4 py-3 text-xs sm:px-6 lg:px-8">
-          <Link href="/" className="text-slate-500 hover:text-teal-700">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-1.5 px-4 py-2.5 sm:px-6 lg:px-8">
+          <Link
+            href="/"
+            className="text-xs text-slate-500 hover:text-teal-700"
+          >
             Home
           </Link>
           <span className="material-symbols-outlined text-sm text-slate-400">
@@ -163,196 +216,180 @@ export default function OrthopedicSurgeryMohaliPage() {
           </span>
           <Link
             href="/#services"
-            className="text-slate-500 hover:text-teal-700"
+            className="text-xs text-slate-500 hover:text-teal-700"
           >
             Services
           </Link>
           <span className="material-symbols-outlined text-sm text-slate-400">
             chevron_right
           </span>
-          <span aria-current="page" className="font-semibold text-teal-800">
+          <span className="text-xs font-semibold text-teal-800">
             Orthopedic Surgery
           </span>
         </div>
       </nav>
 
-      {/* Hero: text left, surgery image right */}
+      {/* 1. Hero */}
       <section className="bg-gradient-to-br from-teal-50 via-white to-emerald-50">
-        <div className="mx-auto grid max-w-7xl items-center gap-7 px-4 py-7 sm:px-6 sm:py-10 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:py-12">
-          <div>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-teal-100 bg-white px-3 py-1.5 text-[10px] font-semibold text-teal-800 shadow-sm sm:text-xs">
+        <div className="mx-auto grid max-w-7xl items-center gap-5 px-4 py-6 sm:px-6 sm:py-8 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-10">
+          <div className="min-w-0">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-teal-100 bg-white px-3 py-1.5 text-[9px] font-semibold text-teal-800 shadow-sm sm:text-[10px]">
               <span className="material-symbols-outlined text-sm">
                 medical_services
               </span>
               Veterinary Orthopedic Care · Mohali
             </span>
 
-            <h1 className="mt-4 font-headline text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl">
+            <h1 className="mt-3 font-headline text-2xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-3xl lg:text-[2.55rem]">
               Orthopedic Surgery in Mohali for Dogs &amp; Cats
             </h1>
 
-            <p className="mt-3 text-sm font-bold text-teal-800 sm:text-base">
+            <h2 className="mt-2 text-sm font-bold text-teal-800 sm:text-base">
               Expert Orthopedic Care for Your Pet in Mohali
-            </p>
+            </h2>
 
-            <p className="mt-3 text-xs leading-6 text-slate-600 sm:text-sm sm:leading-7">
-              At GreenCoatVets, we provide professional orthopedic care
-              for dogs and cats in Mohali. From fractures and joint injuries
-              to mobility problems, our veterinary team focuses on accurate
+            <p className="mt-2.5 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
+              At GreenCoatVets, we provide professional orthopedic care for
+              dogs and cats in Mohali. From fractures and joint injuries to
+              mobility problems, our veterinary team focuses on accurate
               diagnosis, appropriate treatment, and comfortable recovery.
             </p>
 
-            <div className="mt-5 flex flex-wrap gap-2.5">
+            <div className="mt-4 flex flex-wrap gap-2">
               <BookButton />
               <Link
                 href="/contact"
-                className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-3 text-xs font-semibold text-slate-700 transition hover:border-teal-300 hover:text-teal-800 sm:text-sm"
+                className="inline-flex min-h-10 items-center justify-center rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-xs font-semibold text-slate-700 transition hover:border-teal-300 hover:text-teal-800"
               >
                 Contact Our Team
               </Link>
             </div>
 
-            <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
-              {["Dogs and cats", "Diagnostic support"].map((item) => (
-                <span
-                  key={item}
-                  className="flex items-center gap-1 text-[10px] font-medium text-slate-600 sm:text-xs"
-                >
-                  <span className="material-symbols-outlined text-sm text-teal-700">
-                    check_circle
+            <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1.5">
+              {["Dogs and cats", "Personalized treatment", "Recovery guidance"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="flex items-center gap-1 text-[9px] font-medium text-slate-600 sm:text-[10px]"
+                  >
+                    <span className="material-symbols-outlined text-sm text-teal-700">
+                      check_circle
+                    </span>
+                    {item}
                   </span>
-                  {item}
-                </span>
-              ))}
+                ),
+              )}
             </div>
           </div>
 
-          <div className="relative min-w-0">
-            <div className="absolute -inset-1 rounded-2xl bg-teal-200/60 blur-lg" />
-            <div className="relative overflow-hidden rounded-2xl border-4 border-white shadow-lg">
-              <Image
-                src="/orthopedic-surgery-hero.png"
-                alt="Veterinary orthopedic surgery for dogs and cats at GreenCoatVets in Mohali"
-                width={1536}
-                height={1024}
-                priority
-                sizes="(max-width: 1023px) 100vw, 50vw"
-                className="aspect-[4/3] w-full object-cover"
-              />
-            </div>
-          </div>
+          <ImagePanel
+            src={heroImage}
+            alt="Veterinary orthopedic surgery for dogs and cats at GreenCoatVets in Mohali"
+            priority
+            className="aspect-[4/3] shadow-lg"
+          />
         </div>
       </section>
 
-      {/* Introduction: dog image left, content right */}
-      <section className="py-8 sm:py-10">
-        <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:gap-9 lg:px-8">
-          <div className="overflow-hidden rounded-xl border border-slate-100">
-            <Image
-              src="/orthopedic-dog-fracture-care.png"
-              alt="Dog receiving veterinary orthopedic assessment for a leg injury"
-              width={1536}
-              height={1024}
-              sizes="(max-width: 1023px) 100vw, 50vw"
-              className="aspect-[4/3] w-full object-cover"
-            />
-          </div>
+      {/* 2. Orthopedic introduction */}
+      <section className="py-6 sm:py-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-5 px-4 sm:px-6 md:grid-cols-2 lg:gap-7 lg:px-8">
+          <ImagePanel
+            src={dogImage}
+            alt="Veterinarian examining a dog receiving orthopedic fracture care"
+            className="aspect-[4/3]"
+          />
 
-          <div>
-            <SectionTitle
+          <div className="min-w-0">
+            <SectionHeading
               eyebrow="Specialized veterinary services"
               title="Veterinary Orthopedic Surgery in Mohali"
             />
 
-            <p className="mt-3 text-xs leading-6 text-slate-600 sm:text-sm sm:leading-7">
+            <p className="mt-2 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
               Our <strong>veterinary orthopedic surgery in Mohali</strong>{" "}
               helps treat conditions affecting your pet&apos;s bones,
               joints, ligaments, and movement.
             </p>
 
-            <p className="mt-2 text-xs leading-6 text-slate-600 sm:text-sm sm:leading-7">
+            <p className="mt-2 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
               Every case is carefully evaluated before surgery is
               recommended. When needed, diagnostic imaging helps our
-              veterinary team understand the condition and plan appropriate
-              treatment.
+              veterinary team understand the condition and plan the
+              appropriate treatment.
             </p>
 
-            <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
-              {[
-                { icon: "search", label: "Accurate diagnosis" },
-                { icon: "monitor_heart", label: "Diagnostic imaging" },
-                { icon: "medical_services", label: "Treatment planning" },
-                { icon: "favorite", label: "Recovery guidance" },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-lg border border-teal-100 bg-teal-50/70 px-2 py-3 text-center"
-                >
-                  <span className="material-symbols-outlined text-xl text-teal-700">
-                    {item.icon}
-                  </span>
-                  <p className="mt-1 text-[10px] font-semibold leading-4 text-slate-700 sm:text-xs">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
+            <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+              <Feature icon="search" title="Accurate diagnosis" />
+              <Feature icon="monitor_heart" title="Diagnostic imaging" />
+              <Feature icon="medical_services" title="Treatment planning" />
+              <Feature icon="favorite" title="Recovery guidance" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Conditions panel */}
-      <section className="bg-gradient-to-r from-teal-50 to-emerald-50 py-8 sm:py-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            eyebrow="Pet orthopedic care in Mohali"
-            title="Conditions We Treat"
-            description="Our orthopedic services focus on evaluating injuries and mobility concerns in dogs and cats."
-            centered
-          />
+      {/* 3. Conditions with cat image on the right */}
+      <section className="bg-gradient-to-r from-teal-50 to-emerald-50 py-6 sm:py-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-5 px-4 sm:px-6 md:grid-cols-[1.15fr_0.85fr] lg:gap-7 lg:px-8">
+          <div className="min-w-0">
+            <SectionHeading
+              eyebrow="Pet orthopedic care in Mohali"
+              title="Conditions We Treat"
+              description="Our pet orthopedic surgery services in Mohali may help with a range of bone, joint, and mobility concerns."
+            />
 
-          <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {conditions.map((item) => (
-              <div
-                key={item.title}
-                className="flex min-h-12 items-center gap-3 rounded-lg border border-white bg-white/90 px-3 py-2.5 shadow-sm"
-              >
-                <span className="material-symbols-outlined flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-lg text-teal-700">
-                  {item.icon}
-                </span>
-                <h3 className="text-xs font-semibold text-slate-800 sm:text-sm">
-                  {item.title}
-                </h3>
-              </div>
-            ))}
+            <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+              {conditions.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex min-h-11 items-center gap-2 rounded-lg border border-white bg-white/90 px-3 py-2 shadow-sm"
+                >
+                  <span className="material-symbols-outlined shrink-0 text-lg text-teal-700">
+                    {item.icon}
+                  </span>
+                  <span className="text-[10px] font-semibold leading-4 text-slate-700 sm:text-xs">
+                    {item.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-3 text-[10px] leading-5 text-slate-500">
+              Treatment is planned according to your pet&apos;s individual
+              condition and health needs.
+            </p>
           </div>
 
-          <p className="mt-4 text-center text-[10px] leading-5 text-slate-500 sm:text-xs">
-            Treatment is planned according to your pet&apos;s individual
-            condition and health needs.
-          </p>
+          <ImagePanel
+            src={catImage}
+            alt="Cat receiving careful veterinary orthopedic assessment"
+            className="aspect-[4/3] md:aspect-[4/5] lg:aspect-[4/3]"
+          />
         </div>
       </section>
 
-      {/* Two service cards with separate dog and cat images */}
-      <section className="py-8 sm:py-10">
+      {/* 4. Dog orthopedic surgery and fracture treatment */}
+      <section className="py-6 sm:py-8">
         <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
           <article className="overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:border-teal-200 hover:shadow-md">
-            <Image
-              src="/orthopedic-dog-fracture-care.png"
-              alt="Veterinarian examining a dog with a leg injury"
-              width={1536}
-              height={1024}
-              sizes="(max-width: 767px) 100vw, 50vw"
-              className="aspect-[16/8] w-full object-cover"
+            <ImagePanel
+              src={dogImage}
+              alt="Dog receiving veterinary orthopedic evaluation for a leg injury"
+              className="aspect-[16/8] rounded-none border-0"
             />
 
             <div className="p-4 sm:p-5">
-              <h2 className="font-headline text-base font-bold text-slate-900 sm:text-lg">
-                Dog Orthopedic Surgery in Mohali
-              </h2>
+              <div className="flex items-start gap-2">
+                <span className="material-symbols-outlined text-xl text-teal-700">
+                  pets
+                </span>
+                <h2 className="font-headline text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                  Dog Orthopedic Surgery in Mohali
+                </h2>
+              </div>
 
-              <p className="mt-2 text-xs leading-6 text-slate-600 sm:text-sm">
+              <p className="mt-2 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
                 Injuries, accidents, falls, and joint problems can make it
                 difficult for dogs to walk or stay active. Our{" "}
                 <strong>dog orthopedic surgery in Mohali</strong> provides
@@ -360,39 +397,40 @@ export default function OrthopedicSurgeryMohaliPage() {
                 orthopedic condition requires it.
               </p>
 
-              <p className="mt-2 text-xs leading-6 text-slate-600 sm:text-sm">
+              <p className="mt-2 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
                 Our focus is on appropriate treatment, pain management, and
                 supporting your dog&apos;s recovery.
               </p>
             </div>
           </article>
 
-          <article className="overflow-hidden rounded-xl border border-teal-100 bg-white transition hover:shadow-md">
-            <Image
-              src="/orthopedic-cat-care.png"
-              alt="Veterinarian carefully bandaging a cat's paw during orthopedic care"
-              width={1536}
-              height={1024}
-              sizes="(max-width: 767px) 100vw, 50vw"
-              className="aspect-[16/8] w-full object-cover"
+          <article className="overflow-hidden rounded-xl border border-teal-100 bg-teal-50/40 transition hover:shadow-md">
+            <ImagePanel
+              src={catImage}
+              alt="Veterinarian providing orthopedic care for a cat"
+              className="aspect-[16/8] rounded-none border-0"
             />
 
             <div className="p-4 sm:p-5">
-              <h2 className="font-headline text-base font-bold text-slate-900 sm:text-lg">
-                Veterinary Bone Surgery &amp; Pet Fracture Treatment
-              </h2>
+              <div className="flex items-start gap-2">
+                <span className="material-symbols-outlined text-xl text-teal-700">
+                  healing
+                </span>
+                <h2 className="font-headline text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                  Veterinary Bone Surgery &amp; Pet Fracture Treatment
+                </h2>
+              </div>
 
-              <p className="mt-2 text-xs leading-6 text-slate-600 sm:text-sm">
+              <p className="mt-2 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
                 A fracture needs proper assessment to support healthy
-                healing. Our{" "}
-                <strong>veterinary bone surgery in Mohali</strong> provides
-                surgical treatment when required.
+                healing. Our <strong>veterinary bone surgery in Mohali</strong>{" "}
+                provides surgical treatment when required.
               </p>
 
-              <p className="mt-2 text-xs leading-6 text-slate-600 sm:text-sm">
+              <p className="mt-2 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
                 For <strong>pet fracture treatment in Mohali</strong>, our
                 veterinarians assess the type and severity of the injury
-                before recommending appropriate treatment, which may
+                before recommending the appropriate approach, which may
                 include imaging, stabilization, surgery, medication, and
                 follow-up care.
               </p>
@@ -401,14 +439,14 @@ export default function OrthopedicSurgeryMohaliPage() {
         </div>
       </section>
 
-      {/* Why choose us */}
-      <section className="border-y border-slate-100 bg-white py-8 sm:py-10">
-        <div className="mx-auto grid max-w-7xl items-start gap-5 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+      {/* 5. Why choose GreenCoatVets */}
+      <section className="border-y border-slate-100 bg-white py-6 sm:py-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-4 px-4 sm:px-6 md:grid-cols-[0.8fr_1.2fr] lg:gap-7 lg:px-8">
           <div>
-            <SectionTitle
+            <SectionHeading
               eyebrow="Trusted pet care"
               title="Why Choose GreenCoatVets?"
-              description="We aim to provide professional and compassionate orthopedic care for pets in Mohali."
+              description="We focus on professional veterinary care, personalized treatment planning, and compassionate support for pets and their families."
             />
           </div>
 
@@ -416,12 +454,12 @@ export default function OrthopedicSurgeryMohaliPage() {
             {benefits.map((item) => (
               <div
                 key={item.title}
-                className="flex min-h-14 items-center gap-2 rounded-lg border border-slate-100 bg-slate-50 p-3"
+                className="flex min-h-14 items-center gap-2 rounded-lg border border-slate-100 bg-slate-50 p-2.5"
               >
-                <span className="material-symbols-outlined text-xl text-teal-700">
+                <span className="material-symbols-outlined shrink-0 text-lg text-teal-700">
                   {item.icon}
                 </span>
-                <p className="text-[10px] font-semibold leading-4 text-slate-700 sm:text-xs">
+                <p className="text-[9px] font-semibold leading-4 text-slate-700 sm:text-[10px]">
                   {item.title}
                 </p>
               </div>
@@ -430,21 +468,31 @@ export default function OrthopedicSurgeryMohaliPage() {
         </div>
       </section>
 
-      {/* Compact appointment banner */}
-      <section className="py-7 sm:py-9">
+      {/* 6. Appointment banner with dog image */}
+      <section className="py-5 sm:py-7">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-teal-900 to-emerald-800 p-5 text-white sm:p-7">
-            <div className="relative grid items-center gap-5 md:grid-cols-[1fr_auto]">
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-teal-200">
+          <div className="grid overflow-hidden rounded-xl bg-gradient-to-r from-teal-900 to-emerald-800 text-white shadow-md sm:grid-cols-[180px_1fr] lg:grid-cols-[240px_1fr]">
+            <div className="relative min-h-36 sm:min-h-full">
+              <Image
+                src={dogImage}
+                alt="Dog receiving compassionate veterinary care"
+                fill
+                sizes="(max-width: 639px) 100vw, 240px"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="flex flex-col items-start justify-between gap-4 p-4 sm:flex-row sm:items-center sm:p-5 lg:p-6">
+              <div className="min-w-0">
+                <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-teal-200">
                   Orthopedic care for dogs and cats
                 </p>
 
-                <h2 className="mt-2 font-headline text-xl font-bold sm:text-2xl">
+                <h2 className="mt-1.5 font-headline text-lg font-bold leading-tight sm:text-xl">
                   Book Your Orthopedic Consultation Today
                 </h2>
 
-                <p className="mt-2 max-w-2xl text-xs leading-6 text-teal-50/90 sm:text-sm">
+                <p className="mt-2 max-w-2xl text-xs leading-5 text-teal-50/90 sm:text-sm sm:leading-6">
                   If your pet is limping, experiencing pain, has suffered
                   an injury, or is having difficulty walking, do not ignore
                   the signs. GreenCoatVets provides professional{" "}
@@ -452,12 +500,12 @@ export default function OrthopedicSurgeryMohaliPage() {
                   focus on your pet&apos;s comfort and recovery.
                 </p>
 
-                <p className="mt-2 text-xs font-semibold text-teal-100">
+                <p className="mt-2 text-[10px] font-semibold text-teal-100 sm:text-xs">
                   Help your pet move comfortably again.
                 </p>
               </div>
 
-              <div className="md:pl-4">
+              <div className="shrink-0">
                 <BookButton>Book Appointment</BookButton>
               </div>
             </div>
@@ -465,16 +513,16 @@ export default function OrthopedicSurgeryMohaliPage() {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="bg-slate-50 py-8 sm:py-10">
+      {/* 7. FAQs */}
+      <section className="bg-slate-50 py-6 sm:py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionTitle
+          <SectionHeading
             eyebrow="Frequently asked questions"
             title="Orthopedic Surgery FAQs"
-            description="Learn more about orthopedic surgery and pet fracture treatment in Mohali."
+            description="Learn more about veterinary orthopedic surgery and pet fracture treatment in Mohali."
           />
 
-          <div className="mt-5 max-w-4xl space-y-2">
+          <div className="mt-4 max-w-4xl space-y-2">
             {faqs.map((faq) => (
               <details
                 key={faq.question}
@@ -487,14 +535,14 @@ export default function OrthopedicSurgeryMohaliPage() {
                   </span>
                 </summary>
 
-                <p className="mt-3 border-t border-slate-100 pt-3 text-xs leading-6 text-slate-600 sm:text-sm">
+                <p className="mt-3 border-t border-slate-100 pt-3 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
                   {faq.answer}
                 </p>
               </details>
             ))}
           </div>
 
-          <div className="mt-5">
+          <div className="mt-4">
             <BookButton />
           </div>
         </div>
