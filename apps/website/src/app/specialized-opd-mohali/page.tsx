@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const pageTitle =
@@ -223,122 +224,33 @@ export default function SpecializedOpdMohaliPage() {
       </nav>
 
       {/* Hero */}
-      <section className="relative isolate bg-gradient-to-br from-teal-50 via-white to-emerald-50/70">
-        <div className="pointer-events-none absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-teal-100/50 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-28 -left-20 -z-10 h-72 w-72 rounded-full bg-emerald-100/50 blur-3xl" />
+     
+{/* Hero Image */}
+<div className="relative mx-auto w-full max-w-lg">
+  <div className="absolute -inset-3 rounded-[32px] bg-teal-100/70 blur-xl" />
 
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8 lg:py-24">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white/80 px-4 py-2 text-sm font-semibold text-teal-800 shadow-sm">
-              <span className="material-symbols-outlined text-lg">
-                medical_services
-              </span>
-              Veterinary consultation in Mohali
-            </span>
+  <div className="relative overflow-hidden rounded-[28px] border border-teal-100 bg-white p-2 shadow-xl">
+    <Image
+      src="/specialized-opd-veterinary.jpg"
+      alt="Veterinarian providing a health examination for a dog at GreenCoatVets in Mohali"
+      width={800}
+      height={900}
+      priority
+      sizes="(max-width: 1024px) 100vw, 500px"
+      className="h-[350px] w-full rounded-[22px] object-cover sm:h-[460px]"
+    />
 
-            <h1 className="mt-6 max-w-2xl font-headline text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-[54px]">
-              Specialized OPD in Mohali for Dogs &amp; Cats
-            </h1>
+    <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/60 bg-white/95 p-4 shadow-lg backdrop-blur-sm">
+      <p className="font-headline text-lg font-bold text-slate-900">
+        Compassionate Veterinary Care
+      </p>
+      <p className="mt-1 text-sm text-slate-600">
+        Professional consultation for dogs and cats in Mohali.
+      </p>
+    </div>
+  </div>
+</div>
 
-            <p className="mt-6 max-w-xl text-lg font-semibold text-teal-800">
-              Expert Veterinary Care for Your Pet in Mohali
-            </p>
-
-            <p className="mt-4 max-w-xl text-base leading-8 text-slate-600">
-              At GreenCoatVets, our Specialized OPD provides professional and
-              compassionate veterinary care for dogs and cats in Mohali.
-              Whether your pet needs a routine check-up, treatment for a
-              health concern, or ongoing medical care, our veterinary team
-              is here to help.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <AppointmentButton />
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-2 py-3 text-sm font-bold text-slate-700 transition hover:text-teal-800"
-              >
-                Contact GreenCoatVets
-                <span className="material-symbols-outlined text-lg">
-                  arrow_outward
-                </span>
-              </Link>
-            </div>
-
-            <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-600">
-              <span className="inline-flex items-center gap-2">
-                <span className="material-symbols-outlined text-lg text-teal-700">
-                  check_circle
-                </span>
-                Personalized care
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="material-symbols-outlined text-lg text-teal-700">
-                  check_circle
-                </span>
-                Dogs and cats
-              </span>
-            </div>
-          </div>
-
-          {/* Hero visual */}
-          <div className="relative mx-auto w-full max-w-lg">
-            <div className="absolute -inset-4 rounded-[36px] bg-gradient-to-br from-teal-200/50 to-emerald-100/30 blur-xl" />
-            <div className="relative overflow-hidden rounded-[30px] border border-teal-100 bg-white p-5 shadow-2xl shadow-teal-900/10 sm:p-7">
-              <div className="flex items-center gap-4 rounded-2xl bg-teal-50 p-5">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-teal-700 text-white">
-                  <span className="material-symbols-outlined text-3xl">
-                    pets
-                  </span>
-                </div>
-                <div>
-                  <p className="font-headline text-lg font-bold text-slate-900">
-                    Care for every stage
-                  </p>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">
-                    Consultation, examination and guidance for your pet.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-5 grid grid-cols-2 gap-4">
-                <div className="rounded-2xl border border-slate-100 p-4">
-                  <span className="material-symbols-outlined text-2xl text-teal-700">
-                    stethoscope
-                  </span>
-                  <p className="mt-3 font-bold text-slate-900">
-                    Health checks
-                  </p>
-                  <p className="mt-1 text-sm leading-5 text-slate-500">
-                    Routine health assessments
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-slate-100 p-4">
-                  <span className="material-symbols-outlined text-2xl text-teal-700">
-                    prescription
-                  </span>
-                  <p className="mt-3 font-bold text-slate-900">
-                    Care guidance
-                  </p>
-                  <p className="mt-1 text-sm leading-5 text-slate-500">
-                    Recommended next steps
-                  </p>
-                </div>
-                <div className="col-span-2 flex items-start gap-3 rounded-2xl bg-emerald-50 p-4">
-                  <span className="material-symbols-outlined text-2xl text-teal-700">
-                    favorite
-                  </span>
-                  <p className="text-sm leading-6 text-slate-700">
-                    Every pet is different. Consultation helps your
-                    veterinarian understand their symptoms, history and
-                    individual needs.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Veterinary consultation */}
       <section className="py-16 sm:py-20">
