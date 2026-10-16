@@ -13,10 +13,10 @@ const pageUrl = "https://www.greencoatvets.com/spay-neuter-mohali/";
 const bookingUrl = "https://www.greencoatvets.com/book";
 
 const images = {
-  hero: "/spay-neuter-hero.png",
-  dog: "/dog-spay-neuter.png",
-  cat: "/cat-spay-neuter.png",
-  banner: "/spay-neuter-pets.png",
+  hero: "/spay-neuter-hero.jpg",
+  dog: "/dog-spay-neuter.jpg",
+  cat: "/cat-spay-neuter.jpg",
+  banner: "/spay-neuter-pets.jpg",
 };
 
 const faqs = [
