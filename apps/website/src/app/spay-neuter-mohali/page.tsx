@@ -308,86 +308,105 @@ export default function SpayNeuterMohaliPage() {
       </section>
 
       {/* Dog and cat: deliberately different card treatment */}
-      <section className="py-10 sm:py-14 lg:py-16">
+     
+      {/* Dog and cat service cards */}
+      <section className="bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-7 max-w-2xl sm:mb-9">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal-700">
+          <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
+            <span className="inline-flex rounded-full bg-emerald-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-teal-800">
               Care tailored to your companion
-            </p>
-            <h2 className="mt-3 font-headline text-2xl font-bold leading-tight text-slate-950 sm:text-3xl">
+            </span>
+
+            <h2 className="mt-4 font-headline text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
               Individual Care for Dogs &amp; Cats
             </h2>
-            <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
               Every pet has different needs. Our veterinary team assesses
               your companion and explains the procedure, preparation,
               recovery, and aftercare.
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
-            {/* Dog card */}
-            <article className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-xl">
-              <div className="grid sm:grid-cols-[0.9fr_1.1fr]">
-                <Photo
+          <div className="grid items-stretch gap-6 lg:grid-cols-2 lg:gap-8">
+            {/* Dog service card */}
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:flex-row">
+              <div className="relative aspect-[5/4] w-full shrink-0 overflow-hidden bg-slate-100 sm:aspect-auto sm:w-[42%]">
+                <Image
                   src={images.dog}
                   alt="Dog receiving veterinary care as part of a spay and neuter consultation"
-                  className="aspect-[4/3] min-h-48 sm:aspect-auto sm:min-h-full"
+                  fill
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 42vw, 300px"
+                  className="object-cover transition duration-500 group-hover:scale-105"
                 />
-                <div className="flex flex-col p-5 sm:p-6">
-                  <span className="w-fit rounded-full bg-emerald-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-emerald-800">
-                    Canine healthcare
+              </div>
+
+              <div className="flex flex-1 flex-col p-6 sm:p-7 lg:p-8">
+                <span className="w-fit rounded-full bg-emerald-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-teal-800">
+                  Canine healthcare
+                </span>
+
+                <h3 className="mt-4 font-headline text-xl font-bold leading-snug text-slate-950 sm:text-2xl">
+                  Dog Spay and Neuter in Mohali
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  Our <strong>dog spay and neuter in Mohali</strong> services
+                  are provided based on each dog&apos;s individual health
+                  and veterinary assessment.
+                </p>
+
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  Before the procedure, our veterinarian evaluates your
+                  dog and explains the surgery, preparation, recovery,
+                  and aftercare.
+                </p>
+
+                <Link
+                  href={bookingUrl}
+                  className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-bold text-teal-800 transition hover:text-emerald-700"
+                >
+                  Book a consultation
+                  <span className="material-symbols-outlined text-lg">
+                    arrow_forward
                   </span>
-                  <h3 className="mt-4 font-headline text-xl font-bold leading-snug text-slate-950">
-                    Dog Spay and Neuter in Mohali
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
-                    Our <strong>dog spay and neuter in Mohali</strong>{" "}
-                    services are provided based on each dog&apos;s
-                    individual health and veterinary assessment.
-                  </p>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
-                    Before the procedure, our veterinarian evaluates your
-                    dog and explains the surgery, preparation, recovery,
-                    and aftercare.
-                  </p>
-                  <Link
-                    href={bookingUrl}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-teal-800 transition group-hover:text-emerald-700"
-                  >
-                    Book a consultation
-                    <span className="material-symbols-outlined text-lg">
-                      arrow_forward
-                    </span>
-                  </Link>
-                </div>
+                </Link>
               </div>
             </article>
 
-            {/* Cat card */}
-            <article className="group overflow-hidden rounded-2xl border border-slate-200 bg-[#f5f8f6] transition hover:-translate-y-1 hover:shadow-xl">
-              <div className="grid sm:grid-cols-[0.9fr_1.1fr]">
-                <Photo
+            {/* Cat service card */}
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-[#f5f8f6] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:flex-row">
+              <div className="relative aspect-[5/4] w-full shrink-0 overflow-hidden bg-slate-100 sm:aspect-auto sm:w-[42%]">
+                <Image
                   src={images.cat}
                   alt="Cat receiving gentle veterinary care"
-                  className="aspect-[4/3] min-h-48 sm:aspect-auto sm:min-h-full"
+                  fill
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 42vw, 300px"
+                  className="object-cover transition duration-500 group-hover:scale-105"
                 />
-                <div className="flex flex-col p-5 sm:p-6">
-                  <span className="w-fit rounded-full bg-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-teal-800">
-                    Feline healthcare
-                  </span>
-                  <h3 className="mt-4 font-headline text-xl font-bold leading-snug text-slate-950">
-                    Cat Spay and Neuter in Mohali
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
-                    <strong>Cat spay and neuter in Mohali</strong> can be
-                    an important part of responsible cat healthcare. At
-                    GreenCoatVets, we provide careful surgical care and
-                    recovery guidance based on your cat&apos;s individual
-                    needs.
-                  </p>
+              </div>
+
+              <div className="flex flex-1 flex-col p-6 sm:p-7 lg:p-8">
+                <span className="w-fit rounded-full bg-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-teal-800">
+                  Feline healthcare
+                </span>
+
+                <h3 className="mt-4 font-headline text-xl font-bold leading-snug text-slate-950 sm:text-2xl">
+                  Cat Spay and Neuter in Mohali
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  <strong>Cat spay and neuter in Mohali</strong> can be
+                  an important part of responsible cat healthcare. At
+                  GreenCoatVets, we provide careful surgical care and
+                  recovery guidance based on your cat&apos;s individual
+                  needs.
+                </p>
+
+                <div className="mt-auto pt-6">
                   <Link
                     href={bookingUrl}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-teal-800 transition group-hover:text-emerald-700"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-teal-800 transition hover:text-emerald-700"
                   >
                     Book a consultation
                     <span className="material-symbols-outlined text-lg">
@@ -400,6 +419,7 @@ export default function SpayNeuterMohaliPage() {
           </div>
         </div>
       </section>
+
 
       {/* Veterinary sterilization */}
       <section className="bg-[#edf5f0] py-10 sm:py-14 lg:py-16">
