@@ -17,6 +17,7 @@ const images = {
   dog: "/pet-ultrasound.jpg",
   cat: "/cat-spay-neuter.jpg",
   banner: "/spay-neuter-pets.jpg",
+  newtreat: "/dog-spay-neuter.png";
 };
             
 const faqs = [
@@ -472,7 +473,7 @@ export default function SpayNeuterMohaliPage() {
           </div>
 
           <Photo
-            src={images.banner}
+            src={images.newtreat}
             alt="Dog and cat representing compassionate veterinary healthcare"
             className="aspect-[4/3] rounded-2xl shadow-lg"
           />
