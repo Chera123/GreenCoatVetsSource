@@ -17,7 +17,7 @@ const images = {
   dog: "/pet-ultrasound.jpg",
   cat: "/cat-spay-neuter.jpg",
   banner: "/spay-neuter-pets.jpg",
-  newtreat: "/dog-spay-neuter.png";
+  newtreat: "/dog-spay-neuter.png",
 };
             
 const faqs = [
