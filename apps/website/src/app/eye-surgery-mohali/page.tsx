@@ -17,7 +17,7 @@ const images = {
   hero: "/eye-surgery-dog.jpg",
   examination: "/pet-eye-examination.jpg",
   treatment: "/veterinary-eye-treatment.png",
-  banner: "/eye-care-pets.png",
+  banner: "/Forthopedic-appointment-dog.png",
 };
 
 export const metadata: Metadata = {
