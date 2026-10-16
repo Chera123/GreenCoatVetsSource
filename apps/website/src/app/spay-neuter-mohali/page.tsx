@@ -18,7 +18,7 @@ const images = {
   cat: "/cat-spay-neuter.jpg",
   banner: "/spay-neuter-pets.jpg",
 };
-       
+            
 const faqs = [
   {
     question: "What is pet spay and neuter?",
