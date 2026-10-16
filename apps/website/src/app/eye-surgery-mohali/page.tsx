@@ -14,8 +14,8 @@ const pageUrl =
 const bookingUrl = "https://www.greencoatvets.com/book";
 
 const images = {
-  hero: "/eye-surgery-dog.png",
-  examination: "/pet-eye-examination.png",
+  hero: "/eye-surgery-dog.jpg",
+  examination: "/pet-eye-examination.jpg",
   treatment: "/veterinary-eye-treatment.png",
   banner: "/eye-care-pets.png",
 };
