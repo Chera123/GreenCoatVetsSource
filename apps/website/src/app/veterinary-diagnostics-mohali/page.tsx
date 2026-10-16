@@ -19,7 +19,7 @@ const images = {
   hero: "/veterinary-diagnostics-hero.jpg",
   ultrasound: "/pet-ultrasound.jpg",
   xray: "/veterinary-xray.jpg",
-  banner: "/dental-care-banner.jpg",    
+  banner: "/logo-mark.png",    
 };
 
 export const metadata: Metadata = {
