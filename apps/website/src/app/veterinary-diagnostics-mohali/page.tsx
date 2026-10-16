@@ -51,32 +51,7 @@ export const metadata: Metadata = {
   },
 };
 
-const diagnosticServices = [
-  {
-    icon: "bloodtype",
-    title: "Blood and Laboratory Tests",
-    description:
-      "Blood and laboratory tests can help veterinarians investigate symptoms and understand your pet's health.",
-  },
-  {
-    icon: "monitor_heart",
-    title: "Pet Ultrasound",
-    description:
-      "Pet ultrasound can help examine internal organs and soft tissues when further investigation is needed.",
-  },
-  {
-    icon: "radiology",
-    title: "Veterinary X-ray",
-    description:
-      "Veterinary X-ray can help assess bones, joints, the chest, abdomen, and certain injuries.",
-  },
-  {
-    icon: "biotech",
-    title: "Other Diagnostic Examinations",
-    description:
-      "Additional diagnostic examinations may be recommended according to your pet's symptoms and individual needs.",
-  },
-];
+
 
 const benefits = [
   { icon: "groups", title: "Experienced veterinary team" },
