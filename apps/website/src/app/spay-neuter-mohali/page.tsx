@@ -14,7 +14,7 @@ const bookingUrl = "https://www.greencoatvets.com/book";
 
 const images = {
   hero: "/spay-neuter-hero.jpg",
-  dog: "/dog-spay-neuter.png",
+  dog: "/pet-ultrasound.jpg",
   cat: "/cat-spay-neuter.jpg",
   banner: "/spay-neuter-pets.jpg",
 };
