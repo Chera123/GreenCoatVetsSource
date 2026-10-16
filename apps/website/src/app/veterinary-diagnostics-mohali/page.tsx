@@ -17,9 +17,9 @@ const bookingUrl = "https://www.greencoatvets.com/book";
 
 const images = {
   hero: "/veterinary-diagnostics-hero.jpg",
-  ultrasound: "/pet-ultrasound.jpeg",
+  ultrasound: "/pet-ultrasound.jpg",
   xray: "/veterinary-xray.jpg",
-  banner: "/dental-care-banner.jpg",
+  banner: "/dental-care-banner.jpg",    
 };
 
 export const metadata: Metadata = {
