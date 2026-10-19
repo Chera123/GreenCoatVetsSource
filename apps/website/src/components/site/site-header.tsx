@@ -9,16 +9,20 @@ import { createClient } from "@/lib/supabase/client";
 const NAV = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services", children: [
-    { href: "/specialized-opd-mohali/", label: "Specialized OPD" },
-    { href: "/orthopedic-surgery-mohali/", label: "Orthopedic Surgery" },
-    { href: "/emergency-care-mohali/", label: "Emergency Care" },
-    { href: "/eye-surgery-mohali/", label: "Eye Surgery" },
-    { href: "/dental-care-mohali/", label: "Dental Care" },
-    { href: "/veterinary-diagnostics-mohali/", label: "Veterinary Diagnostics" },
-    { href: "/spay-neuter-mohali/", label: "Spay & Neuter" },
-    { href: "/equine-services-mohali/", label: "Equine Services" },
-  ] },
+  {
+    href: "/services",
+    label: "Services",
+    children: [
+      { href: "/specialized-opd-mohali/", label: "Specialized OPD" },
+      { href: "/orthopedic-surgery-mohali/", label: "Orthopedic Surgery" },
+      { href: "/emergency-care-mohali/", label: "Emergency Care" },
+      { href: "/eye-surgery-mohali/", label: "Eye Surgery" },
+      { href: "/dental-care-mohali/", label: "Dental Care" },
+      { href: "/veterinary-diagnostics-mohali/", label: "Veterinary Diagnostics" },
+      { href: "/spay-neuter-mohali/", label: "Spay & Neuter" },
+      { href: "/equine-services-mohali/", label: "Equine Services" },
+    ],
+  },
   { href: "/locations", label: "Locations" },
   { href: "/blog", label: "Blog" },
   { href: "/community", label: "Community" },
@@ -40,35 +44,39 @@ export function SiteHeader({
   callTelHref?: string;
   websiteStoreEnabled: boolean;
 }) {
-  const showCall = Boolean(callTelHref?.trim() && callDisplay?.trim());
   const pathname = usePathname();
+
   const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [user, setUser] = useState<User | null>(null);
 
-  const isServiceActive = pathname === "/services" ||
-    NAV.some((item) =>
-      item.href === "/services" &&
-      "children" in item &&
-      item.children.some((child) => pathname === child.href || pathname === child.href.replace(/\/$/, ""))
-    );
+  const showCall = Boolean(callTelHref?.trim() && callDisplay?.trim());
 
   useEffect(() => {
     const supabase = createClient();
+
     void supabase.auth.getUser().then(({ data: { user } }) => {
       setUser(user ?? null);
     });
+
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null);
     });
+
     return () => subscription.unsubscribe();
   }, []);
 
+  // Close both navigation menus whenever the route changes.
+  // The desktop menu uses React state rather than CSS-only hover,
+  // so it stays closed after navigation even if the pointer remains
+  // over the Services navigation item.
   useEffect(() => {
     setOpen(false);
-    setServicesOpen(false);
+    setDesktopServicesOpen(false);
+    setMobileServicesOpen(false);
   }, [pathname]);
 
   return (
@@ -77,64 +85,120 @@ export function SiteHeader({
         className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8"
         aria-label="Main navigation"
       >
-        <Link href="/" className="flex shrink-0 items-center gap-2" onClick={() => setOpen(false)}>
+        <Link
+          href="/"
+          className="flex shrink-0 items-center gap-2"
+          onClick={() => {
+            setOpen(false);
+            setDesktopServicesOpen(false);
+            setMobileServicesOpen(false);
+          }}
+        >
           {logoUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={logoUrl} alt="" className="h-9 w-9 rounded-lg object-contain sm:h-11 sm:w-11" />
+            <img
+              src={logoUrl}
+              alt=""
+              className="h-9 w-9 rounded-lg object-contain sm:h-11 sm:w-11"
+            />
           ) : null}
+
           <span className="bg-gradient-to-br from-teal-500 to-teal-800 bg-clip-text font-headline text-xl font-extrabold tracking-tight text-transparent sm:text-2xl">
             {productName}
           </span>
         </Link>
 
+        {/* Desktop navigation */}
         <div className="hidden items-center gap-3 md:flex lg:gap-5 xl:gap-6">
           {NAV.map((item) => {
-            const active =
-              item.href === "/services"
-                ? isServiceActive
-                : pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
-
             if ("children" in item) {
               return (
-                <div key={item.href} className="group relative">
-                  <Link
-                    href={item.href}
-                    aria-haspopup="true"
-                    className={`inline-flex items-center gap-1 border-b-2 font-headline text-xs font-semibold tracking-tight transition-colors lg:text-sm ${
-                      active
-                        ? "border-primary pb-1 text-primary"
-                        : "border-transparent text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-teal-400"
-                    }`}
-                  >
-                    {item.label}
-                    <span className="material-symbols-outlined text-base" aria-hidden="true">
-                      keyboard_arrow_down
-                    </span>
-                  </Link>
+                <div
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={() => setDesktopServicesOpen(true)}
+                  onMouseLeave={() => setDesktopServicesOpen(false)}
+                  onFocusCapture={() => setDesktopServicesOpen(true)}
+                  onBlurCapture={(event) => {
+                    const nextTarget = event.relatedTarget;
 
-                  <div className="invisible absolute left-0 top-full z-50 w-64 translate-y-2 rounded-xl border border-slate-200 bg-white p-2 opacity-0 shadow-xl transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-                    {item.children.map((child) => {
-                      const childActive =
-                        pathname === child.href || pathname === child.href.replace(/\/$/, "");
+                    if (
+                      !(nextTarget instanceof Node) ||
+                      !event.currentTarget.contains(nextTarget)
+                    ) {
+                      setDesktopServicesOpen(false);
+                    }
+                  }}
+                >
+                  <div className="flex items-center gap-1">
+                    <Link
+                      href={item.href}
+                      className="border-b-2 border-transparent font-headline text-xs font-semibold tracking-tight text-slate-600 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-teal-400 lg:text-sm"
+                      onClick={() => setDesktopServicesOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
 
-                      return (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
-                            childActive
-                              ? "bg-teal-50 text-teal-800"
-                              : "text-slate-700 hover:bg-slate-50 hover:text-teal-700"
-                          }`}
-                        >
-                          {child.label}
-                        </Link>
-                      );
-                    })}
+                    <button
+                      type="button"
+                      className="inline-flex h-7 w-6 items-center justify-center rounded text-slate-600 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:text-slate-400 dark:hover:text-teal-400"
+                      aria-label={
+                        desktopServicesOpen
+                          ? "Close services submenu"
+                          : "Open services submenu"
+                      }
+                      aria-expanded={desktopServicesOpen}
+                      aria-haspopup="true"
+                      onClick={() =>
+                        setDesktopServicesOpen((value) => !value)
+                      }
+                    >
+                      <span
+                        className={`material-symbols-outlined text-xl transition-transform ${
+                          desktopServicesOpen ? "rotate-180" : ""
+                        }`}
+                        aria-hidden="true"
+                      >
+                        keyboard_arrow_down
+                      </span>
+                    </button>
                   </div>
+
+                  {desktopServicesOpen ? (
+                    <div className="absolute left-0 top-full z-50 w-64 pt-2">
+                      <div className="rounded-xl border border-slate-200 bg-white p-2 shadow-xl">
+                        {item.children.map((child) => {
+                          const childActive =
+                            pathname === child.href ||
+                            pathname === child.href.replace(/\/$/, "");
+
+                          return (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+                                childActive
+                                  ? "bg-teal-50 text-teal-800"
+                                  : "text-slate-700 hover:bg-slate-50 hover:text-teal-700"
+                              }`}
+                              onClick={() =>
+                                setDesktopServicesOpen(false)
+                              }
+                            >
+                              {child.label}
+                            </Link>
+                          );
+                        }}
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
               );
             }
+
+            const active =
+              pathname === item.href ||
+              (item.href !== "/" && pathname.startsWith(item.href));
 
             return (
               <Link
@@ -152,6 +216,7 @@ export function SiteHeader({
           })}
         </div>
 
+        {/* Booking, account and mobile menu controls */}
         <div className="flex items-center gap-2 sm:gap-3">
           <Link
             href="/book"
@@ -166,7 +231,10 @@ export function SiteHeader({
               className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-outline-variant/80 bg-surface-container-low/80 text-on-surface shadow-sm transition-colors hover:border-primary hover:bg-surface-container-low hover:text-primary"
               aria-label="Pet owner portal"
             >
-              <span className="material-symbols-outlined text-[26px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+              <span
+                className="material-symbols-outlined text-[26px]"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
                 account_circle
               </span>
             </Link>
@@ -186,46 +254,76 @@ export function SiteHeader({
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((value) => !value)}
           >
-            <span className="material-symbols-outlined">{open ? "close" : "menu"}</span>
+            <span className="material-symbols-outlined">
+              {open ? "close" : "menu"}
+            </span>
           </button>
         </div>
       </nav>
 
+      {/* Mobile navigation */}
       {open ? (
         <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-slate-200 bg-white px-4 py-4 shadow-lg md:hidden">
           <div className="flex flex-col gap-3">
             {NAV.map((item) => {
               if ("children" in item) {
+                const servicePageActive = item.children.some(
+                  (child) =>
+                    pathname === child.href ||
+                    pathname === child.href.replace(/\/$/, ""),
+                );
+
                 return (
-                  <div key={item.href} className="border-b border-slate-100 pb-3">
+                  <div
+                    key={item.href}
+                    className="border-b border-slate-100 pb-3"
+                  >
                     <div className="flex items-center justify-between gap-3">
                       <Link
                         href={item.href}
                         className={`font-headline font-semibold ${
-                          isServiceActive ? "text-primary" : "text-on-surface"
+                          pathname === item.href || servicePageActive
+                            ? "text-primary"
+                            : "text-on-surface"
                         }`}
-                        onClick={() => setOpen(false)}
+                        onClick={() => {
+                          setOpen(false);
+                          setMobileServicesOpen(false);
+                        }}
                       >
                         {item.label}
                       </Link>
+
                       <button
                         type="button"
-                        className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-on-surface hover:bg-slate-100"
-                        aria-label={servicesOpen ? "Collapse service links" : "Expand service links"}
-                        aria-expanded={servicesOpen}
-                        onClick={() => setServicesOpen((value) => !value)}
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-on-surface hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                        aria-label={
+                          mobileServicesOpen
+                            ? "Collapse service links"
+                            : "Expand service links"
+                        }
+                        aria-expanded={mobileServicesOpen}
+                        onClick={() =>
+                          setMobileServicesOpen((value) => !value)
+                        }
                       >
-                        <span className="material-symbols-outlined">
-                          {servicesOpen ? "expand_less" : "expand_more"}
+                        <span
+                          className="material-symbols-outlined"
+                          aria-hidden="true"
+                        >
+                          {mobileServicesOpen
+                            ? "expand_less"
+                            : "expand_more"}
                         </span>
                       </button>
                     </div>
 
-                    {servicesOpen ? (
+                    {mobileServicesOpen ? (
                       <div className="mt-2 flex flex-col gap-1 border-l-2 border-teal-100 pl-3">
                         {item.children.map((child) => {
                           const childActive =
-                            pathname === child.href || pathname === child.href.replace(/\/$/, "");
+                            pathname === child.href ||
+                            pathname === child.href.replace(/\/$/, "");
 
                           return (
                             <Link
@@ -236,7 +334,10 @@ export function SiteHeader({
                                   ? "bg-teal-50 font-semibold text-teal-800"
                                   : "text-slate-600 hover:bg-slate-50 hover:text-teal-700"
                               }`}
-                              onClick={() => setOpen(false)}
+                              onClick={() => {
+                                setOpen(false);
+                                setMobileServicesOpen(false);
+                              }}
                             >
                               {child.label}
                             </Link>
@@ -248,14 +349,21 @@ export function SiteHeader({
                 );
               }
 
+              const active =
+                pathname === item.href ||
+                (item.href !== "/" && pathname.startsWith(item.href));
+
               return (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={`font-headline font-semibold ${
-                    pathname === item.href ? "text-primary" : "text-on-surface"
+                    active ? "text-primary" : "text-on-surface"
                   }`}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setOpen(false);
+                    setMobileServicesOpen(false);
+                  }}
                 >
                   {item.label}
                 </Link>
@@ -288,24 +396,39 @@ export function SiteHeader({
                   className="inline-flex items-center gap-2 font-semibold text-primary"
                   onClick={() => setOpen(false)}
                 >
-                  <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  <span
+                    className="material-symbols-outlined text-xl"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
                     account_circle
                   </span>
                   Pet portal
                 </Link>
               ) : (
                 <>
-                  <Link href="/login" className="font-semibold text-primary" onClick={() => setOpen(false)}>
+                  <Link
+                    href="/login"
+                    className="font-semibold text-primary"
+                    onClick={() => setOpen(false)}
+                  >
                     Login
                   </Link>
-                  <Link href="/signup" className="text-on-surface-variant" onClick={() => setOpen(false)}>
+                  <Link
+                    href="/signup"
+                    className="text-on-surface-variant"
+                    onClick={() => setOpen(false)}
+                  >
                     Sign up
                   </Link>
                 </>
               )}
 
               {websiteStoreEnabled ? (
-                <Link href="/store" className="text-on-surface-variant" onClick={() => setOpen(false)}>
+                <Link
+                  href="/store"
+                  className="text-on-surface-variant"
+                  onClick={() => setOpen(false)}
+                >
                   Store
                 </Link>
               ) : null}
