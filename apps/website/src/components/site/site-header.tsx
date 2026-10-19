@@ -18,7 +18,10 @@ const NAV = [
       { href: "/emergency-care-mohali/", label: "Emergency Care" },
       { href: "/eye-surgery-mohali/", label: "Eye Surgery" },
       { href: "/dental-care-mohali/", label: "Dental Care" },
-      { href: "/veterinary-diagnostics-mohali/", label: "Veterinary Diagnostics" },
+      {
+        href: "/veterinary-diagnostics-mohali/",
+        label: "Veterinary Diagnostics",
+      },
       { href: "/spay-neuter-mohali/", label: "Spay & Neuter" },
       { href: "/equine-services-mohali/", label: "Equine Services" },
     ],
@@ -29,6 +32,11 @@ const NAV = [
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ] as const;
+
+function normalizePath(path: string) {
+  if (path === "/") return "/";
+  return path.replace(/\/+$/, "");
+}
 
 export function SiteHeader({
   productName,
@@ -45,7 +53,6 @@ export function SiteHeader({
   websiteStoreEnabled: boolean;
 }) {
   const pathname = usePathname();
-
   const [open, setOpen] = useState(false);
   const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -69,15 +76,18 @@ export function SiteHeader({
     return () => subscription.unsubscribe();
   }, []);
 
-  // Close both navigation menus whenever the route changes.
-  // The desktop menu uses React state rather than CSS-only hover,
-  // so it stays closed after navigation even if the pointer remains
-  // over the Services navigation item.
+  // Close all menus after navigating to a new route.
   useEffect(() => {
     setOpen(false);
     setDesktopServicesOpen(false);
     setMobileServicesOpen(false);
   }, [pathname]);
+
+  const closeAllMenus = () => {
+    setOpen(false);
+    setDesktopServicesOpen(false);
+    setMobileServicesOpen(false);
+  };
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/15 bg-surface/90 backdrop-blur-sm dark:border-slate-700/20">
@@ -88,11 +98,7 @@ export function SiteHeader({
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2"
-          onClick={() => {
-            setOpen(false);
-            setDesktopServicesOpen(false);
-            setMobileServicesOpen(false);
-          }}
+          onClick={closeAllMenus}
         >
           {logoUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
@@ -118,14 +124,8 @@ export function SiteHeader({
                   className="relative"
                   onMouseEnter={() => setDesktopServicesOpen(true)}
                   onMouseLeave={() => setDesktopServicesOpen(false)}
-                  onFocusCapture={() => setDesktopServicesOpen(true)}
-                  onBlurCapture={(event) => {
-                    const nextTarget = event.relatedTarget;
-
-                    if (
-                      !(nextTarget instanceof Node) ||
-                      !event.currentTarget.contains(nextTarget)
-                    ) {
+                  onKeyDown={(event) => {
+                    if (event.key === "Escape") {
                       setDesktopServicesOpen(false);
                     }
                   }}
@@ -133,8 +133,8 @@ export function SiteHeader({
                   <div className="flex items-center gap-1">
                     <Link
                       href={item.href}
-                      className="border-b-2 border-transparent font-headline text-xs font-semibold tracking-tight text-slate-600 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-teal-400 lg:text-sm"
-                      onClick={() => setDesktopServicesOpen(false)}
+                      className="border-b-2 border-transparent font-headline text-xs font-semibold tracking-tight text-slate-600 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:text-slate-400 dark:hover:text-teal-400 lg:text-sm"
+                      onClick={closeAllMenus}
                     >
                       {item.label}
                     </Link>
@@ -169,8 +169,8 @@ export function SiteHeader({
                       <div className="rounded-xl border border-slate-200 bg-white p-2 shadow-xl">
                         {item.children.map((child) => {
                           const childActive =
-                            pathname === child.href ||
-                            pathname === child.href.replace(/\/$/, "");
+                            normalizePath(pathname) ===
+                            normalizePath(child.href);
 
                           return (
                             <Link
@@ -181,14 +181,12 @@ export function SiteHeader({
                                   ? "bg-teal-50 text-teal-800"
                                   : "text-slate-700 hover:bg-slate-50 hover:text-teal-700"
                               }`}
-                              onClick={() =>
-                                setDesktopServicesOpen(false)
-                              }
+                              onClick={closeAllMenus}
                             >
                               {child.label}
                             </Link>
                           );
-                        }}
+                        })}
                       </div>
                     </div>
                   ) : null}
@@ -252,7 +250,10 @@ export function SiteHeader({
             className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-on-surface md:hidden"
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((value) => !value)}
+            onClick={() => {
+              setOpen((value) => !value);
+              setMobileServicesOpen(false);
+            }}
           >
             <span className="material-symbols-outlined">
               {open ? "close" : "menu"}
@@ -269,8 +270,7 @@ export function SiteHeader({
               if ("children" in item) {
                 const servicePageActive = item.children.some(
                   (child) =>
-                    pathname === child.href ||
-                    pathname === child.href.replace(/\/$/, ""),
+                    normalizePath(pathname) === normalizePath(child.href),
                 );
 
                 return (
@@ -286,10 +286,7 @@ export function SiteHeader({
                             ? "text-primary"
                             : "text-on-surface"
                         }`}
-                        onClick={() => {
-                          setOpen(false);
-                          setMobileServicesOpen(false);
-                        }}
+                        onClick={closeAllMenus}
                       >
                         {item.label}
                       </Link>
@@ -322,8 +319,8 @@ export function SiteHeader({
                       <div className="mt-2 flex flex-col gap-1 border-l-2 border-teal-100 pl-3">
                         {item.children.map((child) => {
                           const childActive =
-                            pathname === child.href ||
-                            pathname === child.href.replace(/\/$/, "");
+                            normalizePath(pathname) ===
+                            normalizePath(child.href);
 
                           return (
                             <Link
@@ -334,10 +331,7 @@ export function SiteHeader({
                                   ? "bg-teal-50 font-semibold text-teal-800"
                                   : "text-slate-600 hover:bg-slate-50 hover:text-teal-700"
                               }`}
-                              onClick={() => {
-                                setOpen(false);
-                                setMobileServicesOpen(false);
-                              }}
+                              onClick={closeAllMenus}
                             >
                               {child.label}
                             </Link>
@@ -360,10 +354,7 @@ export function SiteHeader({
                   className={`font-headline font-semibold ${
                     active ? "text-primary" : "text-on-surface"
                   }`}
-                  onClick={() => {
-                    setOpen(false);
-                    setMobileServicesOpen(false);
-                  }}
+                  onClick={closeAllMenus}
                 >
                   {item.label}
                 </Link>
@@ -374,7 +365,7 @@ export function SiteHeader({
               <a
                 href={callTelHref}
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary py-3 font-headline font-bold text-primary"
-                onClick={() => setOpen(false)}
+                onClick={closeAllMenus}
               >
                 <span className="material-symbols-outlined">call</span>
                 Call now · {callDisplay}
@@ -384,7 +375,7 @@ export function SiteHeader({
             <Link
               href="/book"
               className="gradient-primary mt-2 rounded-xl py-3 text-center font-headline font-bold text-on-primary"
-              onClick={() => setOpen(false)}
+              onClick={closeAllMenus}
             >
               Book appointment
             </Link>
@@ -394,7 +385,7 @@ export function SiteHeader({
                 <Link
                   href="/account"
                   className="inline-flex items-center gap-2 font-semibold text-primary"
-                  onClick={() => setOpen(false)}
+                  onClick={closeAllMenus}
                 >
                   <span
                     className="material-symbols-outlined text-xl"
@@ -409,14 +400,14 @@ export function SiteHeader({
                   <Link
                     href="/login"
                     className="font-semibold text-primary"
-                    onClick={() => setOpen(false)}
+                    onClick={closeAllMenus}
                   >
                     Login
                   </Link>
                   <Link
                     href="/signup"
                     className="text-on-surface-variant"
-                    onClick={() => setOpen(false)}
+                    onClick={closeAllMenus}
                   >
                     Sign up
                   </Link>
@@ -427,7 +418,7 @@ export function SiteHeader({
                 <Link
                   href="/store"
                   className="text-on-surface-variant"
-                  onClick={() => setOpen(false)}
+                  onClick={closeAllMenus}
                 >
                   Store
                 </Link>
