@@ -1,5 +1,6 @@
 
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -168,7 +169,7 @@ function BookingLink({
   children = "Book an Equine Consultation",
   light = false,
 }: {
-  children?: React.ReactNode;
+  children?: ReactNode;
   light?: boolean;
 }) {
   return (
@@ -246,7 +247,7 @@ export default function EquineServicesMohaliPage() {
 
       {/* Hero */}
       <section className="bg-[#f2f6f3]">
-        <div className="mx-auto grid max-w-7xl lg:min-h-[590px] lg:grid-cols-[0.88fr_1.12fr]">
+        <div className="mx-auto grid max-w-7xl lg:grid-cols-[0.88fr_1.12fr]">
           <div className="flex flex-col justify-center px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-emerald-600" />
@@ -289,12 +290,13 @@ export default function EquineServicesMohaliPage() {
             </div>
           </div>
 
-          <div className="relative min-h-[320px] sm:min-h-[430px] lg:min-h-full">
+          {/* Hero image: explicit height at every breakpoint */}
+          <div className="relative h-[360px] w-full sm:h-[480px] lg:h-[590px]">
             <HorsePhoto
               src={images.hero}
               alt="Equine veterinary services and horse veterinary care at GreenCoatVets in Mohali"
               priority
-              className="absolute inset-0"
+              className="absolute inset-0 h-full w-full"
             />
 
             <div className="absolute bottom-5 left-5 max-w-xs border-l-4 border-emerald-400 bg-white/95 px-5 py-4 shadow-lg sm:bottom-8 sm:left-8">
@@ -310,7 +312,7 @@ export default function EquineServicesMohaliPage() {
       </section>
 
       {/* Equine service grid */}
-      <section className="py-14 sm:py-18 lg:py-24">
+      <section className="py-14 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
@@ -364,11 +366,12 @@ export default function EquineServicesMohaliPage() {
       {/* Horse veterinary care */}
       <section className="bg-[#123d39] text-white">
         <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
-          <div className="relative min-h-[320px] sm:min-h-[440px] lg:min-h-[540px]">
+          {/* Care image: explicit height at every breakpoint */}
+          <div className="relative h-[340px] w-full sm:h-[460px] lg:h-[540px]">
             <HorsePhoto
               src={images.care}
               alt="Horse receiving attentive veterinary care"
-              className="absolute inset-0"
+              className="absolute inset-0 h-full w-full"
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-[#123d39]/40 via-transparent to-transparent" />
@@ -421,7 +424,7 @@ export default function EquineServicesMohaliPage() {
       </section>
 
       {/* When to seek veterinary attention */}
-      <section className="py-14 sm:py-18 lg:py-24">
+      <section className="py-14 sm:py-16 lg:py-24">
         <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:px-8">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-700">
@@ -463,7 +466,7 @@ export default function EquineServicesMohaliPage() {
       </section>
 
       {/* Medical treatment and health services */}
-      <section className="bg-[#f1f6f2] py-14 sm:py-18 lg:py-20">
+      <section className="bg-[#f1f6f2] py-14 sm:py-16 lg:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 md:grid-cols-[1fr_auto] lg:gap-14 lg:px-8">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-700">
@@ -497,7 +500,7 @@ export default function EquineServicesMohaliPage() {
       </section>
 
       {/* Why choose GreenCoatVets */}
-      <section className="py-14 sm:py-18 lg:py-24">
+      <section className="py-14 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div>
@@ -536,7 +539,7 @@ export default function EquineServicesMohaliPage() {
       </section>
 
       {/* Appointment banner */}
-      <section className="px-4 pb-14 sm:px-6 sm:pb-18 lg:px-8 lg:pb-24">
+      <section className="px-4 pb-14 sm:px-6 sm:pb-16 lg:px-8 lg:pb-24">
         <div className="mx-auto grid max-w-7xl overflow-hidden bg-[#123d39] md:grid-cols-[1.15fr_0.85fr]">
           <div className="flex flex-col justify-center px-6 py-10 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-300">
@@ -561,18 +564,18 @@ export default function EquineServicesMohaliPage() {
             </div>
           </div>
 
-          <div className="relative min-h-[260px] sm:min-h-[340px] md:min-h-full">
+          <div className="relative h-[280px] w-full sm:h-[360px] md:h-full md:min-h-[420px]">
             <HorsePhoto
               src={images.hero}
               alt="Horse representing equine veterinary care at GreenCoatVets"
-              className="absolute inset-0"
+              className="absolute inset-0 h-full w-full"
             />
           </div>
         </div>
       </section>
 
       {/* FAQs */}
-      <section className="bg-[#f5f8f6] py-14 sm:py-18 lg:py-20">
+      <section className="bg-[#f5f8f6] py-14 sm:py-16 lg:py-20">
         <div className="mx-auto grid max-w-7xl items-start gap-8 px-4 sm:px-6 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14 lg:px-8">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-700">
