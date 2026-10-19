@@ -15,7 +15,7 @@ const siteUrl = "https://www.greencoatvets.com";
 const images = {
   hero: "/equine-services-hero.png",
   care: "/equine-veterinary-care.png",
-  banner: "horse-banner.jpg",
+  banner: "/horse-banner.jpg",
 };
 
 const services = [
