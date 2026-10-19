@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
@@ -16,6 +15,7 @@ const siteUrl = "https://www.greencoatvets.com";
 const images = {
   hero: "/equine-services-hero.png",
   care: "/equine-veterinary-care.png",
+  banner: "horse-banner.jpg",
 };
 
 const services = [
@@ -566,7 +566,7 @@ export default function EquineServicesMohaliPage() {
 
           <div className="relative h-[280px] w-full sm:h-[360px] md:h-full md:min-h-[420px]">
             <HorsePhoto
-              src={images.hero}
+              src={images.banner}
               alt="Horse representing equine veterinary care at GreenCoatVets"
               className="absolute inset-0 h-full w-full"
             />
