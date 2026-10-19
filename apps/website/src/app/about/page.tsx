@@ -26,13 +26,13 @@ const teamMembers = [
   {
     name: "Team Member Name",
     role: "Veterinarian",
-    image: "/images/team/team-member-1.webp",
+    image: "/team.jpg",
     alt: "Veterinarian at GreenCoatVets in Mohali",
   },
   {
-    name: "Team Member Name",
+    name: "Dr. Karanveer Singh",
     role: "Veterinary Professional",
-    image: "/images/team/team-member-2.webp",
+    image: "/karanveer.jpeg",
     alt: "Veterinary professional at GreenCoatVets",
   },
   {
