@@ -17,8 +17,8 @@ const heroImage = "/orthopedic-surgery-hero.png";
 const dogImage = "/orthopedic-dog-fracture-care.png";
 const catImage = "/orthopedic-cat-care.png";
 const appointmentImage = "/orthopedic-appointment-dog.png";
-const bookingUrl = "https://www.greencoatvets.com/book";
-const contact = "https://www.greencoatvets.com/contact";
+const bookingUrl = "https://www.greencoatvets.com/book/";
+const contact = "https://www.greencoatvets.com/contact/";
 const SpecializedVService = "/ortho-sergery-dog.jpg";
 
 export const metadata: Metadata = {
