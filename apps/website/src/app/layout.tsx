@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
+
 import { MarketingShell } from "@/components/site/marketing-shell";
 import {
   GoogleHeadTags,
@@ -34,14 +35,37 @@ const manrope = Manrope({
   preload: false,
 });
 
+/**
+ * Temporary performance diagnostic.
+ * Logs the duration of each server-side operation in Vercel logs.
+ */
+async function timed<T>(
+  label: string,
+  operation: () => Promise<T>
+): Promise<T> {
+  const startedAt = Date.now();
+
+  try {
+    return await operation();
+  } finally {
+    console.info(`[Performance] ${label}: ${Date.now() - startedAt}ms`);
+  }
+}
+
 export async function generateMetadata(): Promise<Metadata> {
   const [branding, marketing] = await Promise.all([
-    getPlatformBranding(),
-    getMarketingSiteSettings(),
+    timed("Metadata: getPlatformBranding", () =>
+      getPlatformBranding()
+    ),
+    timed("Metadata: getMarketingSiteSettings", () =>
+      getMarketingSiteSettings()
+    ),
   ]);
 
   const metadataBase = new URL(
-    await getWebsitePublicBaseUrlFromRequest(marketing.seo_settings)
+    await timed("Metadata: getWebsitePublicBaseUrlFromRequest", () =>
+      getWebsitePublicBaseUrlFromRequest(marketing.seo_settings)
+    )
   );
 
   const verification =
@@ -119,17 +143,28 @@ export default async function RootLayout({
     footerNav,
     marketingPopups,
   ] = await Promise.all([
-    getPlatformBranding(),
-    resolveClinic(),
-    getMarketingSiteSettings(),
-    getMarketingFooterNav(),
-    getActiveMarketingPopups(),
+    timed("Layout: getPlatformBranding", () =>
+      getPlatformBranding()
+    ),
+    timed("Layout: resolveClinic", () =>
+      resolveClinic()
+    ),
+    timed("Layout: getMarketingSiteSettings", () =>
+      getMarketingSiteSettings()
+    ),
+    timed("Layout: getMarketingFooterNav", () =>
+      getMarketingFooterNav()
+    ),
+    timed("Layout: getActiveMarketingPopups", () =>
+      getActiveMarketingPopups()
+    ),
   ]);
 
   const navCopy = mergeHomepageCopy(marketing.homepage_copy);
 
-  const publicBase = await getWebsitePublicBaseUrlFromRequest(
-    marketing.seo_settings
+  const publicBase = await timed(
+    "Layout: getWebsitePublicBaseUrlFromRequest",
+    () => getWebsitePublicBaseUrlFromRequest(marketing.seo_settings)
   );
 
   const sitemapUrl = `${publicBase}/sitemap.xml`;
@@ -156,26 +191,29 @@ export default async function RootLayout({
     >
       <head>
         <GoogleHeadTags />
-		
-		{/* Ahrefs Analytics */}
-  <script
-    src="https://analytics.ahrefs.com/analytics.js"
-    data-key="rPS2X28/8UrUhCF30612gA"
-    async
-  />
+
+        {/* Ahrefs Analytics */}
+        <script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="rPS2X28/8UrUhCF30612gA"
+          async
+        />
 
         <link rel="icon" href="/favicon.ico" sizes="any" />
+
         <link
           rel="icon"
           href="/favicon.svg"
           type="image/svg+xml"
         />
+
         <link
           rel="icon"
           href={faviconHref}
           type="image/png"
           sizes="48x48"
         />
+
         <link
           rel="apple-touch-icon"
           href={appleHref}
@@ -189,7 +227,7 @@ export default async function RootLayout({
           href={sitemapUrl}
         />
 
-        {/* Non-blocking Material Symbols — avoids render-blocking Google CSS */}
+        {/* Non-blocking Material Symbols */}
         <link
           rel="preload"
           as="style"
