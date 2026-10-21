@@ -9,8 +9,8 @@ const pageDescription =
   "Looking for horse veterinary care in Mohali? GreenCoatVets provides equine veterinary services, horse medical treatment and equine health care.";
 
 const pageUrl = "https://www.greencoatvets.com/equine-services-mohali/";
-const bookingUrl = "https://www.greencoatvets.com/book";
-const siteUrl = "https://www.greencoatvets.com";
+const bookingUrl = "https://www.greencoatvets.com/book/";
+const siteUrl = "https://www.greencoatvets.com/";
 
 const images = {
   hero: "/equine-services-hero.png",
