@@ -13,7 +13,7 @@ const pageDescription =
 const pageUrl =
   "https://www.greencoatvets.com/emergency-care-mohali/";
 
-const bookingUrl = "https://www.greencoatvets.com/book";
+const bookingUrl = "https://www.greencoatvets.com/book/";
 
 // Image files must be inside apps/website/public/
 const heroImage = "/hospital-front.jpg";
