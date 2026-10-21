@@ -10,7 +10,7 @@ const pageDescription =
   "Looking for spay and neuter services in Mohali? GreenCoatVets provides pet spay and neuter, dog and cat sterilization, and professional post-operative care.";
 
 const pageUrl = "https://www.greencoatvets.com/spay-neuter-mohali/";
-const bookingUrl = "https://www.greencoatvets.com/book";
+const bookingUrl = "https://www.greencoatvets.com/book/";
 
 const images = {
   hero: "/spay-neuter-hero.jpg",
