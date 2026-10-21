@@ -6,12 +6,12 @@ import Link from "next/link";
 const pageTitle = "Veterinary Eye Surgery in Mohali | GreenCoatVets";
 
 const pageDescription =
-  "Looking for eye care for your pet in Mohali? GreenCoatVets provides veterinary eye surgery, pet eye treatment and professional ophthalmic care for dogs and cats.";
+  "GreenCoatVets offers veterinary eye surgery and pet eye treatment for dogs and cats in Mohali. Book an eye consultation for your pet.";
 
 const pageUrl =
   "https://www.greencoatvets.com/eye-surgery-mohali/";
 
-const bookingUrl = "https://www.greencoatvets.com/book";
+const bookingUrl = "https://www.greencoatvets.com/book/";
 
 const images = {
   hero: "/eye-surgery-dog.jpg",
