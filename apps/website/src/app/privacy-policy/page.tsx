@@ -230,11 +230,11 @@ const sections = [
   },
   {
     id: "children",
-    title: "9. Children's Privacy",
+    title: "9. Children&apos;s Privacy",
     content: (
       <p>
         Our website is intended for people seeking veterinary information
-        and services. We do not knowingly seek to collect children's
+        and services. We do not knowingly seek to collect children&apos;s
         personal information unnecessarily. If you believe a child has
         provided personal information to us, please contact us so that
         we can review the matter and take appropriate action.
