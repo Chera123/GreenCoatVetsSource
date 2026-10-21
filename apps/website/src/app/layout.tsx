@@ -156,6 +156,13 @@ export default async function RootLayout({
     >
       <head>
         <GoogleHeadTags />
+		
+		{/* Ahrefs Analytics */}
+  <script
+    src="https://analytics.ahrefs.com/analytics.js"
+    data-key="rPS2X28/8UrUhCF30612gA"
+    async
+  />
 
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link
