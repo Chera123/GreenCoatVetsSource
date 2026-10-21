@@ -1,7 +1,13 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Add trailing slashes to website URLs
+  trailingSlash: true,
+
   transpilePackages: ["@saasclinics/lib"],
+
   poweredByHeader: false,
+
   async redirects() {
     return [
       { source: "/wp-admin", destination: "/", permanent: true },
@@ -15,9 +21,12 @@ const nextConfig = {
       { source: "/comments/feed/:path*", destination: "/", permanent: true },
     ];
   },
+
   images: {
     formats: ["image/avif", "image/webp"],
+
     minimumCacheTTL: 60 * 60 * 24 * 7,
+
     remotePatterns: [
       {
         protocol: "https",
