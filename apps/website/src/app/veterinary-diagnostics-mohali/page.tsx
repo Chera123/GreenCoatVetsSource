@@ -13,7 +13,7 @@ const pageDescription =
 const pageUrl =
   "https://www.greencoatvets.com/veterinary-diagnostics-mohali/";
 
-const bookingUrl = "https://www.greencoatvets.com/book";
+const bookingUrl = "https://www.greencoatvets.com/book/";
 
 const images = {
   hero: "/veterinary-diagnostics-hero.jpg",
