@@ -170,7 +170,7 @@ function AppointmentButton({
 }) {
   return (
     <Link
-      href="/book"
+      href="/book/"
       className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-teal-700 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-teal-900/10 transition hover:-translate-y-0.5 hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2"
     >
       {children}
