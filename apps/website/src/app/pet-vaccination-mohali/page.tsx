@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: pageDescription,
     siteName: "GreenCoatVets",
     locale: "en_IN",
-    images: [{ url: "/specialized-opd-veterinary.jpg", alt: imageAlt }],
+    images: [{ url: "/pet-vaccination.jpg", alt: imageAlt }],    
   },
   twitter: {
     card: "summary_large_image",
