@@ -112,9 +112,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const clinic = await resolveClinic();
-
- const [
+  const [
     clinic,
     marketing,
     publicLocations,
