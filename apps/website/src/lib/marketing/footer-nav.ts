@@ -26,7 +26,7 @@ export const DEFAULT_FOOTER_NAV: FooterNavGroup[] = [
       { id: "", label: "Services", href: "/services", openInNewTab: false },
       { id: "", label: "Locations", href: "/locations", openInNewTab: false },
       { id: "", label: "Blog", href: "/blog", openInNewTab: false },
-      { id: "", label: "Our team", href: "/doctors", openInNewTab: false },
+    
       { id: "", label: "Community", href: "/community", openInNewTab: false },
       { id: "", label: "FAQ", href: "/faq", openInNewTab: false },
       {
