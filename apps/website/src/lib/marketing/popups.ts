@@ -14,25 +14,58 @@ export type MarketingPopupRow = {
   cta_href: string | null;
 };
 
-export const getActiveMarketingPopups = cache(async (): Promise<MarketingPopupRow[]> => {
-  const supabase = createPublicClient();
-  const { data, error } = await supabase
-    .from("marketing_site_popups")
-    .select("id, sort_order, template_type, title, body, image_url, cta_label, cta_href")
-    .eq("is_active", true)
-    .order("sort_order", { ascending: true })
-    .order("created_at", { ascending: false });
 
-  if (error || !data?.length) return [];
+export const getActiveMarketingPopups = cache(
+  async (): Promise<MarketingPopupRow[]> => {
+    const functionStartedAt = performance.now();
 
-  return data.map((r) => ({
-    id: r.id as string,
-    sort_order: Number(r.sort_order ?? 0),
-    template_type: (r.template_type as MarketingPopupTemplate) ?? "generic",
-    title: r.title as string,
-    body: (r.body as string | null) ?? null,
-    image_url: (r.image_url as string | null) ?? null,
-    cta_label: (r.cta_label as string | null) ?? null,
-    cta_href: (r.cta_href as string | null) ?? null,
-  }));
-});
+    try {
+      const supabase = createPublicClient();
+      const queryStartedAt = performance.now();
+
+      const { data, error } = await supabase
+        .from("marketing_site_popups")
+        .select(
+          "id, sort_order, template_type, title, body, image_url, cta_label, cta_href",
+        )
+        .eq("is_active", true)
+        .order("sort_order", { ascending: true })
+        .order("created_at", { ascending: false });
+
+      console.info(
+        `[DB Performance] marketing popups query: ${Math.round(
+          performance.now() - queryStartedAt,
+        )}ms`,
+        error ? `ERROR: ${error.message}` : "OK",
+      );
+
+      if (error || !data?.length) {
+        return [];
+      }
+
+      return data.map((r) => ({
+        id: r.id as string,
+        sort_order: Number(r.sort_order ?? 0),
+        template_type: (r.template_type as MarketingPopupTemplate) ?? "generic",
+        title: r.title as string,
+        body: (r.body as string | null) ?? null,
+        image_url: (r.image_url as string | null) ?? null,
+        cta_label: (r.cta_label as string | null) ?? null,
+        cta_href: (r.cta_href as string | null) ?? null,
+      }));
+    } catch (error) {
+      console.error(
+        "[DB Performance] marketing popups failed:",
+        error,
+      );
+      return [];
+    } finally {
+      console.info(
+        `[DB Performance] marketing popups total: ${Math.round(
+          performance.now() - functionStartedAt,
+        )}ms`,
+      );
+    }
+  },
+);
+
