@@ -56,16 +56,44 @@ const EMPTY: MarketingSiteSettingsRow = {
   page_content: {},
 };
 
+
 export const getMarketingSiteSettings = cache(async (): Promise<MarketingSiteSettingsRow> => {
+  const functionStartedAt = Date.now();
+
   try {
     const supabase = createPublicClient();
+
     const columns =
       "default_clinic_id, website_branded_for_clinic_id, contact_form_recipient_email, homepage_images, social_links, homepage_copy, instagram_embed_urls, gallery_image_urls, welcome_video_url, seo_settings, website_favicon_url, page_content";
-    const first = await supabase.from("marketing_site_settings").select(columns).eq("id", "default").maybeSingle();
-    let data: Record<string, unknown> | null = first.data as Record<string, unknown> | null;
+
+    // Measure the initial Supabase query.
+    const initialQueryStartedAt = Date.now();
+
+    const first = await supabase
+      .from("marketing_site_settings")
+      .select(columns)
+      .eq("id", "default")
+      .maybeSingle();
+
+    console.info(
+      "[DB Performance] marketing_site_settings initial query:",
+      `${Date.now() - initialQueryStartedAt}ms`,
+    );
+
+    let data: Record<string, unknown> | null =
+      first.data as Record<string, unknown> | null;
+
     let error = first.error;
 
+    // Preserve the existing fallback for a missing page_content column.
     if (error && /page_content/i.test(error.message ?? "")) {
+      console.warn(
+        "[DB Performance] page_content query failed; running fallback query:",
+        error.message,
+      );
+
+      const fallbackQueryStartedAt = Date.now();
+
       const retry = await supabase
         .from("marketing_site_settings")
         .select(
@@ -73,60 +101,104 @@ export const getMarketingSiteSettings = cache(async (): Promise<MarketingSiteSet
         )
         .eq("id", "default")
         .maybeSingle();
+
+      console.info(
+        "[DB Performance] marketing_site_settings fallback query:",
+        `${Date.now() - fallbackQueryStartedAt}ms`,
+      );
+
       data = retry.data as Record<string, unknown> | null;
       error = retry.error;
     }
 
     if (error || !data) {
+      if (error) {
+        console.error(
+          "[DB Performance] marketing_site_settings query error:",
+          error.message,
+        );
+      } else {
+        console.warn(
+          "[DB Performance] No marketing_site_settings row found for id=default",
+        );
+      }
+
       return { ...EMPTY };
     }
 
-  const rawEmbeds = (data as { instagram_embed_urls?: unknown }).instagram_embed_urls;
-  const instagram_embed_urls = Array.isArray(rawEmbeds)
-    ? rawEmbeds.filter((u): u is string => typeof u === "string" && u.trim().length > 0)
-    : [];
+    const rawEmbeds = data.instagram_embed_urls;
+    const instagram_embed_urls = Array.isArray(rawEmbeds)
+      ? rawEmbeds.filter(
+          (u): u is string =>
+            typeof u === "string" && u.trim().length > 0,
+        )
+      : [];
 
-  const rawGallery = (data as { gallery_image_urls?: unknown }).gallery_image_urls;
-  const gallery_image_urls = Array.isArray(rawGallery)
-    ? rawGallery
-        .filter((u): u is string => typeof u === "string" && /^https?:\/\//i.test(u.trim()))
-        .map((u) => u.trim())
-    : [];
+    const rawGallery = data.gallery_image_urls;
+    const gallery_image_urls = Array.isArray(rawGallery)
+      ? rawGallery
+          .filter(
+            (u): u is string =>
+              typeof u === "string" &&
+              /^https?:\/\//i.test(u.trim()),
+          )
+          .map((u) => u.trim())
+      : [];
 
-  const welcome_video_url =
-    typeof (data as { welcome_video_url?: string | null }).welcome_video_url === "string"
-      ? ((data as { welcome_video_url?: string | null }).welcome_video_url as string).trim() || null
-      : null;
+    const welcome_video_url =
+      typeof data.welcome_video_url === "string"
+        ? data.welcome_video_url.trim() || null
+        : null;
 
-  const rawSeo = (data as { seo_settings?: MarketingSeoSettings | null }).seo_settings;
-  const seo_settings: MarketingSeoSettings =
-    rawSeo && typeof rawSeo === "object" && !Array.isArray(rawSeo) ? { ...EMPTY_SEO_SETTINGS, ...rawSeo } : { ...EMPTY_SEO_SETTINGS };
+    const rawSeo = data.seo_settings as MarketingSeoSettings | null;
 
-  const rawPageContent = (data as { page_content?: MarketingPageContentMap | null }).page_content;
-  const page_content: MarketingPageContentMap =
-    rawPageContent && typeof rawPageContent === "object" && !Array.isArray(rawPageContent) ? rawPageContent : {};
+    const seo_settings: MarketingSeoSettings =
+      rawSeo && typeof rawSeo === "object" && !Array.isArray(rawSeo)
+        ? { ...EMPTY_SEO_SETTINGS, ...rawSeo }
+        : { ...EMPTY_SEO_SETTINGS };
+
+    const rawPageContent =
+      data.page_content as MarketingPageContentMap | null;
+
+    const page_content: MarketingPageContentMap =
+      rawPageContent &&
+      typeof rawPageContent === "object" &&
+      !Array.isArray(rawPageContent)
+        ? rawPageContent
+        : {};
 
     const homepage_images =
-      data.homepage_images && typeof data.homepage_images === "object" && !Array.isArray(data.homepage_images)
+      data.homepage_images &&
+      typeof data.homepage_images === "object" &&
+      !Array.isArray(data.homepage_images)
         ? (data.homepage_images as Record<string, string>)
         : {};
+
     const social_links =
-      data.social_links && typeof data.social_links === "object" && !Array.isArray(data.social_links)
+      data.social_links &&
+      typeof data.social_links === "object" &&
+      !Array.isArray(data.social_links)
         ? (data.social_links as SocialLinks)
         : {};
+
     const homepage_copy =
-      data.homepage_copy && typeof data.homepage_copy === "object" && !Array.isArray(data.homepage_copy)
-        ? ((data as { homepage_copy?: HomepageCopy | null }).homepage_copy as HomepageCopy)
+      data.homepage_copy &&
+      typeof data.homepage_copy === "object" &&
+      !Array.isArray(data.homepage_copy)
+        ? (data.homepage_copy as HomepageCopy)
         : {};
 
-    return {
+    const result: MarketingSiteSettingsRow = {
       default_clinic_id: data.default_clinic_id as string | null,
-      website_branded_for_clinic_id: (data as { website_branded_for_clinic_id?: string | null })
-        .website_branded_for_clinic_id ?? null,
+
+      website_branded_for_clinic_id:
+        (data.website_branded_for_clinic_id as string | null) ?? null,
+
       contact_form_recipient_email:
-        typeof (data as { contact_form_recipient_email?: string | null }).contact_form_recipient_email === "string"
-          ? ((data as { contact_form_recipient_email?: string | null }).contact_form_recipient_email as string).trim() || null
+        typeof data.contact_form_recipient_email === "string"
+          ? data.contact_form_recipient_email.trim() || null
           : null,
+
       homepage_images,
       social_links,
       homepage_copy,
@@ -134,16 +206,31 @@ export const getMarketingSiteSettings = cache(async (): Promise<MarketingSiteSet
       gallery_image_urls,
       welcome_video_url,
       seo_settings,
+
       website_favicon_url:
-        typeof (data as { website_favicon_url?: string | null }).website_favicon_url === "string"
-          ? ((data as { website_favicon_url?: string | null }).website_favicon_url as string).trim() || null
+        typeof data.website_favicon_url === "string"
+          ? data.website_favicon_url.trim() || null
           : null,
+
       page_content,
     };
-  } catch {
+
+    return result;
+  } catch (error) {
+    console.error(
+      "[DB Performance] getMarketingSiteSettings failed:",
+      error instanceof Error ? error.message : "Unknown error",
+    );
+
     return { ...EMPTY };
+  } finally {
+    console.info(
+      "[DB Performance] getMarketingSiteSettings total:",
+      `${Date.now() - functionStartedAt}ms`,
+    );
   }
 });
+
 
 /** Deep-merge DB page content over code defaults for a marketing page slug. */
 export function getPageContent(slug: MarketingPageSlug, pageContentMap?: MarketingPageContentMap | null) {
