@@ -30,7 +30,7 @@ export async function buildMarketingSitemapEntries(): Promise<MetadataRoute.Site
     { url: "/contact", changeFrequency: "monthly", priority: 0.7 },
     { url: "/locations", changeFrequency: "monthly", priority: 0.8 },
     { url: "/services", changeFrequency: "weekly", priority: 0.8 },
-    { url: "/doctors", changeFrequency: "weekly", priority: 0.8 },
+  
     { url: "/team", changeFrequency: "monthly", priority: 0.7 },
     { url: "/faq", changeFrequency: "monthly", priority: 0.7 },
     { url: "/blog", changeFrequency: "daily", priority: 0.8 },
