@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    images: ["/specialized-opd-veterinary.jpg"],
+    images: ["/pet-vaccination.jpg"],
   },
 };
 
