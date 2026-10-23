@@ -74,7 +74,7 @@ export function ForgotPasswordForm({
           className="input-soft w-full px-4 py-3.5"
           type="email"
           name="email"
-          placeholder="you@clinic.com"
+          placeholder="your@clinic.com"
           required
           autoComplete="email"
           disabled={sent}
