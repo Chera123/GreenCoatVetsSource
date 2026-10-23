@@ -6,7 +6,7 @@ const pageTitle = "Veterinary Soft Tissue Surgery in Mohali | GreenCoatVets";
 const pageDescription =
   "Veterinary soft tissue surgery in Mohali at GreenCoatVets. Surgical assessment, pre-operative planning and post-operative care for pets.";
 const pageUrl = "https://www.greencoatvets.com/soft-tissue-surgery-mohali/";
-const heroImage = "/soft-tissue-surgery.jpg";
+const heroImage = "/soft-tissue.jpeg";
 const bookingUrl = "/book/";
 const contactUrl = "/contact/";
 
