@@ -11,7 +11,7 @@ const bookingUrl = "https://www.greencoatvets.com/book/";
      
 // Place pet-ultrasound.jpg in apps/website/public/.
 const heroImage = "/soft-tissue.jpeg";   
-
+  
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
