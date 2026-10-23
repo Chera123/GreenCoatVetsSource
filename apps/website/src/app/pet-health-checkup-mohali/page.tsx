@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-    
+      
 const pageTitle = "Pet Health Checkup & Preventive Care Mohali | GreenCoatVets";
 const pageDescription =
   "Routine pet health checkup in Mohali at GreenCoatVets. Preventive care, age-based wellness exams and early detection of health concerns for pets.";
 const pageUrl =
   "https://www.greencoatvets.com/pet-health-checkup-mohali/";
 const bookingUrl = "https://www.greencoatvets.com/book/";
-
+     
 // Place pet-ultrasound.jpg in apps/website/public/.
 const heroImage = "/soft-tissue.jpeg";   
 
@@ -412,3 +412,6 @@ export default function PetHealthCheckupMohaliPage() {
     </main>
   );
 }
+
+
+
