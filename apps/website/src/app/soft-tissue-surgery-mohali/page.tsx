@@ -482,7 +482,7 @@ export default function SoftTissueSurgeryMohaliPage() {
             <p className="mt-3 text-sm leading-7 text-teal-50 sm:text-base">
               If your pet has been advised surgery, or you would like a surgical opinion, GreenCoatVets can assess your pet and explain the next steps. Bring any previous reports, scans or prescriptions with you.
             </p>
-            <p className="mt-2 text-sm font-semibold text-white">Speak to our veterinary team about your pet’s surgery.</p>
+            <p className="mt-2 text-sm font-semibold text-white">Speak to our veterinary team about your pet’s surgery.</p>  
           </div>
           <div className="flex shrink-0 flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
             <PrimaryLink href={bookingUrl}>Book an Appointment</PrimaryLink>
