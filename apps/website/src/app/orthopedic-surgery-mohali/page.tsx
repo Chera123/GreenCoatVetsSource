@@ -173,13 +173,11 @@ function ImagePanel({
   src,
   alt,
   className = "",
-  imageClassName = "object-cover",
   priority = false,
 }: {
   src: string;
   alt: string;
   className?: string;
-  imageClassName?: string;
   priority?: boolean;
 }) {
   return (
@@ -191,9 +189,8 @@ function ImagePanel({
         alt={alt}
         fill
         priority={priority}
-        loading={priority ? "eager" : "lazy"}
         sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 600px"
-        className={imageClassName}
+        className="object-cover"
       />
     </div>
   );
@@ -301,8 +298,7 @@ export default function OrthopedicSurgeryMohaliPage() {
             src={heroImage}
             alt="Veterinary orthopedic surgery for dogs and cats at GreenCoatVets in Mohali"
             priority
-            imageClassName="object-cover object-[center_22%]"
-            className="aspect-[4/5] w-full shadow-xl sm:aspect-[4/5] lg:aspect-[4/5]"
+            className="aspect-[4/3] shadow-lg"
           />
         </div>
       </section>
@@ -313,8 +309,7 @@ export default function OrthopedicSurgeryMohaliPage() {
           <ImagePanel
             src={SpecializedVService}
             alt="Veterinarian examining a dog receiving orthopedic fracture care"
-            imageClassName="object-cover object-[center_25%]"
-            className="aspect-[4/3] shadow-md"
+            className="aspect-[4/3]"
           />
 
           <div className="min-w-0">
@@ -381,82 +376,107 @@ export default function OrthopedicSurgeryMohaliPage() {
           <ImagePanel
             src={catImage}
             alt="Cat receiving careful veterinary orthopedic assessment"
-            imageClassName="object-cover object-[center_30%]"
-            className="aspect-[4/3] shadow-md"
+            className="aspect-[4/3] md:aspect-[4/3]"
           />
         </div>
       </section>
 
-      {/* 4. Detailed services */}
-      <section className="py-7 sm:py-9">
-        <div className="mx-auto grid max-w-7xl gap-5 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
-          <article className="overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:border-teal-200 hover:shadow-md">
-            <ImagePanel
-              src={dogImage}
-              alt="Dog receiving veterinary orthopedic evaluation for a leg injury"
-              imageClassName="object-cover object-[center_35%]"
-              className="aspect-[16/9] rounded-none border-0"
-            />
+      {/* 4. Orthopedic services: alternating editorial layout */}
+      <section className="bg-gradient-to-b from-white to-slate-50 py-10 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-7 max-w-3xl text-center sm:mb-9">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-teal-700 sm:text-xs">
+              Orthopedic care for pets
+            </p>
+            <h2 className="font-headline text-2xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-3xl">
+              Surgical Care for Dogs and Cats
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+              From mobility concerns to fractures, every treatment plan starts with an individual veterinary assessment and is tailored to your pet’s needs.
+            </p>
+          </div>
 
-            <div className="p-5 sm:p-6">
-              <div className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-2xl text-teal-700">
-                  pets
+          <div className="space-y-5 sm:space-y-7">
+            <article className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md md:grid-cols-[0.95fr_1.05fr]">
+              <div className="relative min-h-[230px] overflow-hidden bg-slate-100 sm:min-h-[300px] md:min-h-[340px]">
+                <Image
+                  src={dogImage}
+                  alt="Veterinary team providing orthopedic assessment and care for a dog"
+                  fill
+                  sizes="(max-width: 767px) 100vw, (max-width: 1279px) 45vw, 560px"
+                  className="object-cover object-[center_20%]"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-950/35 to-transparent" aria-hidden="true" />
+                <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/95 px-3 py-1.5 text-xs font-bold text-teal-900 shadow-sm">
+                  <span className="material-symbols-outlined text-base">pets</span>
+                  Canine orthopedics
                 </span>
-                <h2 className="font-headline text-lg font-bold leading-snug text-slate-900 sm:text-xl">
+              </div>
+
+              <div className="flex min-w-0 flex-col justify-center p-5 sm:p-7 lg:p-9">
+                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-teal-700 sm:text-xs">
+                  For dogs
+                </p>
+                <h3 className="mt-2 font-headline text-xl font-bold leading-tight text-slate-950 sm:text-2xl">
                   Dog Orthopedic Surgery in Mohali
-                </h2>
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+                  Injuries, accidents, falls and joint problems can make it difficult for dogs to walk or stay active. Our <strong className="font-semibold text-slate-800">dog orthopedic surgery in Mohali</strong> service provides professional assessment and surgical care when an orthopedic condition requires it.
+                </p>
+                <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+                  We focus on appropriate treatment, pain management and clear recovery guidance for you and your pet.
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  <span className="rounded-full bg-teal-50 px-3 py-1.5 text-xs font-semibold text-teal-900">Mobility concerns</span>
+                  <span className="rounded-full bg-teal-50 px-3 py-1.5 text-xs font-semibold text-teal-900">Joint injuries</span>
+                  <span className="rounded-full bg-teal-50 px-3 py-1.5 text-xs font-semibold text-teal-900">Recovery planning</span>
+                </div>
+                <div className="mt-6">
+                  <BookButton>Book a Consultation</BookButton>
+                </div>
               </div>
+            </article>
 
-              <p className="mt-3 text-sm leading-6 text-slate-700">
-                Injuries, accidents, falls, and joint problems can make it
-                difficult for dogs to walk or stay active. Our{" "}
-                <strong>dog orthopedic surgery in Mohali</strong> provides
-                professional evaluation and surgical care when an
-                orthopedic condition requires it.
-              </p>
-
-              <p className="mt-3 text-sm leading-6 text-slate-700">
-                Our focus is on appropriate treatment, pain management, and
-                supporting your dog&apos;s recovery.
-              </p>
-            </div>
-          </article>
-
-          <article className="overflow-hidden rounded-xl border border-teal-100 bg-teal-50/40 transition hover:shadow-md">
-            <ImagePanel
-              src={catImage}
-              alt="Veterinarian providing orthopedic care for a cat"
-              imageClassName="object-cover object-[center_30%]"
-              className="aspect-[16/9] rounded-none border-0"
-            />
-
-            <div className="p-5 sm:p-6">
-              <div className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-2xl text-teal-700">
-                  healing
-                </span>
-                <h2 className="font-headline text-lg font-bold leading-snug text-slate-900 sm:text-xl">
+            <article className="grid overflow-hidden rounded-2xl border border-teal-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md md:grid-cols-[1.05fr_0.95fr]">
+              <div className="order-2 flex min-w-0 flex-col justify-center p-5 sm:p-7 lg:p-9 md:order-1">
+                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-teal-700 sm:text-xs">
+                  For dogs and cats
+                </p>
+                <h3 className="mt-2 font-headline text-xl font-bold leading-tight text-slate-950 sm:text-2xl">
                   Veterinary Bone Surgery &amp; Pet Fracture Treatment
-                </h2>
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+                  A fracture needs careful assessment to support healthy healing. Our <strong className="font-semibold text-slate-800">veterinary bone surgery in Mohali</strong> service provides surgical treatment when required.
+                </p>
+                <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+                  For <strong className="font-semibold text-slate-800">pet fracture treatment in Mohali</strong>, the veterinary team assesses the location and severity of the injury, your pet’s overall health and the treatment options. Care may include diagnostic imaging, stabilization, surgery and follow-up checks, depending on the case.
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  <span className="rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-900">Fracture assessment</span>
+                  <span className="rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-900">Treatment planning</span>
+                  <span className="rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-900">Follow-up care</span>
+                </div>
+                <div className="mt-6">
+                  <BookButton>Discuss Your Pet’s Needs</BookButton>
+                </div>
               </div>
 
-              <p className="mt-3 text-sm leading-6 text-slate-700">
-                A fracture needs proper assessment to support healthy
-                healing. Our{" "}
-                <strong>veterinary bone surgery in Mohali</strong> provides
-                surgical treatment when required.
-              </p>
-
-              <p className="mt-3 text-sm leading-6 text-slate-700">
-                For <strong>pet fracture treatment in Mohali</strong>, our
-                veterinarians assess the type and severity of the injury
-                before recommending the appropriate approach, which may
-                include imaging, stabilization, surgery, medication, and
-                follow-up care.
-              </p>
-            </div>
-          </article>
+              <div className="relative order-1 min-h-[230px] overflow-hidden bg-slate-100 sm:min-h-[300px] md:order-2 md:min-h-[340px]">
+                <Image
+                  src={catImage}
+                  alt="Cat being gently examined by a veterinary professional for an injury"
+                  fill
+                  sizes="(max-width: 767px) 100vw, (max-width: 1279px) 45vw, 560px"
+                  className="object-cover object-[center_20%]"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-950/30 to-transparent" aria-hidden="true" />
+                <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/95 px-3 py-1.5 text-xs font-bold text-teal-900 shadow-sm">
+                  <span className="material-symbols-outlined text-base">healing</span>
+                  Fracture care
+                </span>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -499,7 +519,7 @@ export default function OrthopedicSurgeryMohaliPage() {
                 alt="Happy dog receiving compassionate care at a veterinary clinic"
                 fill
                 sizes="(max-width: 767px) 100vw, 280px"
-                className="object-cover object-[center_25%]"
+                className="object-cover"
               />
             </div>
 
