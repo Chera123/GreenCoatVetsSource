@@ -368,13 +368,13 @@ export default function SoftTissueSurgeryMohaliPage() {
       {/* Image 2 + preparation */}
       <section className="bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
-          <div className="relative min-h-[280px] overflow-hidden rounded-3xl bg-teal-100 shadow-lg sm:min-h-[390px]">
+          <div className="relative min-h-[360px] overflow-hidden rounded-3xl bg-teal-100 shadow-lg sm:min-h-[500px] lg:min-h-[540px]">
             <Image
               src={assessmentImage}
-              alt="Veterinarian assessing a pet and discussing the planned procedure with its owner"
+              alt="Veterinarian performing a surgical procedure on a pet"
               fill
               sizes="(max-width: 1023px) 100vw, 50vw"
-              className="object-cover"
+              className="object-contain object-center"
             />
           </div>
           <div>
@@ -427,7 +427,7 @@ export default function SoftTissueSurgeryMohaliPage() {
               </p>
             </aside>
           </div>
-          <div className="relative min-h-[280px] overflow-hidden rounded-3xl bg-teal-100 shadow-lg sm:min-h-[430px]">
+          <div className="relative min-h-[340px] overflow-hidden rounded-3xl bg-teal-100 shadow-lg sm:min-h-[500px] lg:min-h-[540px]">
             <Image
               src={recoveryImage}
               alt="Pet resting comfortably at home during recovery with its owner nearby"
@@ -482,7 +482,7 @@ export default function SoftTissueSurgeryMohaliPage() {
             <p className="mt-3 text-sm leading-7 text-teal-50 sm:text-base">
               If your pet has been advised surgery, or you would like a surgical opinion, GreenCoatVets can assess your pet and explain the next steps. Bring any previous reports, scans or prescriptions with you.
             </p>
-            <p className="mt-2 text-sm font-semibold text-white">Speak to our veterinary team about your pet’s surgery.</p>  
+            <p className="mt-2 text-sm font-semibold text-white">Speak to our veterinary team about your pet’s surgery.</p>
           </div>
           <div className="flex shrink-0 flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
             <PrimaryLink href={bookingUrl}>Book an Appointment</PrimaryLink>
