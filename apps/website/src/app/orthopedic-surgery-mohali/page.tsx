@@ -174,11 +174,13 @@ function ImagePanel({
   alt,
   className = "",
   priority = false,
+  imageClassName = "object-cover",
 }: {
   src: string;
   alt: string;
   className?: string;
   priority?: boolean;
+  imageClassName?: string;
 }) {
   return (
     <div
@@ -190,7 +192,7 @@ function ImagePanel({
         fill
         priority={priority}
         sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 600px"
-        className="object-cover"
+        className={imageClassName}
       />
     </div>
   );
@@ -298,6 +300,7 @@ export default function OrthopedicSurgeryMohaliPage() {
             src={heroImage}
             alt="Veterinary orthopedic surgery for dogs and cats at GreenCoatVets in Mohali"
             priority
+            imageClassName="object-cover object-top"
             className="aspect-[4/3] shadow-lg"
           />
         </div>
@@ -591,4 +594,3 @@ export default function OrthopedicSurgeryMohaliPage() {
     </main>
   );
 }
-   
