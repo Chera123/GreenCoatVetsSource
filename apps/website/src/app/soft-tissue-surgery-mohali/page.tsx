@@ -367,14 +367,17 @@ export default function SoftTissueSurgeryMohaliPage() {
 
       {/* Image 2 + preparation */}
       <section className="bg-white py-12 sm:py-16 lg:py-20">
+	  
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
-          <div className="relative h-[420px] w-full overflow-hidden rounded-3xl bg-teal-100 shadow-lg sm:h-[500px] lg:h-[540px]">
+         <div className="relative h-[420px] w-full overflow-hidden rounded-3xl bg-teal-100 shadow-lg sm:h-[480px] lg:h-[520px]">
+		  
             <Image
               src={assessmentImage}
               alt="Veterinarian performing a surgical procedure on a pet"
-              fill
-              sizes="(max-width: 1023px) 100vw, 50vw"
-              className="object-cover object-top"
+               alt="Veterinarian preparing for a pet's surgery"
+    fill
+    sizes="(max-width: 1023px) 100vw, 50vw"
+    className="object-cover object-[center_38%]"
             />
           </div>
           <div>
