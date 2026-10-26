@@ -242,8 +242,12 @@ export default function OrthopedicSurgeryMohaliPage() {
       </nav>
 
       {/* 1. Hero */}
+  
+      {/* 1. Hero */}
       <section className="bg-gradient-to-br from-teal-50 via-white to-emerald-50">
         <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 py-7 sm:px-6 sm:py-9 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:py-11">
+
+          {/* Hero Content */}
           <div className="min-w-0">
             <span className="inline-flex items-center gap-2 rounded-full border border-teal-100 bg-white px-3 py-2 text-xs font-semibold text-teal-800 shadow-sm">
               <span className="material-symbols-outlined text-base">
@@ -269,6 +273,7 @@ export default function OrthopedicSurgeryMohaliPage() {
 
             <div className="mt-5 flex flex-wrap gap-3">
               <BookButton />
+
               <Link
                 href={contact}
                 className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:border-teal-300 hover:text-teal-800"
@@ -296,15 +301,21 @@ export default function OrthopedicSurgeryMohaliPage() {
             </div>
           </div>
 
-          <ImagePanel
-            src={heroImage}
-            alt="Veterinary orthopedic surgery for dogs and cats at GreenCoatVets in Mohali"
-            priority
-            imageClassName="object-cover object-top"
-            className="aspect-[4/3] shadow-lg"
-          />
+          {/* Hero Image — show the complete original photo */}
+          <div className="relative flex min-h-[300px] w-full items-center justify-center overflow-hidden rounded-xl border border-teal-100 bg-white shadow-lg sm:min-h-[400px] lg:min-h-[440px]">
+            <Image
+              src={heroImage}
+              alt="Veterinary surgical team performing an operation at GreenCoatVets in Mohali"
+              fill
+              priority
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              className="object-contain object-center"
+            />
+          </div>
+
         </div>
       </section>
+
 
       {/* 2. Orthopedic surgery introduction */}
       <section className="py-7 sm:py-9">
