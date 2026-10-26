@@ -173,11 +173,13 @@ function ImagePanel({
   src,
   alt,
   className = "",
+  imageClassName = "object-cover",
   priority = false,
 }: {
   src: string;
   alt: string;
   className?: string;
+  imageClassName?: string;
   priority?: boolean;
 }) {
   return (
@@ -189,8 +191,9 @@ function ImagePanel({
         alt={alt}
         fill
         priority={priority}
+        loading={priority ? "eager" : "lazy"}
         sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 600px"
-        className="object-cover"
+        className={imageClassName}
       />
     </div>
   );
@@ -298,7 +301,8 @@ export default function OrthopedicSurgeryMohaliPage() {
             src={heroImage}
             alt="Veterinary orthopedic surgery for dogs and cats at GreenCoatVets in Mohali"
             priority
-            className="aspect-[4/3] shadow-lg"
+            imageClassName="object-cover object-[center_22%]"
+            className="aspect-[4/5] w-full shadow-xl sm:aspect-[4/5] lg:aspect-[4/5]"
           />
         </div>
       </section>
@@ -309,7 +313,8 @@ export default function OrthopedicSurgeryMohaliPage() {
           <ImagePanel
             src={SpecializedVService}
             alt="Veterinarian examining a dog receiving orthopedic fracture care"
-            className="aspect-[4/3]"
+            imageClassName="object-cover object-[center_25%]"
+            className="aspect-[4/3] shadow-md"
           />
 
           <div className="min-w-0">
@@ -376,7 +381,8 @@ export default function OrthopedicSurgeryMohaliPage() {
           <ImagePanel
             src={catImage}
             alt="Cat receiving careful veterinary orthopedic assessment"
-            className="aspect-[4/3] md:aspect-[4/3]"
+            imageClassName="object-cover object-[center_30%]"
+            className="aspect-[4/3] shadow-md"
           />
         </div>
       </section>
@@ -388,7 +394,8 @@ export default function OrthopedicSurgeryMohaliPage() {
             <ImagePanel
               src={dogImage}
               alt="Dog receiving veterinary orthopedic evaluation for a leg injury"
-              className="aspect-[16/8] rounded-none border-0"
+              imageClassName="object-cover object-[center_35%]"
+              className="aspect-[16/9] rounded-none border-0"
             />
 
             <div className="p-5 sm:p-6">
@@ -420,7 +427,8 @@ export default function OrthopedicSurgeryMohaliPage() {
             <ImagePanel
               src={catImage}
               alt="Veterinarian providing orthopedic care for a cat"
-              className="aspect-[16/8] rounded-none border-0"
+              imageClassName="object-cover object-[center_30%]"
+              className="aspect-[16/9] rounded-none border-0"
             />
 
             <div className="p-5 sm:p-6">
@@ -491,7 +499,7 @@ export default function OrthopedicSurgeryMohaliPage() {
                 alt="Happy dog receiving compassionate care at a veterinary clinic"
                 fill
                 sizes="(max-width: 767px) 100vw, 280px"
-                className="object-cover"
+                className="object-cover object-[center_25%]"
               />
             </div>
 
