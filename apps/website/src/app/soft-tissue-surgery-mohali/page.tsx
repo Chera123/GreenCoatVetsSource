@@ -374,7 +374,7 @@ export default function SoftTissueSurgeryMohaliPage() {
               alt="Veterinarian performing a surgical procedure on a pet"
               fill
               sizes="(max-width: 1023px) 100vw, 50vw"
-              className="object-contain object-center"
+              className="object-cover object-[center_35%]"
             />
           </div>
           <div>
