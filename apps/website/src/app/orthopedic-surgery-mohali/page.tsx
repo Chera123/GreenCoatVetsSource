@@ -13,7 +13,7 @@ const pageDescription =
 const pageUrl =
   "https://www.greencoatvets.com/orthopedic-surgery-mohali/";
 
-const heroImage = "/surgery-prep.png";
+const heroImage = "/soft-tissue-assessment.png";
 const dogImage = "/soft-tissue-recovery.png";
 const catImage = "/orthopedic-cat-care.png";
 const appointmentImage = "/orthopedic-appointment-dog.png";
