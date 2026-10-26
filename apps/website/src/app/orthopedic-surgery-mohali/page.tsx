@@ -243,11 +243,12 @@ export default function OrthopedicSurgeryMohaliPage() {
 
       {/* 1. Hero */}
   
-      {/* 1. Hero */}
+     
+      {/* 1. Hero — portrait-friendly image layout */}
       <section className="bg-gradient-to-br from-teal-50 via-white to-emerald-50">
-        <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 py-7 sm:px-6 sm:py-9 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:py-11">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-8 lg:py-12">
 
-          {/* Hero Content */}
+          {/* Left: Existing hero content */}
           <div className="min-w-0">
             <span className="inline-flex items-center gap-2 rounded-full border border-teal-100 bg-white px-3 py-2 text-xs font-semibold text-teal-800 shadow-sm">
               <span className="material-symbols-outlined text-base">
@@ -282,7 +283,7 @@ export default function OrthopedicSurgeryMohaliPage() {
               </Link>
             </div>
 
-            <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+            <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2">
               {[
                 "Professional assessment",
                 "Personalized treatment",
@@ -301,20 +302,29 @@ export default function OrthopedicSurgeryMohaliPage() {
             </div>
           </div>
 
-          {/* Hero Image — show the complete original photo */}
-          <div className="relative flex min-h-[300px] w-full items-center justify-center overflow-hidden rounded-xl border border-teal-100 bg-white shadow-lg sm:min-h-[400px] lg:min-h-[440px]">
-            <Image
-              src={heroImage}
-              alt="Veterinary surgical team performing an operation at GreenCoatVets in Mohali"
-              fill
-              priority
-              sizes="(max-width: 1023px) 100vw, 50vw"
-              className="object-contain object-center"
-            />
+          {/* Right: Full portrait photo, without cropping */}
+          <div className="mx-auto w-full max-w-[480px] lg:max-w-none">
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-teal-100 bg-gradient-to-br from-teal-100 via-white to-emerald-50 p-2 shadow-lg sm:p-3">
+              <div className="relative h-full w-full overflow-hidden rounded-xl">
+                <Image
+                  src={heroImage}
+                  alt="Veterinary surgical team performing an operation at GreenCoatVets in Mohali"
+                  fill
+                  priority
+                  sizes="(max-width: 1023px) 100vw, 45vw"
+                  className="object-contain object-center"
+                />
+              </div>
+            </div>
+
+            <p className="mt-3 text-center text-xs font-medium text-teal-800">
+              Veterinary Orthopedic Care for Dogs and Cats
+            </p>
           </div>
 
         </div>
       </section>
+
 
 
       {/* 2. Orthopedic surgery introduction */}
