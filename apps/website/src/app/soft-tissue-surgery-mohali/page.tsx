@@ -368,13 +368,13 @@ export default function SoftTissueSurgeryMohaliPage() {
       {/* Image 2 + preparation */}
       <section className="bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
-          <div className="relative min-h-[360px] overflow-hidden rounded-3xl bg-teal-100 shadow-lg sm:min-h-[500px] lg:min-h-[540px]">
+          <div className="relative h-[420px] w-full overflow-hidden rounded-3xl bg-teal-100 shadow-lg sm:h-[500px] lg:h-[540px]">
             <Image
               src={assessmentImage}
               alt="Veterinarian performing a surgical procedure on a pet"
               fill
               sizes="(max-width: 1023px) 100vw, 50vw"
-              className="object-contain object-center"
+              className="object-cover object-top"
             />
           </div>
           <div>
@@ -427,13 +427,13 @@ export default function SoftTissueSurgeryMohaliPage() {
               </p>
             </aside>
           </div>
-          <div className="relative min-h-[340px] overflow-hidden rounded-3xl bg-teal-100 shadow-lg sm:min-h-[500px] lg:min-h-[540px]">
+          <div className="relative h-[400px] w-full overflow-hidden rounded-3xl bg-teal-100 shadow-lg sm:h-[500px] lg:h-[540px]">
             <Image
               src={recoveryImage}
               alt="Pet resting comfortably at home during recovery with its owner nearby"
               fill
               sizes="(max-width: 1023px) 100vw, 50vw"
-              className="object-cover"
+              className="object-cover object-[center_15%]"
             />
             <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-lg backdrop-blur sm:inset-x-6 sm:bottom-6 sm:p-5">
               <p className="text-sm font-bold text-slate-950">Recovery is part of the care plan</p>
