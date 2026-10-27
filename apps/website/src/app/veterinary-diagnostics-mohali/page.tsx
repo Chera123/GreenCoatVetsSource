@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const diagnosticImages = {
+  hero: "/veterinary-diagnostics-hero.jpg",
+  lab: "/veterinary-diagnostics-hero.jpg",
+  ultrasound: "/pet-ultrasound.jpg",
+  xray: "/veterinary-xray.jpg",
+  consultation: "/veterinary-diagnostics-hero.jpg",
+};
+
 const pageTitle = "Veterinary Diagnostics in Mohali | GreenCoatVets";
 const pageDescription =
   "Veterinary diagnostics in Mohali at GreenCoatVets: lab tests, pet ultrasound and veterinary X-ray to support accurate diagnosis and treatment.";
@@ -178,15 +186,13 @@ export default function VeterinaryDiagnosticsMohaliPage() {
               ))}
             </div>
           </div>
-          <div className="relative flex min-h-[280px] items-center justify-center overflow-hidden rounded-3xl border border-emerald-100 bg-gradient-to-br from-teal-800 via-teal-700 to-emerald-600 p-8 text-white shadow-xl sm:min-h-[340px]">
-            <div aria-hidden="true" className="absolute -right-10 -top-10 size-48 rounded-full border-[28px] border-white/10" />
-            <div aria-hidden="true" className="absolute -bottom-14 -left-10 size-56 rounded-full border-[34px] border-emerald-300/10" />
-            <div className="relative z-10 max-w-sm text-center">
-              <div className="mx-auto flex size-24 items-center justify-center rounded-3xl border border-white/20 bg-white/10 shadow-inner">
-                <span aria-hidden="true" className="material-symbols-outlined text-6xl">biotech</span>
-              </div>
-              <h2 className="mt-6 text-2xl font-extrabold leading-tight sm:text-3xl">Clearer answers for better care</h2>
-              <p className="mt-3 text-sm leading-6 text-teal-50 sm:text-base">Diagnostic tests help your veterinarian understand the problem and plan the next step.</p>
+          <div className="relative min-h-[300px] overflow-hidden rounded-3xl border border-emerald-100 bg-teal-50 shadow-xl sm:min-h-[390px]">
+            <img src={diagnosticImages.hero} alt="Veterinary team caring for a pet during a clinical examination" className="absolute inset-0 h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/15 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-3 py-1.5 text-xs font-bold backdrop-blur-sm"><span className="material-symbols-outlined text-base">biotech</span>Testing and imaging</span>
+              <h2 className="mt-4 max-w-sm text-2xl font-extrabold leading-tight sm:text-3xl">Clearer answers for better care</h2>
+              <p className="mt-2 max-w-md text-sm leading-6 text-white/90">Diagnostic tests help your veterinarian understand the problem and plan the next step.</p>
             </div>
           </div>
         </div>
@@ -199,7 +205,12 @@ export default function VeterinaryDiagnosticsMohaliPage() {
           </div>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {diagnostics.map((item) => (
-              <article key={item.number} className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg sm:p-6">
+              <article key={item.number} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg">
+                <div className="relative h-44 overflow-hidden bg-emerald-50 sm:h-48">
+                  <img src={[diagnosticImages.lab, diagnosticImages.ultrasound, diagnosticImages.xray][Number(item.number) - 1]} alt={`${item.title} for pets at GreenCoatVets in Mohali`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+                  <span className="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-extrabold tracking-widest text-emerald-800 shadow">{item.number}</span>
+                </div>
+                <div className="p-5 sm:p-6">
                 <div className="flex items-center justify-between">
                   <span className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-100 to-teal-50 text-emerald-800">
                     <span aria-hidden="true" className="material-symbols-outlined text-3xl">{item.icon}</span>
@@ -211,6 +222,7 @@ export default function VeterinaryDiagnosticsMohaliPage() {
                 <ul className="mt-5 space-y-2 border-t border-slate-100 pt-4">
                   {item.points.map((point) => <li key={point} className="flex items-start gap-2 text-sm text-slate-700"><span aria-hidden="true" className="material-symbols-outlined mt-0.5 text-base text-emerald-700">check_circle</span><span>{point}</span></li>)}
                 </ul>
+                </div>
               </article>
             ))}
           </div>
@@ -247,6 +259,23 @@ export default function VeterinaryDiagnosticsMohaliPage() {
             <h2 className="mt-4 font-headline text-2xl font-bold text-slate-950">How Test Results Guide Treatment</h2>
             <p className="mt-3 text-sm leading-7 text-slate-600">Test results are only useful when they are explained clearly. Your veterinarian will go through what was found, what it means for your pet and the next step. A test result does not always lead to surgery. Many results lead to medicine, a change in diet or monitoring, and some confirm that nothing serious is wrong.</p>
           </article>
+        </div>
+      </section>
+
+
+      <section className="py-10 sm:py-14">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+          <div className="relative min-h-[280px] overflow-hidden rounded-2xl shadow-lg sm:min-h-[340px]">
+            <img src={diagnosticImages.consultation} alt="Veterinary professional discussing diagnostic care for a pet" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+          </div>
+          <div>
+            <SectionHeading eyebrow="Clear guidance at every step" title="Understand Your Pet’s Results" description="Your veterinarian will explain which tests are recommended, what the results show and how they help guide your pet’s care." />
+            <div className="mt-5 space-y-3">
+              {["You will be told why a test is recommended.", "Your team will explain any preparation, including fasting if needed.", "Results help guide medicine, surgery, dietary changes or monitoring.", "Not every test result means surgery is needed."].map((item) => (
+                <div key={item} className="flex items-start gap-3 rounded-xl border border-emerald-100 bg-emerald-50/60 p-3.5"><span aria-hidden="true" className="material-symbols-outlined mt-0.5 text-xl text-emerald-700">check_circle</span><p className="text-sm leading-6 text-slate-700">{item}</p></div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
