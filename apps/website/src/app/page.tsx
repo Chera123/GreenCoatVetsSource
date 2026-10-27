@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { resolveClinic } from "@/lib/clinic/resolve-clinic";
 import {
   buildHeroSlideUrls,
@@ -493,20 +494,80 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Preventive care */}
-        <section className="bg-surface-container-low py-14 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">Prevention at every age</p>
-            <h2 className="mt-3 font-headline text-2xl font-extrabold text-on-surface sm:text-3xl lg:text-4xl">Preventive Care for Every Stage of Life</h2>
-            <p className="mt-4 max-w-4xl leading-relaxed text-on-surface-variant">
-              Regular preventive care helps pets stay healthy and helps problems get caught early.
-              Young pets need guidance on vaccination and growth, adult pets benefit from regular
-              wellness examinations, and older pets may need closer monitoring. Our veterinarians
-              plan care around your pet’s age and health. Start with our{" "}
-              <Link href="/pet-vaccination-mohali/" className="font-semibold text-primary underline underline-offset-4">pet vaccination</Link>,{" "}
-              <Link href="/pet-health-checkup-mohali/" className="font-semibold text-primary underline underline-offset-4">health checkup</Link> and{" "}
-              <Link href="/dental-care-mohali/" className="font-semibold text-primary underline underline-offset-4">dental care</Link> pages.
-            </p>
+        {/* Preventive care — redesigned as clear life-stage cards */}
+        <section className="relative overflow-hidden bg-surface-container-low py-16 sm:py-20 lg:py-24">
+          <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" aria-hidden="true" />
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-3xl">
+                <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">
+                  Prevention at every age
+                </p>
+                <h2 className="mt-3 font-headline text-3xl font-extrabold leading-tight text-on-surface sm:text-4xl lg:text-5xl">
+                  Preventive Care for Every Stage of Life
+                </h2>
+                <p className="mt-4 max-w-2xl text-base leading-7 text-on-surface-variant sm:text-lg">
+                  Preventive care helps keep pets well and gives your veterinarian a chance to spot
+                  changes early. Choose a starting point based on your pet’s age and needs.
+                </p>
+              </div>
+              <Link href="/pet-health-checkup-mohali/" className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 self-start rounded-xl border border-outline-variant bg-surface-container-lowest px-5 py-3 text-sm font-bold text-on-surface transition hover:border-primary hover:text-primary md:self-auto">
+                Plan a wellness check
+                <span aria-hidden="true" className="material-symbols-outlined text-lg">arrow_forward</span>
+              </Link>
+            </div>
+            <div className="mt-9 grid gap-5 md:grid-cols-3">
+              {[
+                {
+                  title: "Young pets",
+                  label: "Build a healthy start",
+                  icon: "pets",
+                  text: "Support healthy growth with age-appropriate veterinary advice, vaccination planning and parasite prevention.",
+                  href: "/pet-vaccination-mohali/",
+                  link: "Explore pet vaccination",
+                },
+                {
+                  title: "Adult pets",
+                  label: "Keep track of wellbeing",
+                  icon: "health_and_safety",
+                  text: "Routine wellness examinations help review weight, teeth, skin, lifestyle and any subtle changes over time.",
+                  href: "/pet-health-checkup-mohali/",
+                  link: "Book a health checkup",
+                },
+                {
+                  title: "Senior pets",
+                  label: "Monitor changing needs",
+                  icon: "favorite",
+                  text: "Older pets may benefit from closer monitoring, dental assessment and further tests when recommended by a veterinarian.",
+                  href: "/dental-care-mohali/",
+                  link: "Explore dental care",
+                },
+              ].map((stage, index) => (
+                <article key={stage.title} className="group flex h-full min-w-0 flex-col rounded-2xl border border-outline-variant/30 bg-surface-container-lowest p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg sm:p-7">
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                      <span aria-hidden="true" className="material-symbols-outlined text-2xl">{stage.icon}</span>
+                    </span>
+                    <span className="font-headline text-sm font-extrabold tracking-widest text-primary/70">0{index + 1}</span>
+                  </div>
+                  <p className="mt-5 text-xs font-bold uppercase tracking-wider text-primary">{stage.label}</p>
+                  <h3 className="mt-2 font-headline text-xl font-bold text-on-surface">{stage.title}</h3>
+                  <p className="mt-3 flex-1 text-sm leading-7 text-on-surface-variant sm:text-base">{stage.text}</p>
+                  <Link href={stage.href} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary underline decoration-primary/30 underline-offset-4 transition group-hover:decoration-primary">
+                    {stage.link}
+                    <span aria-hidden="true" className="material-symbols-outlined text-base">arrow_forward</span>
+                  </Link>
+                </article>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-primary/15 bg-primary/5 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+              <p className="max-w-3xl text-sm leading-6 text-on-surface-variant sm:text-base">
+                Every pet is different. Our veterinary team can help you decide which preventive care is appropriate for your pet.
+              </p>
+              <Link href="/book/" className="gradient-primary inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl px-5 py-3 text-sm font-bold text-on-primary">
+                Book an Appointment
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -552,28 +613,68 @@ export default async function Home() {
           urls={marketing.gallery_image_urls ?? []}
         />
 
-        <section className="bg-surface py-10 sm:py-14">
-          <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-2 md:items-center lg:px-8">
-            <div>
-              <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">Our veterinarians</p>
-              <h2 className="mt-3 font-headline text-2xl font-extrabold text-on-surface sm:text-3xl">Meet Our Veterinary Team</h2>
-              <p className="mt-3 leading-relaxed text-on-surface-variant">
-                Our veterinarians include Dr. Karanbir Singh and Madhu Sahjeta, both senior
-                veterinarians. Visit our team page to learn more about the people caring for your
-                animals. Please confirm each doctor’s verified qualifications and areas of interest
-                before adding those details.
-              </p>
-              <Link href="/team/" className="mt-5 inline-flex min-h-11 items-center justify-center rounded-xl border border-outline-variant px-5 py-3 text-sm font-bold text-on-surface hover:border-primary">Meet the Team</Link>
+        {/* Meet the team — real clinic group photograph */}
+        <section className="bg-surface py-14 sm:py-18 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+              <div className="relative min-w-0">
+                <div className="absolute -inset-3 rounded-3xl bg-primary/10 blur-xl" aria-hidden="true" />
+                <div className="relative overflow-hidden rounded-2xl border border-outline-variant/30 bg-surface-container-low shadow-lg">
+                  <Image
+                    src="/team.jpg"
+                    alt="GreenCoatVets veterinary team together at the clinic in Mohali"
+                    width={3019}
+                    height={2126}
+                    sizes="(max-width: 1023px) 100vw, 55vw"
+                    className="h-auto w-full object-cover"
+                  />
+                </div>
+                <p className="mt-3 text-center text-xs leading-5 text-on-surface-variant">
+                  The team behind your pet’s care at GreenCoatVets
+                </p>
+              </div>
+              <div className="min-w-0">
+                <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">Our veterinarians</p>
+                <h2 className="mt-3 font-headline text-3xl font-extrabold leading-tight text-on-surface sm:text-4xl">
+                  Meet Our Veterinary Team
+                </h2>
+                <p className="mt-4 text-base leading-7 text-on-surface-variant sm:text-lg">
+                  Our veterinary team cares for pets through routine consultations, diagnostic
+                  assessments, emergency treatment and surgical care. We take time to explain our
+                  findings and help you understand the options for your animal.
+                </p>
+                <p className="mt-3 leading-7 text-on-surface-variant">
+                  Our veterinarians include Dr. Karanbir Singh and Madhu Sahjeta, both senior
+                  veterinarians. Visit our team page to learn more about the people caring for your
+                  animals. Please confirm each doctor’s verified qualifications and areas of interest
+                  before adding those details.
+                </p>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <Link href="/team/" className="gradient-primary inline-flex min-h-12 items-center justify-center rounded-xl px-6 py-3 text-sm font-bold text-on-primary">
+                    Meet the Team
+                  </Link>
+                  <Link href="/contact/" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-outline-variant px-6 py-3 text-sm font-bold text-on-surface transition hover:border-primary hover:text-primary">
+                    Contact Our Team
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="rounded-2xl border border-outline-variant/30 bg-surface-container-low p-5 sm:p-7">
-              <h3 className="font-headline text-xl font-bold text-on-surface">Care for Pets and Horses</h3>
-              <p className="mt-3 leading-relaxed text-on-surface-variant">
-                GreenCoatVets treats pets and companion animals, and our{" "}
-                <Link href="/equine-services-mohali/" className="font-semibold text-primary underline underline-offset-4">equine services</Link>{" "}
-                provide veterinary care for horses. If you are not sure whether we can help with
-                your animal, contact our team and describe the situation.
-              </p>
-              <Link href="/contact/" className="mt-5 inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-bold text-on-primary">Contact Our Team</Link>
+            <div className="mt-8 grid gap-5 rounded-2xl border border-outline-variant/30 bg-surface-container-low p-5 sm:p-7 md:grid-cols-[auto_1fr_auto] md:items-center">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <span aria-hidden="true" className="material-symbols-outlined text-2xl">pets</span>
+              </span>
+              <div>
+                <h3 className="font-headline text-xl font-bold text-on-surface">Care for Pets and Horses</h3>
+                <p className="mt-2 leading-7 text-on-surface-variant">
+                  GreenCoatVets treats pets and companion animals, and our{" "}
+                  <Link href="/equine-services-mohali/" className="font-semibold text-primary underline underline-offset-4">equine services</Link>{" "}
+                  provide veterinary care for horses. If you are not sure whether we can help with
+                  your animal, contact our team and describe the situation.
+                </p>
+              </div>
+              <Link href="/equine-services-mohali/" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-outline-variant bg-surface-container-lowest px-5 py-3 text-sm font-bold text-on-surface transition hover:border-primary hover:text-primary">
+                Equine Services
+              </Link>
             </div>
           </div>
         </section>
@@ -769,38 +870,7 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Homepage FAQs */}
-        <section className="bg-surface py-14 sm:py-20">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">Helpful answers</p>
-            <h2 className="mt-3 font-headline text-2xl font-extrabold text-on-surface sm:text-3xl lg:text-4xl">Frequently Asked Questions</h2>
-            <div className="mt-7 space-y-3">
-              {[
-                { q: "Is GreenCoatVets open 24 hours?", a: "Yes. GreenCoatVets is open 24 hours. For urgent cases, please contact us as soon as possible." },
-                { q: "What animals do you treat?", a: "We provide care for pets and companion animals, and our equine services cover horses. Contact our team to ask about your animal." },
-                { q: "Do you offer pet vaccination?", a: "Yes. Our team can assess your pet and guide you on vaccination and boosters. See our pet vaccination page for more information." , href: "/pet-vaccination-mohali/", label: "Pet vaccination page" },
-                { q: "Do you provide emergency care?", a: "Yes. GreenCoatVets provides emergency veterinary care for pets, and we are open 24 hours.", href: "/emergency-care-mohali/", label: "Emergency care page" },
-                { q: "How can I book an appointment?", a: "You can book online or reach our team through the contact page.", href: "/book/", label: "Book an appointment", extraHref: "/contact/", extraLabel: "contact page" },
-                { q: "Do you have a pet shop?", a: "Yes. Our pet shop in Mohali offers everyday supplies and accessories for pets.", href: "/pet-shop-mohali/", label: "Pet shop in Mohali" },
-                { q: "What should I do if my pet needs help late at night?", a: "Contact us straight away. GreenCoatVets is open 24 hours, so our team is available at any time. For serious signs such as breathing difficulty, collapse or seizures, do not wait.", href: "/emergency-care-mohali/", label: "Emergency care" },
-              ].map((faq) => (
-                <details key={faq.q} className="group rounded-2xl border border-outline-variant/30 bg-surface-container-lowest p-4 open:border-primary/40 sm:p-5">
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-headline text-base font-bold text-on-surface marker:hidden sm:text-lg">
-                    <span>{faq.q}</span>
-                    <span aria-hidden="true" className="material-symbols-outlined shrink-0 text-primary transition-transform group-open:rotate-180">expand_more</span>
-                  </summary>
-                  <p className="mt-3 text-sm leading-7 text-on-surface-variant sm:text-base">
-                    {faq.a}{" "}
-                    {faq.href && <Link href={faq.href} className="font-semibold text-primary underline underline-offset-4">{faq.label}</Link>}
-                    {faq.extraHref && <> or <Link href={faq.extraHref} className="font-semibold text-primary underline underline-offset-4">{faq.extraLabel}</Link>.</>}
-                  </p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ teaser */}
+        {/* FAQ teaser — content managed in the database */}
         <section className="bg-surface-container-low py-20 sm:py-24">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 sm:text-left lg:px-8">
             <h2 className="font-headline text-3xl font-extrabold text-on-surface sm:text-4xl">
@@ -883,41 +953,41 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-24 lg:px-8">
-          <div className="gradient-primary relative overflow-hidden rounded-[2rem] p-10 text-center text-on-primary shadow-2xl shadow-primary/30 sm:rounded-[3rem] sm:p-16 lg:p-20">
-            <div className="pointer-events-none absolute left-0 top-0 h-full w-full opacity-10">
-              <span className="material-symbols-outlined absolute -left-10 -top-20 text-[280px] sm:text-[360px]">
-                medical_services
-              </span>
-            </div>
-
-            <div className="relative z-10 space-y-6 sm:space-y-8">
-              <h2 className="mx-auto max-w-4xl font-headline text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
-                {t(s.cta_heading)}
-              </h2>
-
-              {ctaParas.map((p) => (
-                <p
-                  key={p.slice(0, 40)}
-                  className="mx-auto max-w-2xl text-lg opacity-90 sm:text-xl"
-                >
-                  {p}
+        {/* Final booking CTA */}
+        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+          <div className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary-container p-6 text-on-primary shadow-xl sm:p-10 lg:rounded-[2rem] lg:p-14">
+            <div className="pointer-events-none absolute -right-16 -top-20 -z-10 h-72 w-72 rounded-full border-[36px] border-white/10 sm:h-96 sm:w-96" aria-hidden="true" />
+            <div className="pointer-events-none absolute -bottom-20 left-1/3 -z-10 h-56 w-56 rounded-full bg-white/10 blur-3xl" aria-hidden="true" />
+            <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
+              <div className="max-w-3xl">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-2 text-xs font-bold uppercase tracking-wider text-white sm:text-sm">
+                  <span aria-hidden="true" className="material-symbols-outlined text-base">schedule</span>
+                  Open 24 hours
+                </span>
+                <h2 className="mt-5 font-headline text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+                  {t(s.cta_heading) || "Book Your Visit Today"}
+                </h2>
+                {ctaParas.map((p) => (
+                  <p key={p.slice(0, 40)} className="mt-4 max-w-2xl text-base leading-7 text-white/90 sm:text-lg">
+                    {p}
+                  </p>
+                ))}
+                <p className="mt-4 max-w-2xl text-sm leading-6 text-white/85 sm:text-base">
+                  Need urgent help? Contact our team at any time or visit our emergency care page.
                 </p>
-              ))}
-
-              <div className="flex flex-col items-center justify-center gap-4 pt-4 sm:flex-row sm:gap-6">
-                <Link
-                  href="/book/"
-                  className="w-full rounded-2xl bg-surface-container-lowest px-8 py-4 font-headline text-lg font-bold text-primary shadow-lg transition-colors hover:bg-surface sm:w-auto sm:px-10 sm:py-5 sm:text-xl"
-                >
+              </div>
+              <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto lg:flex-col">
+                <Link href="/book/" className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-center text-sm font-extrabold text-primary shadow-md transition hover:bg-surface-container-low sm:min-w-52 lg:w-full">
+                  <span aria-hidden="true" className="material-symbols-outlined text-lg">calendar_month</span>
                   Book an Appointment
                 </Link>
-                <Link
-                  href="/contact/"
-                  className="w-full rounded-2xl border border-white/70 px-8 py-4 font-headline text-lg font-bold text-on-primary transition-colors hover:bg-white/10 sm:w-auto sm:px-10 sm:py-5 sm:text-xl"
-                >
+                <Link href="/contact/" className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/60 bg-white/5 px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-white/10 sm:min-w-52 lg:w-full">
+                  <span aria-hidden="true" className="material-symbols-outlined text-lg">call</span>
                   Contact Our Team
+                </Link>
+                <Link href="/emergency-care-mohali/" className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-center text-sm font-bold text-white underline decoration-white/60 underline-offset-4 transition hover:decoration-white sm:min-w-52 lg:w-full">
+                  Emergency Care
+                  <span aria-hidden="true" className="material-symbols-outlined text-lg">arrow_forward</span>
                 </Link>
               </div>
             </div>
