@@ -493,23 +493,6 @@ export default async function ServicesPage() {
         className="mx-auto mt-14 max-w-7xl px-4 sm:mt-20 sm:px-6 lg:px-8"
         aria-labelledby="services-heading"
       >
-        <div className="mb-8 max-w-3xl sm:mb-10">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-teal-800">
-            Explore care options
-          </p>
-          <h2
-            id="services-heading"
-            className="font-headline text-2xl font-extrabold tracking-tight text-slate-950 sm:text-3xl lg:text-4xl"
-          >
-            Complete Veterinary Care Under One Roof
-          </h2>
-          <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
-            GreenCoatVets offers a wide range of veterinary services for pets under one roof in
-            Mohali, and we are open 24 hours. Choose a service below to learn more, or contact our
-            team if you are not sure what your pet needs.
-          </p>
-        </div>
-
         <div className="space-y-10 sm:space-y-12">
           {serviceGroups.map((group) => (
             <section key={group.title} aria-labelledby={`group-${group.title.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}`}>
