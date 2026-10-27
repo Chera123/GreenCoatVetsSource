@@ -254,34 +254,24 @@ export default async function ServicesPage() {
     throw new Error(error.message);
   }
 
-  const defaultFacilities = [
+  const carePrinciples = [
     {
-      title: "Specialized OPD",
-      blurb: "Outpatient care and consultations coordinated around your pet’s needs.",
+      number: "01",
+      title: "We listen first",
+      blurb: "We take time to understand your pet’s history, routine and the concerns you have noticed.",
+      icon: "forum",
     },
     {
-      title: "Diagnostics",
-      blurb: "Imaging and testing to support informed, timely care decisions.",
+      number: "02",
+      title: "We explain clearly",
+      blurb: "Our team explains findings and suitable next steps in straightforward, practical language.",
+      icon: "chat",
     },
     {
-      title: "In-house path lab",
-      blurb: "On-site laboratory support when tests are appropriate.",
-    },
-    {
-      title: "Dentistry",
-      blurb: "Dental assessment and treatment for comfort and long-term health.",
-    },
-    {
-      title: "Dermatology",
-      blurb: "Skin, coat, ear and allergy support for dogs and cats.",
-    },
-    {
-      title: "Pet boarding",
-      blurb: "Ask our team about current availability and suitable care options.",
-    },
-    {
-      title: "Grooming",
-      blurb: "Grooming information and service details will be available soon.",
+      number: "03",
+      title: "We plan around your pet",
+      blurb: "Recommendations are tailored to your pet’s individual needs, age and circumstances.",
+      icon: "favorite",
     },
   ];
 
@@ -405,8 +395,95 @@ export default async function ServicesPage() {
         </div>
       </section>
 
-      {/* Keep the existing live Supabase services and CMS empty-state content. */}
-   
+      {/* Helpful care principles, without repeating service names already listed below. */}
+      {!services?.length && (
+        <section className="mx-auto mt-10 max-w-7xl px-4 sm:mt-14 sm:px-6 lg:px-8">
+          <div className="overflow-hidden rounded-3xl border border-teal-100 bg-white shadow-sm">
+            <div className="grid gap-6 bg-gradient-to-br from-teal-50 via-white to-amber-50 p-5 sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-10 lg:p-10">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-teal-800">
+                  A personal approach to care
+                </p>
+                <h2 className="mt-2 font-headline text-2xl font-extrabold leading-tight text-slate-950 sm:text-3xl">
+                  Thoughtful Care, Clear Guidance
+                </h2>
+                <p className="mt-4 text-base leading-7 text-slate-600">
+                  Every pet is different. We begin by understanding your pet’s history and needs,
+                  then explain our findings and practical next steps so you can make informed
+                  decisions about their care.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 lg:gap-4">
+                {carePrinciples.map((principle) => (
+                  <article
+                    key={principle.number}
+                    className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5"
+                  >
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-amber-800">
+                      <span className="material-symbols-outlined text-xl" aria-hidden="true">
+                        {principle.icon}
+                      </span>
+                    </div>
+                    <p className="mt-4 text-xs font-extrabold tracking-[0.14em] text-teal-800">
+                      {principle.number}
+                    </p>
+                    <h3 className="mt-1 font-headline text-base font-bold leading-snug text-slate-950">
+                      {principle.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">{principle.blurb}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {services?.length ? (
+        <section className="mx-auto mt-10 max-w-7xl px-4 sm:mt-14 sm:px-6 lg:px-8">
+          <div className="mb-6 max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-teal-800">
+              Available at our hospital
+            </p>
+            <h2 className="mt-2 font-headline text-2xl font-extrabold text-slate-950 sm:text-3xl">
+              Our Current Services
+            </h2>
+            <p className="mt-3 text-base leading-7 text-slate-600">
+              Browse the services currently listed by our hospital, or explore the dedicated
+              service pages below for more detailed information.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <article
+                key={service.id}
+                className="group flex min-w-0 flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-teal-200 hover:shadow-md sm:p-6"
+              >
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-800">
+                  <span className="material-symbols-outlined text-xl" aria-hidden="true">
+                    medical_services
+                  </span>
+                </div>
+                <h3 className="font-headline text-lg font-bold text-slate-950">
+                  {service.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">
+                  {service.short_description ?? "Learn more about this service."}
+                </p>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="mt-5 inline-flex min-h-10 items-center gap-2 self-start text-sm font-bold text-teal-800 hover:text-teal-950"
+                >
+                  Learn more
+                  <span className="material-symbols-outlined text-base" aria-hidden="true">
+                    arrow_forward
+                  </span>
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {/* SEO service directory: the supplied service-page list takes priority. */}
       <section
