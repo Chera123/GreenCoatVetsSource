@@ -288,73 +288,80 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Promise */}
-        <section className="bg-surface-container-low py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">
-              {t(s.promise_eyebrow)}
-            </p>
-
-            <h2 className="mt-3 font-headline text-3xl font-extrabold text-on-surface sm:text-4xl lg:text-5xl">
-              {t(s.promise_heading)}
-            </h2>
-
-            {promiseParas.map((p) => (
-              <p
-                key={p.slice(0, 40)}
-                className="mt-6 max-w-3xl text-lg leading-relaxed text-on-surface-variant"
-              >
-                {p}
+        {/* Promise — balanced two-column layout to use the available space */}
+        <section className="relative overflow-hidden bg-surface-container-low py-14 sm:py-18 lg:py-24">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl"
+          />
+          <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8">
+            <div className="min-w-0">
+              <p className="font-label text-sm font-bold uppercase tracking-[0.16em] text-primary">
+                {t(s.promise_eyebrow)}
               </p>
-            ))}
-          </div>
-        </section>
-
-        {/* Services */}
-        <section className="bg-surface py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">
-              {t(s.services_eyebrow)}
-            </p>
-
-            <h2 className="mt-3 font-headline text-3xl font-extrabold text-on-surface sm:text-4xl">
-              {t(s.services_heading)}
-            </h2>
-
-            <p className="mt-3 max-w-3xl text-on-surface-variant">
-              {t(s.services_body)}
-            </p>
-
-            <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {serviceCards.map((card, i) => (
-                <li
-                  key={card.title}
-                  className="flex flex-col rounded-2xl border border-outline-variant/30 bg-surface-container-lowest p-6 shadow-sm"
+              <h2 className="mt-3 font-headline text-3xl font-extrabold leading-tight tracking-tight text-on-surface sm:text-4xl lg:text-5xl">
+                {t(s.promise_heading)}
+              </h2>
+              {promiseParas.map((p) => (
+                <p
+                  key={p.slice(0, 40)}
+                  className="mt-5 max-w-2xl text-base leading-8 text-on-surface-variant sm:text-lg"
                 >
-                  <span className="material-symbols-outlined text-3xl text-primary">
-                    {SERVICE_ICONS[i] ?? "pets"}
-                  </span>
-
-                  <h3 className="mt-4 font-headline text-lg font-bold text-on-surface">
-                    {card.title}
-                  </h3>
-
-                  {card.body ? (
-                    <p className="mt-2 text-sm leading-relaxed text-on-surface-variant">
-                      {card.body}
-                    </p>
-                  ) : null}
-                </li>
+                  {p}
+                </p>
               ))}
-            </ul>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Link
+                  href="/about/"
+                  className="gradient-primary inline-flex min-h-12 items-center justify-center rounded-xl px-6 py-3 text-sm font-bold text-on-primary shadow-md transition-transform hover:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                >
+                  About GreenCoatVets
+                  <span aria-hidden="true" className="material-symbols-outlined ml-2 text-lg">arrow_forward</span>
+                </Link>
+                <Link
+                  href="/contact/"
+                  className="inline-flex min-h-12 items-center justify-center rounded-xl border border-outline-variant bg-surface px-6 py-3 text-sm font-bold text-on-surface transition-colors hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                >
+                  Contact Our Team
+                </Link>
+              </div>
+            </div>
 
-            <div className="mt-10">
-              <Link
-                href="/services"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-bold uppercase tracking-wide text-on-primary"
-              >
-                View All Services
-              </Link>
+            <div className="grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              {[
+                {
+                  icon: "schedule",
+                  title: "Open 24 hours",
+                  body: "Reach out to our team whenever your pet needs veterinary attention.",
+                },
+                {
+                  icon: "biotech",
+                  title: "Diagnostics and treatment",
+                  body: "Access consultations, diagnostic support and treatment planning in one place.",
+                },
+                {
+                  icon: "diversity_3",
+                  title: "A team that listens",
+                  body: "We explain findings and care options clearly, with your pet’s needs at the centre.",
+                },
+              ].map((item, index) => (
+                <div
+                  key={item.title}
+                  className={`flex min-w-0 items-start gap-4 rounded-2xl border border-outline-variant/30 bg-surface-container-lowest p-5 shadow-sm sm:p-6 ${
+                    index === 0 ? "sm:col-span-2 lg:col-span-1" : ""
+                  }`}
+                >
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <span aria-hidden="true" className="material-symbols-outlined text-2xl">
+                      {item.icon}
+                    </span>
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="font-headline text-lg font-bold text-on-surface">{item.title}</h3>
+                    <p className="mt-1 text-sm leading-6 text-on-surface-variant">{item.body}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -388,6 +395,7 @@ export default async function Home() {
                 { title: "Spay & Neuter", href: "/spay-neuter-mohali/", text: "Sterilisation with health assessment and aftercare." },
                 { title: "Equine Services", href: "/equine-services-mohali/", text: "Veterinary care for horses." },
                 { title: "Pet Shop", href: "/pet-shop-mohali/", text: "Everyday supplies and accessories for pets." },
+                { title: "Pet Grooming", href: "/pet-grooming-mohali/", text: "Grooming and coat-care services for pets. Full service details coming soon." },
               ].map((service) => (
                 <li key={service.href} className="min-w-0">
                   <Link
