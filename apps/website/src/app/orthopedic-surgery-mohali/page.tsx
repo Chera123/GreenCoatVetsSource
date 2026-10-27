@@ -8,7 +8,7 @@ const pageTitle =
   "Veterinary Orthopedic Surgery in Mohali | GreenCoatVets";
 
 const pageDescription =
-  "Looking for orthopedic care for your pet in Mohali? GreenCoatVets provides veterinary orthopedic surgery, pet fracture treatment and compassionate surgical care.";
+  "Veterinary orthopedic surgery and fracture treatment for pets in Mohali at GreenCoatVets. Diagnosis, surgical care and recovery guidance.";
 
 const pageUrl =
   "https://www.greencoatvets.com/orthopedic-surgery-mohali/";
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: pageUrl,
     title: pageTitle,
     description:
-      "Professional orthopedic surgery, fracture treatment and specialized care for dogs and cats in Mohali.",
+      "Veterinary orthopedic surgery and fracture treatment for pets in Mohali at GreenCoatVets. Diagnosis, surgical care and recovery guidance.",
     siteName: "GreenCoatVets",
     locale: "en_IN",
     images: [
@@ -72,17 +72,32 @@ const faqs = [
   {
     question: "When does a pet need orthopedic surgery?",
     answer:
-      "Surgery may be recommended for certain fractures, joint injuries, ligament problems, and other conditions that require surgical treatment.",
+      "It depends on the injury or condition. Your veterinarian will examine your pet, may recommend imaging, and explain whether surgery or another approach is best.",
   },
   {
-    question: "Do you provide dog orthopedic surgery in Mohali?",
+    question: "Do you treat fractures in Mohali?",
     answer:
-      "Yes, GreenCoatVets provides dog orthopedic surgery in Mohali based on your pet's individual condition and treatment needs.",
+      "Yes. GreenCoatVets assesses and treats fractures. Treatment depends on the type and severity of the injury.",
   },
   {
-    question: "How is pet fracture treatment decided?",
+    question: "How long does recovery take?",
     answer:
-      "Treatment depends on the location and severity of the fracture, along with your pet's overall health and specific needs.",
+      "Recovery varies with the injury, the treatment and your pet’s age and health. Your veterinarian will give you an idea of what to expect and arrange follow-up visits.",
+  },
+  {
+    question: "Will my pet need an X-ray?",
+    answer:
+      "Often, yes. Imaging helps the veterinarian see the problem clearly. The veterinarian will tell you which tests are needed.",
+  },
+  {
+    question: "What should I do if my pet is injured?",
+    answer:
+      "Keep your pet as still and calm as possible and contact us straight away. GreenCoatVets is open 24 hours.",
+  },
+  {
+    question: "Can I give my pet painkillers at home?",
+    answer:
+      "Only give medicines prescribed by a veterinarian. Human painkillers can be harmful to pets.",
   },
 ];
 
@@ -258,18 +273,15 @@ export default function OrthopedicSurgeryMohaliPage() {
             </span>
 
             <h1 className="mt-4 font-headline text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-[2.65rem]">
-              Orthopedic Surgery in Mohali for Dogs &amp; Cats
+              Veterinary Orthopedic Surgery in Mohali
             </h1>
 
             <h2 className="mt-3 text-base font-bold text-teal-800 sm:text-lg">
-              Expert Orthopedic Care for Your Pet in Mohali
+              Fracture, bone and joint care for pets
             </h2>
 
             <p className="mt-3 text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
-              At GreenCoatVets, we provide professional orthopedic care for
-              dogs and cats in Mohali. From fractures and joint injuries to
-              mobility problems, our veterinary team focuses on accurate
-              diagnosis, appropriate treatment, and comfortable recovery.
+              Orthopedic problems can affect your pet’s bones, joints and ability to move comfortably. At GreenCoatVets in Mohali, our veterinary team assesses fractures, joint injuries and mobility problems, explains the options and provides surgical care where it is needed.
             </p>
 
             <div className="mt-5 flex flex-wrap gap-3">
@@ -343,16 +355,19 @@ export default function OrthopedicSurgeryMohaliPage() {
             />
 
             <p className="mt-3 text-sm leading-6 text-slate-700">
-              Our <strong>veterinary orthopedic surgery in Mohali</strong>{" "}
-              helps treat conditions affecting your pet&apos;s bones,
-              joints, ligaments, and movement.
+              Our veterinary team assesses bone fractures, joint injuries, dislocations, ligament injuries and other conditions that affect normal movement. Treatment is planned around your pet’s individual condition, and not every orthopedic problem needs surgery.
             </p>
 
             <p className="mt-3 text-sm leading-6 text-slate-700">
-              Every case is carefully evaluated before surgery is
-              recommended. When needed, diagnostic imaging helps our
-              veterinary team understand the condition and plan the
-              appropriate treatment.
+              The veterinarian will take your pet’s history, examine the affected area and check how your pet moves. Imaging such as X-ray, available through our{" "}
+              <Link href="/veterinary-diagnostics-mohali/" className="font-semibold text-teal-800 underline underline-offset-4 hover:text-teal-950">veterinary diagnostics service</Link>, helps show the type and severity of the problem and guides the treatment plan.
+            </p>
+
+            <p className="mt-3 text-sm leading-6 text-slate-700">
+              Surgery involving other parts of the body is covered by our{" "}
+              <Link href="/soft-tissue-surgery-mohali/" className="font-semibold text-teal-800 underline underline-offset-4 hover:text-teal-950">
+                soft tissue surgery service
+              </Link>.
             </p>
 
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -371,8 +386,8 @@ export default function OrthopedicSurgeryMohaliPage() {
           <div className="min-w-0">
             <SectionHeading
               eyebrow="Pet orthopedic care in Mohali"
-              title="Conditions We Treat"
-              description="Our pet orthopedic surgery services in Mohali may help with a range of bone, joint, and mobility concerns."
+              title="Conditions We Assess and Treat"
+              description="Orthopedic care in Mohali starts with an assessment of your pet’s injury, movement and overall health."
             />
 
             <div className="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
@@ -392,8 +407,7 @@ export default function OrthopedicSurgeryMohaliPage() {
             </div>
 
             <p className="mt-3 text-xs leading-5 text-slate-600">
-              Treatment is planned according to your pet&apos;s individual
-              condition and health needs.
+              Treatment depends on the condition and severity of the injury; not every case requires surgery.
             </p>
           </div>
 
@@ -442,13 +456,13 @@ export default function OrthopedicSurgeryMohaliPage() {
                   For dogs
                 </p>
                 <h3 className="mt-2 font-headline text-xl font-bold leading-tight text-slate-950 sm:text-2xl">
-                  Dog Orthopedic Surgery in Mohali
+                  Orthopedic Care for Dogs
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
-                  Injuries, accidents, falls and joint problems can make it difficult for dogs to walk or stay active. Our <strong className="font-semibold text-slate-800">dog orthopedic surgery in Mohali</strong> service provides professional assessment and surgical care when an orthopedic condition requires it.
+                  Limping, pain, swelling or reluctance to walk can indicate an orthopedic problem. Our veterinary team assesses the injury and explains suitable treatment options, including surgery when it is needed.
                 </p>
                 <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
-                  We focus on appropriate treatment, pain management and clear recovery guidance for you and your pet.
+                  Care may include diagnostic imaging, pain management, treatment planning and follow-up guidance tailored to your pet.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   <span className="rounded-full bg-teal-50 px-3 py-1.5 text-xs font-semibold text-teal-900">Mobility concerns</span>
@@ -467,13 +481,13 @@ export default function OrthopedicSurgeryMohaliPage() {
                   For dogs and cats
                 </p>
                 <h3 className="mt-2 font-headline text-xl font-bold leading-tight text-slate-950 sm:text-2xl">
-                  Veterinary Bone Surgery &amp; Pet Fracture Treatment
+                  Fracture Treatment and Surgical Care
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
-                  A fracture needs careful assessment to support healthy healing. Our <strong className="font-semibold text-slate-800">veterinary bone surgery in Mohali</strong> service provides surgical treatment when required.
+                  Fracture treatment depends on the type and severity of the injury. Your veterinarian will explain the recommended approach and whether stabilisation or surgery is appropriate.
                 </p>
                 <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
-                  For <strong className="font-semibold text-slate-800">pet fracture treatment in Mohali</strong>, the veterinary team assesses the location and severity of the injury, your pet’s overall health and the treatment options. Care may include diagnostic imaging, stabilization, surgery and follow-up checks, depending on the case.
+                  The assessment considers the location of the fracture, your pet’s overall health and the likely recovery process. Care may include imaging, stabilisation, surgery and follow-up checks, depending on the case.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   <span className="rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-900">Fracture assessment</span>
@@ -510,8 +524,8 @@ export default function OrthopedicSurgeryMohaliPage() {
           <div>
             <SectionHeading
               eyebrow="Trusted pet care"
-              title="Why Choose GreenCoatVets?"
-              description="Our focus is on professional veterinary care, personalized treatment planning, and compassionate support for pets and their families."
+              title="Care Focused on Diagnosis and Recovery"
+              description="We explain the assessment, treatment options and aftercare so you can make informed decisions about your pet’s orthopedic care."
             />
           </div>
 
@@ -529,6 +543,68 @@ export default function OrthopedicSurgeryMohaliPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Orthopedic symptoms and safe recovery guidance */}
+      <section className="bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-10 sm:py-14">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
+          <div className="rounded-2xl border border-emerald-100 bg-white p-5 shadow-sm sm:p-7">
+            <SectionHeading
+              eyebrow="Know the signs"
+              title="Signs Your Pet May Need Orthopedic Care"
+              description="Arrange a veterinary assessment if you notice any of these changes."
+            />
+            <ul className="mt-5 space-y-3">
+              {[
+                "Limping or favouring a leg",
+                "Pain or reluctance to move, climb or play",
+                "Swelling around a bone or joint",
+                "Difficulty standing up or walking",
+                "A fall, accident or injury",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm leading-6 text-slate-700">
+                  <span className="material-symbols-outlined mt-0.5 text-lg text-emerald-700" aria-hidden="true">check_circle</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-slate-700">
+              After an accident or if your pet is in severe pain, contact our{" "}
+              <Link href="/emergency-care-mohali/" className="font-bold text-teal-900 underline underline-offset-4">emergency care team</Link>{" "}
+              without delay.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-teal-100 bg-white p-5 shadow-sm sm:p-7">
+            <SectionHeading
+              eyebrow="Recovery and prevention"
+              title="Pain Management, Aftercare and Joint Health"
+              description="Following the veterinary plan can help support your pet’s comfort and recovery."
+            />
+            <ul className="mt-5 space-y-3">
+              {[
+                "Limit activity as advised by your veterinarian.",
+                "Give pain relief and other medicines only as prescribed.",
+                "Keep dressings or surgical areas clean and dry as instructed.",
+                "Attend follow-up visits so healing can be checked.",
+                "Maintain a healthy weight and provide suitable regular exercise.",
+                "Make home surroundings safer to reduce falls and accidents.",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm leading-6 text-slate-700">
+                  <span className="material-symbols-outlined mt-0.5 text-lg text-teal-700" aria-hidden="true">check_circle</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm leading-6 text-slate-600">
+              Contact the clinic if you notice increasing swelling, discharge, worsening pain or your pet stops using the limb. Never give human painkillers unless a veterinarian has specifically prescribed a medicine for your pet.
+            </p>
+            <p className="mt-4 text-sm leading-6 text-slate-600">
+              Routine{" "}
+              <Link href="/pet-health-checkup-mohali/" className="font-semibold text-teal-800 underline underline-offset-4 hover:text-teal-950">pet health checkups</Link>{" "}
+              can also help you discuss weight, movement and joint concerns.
+            </p>
           </div>
         </div>
       </section>
@@ -554,19 +630,15 @@ export default function OrthopedicSurgeryMohaliPage() {
                 </p>
 
                 <h2 className="mt-2 font-headline text-xl font-bold leading-tight sm:text-2xl">
-                  Book Your Orthopedic Consultation Today
+                  Book an Orthopedic Consultation in Mohali
                 </h2>
 
                 <p className="mt-3 text-sm leading-6 text-teal-50">
-                  If your pet is limping, experiencing pain, has suffered
-                  an injury, or is having difficulty walking, don&apos;t
-                  ignore the signs. GreenCoatVets provides professional{" "}
-                  <strong>pet orthopedic care in Mohali</strong> with a
-                  focus on your pet&apos;s comfort and recovery.
+                  If your pet is limping, in pain, has suffered an injury or is having difficulty walking, contact GreenCoatVets. Our veterinary team can assess your pet and explain the next steps for orthopedic treatment and recovery.
                 </p>
 
                 <p className="mt-3 text-sm font-semibold text-white">
-                  Help your pet move comfortably again.
+                  Ask our team about assessment, treatment and recovery guidance.
                 </p>
               </div>
 
