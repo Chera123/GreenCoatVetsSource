@@ -18,7 +18,6 @@ import {
   applyClinicPlaceholders,
   sectionLines,
   sectionParagraphs,
-  sectionTitleBodyLines,
 } from "@/lib/marketing/page-content";
 import { marketingPageMetadata } from "@/lib/marketing/page-metadata";
 import { HeroImageSlider } from "@/components/site/hero-image-slider";
@@ -42,17 +41,6 @@ const WHY_ICONS = [
   "medical_services",
   "volunteer_activism",
   "favorite",
-] as const;
-
-const SERVICE_ICONS = [
-  "stethoscope",
-  "orthopedics",
-  "emergency",
-  "visibility",
-  "dentistry",
-  "biotech",
-  "pets",
-  "agriculture",
 ] as const;
 
 function findLocation(
@@ -139,7 +127,6 @@ export default async function Home() {
   const t = (value: string | undefined) =>
     applyClinicPlaceholders(value ?? "", clinic.name ?? "");
 
-  const serviceCards = sectionTitleBodyLines(s, "services_list");
   const faqPreview = sectionLines(s, "faq_preview_list");
 
   const whyUs = [1, 2, 3, 4, 5, 6]
