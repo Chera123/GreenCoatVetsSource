@@ -16,6 +16,7 @@ const pageUrl =
 const heroImage = "/soft-tissue-assessment.png";
 const dogImage = "/soft-tissue-recovery.png";
 const catImage = "/veterinary-diagnostics-hero.jpg";
+const fcatImage = "orthopedic-cat-care.png";
 const appointmentImage = "/orthopedic-appointment-dog.png";
 const bookingUrl = "https://www.greencoatvets.com/book/";
 const contact = "https://www.greencoatvets.com/contact/";
@@ -501,7 +502,7 @@ export default function OrthopedicSurgeryMohaliPage() {
 
               <div className="relative order-1 min-h-[230px] overflow-hidden bg-slate-100 sm:min-h-[300px] md:order-2 md:min-h-[340px]">
                 <Image
-                  src={catImage}
+                  src={fcatImage}
                   alt="Cat being gently examined by a veterinary professional for an injury"
                   fill
                   sizes="(max-width: 767px) 100vw, (max-width: 1279px) 45vw, 560px"
