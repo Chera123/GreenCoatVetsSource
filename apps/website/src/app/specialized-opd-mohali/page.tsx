@@ -327,6 +327,29 @@ export default function SpecializedOpdMohaliPage() {
                   </p>
                 </div>
               </div>
+              <div className="mt-5 border-t border-amber-200 pt-4">
+                <h4 className="text-sm font-bold text-slate-950">
+                  Veterinary consultation in Mohali, 24 hours a day
+                </h4>
+                <p className="mt-2 text-sm leading-6 text-slate-700">
+                  For non-emergency concerns such as changes in appetite, vomiting, skin irritation, limping or unusual behaviour, book a{" "}
+                  <Link
+                    href="/book/"
+                    className="font-semibold text-teal-900 underline decoration-teal-400 underline-offset-4 hover:text-teal-950"
+                  >
+                    veterinary consultation
+                  </Link>{" "}
+                  at GreenCoatVets. Our team can assess your pet and advise whether further tests or treatment may be needed.
+                </p>
+                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
+                  <Link href="/veterinary-diagnostics-mohali/" className="text-teal-900 underline decoration-teal-300 underline-offset-4 hover:text-teal-950">
+                    Veterinary diagnostics
+                  </Link>
+                  <Link href="/pet-health-checkup-mohali/" className="text-teal-900 underline decoration-teal-300 underline-offset-4 hover:text-teal-950">
+                    Preventive health checkups
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
 
