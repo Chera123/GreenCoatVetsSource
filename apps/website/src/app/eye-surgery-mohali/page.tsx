@@ -455,40 +455,93 @@ export default function EyeSurgeryMohaliPage() {
         </div>
       </section>
 
-      {/* Warning signs */}
-      <section className="py-8 sm:py-11">
-        <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:gap-10 lg:px-8">
-          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 sm:p-7">
-            <SectionHeading
-              eyebrow="Know the warning signs"
-              title="Warning Signs to Watch For"
-              description="Please have your pet seen promptly if you notice any of these signs, particularly after an injury."
-            />
-            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-              {[
-                "Redness or swelling",
-                "Discharge from the eye",
-                "Squinting or keeping the eye closed",
-                "A cloudy or changed appearance",
-                "Rubbing or pawing at the eye",
-                "Signs of reduced vision, such as bumping into things",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-sm leading-6 text-slate-700">
-                  <span className="material-symbols-outlined mt-0.5 shrink-0 text-lg text-amber-800" aria-hidden="true">warning</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="min-w-0">
-            <Photo
-              src={images.treatment}
-              alt="Veterinarian carefully examining a pet's eye at GreenCoatVets in Mohali"
-              className="aspect-[4/3] shadow-md"
-            />
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Avoid using human eye drops or leftover medicines unless a veterinarian advises you to. Early assessment can help identify the right treatment.
+      {/* Warning signs — text-only, responsive, green-accented section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-9 sm:py-12 lg:py-14">
+        <div className="pointer-events-none absolute -right-16 -top-16 size-56 rounded-full bg-emerald-100/60 blur-3xl" aria-hidden="true" />
+        <div className="pointer-events-none absolute -bottom-20 -left-16 size-64 rounded-full bg-teal-100/60 blur-3xl" aria-hidden="true" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-emerald-800 shadow-sm">
+              <span className="material-symbols-outlined text-base" aria-hidden="true">visibility</span>
+              Know the warning signs
+            </span>
+            <h2 className="mt-4 font-headline text-2xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-3xl lg:text-4xl">
+              Warning Signs of Eye Problems in Pets
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+              Eye problems can be painful and may affect your pet’s vision. Arrange a veterinary assessment promptly if you notice any of these changes, especially after an injury.
             </p>
+          </div>
+
+          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:mt-9 lg:grid-cols-3">
+            {[
+              {
+                icon: "water_drop",
+                title: "Redness or swelling",
+                text: "The eye or surrounding area looks red, puffy or irritated.",
+              },
+              {
+                icon: "opacity",
+                title: "Eye discharge",
+                text: "Fluid, sticky discharge or unusual buildup around the eye.",
+              },
+              {
+                icon: "visibility_off",
+                title: "Squinting or closed eye",
+                text: "Your pet keeps the eye partly or fully closed, or seems uncomfortable.",
+              },
+              {
+                icon: "blur_on",
+                title: "Cloudiness or appearance changes",
+                text: "The eye looks cloudy or different from its usual appearance.",
+              },
+              {
+                icon: "pets",
+                title: "Rubbing or pawing at the eye",
+                text: "Your pet repeatedly rubs its face or paws at the affected eye.",
+              },
+              {
+                icon: "explore",
+                title: "Possible vision changes",
+                text: "Your pet appears disoriented or starts bumping into familiar objects.",
+              },
+            ].map((item) => (
+              <article
+                key={item.title}
+                className="group flex h-full items-start gap-4 rounded-2xl border border-emerald-100 bg-white/95 p-4 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md sm:p-5"
+              >
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 text-emerald-800 transition group-hover:from-emerald-200 group-hover:to-teal-200 sm:size-12">
+                  <span className="material-symbols-outlined text-2xl" aria-hidden="true">{item.icon}</span>
+                </span>
+                <div className="min-w-0">
+                  <h3 className="font-headline text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-6 text-slate-600">
+                    {item.text}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-emerald-200 bg-emerald-900 p-4 text-white shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-5">
+            <div className="flex items-start gap-3">
+              <span className="material-symbols-outlined mt-0.5 text-2xl text-emerald-200" aria-hidden="true">medical_services</span>
+              <div>
+                <h3 className="font-headline text-base font-bold sm:text-lg">Do not wait after an eye injury</h3>
+                <p className="mt-1 text-sm leading-6 text-emerald-50">
+                  Avoid human eye drops or leftover medicines unless a veterinarian advises you to. Contact our team for guidance.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/contact/"
+              className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-bold text-emerald-900 transition hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-emerald-900"
+            >
+              Contact Our Team
+              <span className="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+            </Link>
           </div>
         </div>
       </section>
