@@ -1,36 +1,27 @@
-
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const pageTitle =
-  "Specialized Veterinary OPD in Mohali | GreenCoatVets";
-
+const pageTitle = "Veterinary OPD & Consultation in Mohali | GreenCoatVets";
 const pageDescription =
-  "Looking for veterinary consultation in Mohali? GreenCoatVets provides specialized veterinary OPD, pet health consultation and compassionate care for dogs and cats.";
-
-const pageUrl =
-  "https://www.greencoatvets.com/specialized-opd-mohali/";
+  "Book a veterinary consultation in Mohali at GreenCoatVets. Specialized OPD care for pets with symptoms or ongoing health concerns. Open 24 hours.";
+const pageUrl = "https://www.greencoatvets.com/specialized-opd-mohali/";
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  alternates: {
-    canonical: pageUrl,
-  },
+  alternates: { canonical: pageUrl },
   openGraph: {
     type: "website",
     url: pageUrl,
     title: pageTitle,
-    description:
-      "Professional veterinary consultation, pet health care and specialized OPD services for dogs and cats in Mohali.",
+    description: pageDescription,
     siteName: "GreenCoatVets",
     locale: "en_IN",
     images: [
       {
-        url: "/specialized-opd-veterinary.png",
-        alt: "GreenCoatVets veterinarian examining pets in a clinic",
+        url: "/specialized-opd-veterinary.jpg",
+        alt: "Veterinarian consulting with a pet owner at GreenCoatVets in Mohali",
       },
     ],
   },
@@ -38,85 +29,110 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    images: ["/specialized-opd-veterinary.png"],
+    images: ["/specialized-opd-veterinary.jpg"],
   },
 };
 
 const concerns = [
   {
-    icon: "health_and_safety",
-    title: "Routine health check-ups",
-    description:
-      "Regular examinations to help monitor your pet's general health.",
-  },
-  {
     icon: "thermostat",
-    title: "Fever, weakness and loss of appetite",
-    description:
-      "Consultation for fever, low energy and appetite changes.",
+    title: "Fever, weakness or loss of appetite",
+    description: "Get veterinary advice when your pet seems unusually tired, feverish or is eating less than normal.",
   },
   {
     icon: "gastroenterology",
-    title: "Vomiting and digestive problems",
-    description:
-      "Assessment of vomiting and other digestive concerns.",
+    title: "Vomiting or digestive problems",
+    description: "Discuss vomiting, diarrhoea or other changes in your pet’s digestion with a veterinarian.",
   },
   {
-    icon: "pets",
-    title: "Skin, coat and ear conditions",
-    description:
-      "Veterinary assessment of common skin, coat and ear concerns.",
+    icon: "dermatology",
+    title: "Skin, coat or ear concerns",
+    description: "Arrange an assessment for itching, hair loss, irritation or ear discomfort.",
   },
   {
     icon: "air",
-    title: "Coughing and breathing concerns",
-    description:
-      "Consultation when you notice coughing or changes in breathing.",
+    title: "Coughing or breathing changes",
+    description: "A veterinarian can assess coughing and changes in breathing. Severe breathing difficulty needs urgent care.",
   },
   {
     icon: "directions_walk",
-    title: "Pain and mobility problems",
-    description:
-      "Assessment of discomfort and movement difficulties.",
+    title: "Pain, limping or mobility changes",
+    description: "Seek advice if your pet appears uncomfortable, is limping or finds movement difficult.",
   },
   {
     icon: "monitor_weight",
-    title: "Weight and behavioural changes",
-    description:
-      "Guidance when your pet's weight or behaviour changes.",
+    title: "Weight or behaviour changes",
+    description: "Changes in weight, activity or behaviour can be useful clues to your pet’s health.",
   },
   {
-    icon: "favorite",
-    title: "Preventive and senior pet care",
-    description:
-      "Health guidance tailored to your pet's age and individual needs.",
+    icon: "clinical_notes",
+    title: "Ongoing health conditions",
+    description: "Follow-up consultations can help review long-term conditions and assess how your pet is doing.",
+  },
+  {
+    icon: "medical_information",
+    title: "Other health concerns",
+    description: "If something about your pet’s health worries you, our team can help you decide on the next step.",
   },
 ];
 
-const benefits = [
-  "Experienced veterinary team",
-  "Personalized pet care",
-  "Comprehensive veterinary services",
-  "Modern diagnostic support",
-  "Compassionate approach",
-  "Clear guidance for pet parents",
+const consultationSteps = [
+  {
+    number: "01",
+    title: "Talk through your pet’s history",
+    description:
+      "Your veterinarian will ask when the problem started, what you have noticed, what your pet eats and whether there has been any previous illness or treatment.",
+  },
+  {
+    number: "02",
+    title: "A careful physical examination",
+    description:
+      "Your pet will be examined according to their symptoms and needs. The veterinarian will explain the findings in clear, straightforward language.",
+  },
+  {
+    number: "03",
+    title: "Tests when they are needed",
+    description:
+      "If further investigation is appropriate, the veterinarian may recommend tests through our veterinary diagnostics service.",
+  },
+  {
+    number: "04",
+    title: "A clear plan for next steps",
+    description:
+      "We will discuss the recommended treatment, what to monitor at home and whether a follow-up visit is needed.",
+  },
 ];
 
 const faqs = [
   {
     question: "What is a veterinary OPD?",
     answer:
-      "A veterinary OPD provides outpatient consultation, examination, diagnosis and treatment guidance for pets. Your veterinarian can assess your pet's concerns and recommend appropriate next steps.",
+      "OPD stands for outpatient department. Your pet is examined and receives veterinary advice or treatment without needing to stay in the hospital for an inpatient admission.",
   },
   {
-    question: "When should I book a veterinary consultation in Mohali?",
+    question: "When should I book a veterinary consultation?",
     answer:
-      "Consult a veterinarian if you notice changes in your pet's appetite, behaviour, energy, digestion, skin, breathing or mobility. Seek urgent veterinary care for severe breathing difficulty, collapse or other serious symptoms.",
+      "Book a consultation if your pet has symptoms such as loss of appetite, vomiting, coughing, limping or skin problems, or if you have another health concern. For severe breathing difficulty, collapse or other serious symptoms, seek emergency veterinary care immediately.",
   },
   {
-    question: "Do you provide routine pet health consultation in Mohali?",
+    question: "How is an OPD consultation different from a health checkup?",
     answer:
-      "Routine pet health consultations can help monitor your pet's health and identify potential concerns early. Contact GreenCoatVets to discuss your pet's needs and arrange a consultation.",
+      "An OPD consultation is for a pet with symptoms or a specific health concern. A pet health checkup is a routine wellness visit for a pet that appears healthy and focuses on preventive care.",
+  },
+  {
+    question: "What should I bring to the consultation?",
+    answer:
+      "Bring previous medical records, test reports or prescriptions if available. It is also helpful to note when the symptoms started, your pet’s diet and any medicines or supplements they take.",
+  },
+  {
+    question: "Is the OPD open 24 hours?",
+    answer:
+      "GreenCoatVets is open 24 hours. Contact our team to discuss your pet’s needs and arrange your visit.",
+  },
+  {
+    question: "Will I be told when my pet needs to come back?",
+    answer:
+      "Yes. Your veterinarian will explain whether a recheck is recommended, when to return and what changes to watch for at home.",
   },
 ];
 
@@ -126,10 +142,7 @@ const faqSchema = {
   mainEntity: faqs.map((faq) => ({
     "@type": "Question",
     name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
   })),
 };
 
@@ -144,37 +157,31 @@ function SectionHeading({
 }) {
   return (
     <div className="mx-auto mb-10 max-w-3xl text-center">
-      {eyebrow && (
-        <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-teal-700">
+      {eyebrow ? (
+        <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.18em] text-teal-800 sm:text-sm">
           {eyebrow}
         </p>
-      )}
-
-      <h2 className="font-headline text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+      ) : null}
+      <h2 className="font-headline text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
         {title}
       </h2>
-
-      {description && (
-        <p className="mt-4 text-base leading-7 text-slate-600">
+      {description ? (
+        <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
           {description}
         </p>
-      )}
+      ) : null}
     </div>
   );
 }
 
-function AppointmentButton({
-  children = "Book a Veterinary Consultation",
-}: {
-  children?: ReactNode;
-}) {
+function BookButton({ children = "Book an Appointment" }: { children?: React.ReactNode }) {
   return (
     <Link
       href="/book/"
-      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-teal-700 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-teal-900/10 transition hover:-translate-y-0.5 hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2"
+      className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-teal-700 px-5 py-3 text-sm font-bold text-white shadow-md shadow-teal-900/10 transition hover:-translate-y-0.5 hover:bg-teal-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2 sm:w-auto"
     >
       {children}
-      <span className="material-symbols-outlined text-lg">
+      <span className="material-symbols-outlined text-lg" aria-hidden="true">
         arrow_forward
       </span>
     </Link>
@@ -184,7 +191,6 @@ function AppointmentButton({
 export default function SpecializedOpdMohaliPage() {
   return (
     <main className="overflow-hidden bg-white text-slate-800">
-      {/* FAQ structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -192,137 +198,99 @@ export default function SpecializedOpdMohaliPage() {
         }}
       />
 
-      {/* Breadcrumb */}
-      <nav
-        aria-label="Breadcrumb"
-        className="border-b border-slate-100 bg-slate-50/70"
-      >
-        <div className="mx-auto max-w-7xl px-6 py-4 lg:px-8">
-          <ol className="flex flex-wrap items-center gap-2 text-sm text-slate-500">
-            <li>
-              <Link href="/" className="transition hover:text-teal-700">
-                Home
-              </Link>
-            </li>
-
-            <li aria-hidden="true">
-              <span className="material-symbols-outlined text-base">
-                chevron_right
-              </span>
-            </li>
-
-            <li>
-              <Link
-                href="/#services"
-                className="transition hover:text-teal-700"
-              >
-                Services
-              </Link>
-            </li>
-
-            <li aria-hidden="true">
-              <span className="material-symbols-outlined text-base">
-                chevron_right
-              </span>
-            </li>
-
-            <li
-              aria-current="page"
-              className="font-semibold text-teal-800"
-            >
-              Specialized OPD
-            </li>
-          </ol>
+      <nav aria-label="Breadcrumb" className="border-b border-slate-200 bg-slate-50">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-4 py-3 sm:px-6 lg:px-8">
+          <Link href="/" className="text-sm text-slate-600 transition hover:text-teal-800">
+            Home
+          </Link>
+          <span className="material-symbols-outlined text-base text-slate-400" aria-hidden="true">
+            chevron_right
+          </span>
+          <Link href="/services/" className="text-sm text-slate-600 transition hover:text-teal-800">
+            Services
+          </Link>
+          <span className="material-symbols-outlined text-base text-slate-400" aria-hidden="true">
+            chevron_right
+          </span>
+          <span aria-current="page" className="text-sm font-semibold text-teal-900">
+            Specialized OPD
+          </span>
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-emerald-50">
-        <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-teal-100/60 blur-3xl" />
-
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 sm:py-16 lg:grid-cols-[1fr_1.05fr] lg:gap-14 lg:px-8 lg:py-20">
-          {/* Hero content */}
-          <div className="relative z-10 max-w-xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white px-4 py-2 text-sm font-semibold text-teal-800 shadow-sm">
-              <span className="material-symbols-outlined text-lg">
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-teal-50 via-white to-amber-50">
+        <div className="pointer-events-none absolute -right-24 -top-20 -z-10 h-80 w-80 rounded-full bg-teal-200/40 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 left-1/4 -z-10 h-72 w-72 rounded-full bg-amber-200/30 blur-3xl" />
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14 lg:px-8 lg:py-20">
+          <div className="min-w-0">
+            <span className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white/90 px-4 py-2 text-xs font-bold uppercase tracking-wider text-teal-900 shadow-sm sm:text-sm">
+              <span className="material-symbols-outlined text-lg" aria-hidden="true">
                 medical_services
               </span>
               Specialized Veterinary OPD · Mohali
             </span>
-
-            <h1 className="mt-6 font-headline text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl">
-              Specialized OPD in Mohali for Dogs &amp; Cats
+            <h1 className="mt-5 font-headline text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+              Specialized Veterinary OPD in Mohali for Pets
             </h1>
-
-            <p className="mt-5 text-xl font-semibold text-teal-800">
-              Expert Veterinary Care for Your Pet in Mohali
+            <p className="mt-4 text-lg font-bold leading-7 text-teal-900 sm:text-xl">
+              Veterinary consultation for dogs and cats, open 24 hours
             </p>
-
-            <p className="mt-4 text-base leading-8 text-slate-600">
-              At GreenCoatVets, our Specialized OPD provides professional
-              and compassionate veterinary care for dogs and cats in Mohali.
-              Whether your pet needs a routine check-up, treatment for a
-              health concern, or ongoing medical care, our veterinary team
-              is here to help.
+            <p className="mt-4 text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
+              The Specialized OPD at GreenCoatVets offers outpatient veterinary consultations for pets in Mohali. If your pet has symptoms, an ongoing condition or a health concern, our veterinary team will examine your pet, listen to your concerns and recommend appropriate care. GreenCoatVets is open 24 hours.
             </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <AppointmentButton />
-
+            <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">
+              For routine wellness visits for pets that seem healthy, see our{" "}
               <Link
-                href="/contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-teal-300 hover:text-teal-800"
+                href="/pet-health-checkup-mohali/"
+                className="font-bold text-teal-800 underline decoration-teal-300 underline-offset-4 hover:text-teal-950"
+              >
+                pet health checkup and preventive care
+              </Link>{" "}
+              page.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <BookButton>Book a Veterinary Consultation</BookButton>
+              <Link
+                href="/contact/"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 transition hover:border-teal-500 hover:text-teal-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2 sm:w-auto"
               >
                 Contact Our Team
               </Link>
             </div>
-
-            <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm text-slate-600">
-              <span className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-lg text-teal-700">
-                  check_circle
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-slate-700">
+              {["Open 24 hours", "Individual assessment", "Clear next steps"].map((item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-lg text-teal-700" aria-hidden="true">
+                    check_circle
+                  </span>
+                  {item}
                 </span>
-                Care for dogs and cats
-              </span>
-
-              <span className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-lg text-teal-700">
-                  check_circle
-                </span>
-                Personalized consultation
-              </span>
+              ))}
             </div>
           </div>
 
-          {/* Hero image */}
           <div className="relative mx-auto w-full max-w-2xl">
-            <div className="absolute -inset-3 rounded-[30px] bg-teal-200/50 blur-2xl" />
-
-            <div className="relative overflow-hidden rounded-3xl border border-white bg-white p-2 shadow-2xl shadow-slate-900/10">
+            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-teal-200/70 to-amber-200/60 blur-xl" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-3xl border border-white bg-white p-2 shadow-2xl shadow-slate-900/10 sm:p-3">
               <Image
                 src="/specialized-opd-veterinary.jpg"
-                alt="GreenCoatVets veterinarian examining a dog and a cat together in a veterinary clinic"
+                alt="Veterinarian consulting with a pet owner at GreenCoatVets in Mohali"
                 width={1536}
                 height={1024}
                 priority
-                sizes="(max-width: 1024px) 100vw, 600px"
-                className="aspect-[4/3] w-full rounded-[20px] object-cover"
+                sizes="(max-width: 1023px) 100vw, 52vw"
+                className="aspect-[4/3] w-full rounded-2xl object-cover"
               />
-            </div>
-
-            <div className="relative mx-4 -mt-5 rounded-2xl border border-teal-100 bg-white px-5 py-4 shadow-lg sm:mx-7">
-              <div className="flex items-start gap-3">
-                <span className="material-symbols-outlined rounded-xl bg-teal-50 p-2 text-2xl text-teal-700">
-                  favorite
+              <div className="flex items-center gap-3 px-3 py-4 sm:px-5">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-800">
+                  <span className="material-symbols-outlined text-2xl" aria-hidden="true">
+                    favorite
+                  </span>
                 </span>
-
                 <div>
-                  <p className="font-headline font-bold text-slate-900">
-                    Compassionate Veterinary Care
-                  </p>
-
+                  <p className="font-headline font-bold text-slate-950">Care that starts with listening</p>
                   <p className="mt-1 text-sm leading-6 text-slate-600">
-                    Professional consultation for dogs and cats in Mohali.
+                    Consultation and guidance based on your pet’s needs.
                   </p>
                 </div>
               </div>
@@ -331,184 +299,213 @@ export default function SpecializedOpdMohaliPage() {
         </div>
       </section>
 
-      {/* Trusted consultation */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+      <section className="py-14 sm:py-20">
+        <div className="mx-auto grid max-w-7xl items-start gap-8 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 lg:px-8">
           <div>
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-teal-700">
-              Personalized attention
+            <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.18em] text-teal-800 sm:text-sm">
+              When to visit
             </p>
-
-            <h2 className="font-headline text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Trusted Veterinary Consultation in Mohali
+            <h2 className="font-headline text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
+              When to Book a Veterinary Consultation
             </h2>
-
-            <p className="mt-6 leading-8 text-slate-600">
-              Every pet deserves personalized medical attention. During a
-              veterinary consultation in Mohali, our team examines your pet,
-              understands their symptoms and medical history, and recommends
-              appropriate care based on their individual needs.
+            <p className="mt-4 leading-7 text-slate-600 sm:text-lg sm:leading-8">
+              If you notice a change in your pet’s health or behaviour, a veterinary consultation can help you understand what may be happening and what to do next.
             </p>
-
-            <p className="mt-4 leading-8 text-slate-600">
-              From preventive healthcare to common illnesses and ongoing
-              conditions, we focus on helping keep your pet healthy and
-              comfortable.
-            </p>
+            <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined mt-0.5 text-2xl text-amber-800" aria-hidden="true">
+                  emergency
+                </span>
+                <div>
+                  <h3 className="font-bold text-slate-950">Serious symptoms need urgent attention</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-700">
+                    For severe breathing difficulty, collapse or other serious symptoms, contact our{" "}
+                    <Link href="/emergency-care-mohali/" className="font-bold text-teal-900 underline underline-offset-4">
+                      emergency care team
+                    </Link>{" "}
+                    immediately.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50 to-emerald-50 p-7 sm:p-9">
-            <h3 className="font-headline text-xl font-bold text-slate-900">
-              What to Expect During a Consultation
-            </h3>
-
-            <ul className="mt-6 space-y-4">
-              {[
-                "Discussion of your pet's symptoms and medical history",
-                "A veterinary examination based on your pet's concerns",
-                "Clear explanations and care recommendations",
-                "Further diagnostic evaluation when considered necessary",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="material-symbols-outlined mt-0.5 text-xl text-teal-700">
-                    check_circle
-                  </span>
-                  <span className="leading-6 text-slate-700">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Veterinary OPD concerns */}
-      <section className="bg-slate-50 py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Outpatient veterinary care"
-            title="Comprehensive Veterinary OPD in Mohali"
-            description="Our veterinary OPD in Mohali provides consultation for a wide range of pet health concerns. Your veterinarian can assess symptoms and advise whether further evaluation or treatment is appropriate."
-          />
-
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {concerns.map((item) => (
+          <div className="grid gap-4 sm:grid-cols-2">
+            {concerns.map((item, index) => (
               <article
                 key={item.title}
-                className="group rounded-2xl border border-slate-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-teal-200 hover:shadow-lg hover:shadow-teal-900/5"
+                className={`rounded-2xl border p-5 transition duration-200 hover:-translate-y-0.5 hover:shadow-md sm:p-6 ${
+                  index % 2 === 0
+                    ? "border-teal-100 bg-teal-50/60 hover:border-teal-200"
+                    : "border-amber-100 bg-amber-50/60 hover:border-amber-200"
+                }`}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
-                  <span className="material-symbols-outlined text-2xl">
+                <span
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl ${
+                    index % 2 === 0 ? "bg-white text-teal-800" : "bg-white text-amber-800"
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-2xl" aria-hidden="true">
                     {item.icon}
                   </span>
-                </div>
-
-                <h3 className="mt-5 font-headline text-lg font-bold text-slate-900">
+                </span>
+                <h3 className="mt-4 font-headline text-lg font-bold leading-snug text-slate-950">
                   {item.title}
                 </h3>
-
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  {item.description}
-                </p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
               </article>
             ))}
           </div>
-
-          <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-slate-500">
-            When required, our veterinarians may recommend further diagnostic
-            evaluation or treatment. The appropriate care depends on your
-            pet&apos;s individual condition.
-          </p>
         </div>
       </section>
 
-      {/* Personalized pet health consultation */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
-          <div className="order-2 rounded-3xl bg-slate-900 p-7 text-white sm:p-10 lg:order-1">
-            <span className="material-symbols-outlined text-4xl text-teal-300">
-              diversity_1
+      <section className="bg-slate-50 py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Your visit, step by step"
+            title="What to Expect During a Consultation"
+            description="We take time to understand your pet’s concern, explain the examination findings and discuss sensible next steps with you."
+          />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {consultationSteps.map((step, index) => (
+              <article key={step.number} className="relative rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+                <div className={`flex h-12 w-12 items-center justify-center rounded-xl text-sm font-extrabold ${
+                  index % 2 === 0 ? "bg-teal-100 text-teal-900" : "bg-amber-100 text-amber-900"
+                }`}>
+                  {step.number}
+                </div>
+                <h3 className="mt-5 font-headline text-lg font-bold leading-snug text-slate-950">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{step.description}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <BookButton>Book Your Consultation</BookButton>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 sm:py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
+          <div className="rounded-3xl bg-slate-950 p-6 text-white sm:p-9 lg:p-10">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-teal-400/15 text-teal-300">
+              <span className="material-symbols-outlined text-2xl" aria-hidden="true">
+                pets
+              </span>
             </span>
-
-            <h3 className="mt-5 font-headline text-2xl font-bold">
-              Every Pet Deserves Individual Attention
-            </h3>
-
+            <h2 className="mt-5 font-headline text-2xl font-extrabold sm:text-3xl">
+              Care That Fits Your Pet
+            </h2>
             <p className="mt-4 leading-7 text-slate-300">
-              Age, breed, lifestyle and medical history can all influence your
-              pet&apos;s healthcare needs. Sharing these details helps your
-              veterinarian understand the bigger picture.
+              Every pet is different, so recommendations depend on your pet’s age, history and lifestyle. Senior pets and pets with long-term conditions can also be seen here for ongoing guidance.
             </p>
+            <Link
+              href="/pet-health-checkup-mohali/"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-amber-400 px-4 py-3 text-sm font-bold text-slate-950 transition hover:bg-amber-300"
+            >
+              Explore Preventive Checkups
+              <span className="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+            </Link>
+          </div>
 
-            <div className="mt-7">
-              <AppointmentButton />
+          <div>
+            <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.18em] text-teal-800 sm:text-sm">
+              Ongoing support
+            </p>
+            <h2 className="font-headline text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
+              Follow-Up and Ongoing Care
+            </h2>
+            <p className="mt-5 leading-7 text-slate-600 sm:text-lg sm:leading-8">
+              Some conditions need more than one visit. Your veterinarian will explain whether your pet should be rechecked, what to watch for at home and when to contact us sooner. Pets with long-term conditions can return for regular reviews so that treatment can be adjusted as needed.
+            </p>
+            <div className="mt-6 flex items-start gap-3 rounded-2xl border border-teal-100 bg-teal-50 p-4">
+              <span className="material-symbols-outlined text-2xl text-teal-800" aria-hidden="true">
+                event_available
+              </span>
+              <p className="text-sm leading-6 text-slate-700">
+                Before you leave, ask your veterinarian about the recommended follow-up timing and any signs that should prompt an earlier visit.
+              </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="order-1 lg:order-2">
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-teal-700">
-              Care tailored to your pet
-            </p>
-
-            <h2 className="font-headline text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Personalized Pet Health Consultation
-            </h2>
-
-            <p className="mt-6 leading-8 text-slate-600">
-              Your pet&apos;s age, breed, lifestyle and medical history all
-              matter. Our pet health consultation in Mohali focuses on your
-              pet&apos;s specific needs, helping you understand their
-              condition and the appropriate way forward.
-            </p>
-
-            <p className="mt-4 leading-8 text-slate-600">
-              We believe good veterinary care starts with listening to both
-              pets and their families. We aim to explain recommendations in
-              clear, understandable language so you can make informed
-              decisions about your companion&apos;s care.
-            </p>
+      <section className="border-y border-amber-100 bg-gradient-to-r from-amber-50 via-white to-teal-50 py-14 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Connected veterinary services"
+            title="Support From the Rest of the Hospital"
+            description="If your pet needs more than a consultation, your veterinarian can guide you to the right service within GreenCoatVets. Having these services in one place can help coordinate the next steps in your pet’s care."
+          />
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                title: "Veterinary Diagnostics",
+                description: "Further tests may help clarify a health concern when your veterinarian recommends them.",
+                href: "/veterinary-diagnostics-mohali/",
+                icon: "biotech",
+              },
+              {
+                title: "Dental Care",
+                description: "Dental assessment and treatment for oral health concerns.",
+                href: "/dental-care-mohali/",
+                icon: "dentistry",
+              },
+              {
+                title: "Surgical Services",
+                description: "Further assessment when a surgical procedure may be appropriate.",
+                href: "/services/",
+                icon: "medical_services",
+              },
+            ].map((service, index) => (
+              <article key={service.title} className="rounded-2xl border border-white bg-white p-5 shadow-sm sm:p-6">
+                <span className={`flex h-12 w-12 items-center justify-center rounded-xl ${
+                  index === 1 ? "bg-amber-100 text-amber-900" : "bg-teal-100 text-teal-900"
+                }`}>
+                  <span className="material-symbols-outlined text-2xl" aria-hidden="true">{service.icon}</span>
+                </span>
+                <h3 className="mt-4 font-headline text-lg font-bold text-slate-950">{service.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{service.description}</p>
+                <Link href={service.href} className="mt-4 inline-flex min-h-10 items-center gap-2 text-sm font-bold text-teal-800 hover:text-teal-950">
+                  Learn more
+                  <span className="material-symbols-outlined text-base" aria-hidden="true">arrow_forward</span>
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why choose GreenCoatVets */}
-      <section className="border-y border-teal-100 bg-teal-50/60 py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
+      <section className="py-14 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14 lg:px-8">
           <div>
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-teal-700">
-              Care you can understand
+            <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.18em] text-teal-800 sm:text-sm">
+              Before you arrive
             </p>
-
-            <h2 className="font-headline text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              A Veterinary Doctor for Pets You Can Trust
+            <h2 className="font-headline text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
+              How to Prepare for Your Visit
             </h2>
-
-            <p className="mt-6 leading-8 text-slate-600">
-              At GreenCoatVets, our veterinary team aims to provide
-              professional care with a compassionate approach. We take the
-              time to explain your pet&apos;s condition, available treatment
-              options and recommended next steps in simple terms.
-            </p>
-
-            <p className="mt-4 leading-8 text-slate-600">
-              Our goal is to make veterinary care as clear and comfortable as
-              possible for pets and their families.
+            <p className="mt-4 leading-7 text-slate-600">
+              A little preparation can help your veterinary team understand what has changed and make the most of your appointment.
             </p>
           </div>
-
-          <div className="rounded-3xl border border-white bg-white p-7 shadow-sm sm:p-9">
-            <h3 className="font-headline text-xl font-bold text-slate-900">
-              Why Choose GreenCoatVets?
-            </h3>
-
-            <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-              {benefits.map((benefit) => (
-                <li key={benefit} className="flex items-start gap-3">
-                  <span className="material-symbols-outlined text-xl text-teal-700">
-                    check_circle
+          <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
+            <ul className="space-y-4">
+              {[
+                "Bring previous medical records, reports or prescriptions.",
+                "Note when the symptoms started and how they have changed.",
+                "List your pet’s diet and any medicines or supplements.",
+                "Write down your questions so nothing is missed.",
+              ].map((item, index) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${
+                    index % 2 === 0 ? "bg-teal-100 text-teal-900" : "bg-amber-100 text-amber-900"
+                  }`}>
+                    <span className="material-symbols-outlined text-base" aria-hidden="true">check</span>
                   </span>
-                  <span className="text-sm font-medium leading-6 text-slate-700">
-                    {benefit}
-                  </span>
+                  <span className="leading-7 text-slate-700">{item}</span>
                 </li>
               ))}
             </ul>
@@ -516,72 +513,58 @@ export default function SpecializedOpdMohaliPage() {
         </div>
       </section>
 
-      {/* Appointment CTA */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <div className="rounded-[30px] bg-gradient-to-br from-slate-900 to-teal-950 px-6 py-10 text-center shadow-xl sm:px-12 sm:py-14">
-            <span className="material-symbols-outlined text-4xl text-teal-300">
-              pets
-            </span>
-
-            <h2 className="mt-4 font-headline text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Looking for a Pet Veterinary Clinic in Mohali?
-            </h2>
-
-            <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-300">
-              If your pet has a health concern or simply needs a routine
-              check-up, GreenCoatVets is here to help. Contact our team to
-              discuss your companion&apos;s needs and arrange a consultation.
-            </p>
-
-            <div className="mt-8">
-              <AppointmentButton>
-                Book Your Specialized OPD Appointment
-              </AppointmentButton>
+      <section className="px-4 pb-14 sm:px-6 sm:pb-20 lg:px-8">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl bg-gradient-to-r from-teal-900 via-teal-800 to-slate-900 p-6 text-white shadow-xl sm:p-10 lg:p-12">
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="max-w-2xl">
+              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-amber-300 sm:text-sm">
+                GreenCoatVets · Mohali · Open 24 hours
+              </p>
+              <h2 className="mt-3 font-headline text-3xl font-extrabold tracking-tight sm:text-4xl">
+                Book a Veterinary Consultation in Mohali
+              </h2>
+              <p className="mt-4 leading-7 text-teal-50 sm:text-lg sm:leading-8">
+                If you are worried about your pet’s health, our team is here to help. Bring any previous records you have and we will discuss the appropriate next steps for your pet.
+              </p>
             </div>
-
-            <p className="mt-4 text-sm text-slate-400">
-              Give your pet the care they deserve.
-            </p>
+            <div className="flex flex-col gap-3 sm:flex-row lg:min-w-52 lg:flex-col">
+              <BookButton>Book an Appointment</BookButton>
+              <Link
+                href="/contact/"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/40 bg-white/5 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-teal-900"
+              >
+                Contact Our Team
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="bg-slate-50 py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+      <section className="bg-slate-50 py-14 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Frequently asked questions"
             title="Specialized Veterinary OPD FAQs"
-            description="Answers to common questions about veterinary consultation and outpatient pet care in Mohali."
+            description="Helpful answers about consultations, preparation and follow-up care at GreenCoatVets."
           />
-
-          <div className="space-y-4">
-            {faqs.map((faq) => (
+          <div className="space-y-3">
+            {faqs.map((faq, index) => (
               <details
                 key={faq.question}
-                className="group rounded-2xl border border-slate-200 bg-white p-5 open:border-teal-200 sm:p-6"
+                className="group rounded-2xl border border-slate-200 bg-white p-4 transition open:border-teal-200 open:shadow-sm sm:p-5"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-headline font-bold text-slate-900 marker:hidden">
-                  <span>{faq.question}</span>
-
-                  <span className="material-symbols-outlined shrink-0 text-teal-700 transition-transform group-open:rotate-180">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left font-headline text-sm font-bold leading-6 text-slate-950 marker:hidden sm:text-base">
+                  <span>
+                    <span className="mr-2 text-teal-800">Q{index + 1}.</span>
+                    {faq.question}
+                  </span>
+                  <span className="material-symbols-outlined shrink-0 text-teal-800 transition-transform group-open:rotate-180" aria-hidden="true">
                     expand_more
                   </span>
                 </summary>
-
-                <p className="mt-4 pr-6 text-sm leading-7 text-slate-600">
-                  {faq.answer}
-                </p>
+                <p className="mt-3 pr-2 text-sm leading-7 text-slate-600 sm:pr-7">{faq.answer}</p>
               </details>
             ))}
-          </div>
-
-          <div className="mt-10 text-center">
-            <p className="mb-5 text-slate-600">
-              Have another question about your pet&apos;s health?
-            </p>
-            <AppointmentButton />
           </div>
         </div>
       </section>
