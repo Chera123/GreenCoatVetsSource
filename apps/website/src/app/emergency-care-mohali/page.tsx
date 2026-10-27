@@ -17,7 +17,7 @@ const bookingUrl = "https://www.greencoatvets.com/book/";
 // Image files must be inside apps/website/public/
 const heroImage = "/hospital-front.jpg";
 const catImage = "/orthopedic-cat-care.png";
-const dogImage = "/orthopedic-dog-fracture-care.png";
+const dogImage = "/emergency-care.jpg";
 const cta = "/orthopedic-appointment-dog.png";
 
 const emergencyPhone = "+919608550006";
