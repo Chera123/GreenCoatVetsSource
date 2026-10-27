@@ -32,7 +32,7 @@ import type { MarketingLocationPublic } from "@/lib/marketing/types";
 const SITE_URL = "https://www.greencoatvets.com";
 const HOMEPAGE_URL = `${SITE_URL}/`;
 const HOMEPAGE_DESCRIPTION =
-  "GreenCoatVets in Mohali offers veterinary consultations, diagnostics, surgery, vaccinations and specialist care for pets and other animals.";
+  "24-hour veterinary hospital in Mohali. Consultations, diagnostics, surgery, vaccination and emergency care for pets. Book your visit today.";
 
 const WHY_ICONS = [
   "stethoscope",
@@ -73,7 +73,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/",
   });
 
-  const title = `${clinic.name || "GreenCoatVets"} | Veterinary Hospital in Mohali`;
+  const title = `24-Hour Veterinary Hospital in Mohali | ${clinic.name || "GreenCoatVets"}`;
   const image = "/og-image.jpg";
 
   return {
@@ -289,7 +289,7 @@ export default async function Home() {
 
         {/* Promise */}
         <section className="bg-surface-container-low py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">
               {t(s.promise_eyebrow)}
             </p>
@@ -311,7 +311,7 @@ export default async function Home() {
 
         {/* Services */}
         <section className="bg-surface py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">
               {t(s.services_eyebrow)}
             </p>
@@ -358,9 +358,95 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* Complete service directory — links to existing service pages */}
+        <section className="bg-surface-container-low py-14 sm:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">
+              Veterinary services
+            </p>
+            <h2 className="mt-3 font-headline text-2xl font-extrabold text-on-surface sm:text-3xl lg:text-4xl">
+              Complete Veterinary Care Under One Roof
+            </h2>
+            <p className="mt-4 max-w-3xl leading-relaxed text-on-surface-variant">
+              Whether your pet needs a routine consultation, diagnostic tests, dental care,
+              surgery or urgent treatment, you can find a range of veterinary services at
+              GreenCoatVets in Mohali.
+            </p>
+            <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                { title: "Specialized OPD", href: "/specialized-opd-mohali/", text: "Veterinary consultations and care for everyday health concerns." },
+                { title: "Emergency Care", href: "/emergency-care-mohali/", text: "Urgent assessment and treatment, 24 hours a day." },
+                { title: "Veterinary Diagnostics", href: "/veterinary-diagnostics-mohali/", text: "Laboratory tests, ultrasound and X-ray." },
+                { title: "Pet Vaccination", href: "/pet-vaccination-mohali/", text: "Vaccination assessment and booster guidance." },
+                { title: "Pet Health Checkup", href: "/pet-health-checkup-mohali/", text: "Routine wellness examinations and preventive care." },
+                { title: "Orthopedic Surgery", href: "/orthopedic-surgery-mohali/", text: "Assessment and treatment for fractures, joint problems and mobility conditions." },
+                { title: "Soft Tissue Surgery", href: "/soft-tissue-surgery-mohali/", text: "Surgical assessment and care for pets." },
+                { title: "Eye Surgery", href: "/eye-surgery-mohali/", text: "Eye examination, treatment and surgical care." },
+                { title: "Dental Care", href: "/dental-care-mohali/", text: "Dental examinations, teeth cleaning and dental surgery." },
+                { title: "Skin Treatment", href: "/veterinary-skin-treatment-mohali/", text: "Assessment of itching, hair loss and skin problems." },
+                { title: "Spay & Neuter", href: "/spay-neuter-mohali/", text: "Sterilisation with health assessment and aftercare." },
+                { title: "Equine Services", href: "/equine-services-mohali/", text: "Veterinary care for horses." },
+                { title: "Pet Shop", href: "/pet-shop-mohali/", text: "Everyday supplies and accessories for pets." },
+              ].map((service) => (
+                <li key={service.href} className="min-w-0">
+                  <Link
+                    href={service.href}
+                    className="group flex h-full flex-col rounded-2xl border border-outline-variant/30 bg-surface-container-lowest p-5 shadow-sm transition-colors hover:border-primary/50 hover:bg-surface sm:p-6"
+                  >
+                    <span className="font-headline text-lg font-bold text-on-surface group-hover:text-primary">
+                      {service.title}
+                    </span>
+                    <span className="mt-2 flex-1 text-sm leading-relaxed text-on-surface-variant">
+                      {service.text}
+                    </span>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-primary">
+                      Explore service
+                      <span aria-hidden="true" className="material-symbols-outlined text-base">arrow_forward</span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/book/" className="gradient-primary inline-flex min-h-12 items-center justify-center rounded-xl px-6 py-3 text-center text-sm font-bold text-on-primary">Book an Appointment</Link>
+              <Link href="/services/" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-outline-variant px-6 py-3 text-center text-sm font-bold text-on-surface hover:border-primary">Explore All Services</Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Open 24 hours and urgent care */}
+        <section className="bg-surface py-14 sm:py-20">
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8">
+            <div>
+              <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">Here when you need us</p>
+              <h2 className="mt-3 font-headline text-2xl font-extrabold text-on-surface sm:text-3xl lg:text-4xl">Open 24 Hours</h2>
+              <p className="mt-4 leading-relaxed text-on-surface-variant">
+                Pets do not fall ill on a schedule. GreenCoatVets is open 24 hours, so you can
+                reach our veterinary team when your pet needs help. For difficulty breathing,
+                collapse, seizures, severe bleeding or suspected poisoning, contact us straight away.
+                Read more about our{" "}
+                <Link href="/emergency-care-mohali/" className="font-semibold text-primary underline underline-offset-4">24-hour emergency care in Mohali</Link>.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Link href="/emergency-care-mohali/" className="gradient-primary inline-flex min-h-12 items-center justify-center rounded-xl px-6 py-3 text-sm font-bold text-on-primary">Emergency Care</Link>
+                <Link href="/contact/" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-outline-variant px-6 py-3 text-sm font-bold text-on-surface hover:border-primary">Contact Our Team</Link>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-outline-variant/30 bg-surface-container-low p-5 sm:p-7">
+              <h3 className="font-headline text-xl font-bold text-on-surface">What to Do in a Pet Emergency</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-relaxed text-on-surface-variant sm:text-base">
+                <li className="flex gap-3"><span className="material-symbols-outlined shrink-0 text-primary">check_circle</span><span>Stay calm and keep your pet as still and secure as possible.</span></li>
+                <li className="flex gap-3"><span className="material-symbols-outlined shrink-0 text-primary">check_circle</span><span>Contact GreenCoatVets straight away. We are open 24 hours.</span></li>
+                <li className="flex gap-3"><span className="material-symbols-outlined shrink-0 text-primary">check_circle</span><span>Do not give medicines or home remedies unless a veterinarian has advised it.</span></li>
+                <li className="flex gap-3"><span className="material-symbols-outlined shrink-0 text-primary">check_circle</span><span>Bring any medical records and the packaging if poisoning is suspected.</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         {/* Specialized surgery */}
         <section className="bg-surface-container-low py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">
               {t(s.surgery_eyebrow)}
             </p>
@@ -377,6 +463,17 @@ export default async function Home() {
                 {p}
               </p>
             ))}
+
+            <p className="mt-6 max-w-4xl leading-relaxed text-on-surface-variant">
+              Our surgical services include{" "}
+              <Link href="/orthopedic-surgery-mohali/" className="font-semibold text-primary underline underline-offset-4">orthopedic surgery</Link> for fractures and joint problems,{" "}
+              <Link href="/soft-tissue-surgery-mohali/" className="font-semibold text-primary underline underline-offset-4">soft tissue surgery</Link>,{" "}
+              <Link href="/eye-surgery-mohali/" className="font-semibold text-primary underline underline-offset-4">eye surgery</Link>, dental surgery and{" "}
+              <Link href="/spay-neuter-mohali/" className="font-semibold text-primary underline underline-offset-4">spay and neuter</Link>.
+              Our orthopedic experience includes 550+ surgeries performed, with a 98% reported success
+              rate. Every case is different; your veterinarian will explain the expected outcome,
+              procedure, risks and recovery plan before treatment.
+            </p>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {[1, 2, 3].map((n) => (
@@ -396,9 +493,26 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* Preventive care */}
+        <section className="bg-surface-container-low py-14 sm:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">Prevention at every age</p>
+            <h2 className="mt-3 font-headline text-2xl font-extrabold text-on-surface sm:text-3xl lg:text-4xl">Preventive Care for Every Stage of Life</h2>
+            <p className="mt-4 max-w-4xl leading-relaxed text-on-surface-variant">
+              Regular preventive care helps pets stay healthy and helps problems get caught early.
+              Young pets need guidance on vaccination and growth, adult pets benefit from regular
+              wellness examinations, and older pets may need closer monitoring. Our veterinarians
+              plan care around your pet’s age and health. Start with our{" "}
+              <Link href="/pet-vaccination-mohali/" className="font-semibold text-primary underline underline-offset-4">pet vaccination</Link>,{" "}
+              <Link href="/pet-health-checkup-mohali/" className="font-semibold text-primary underline underline-offset-4">health checkup</Link> and{" "}
+              <Link href="/dental-care-mohali/" className="font-semibold text-primary underline underline-offset-4">dental care</Link> pages.
+            </p>
+          </div>
+        </section>
+
         {/* Why rely on us */}
         <section className="bg-surface py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">
               {t(s.why_eyebrow)}
             </p>
@@ -438,6 +552,32 @@ export default async function Home() {
           urls={marketing.gallery_image_urls ?? []}
         />
 
+        <section className="bg-surface py-10 sm:py-14">
+          <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-2 md:items-center lg:px-8">
+            <div>
+              <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">Our veterinarians</p>
+              <h2 className="mt-3 font-headline text-2xl font-extrabold text-on-surface sm:text-3xl">Meet Our Veterinary Team</h2>
+              <p className="mt-3 leading-relaxed text-on-surface-variant">
+                Our veterinarians include Dr. Karanbir Singh and Madhu Sahjeta, both senior
+                veterinarians. Visit our team page to learn more about the people caring for your
+                animals. Please confirm each doctor’s verified qualifications and areas of interest
+                before adding those details.
+              </p>
+              <Link href="/team/" className="mt-5 inline-flex min-h-11 items-center justify-center rounded-xl border border-outline-variant px-5 py-3 text-sm font-bold text-on-surface hover:border-primary">Meet the Team</Link>
+            </div>
+            <div className="rounded-2xl border border-outline-variant/30 bg-surface-container-low p-5 sm:p-7">
+              <h3 className="font-headline text-xl font-bold text-on-surface">Care for Pets and Horses</h3>
+              <p className="mt-3 leading-relaxed text-on-surface-variant">
+                GreenCoatVets treats pets and companion animals, and our{" "}
+                <Link href="/equine-services-mohali/" className="font-semibold text-primary underline underline-offset-4">equine services</Link>{" "}
+                provide veterinary care for horses. If you are not sure whether we can help with
+                your animal, contact our team and describe the situation.
+              </p>
+              <Link href="/contact/" className="mt-5 inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-bold text-on-primary">Contact Our Team</Link>
+            </div>
+          </div>
+        </section>
+
         <HomeTeamSection
           members={teamMembers}
           eyebrow={t(s.team_eyebrow)}
@@ -455,7 +595,7 @@ export default async function Home() {
 
         {/* Ratings */}
         <section className="bg-surface py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-start gap-6 rounded-[2rem] border border-outline-variant/30 bg-gradient-to-br from-primary/10 to-surface-container-low p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
               <div>
                 <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">
@@ -491,7 +631,7 @@ export default async function Home() {
         {/* Testimonials — real reviews only */}
         {testimonialRows.length ? (
           <section className="overflow-hidden bg-surface-container-low py-20 sm:py-24">
-            <div className="relative mx-auto max-w-7xl px-6">
+            <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="mb-10 space-y-3 sm:mb-12">
                 <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">
                   {t(s.testimonials_eyebrow)}
@@ -561,9 +701,30 @@ export default async function Home() {
           </section>
         ) : null}
 
+        {/* Main clinic address */}
+        <section className="bg-surface-container-low py-12 sm:py-16">
+          <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-2 md:items-center lg:px-8">
+            <div>
+              <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">Plan your visit</p>
+              <h2 className="mt-3 font-headline text-2xl font-extrabold text-on-surface sm:text-3xl">Visit GreenCoatVets in Mohali</h2>
+              <address className="mt-4 not-italic leading-relaxed text-on-surface-variant">
+                GreenCoatVets, SCO 20, near Bestech Mall, Industrial Area Phase 9, Sahibzada Ajit Singh Nagar (Mohali), Punjab.
+              </address>
+              <p className="mt-3 leading-relaxed text-on-surface-variant">
+                Find directions on our <Link href="/locations/" className="font-semibold text-primary underline underline-offset-4">locations page</Link> or <Link href="/contact/" className="font-semibold text-primary underline underline-offset-4">contact us</Link>.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
+              <Link href="/book/" className="gradient-primary inline-flex min-h-12 items-center justify-center rounded-xl px-6 py-3 text-sm font-bold text-on-primary">Book an Appointment</Link>
+              <Link href="/contact/" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-outline-variant px-6 py-3 text-sm font-bold text-on-surface hover:border-primary">Contact Our Team</Link>
+              <Link href="/locations/" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-outline-variant px-6 py-3 text-sm font-bold text-on-surface hover:border-primary">Get Directions</Link>
+            </div>
+          </div>
+        </section>
+
         {/* Locations */}
         <section className="bg-surface py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="font-headline text-3xl font-extrabold text-on-surface sm:text-4xl">
               {t(s.locations_heading)}
             </h2>
@@ -608,9 +769,40 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* Homepage FAQs */}
+        <section className="bg-surface py-14 sm:py-20">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">Helpful answers</p>
+            <h2 className="mt-3 font-headline text-2xl font-extrabold text-on-surface sm:text-3xl lg:text-4xl">Frequently Asked Questions</h2>
+            <div className="mt-7 space-y-3">
+              {[
+                { q: "Is GreenCoatVets open 24 hours?", a: "Yes. GreenCoatVets is open 24 hours. For urgent cases, please contact us as soon as possible." },
+                { q: "What animals do you treat?", a: "We provide care for pets and companion animals, and our equine services cover horses. Contact our team to ask about your animal." },
+                { q: "Do you offer pet vaccination?", a: "Yes. Our team can assess your pet and guide you on vaccination and boosters. See our pet vaccination page for more information." , href: "/pet-vaccination-mohali/", label: "Pet vaccination page" },
+                { q: "Do you provide emergency care?", a: "Yes. GreenCoatVets provides emergency veterinary care for pets, and we are open 24 hours.", href: "/emergency-care-mohali/", label: "Emergency care page" },
+                { q: "How can I book an appointment?", a: "You can book online or reach our team through the contact page.", href: "/book/", label: "Book an appointment", extraHref: "/contact/", extraLabel: "contact page" },
+                { q: "Do you have a pet shop?", a: "Yes. Our pet shop in Mohali offers everyday supplies and accessories for pets.", href: "/pet-shop-mohali/", label: "Pet shop in Mohali" },
+                { q: "What should I do if my pet needs help late at night?", a: "Contact us straight away. GreenCoatVets is open 24 hours, so our team is available at any time. For serious signs such as breathing difficulty, collapse or seizures, do not wait.", href: "/emergency-care-mohali/", label: "Emergency care" },
+              ].map((faq) => (
+                <details key={faq.q} className="group rounded-2xl border border-outline-variant/30 bg-surface-container-lowest p-4 open:border-primary/40 sm:p-5">
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-headline text-base font-bold text-on-surface marker:hidden sm:text-lg">
+                    <span>{faq.q}</span>
+                    <span aria-hidden="true" className="material-symbols-outlined shrink-0 text-primary transition-transform group-open:rotate-180">expand_more</span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-7 text-on-surface-variant sm:text-base">
+                    {faq.a}{" "}
+                    {faq.href && <Link href={faq.href} className="font-semibold text-primary underline underline-offset-4">{faq.label}</Link>}
+                    {faq.extraHref && <> or <Link href={faq.extraHref} className="font-semibold text-primary underline underline-offset-4">{faq.extraLabel}</Link>.</>}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FAQ teaser */}
         <section className="bg-surface-container-low py-20 sm:py-24">
-          <div className="mx-auto max-w-3xl px-6 text-center sm:text-left">
+          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 sm:text-left lg:px-8">
             <h2 className="font-headline text-3xl font-extrabold text-on-surface sm:text-4xl">
               {s.faq_heading}
             </h2>
@@ -644,7 +836,7 @@ export default async function Home() {
 
         {/* Follow */}
         <section className="border-t border-outline-variant/20 bg-surface py-12">
-          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 sm:flex-row sm:px-6 lg:px-8">
             <div className="text-center sm:text-left">
               <p className="font-label text-sm font-bold uppercase tracking-widest text-primary">
                 {t(s.follow_eyebrow)}
@@ -692,7 +884,7 @@ export default async function Home() {
         </section>
 
         {/* CTA */}
-        <section className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
+        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-24 lg:px-8">
           <div className="gradient-primary relative overflow-hidden rounded-[2rem] p-10 text-center text-on-primary shadow-2xl shadow-primary/30 sm:rounded-[3rem] sm:p-16 lg:p-20">
             <div className="pointer-events-none absolute left-0 top-0 h-full w-full opacity-10">
               <span className="material-symbols-outlined absolute -left-10 -top-20 text-[280px] sm:text-[360px]">
@@ -716,10 +908,16 @@ export default async function Home() {
 
               <div className="flex flex-col items-center justify-center gap-4 pt-4 sm:flex-row sm:gap-6">
                 <Link
-                  href="/book"
+                  href="/book/"
                   className="w-full rounded-2xl bg-surface-container-lowest px-8 py-4 font-headline text-lg font-bold text-primary shadow-lg transition-colors hover:bg-surface sm:w-auto sm:px-10 sm:py-5 sm:text-xl"
                 >
                   Book an Appointment
+                </Link>
+                <Link
+                  href="/contact/"
+                  className="w-full rounded-2xl border border-white/70 px-8 py-4 font-headline text-lg font-bold text-on-primary transition-colors hover:bg-white/10 sm:w-auto sm:px-10 sm:py-5 sm:text-xl"
+                >
+                  Contact Our Team
                 </Link>
               </div>
             </div>
