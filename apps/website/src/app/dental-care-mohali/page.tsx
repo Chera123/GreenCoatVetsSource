@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const pageTitle = "Veterinary Dental Care in Mohali | GreenCoatVets";
+const pageTitle = "Pet Dental Care & Teeth Cleaning in Mohali | GreenCoatVets";
 
 const pageDescription =
-  "Looking for pet dental care in Mohali? GreenCoatVets provides veterinary dental care, pet teeth cleaning and dental surgery for dogs and cats.";
+  "Pet dental care in Mohali at GreenCoatVets: dental examination, professional teeth cleaning and dental surgery for pets. Book a dental visit.";
 
 const pageUrl =
   "https://www.greencoatvets.com/dental-care-mohali/";
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     url: pageUrl,
     title: pageTitle,
     description:
-      "Professional pet dental care, teeth cleaning and veterinary dental surgery for dogs and cats in Mohali.",
+      "Pet dental care in Mohali at GreenCoatVets: dental examination, professional teeth cleaning and dental surgery for pets. Book a dental visit.",
     siteName: "GreenCoatVets",
     locale: "en_IN",
     images: [
       {
         url: images.hero,
-        alt: "Veterinary dental care and pet teeth cleaning for dogs and cats in Mohali",
+        alt: "Veterinarian checking a pet’s teeth during a dental examination at GreenCoatVets in Mohali",
       },
     ],
   },
@@ -62,63 +62,29 @@ const dentalProblems = [
 const services = [
   {
     icon: "dentistry",
-    title: "Pet Dental Care for Pets",
+    title: "Professional Teeth Cleaning",
     paragraphs: [
       <>
-        Good <strong>pet dental care</strong> is an important part of your
-        pet&apos;s overall health. Regular dental checks can help identify
-        problems before they become more painful or difficult to treat.
+        Professional cleaning removes plaque and tartar that brushing at home
+        cannot reach.
       </>,
       <>
-        Our veterinary team examines your pet&apos;s teeth and gums and
-        recommends appropriate care based on their individual needs.
+        Your veterinarian will explain how cleaning is performed, whether
+        anaesthesia is needed for your pet and how any risks are managed.
       </>,
     ],
   },
   {
-    icon: "pets",
-    title: "Dog Dental Care in Mohali",
+    icon: "medical_services",
+    title: "Dental Surgery",
     paragraphs: [
       <>
-        Dental problems are common in dogs and can develop gradually without
-        obvious signs. Our <strong>dog dental care in Mohali</strong> helps
-        maintain healthy teeth and gums through professional examination,
-        cleaning, and treatment when required.
+        Where teeth are damaged, loose or causing pain, your veterinarian may
+        advise dental surgery.
       </>,
       <>
-        If your dog has persistent bad breath, difficulty eating, or visible
-        tartar, a dental check-up may be beneficial.
-      </>,
-    ],
-  },
-  {
-    icon: "vaccines",
-    title: "Veterinary Dental Surgery",
-    paragraphs: [
-      <>
-        Some dental conditions require more than routine cleaning. Our{" "}
-        <strong>veterinary dental surgery</strong> services may include
-        treatment for damaged, painful, or problematic teeth when surgical
-        care is necessary.
-      </>,
-      <>
-        Every procedure is planned after examining your pet and assessing
-        their overall health.
-      </>,
-    ],
-  },
-  {
-    icon: "auto_awesome",
-    title: "Pet Teeth Cleaning in Mohali",
-    paragraphs: [
-      <>
-        Professional <strong>pet teeth cleaning in Mohali</strong> helps
-        remove plaque and tartar that regular brushing may not completely
-        control.
-      </>,
-      <>
-        Our team can assess your pet&apos;s oral health and recommend
-        professional cleaning or further dental treatment when needed.
+        Treatment is planned around your pet&apos;s condition, and the
+        procedure and aftercare are explained in advance.
       </>,
     ],
   },
@@ -135,19 +101,34 @@ const benefits = [
 
 const faqs = [
   {
-    question: "How often should my pet have a dental check-up?",
+    question: "Why does my pet have bad breath?",
     answer:
-      "Regular dental examinations can help identify plaque, tartar, gum disease, and other oral problems early. Your veterinarian can recommend a suitable schedule based on your pet's needs.",
+      "Bad breath can come from plaque, tartar, gum problems or other health issues. A veterinary examination will help find the cause.",
   },
   {
-    question: "Is pet teeth cleaning necessary?",
+    question: "Does teeth cleaning need anaesthesia?",
     answer:
-      "Professional cleaning can help remove plaque and tartar that may not be removed through routine brushing alone.",
+      "Your veterinarian will explain whether anaesthesia is needed for your pet and how safety is managed before going ahead.",
   },
   {
-    question: "When does a pet need veterinary dental surgery?",
+    question: "How often should my pet’s teeth be checked?",
     answer:
-      "Dental surgery may be recommended for certain damaged, painful, infected, or problematic teeth after a veterinary examination.",
+      "Ask your veterinarian. Dental checks are best included in regular health checkups, and pets with dental problems may need more frequent visits.",
+  },
+  {
+    question: "Do you provide dental surgery for pets in Mohali?",
+    answer:
+      "Yes. GreenCoatVets provides dental surgery where it is advised, following an examination.",
+  },
+  {
+    question: "Can I use human toothpaste for my pet?",
+    answer:
+      "No. Human toothpaste is not designed for pets. Ask your veterinarian what is suitable.",
+  },
+  {
+    question: "What happens after dental treatment?",
+    answer:
+      "Your veterinarian will explain aftercare, which may include softer food for a short time, prescribed medicines and a follow-up visit. Contact us if your pet will not eat or seems in pain.",
   },
 ];
 
@@ -301,28 +282,25 @@ export default function DentalCareMohaliPage() {
               <span className="material-symbols-outlined text-base">
                 dentistry
               </span>
-              Veterinary Dental Care · Mohali
+              Pet Dental Care · Mohali
             </span>
 
             <h1 className="mt-4 font-headline text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-[2.65rem]">
-              Dental Care in Mohali for Pets
+              Pet Dental Care and Teeth Cleaning in Mohali
             </h1>
 
             <h2 className="mt-3 text-base font-bold text-teal-800 sm:text-lg">
-              Better Dental Health for a Happier Pet
+              Professional dental examinations, cleaning and treatment
             </h2>
 
             <p className="mt-3 text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
-              Dental problems can cause pain, bad breath, difficulty eating,
-              and other health concerns. At GreenCoatVets, we provide
-              professional <strong>veterinary dental care in Mohali</strong>{" "}
-              to help keep your pet&apos;s teeth, gums, and mouth healthy.
+              Healthy teeth and gums matter for your pet’s comfort, eating and overall health. At GreenCoatVets in Mohali, our veterinary team provides dental examinations, professional teeth cleaning and dental surgery for pets, and gives guidance on caring for your pet’s mouth at home.
             </p>
 
             <div className="mt-5 flex flex-wrap gap-3">
               <AppointmentButton />
               <Link
-                href="/contact"
+                href="/contact/"
                 className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:border-teal-500 hover:text-teal-800"
               >
                 Contact Our Team
@@ -348,7 +326,7 @@ export default function DentalCareMohaliPage() {
 
           <Photo
             src={images.hero}
-            alt="Veterinary dental care and pet teeth cleaning for dogs and cats in Mohali"
+            alt="Veterinarian checking a pet’s teeth during a dental examination at GreenCoatVets in Mohali"
             priority
             className="aspect-[4/3] shadow-lg"
           />
@@ -367,19 +345,27 @@ export default function DentalCareMohaliPage() {
           <div className="min-w-0">
             <SectionHeading
               eyebrow="Professional dental care"
-              title="Veterinary Dental Care in Mohali"
-              description="Our veterinary dental care in Mohali focuses on maintaining your pet's oral health and identifying dental problems early."
+              title="Dental Examination"
+              description="Your veterinarian will examine your pet’s teeth, gums and mouth and discuss the signs you have noticed."
             />
 
             <p className="mt-3 text-sm leading-6 text-slate-700">
-              We provide dental evaluation and treatment for concerns such as:
+              The examination helps your veterinarian explain what care is needed and whether professional cleaning or other treatment is recommended.
             </p>
 
-            <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
-              {dentalProblems.slice(0, 4).map((item) => (
-                <Feature key={item.title} icon={item.icon} title={item.title} />
+            <ul className="mt-4 space-y-2.5">
+              {[
+                "Examination of teeth, gums and mouth",
+                "Discussion of symptoms and eating changes",
+                "Advice on professional cleaning or other treatment",
+                "A treatment plan based on your pet’s needs",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm leading-6 text-slate-700">
+                  <span className="material-symbols-outlined mt-0.5 text-lg text-emerald-700" aria-hidden="true">check_circle</span>
+                  <span>{item}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </section>
@@ -390,8 +376,8 @@ export default function DentalCareMohaliPage() {
           <div>
             <SectionHeading
               eyebrow="Common dental problems"
-              title="Dental Issues We Treat"
-              description="Our pet dental care services in Mohali may help with:"
+              title="Signs of a Dental Problem"
+              description="Dental problems can get worse over time. Early veterinary assessment can help identify what care your pet needs."
             />
 
             <div className="mt-5 grid grid-cols-1 gap-x-5 gap-y-3 sm:grid-cols-2">
@@ -455,6 +441,54 @@ export default function DentalCareMohaliPage() {
         </div>
       </section>
 
+      {/* Home dental care */}
+      <section className="bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-8 sm:py-11">
+        <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 sm:px-6 lg:grid-cols-[1fr_1fr] lg:gap-10 lg:px-8">
+          <div>
+            <SectionHeading
+              eyebrow="Everyday dental care"
+              title="Caring for Your Pet’s Teeth at Home"
+              description="Simple habits and regular veterinary checks can help you look after your pet’s oral health."
+            />
+            <ul className="mt-5 space-y-3">
+              {[
+                "Ask your veterinarian how and how often to clean your pet’s teeth.",
+                "Do not use human toothpaste, which is not made for pets.",
+                "Check your pet’s mouth occasionally for bad breath, redness or broken teeth.",
+                "Include a dental check in your pet’s regular health checkup.",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm leading-6 text-slate-700">
+                  <span className="material-symbols-outlined mt-0.5 text-lg text-emerald-700" aria-hidden="true">check_circle</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm leading-6 text-slate-600">
+              Link dental care with a routine{" "}
+              <Link href="/pet-health-checkup-mohali/" className="font-semibold text-teal-800 underline underline-offset-4 hover:text-teal-950">
+                pet health checkup
+              </Link>{" "}
+              to discuss your pet’s overall health.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-emerald-100 bg-white p-5 shadow-sm sm:p-7">
+            <span className="inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 text-emerald-800">
+              <span className="material-symbols-outlined text-2xl" aria-hidden="true">dentistry</span>
+            </span>
+            <h3 className="mt-4 font-headline text-xl font-bold text-slate-950">When to arrange a dental visit</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              Bad breath, tartar build-up, red gums, loose teeth, dropping food or signs of mouth pain are reasons to book an examination. Dental problems often worsen over time, so do not wait for your pet to stop eating before seeking advice.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <AppointmentButton>Book a Dental Visit</AppointmentButton>
+              <Link href="/specialized-opd-mohali/" className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:border-emerald-300 hover:text-emerald-800">
+                Specialized OPD
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why choose us */}
       <section className="border-y border-slate-100 bg-white py-7 sm:py-9">
         <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 sm:px-6 md:grid-cols-[0.8fr_1.2fr] lg:gap-8 lg:px-8">
@@ -505,15 +539,11 @@ export default function DentalCareMohaliPage() {
                 </p>
 
                 <h2 className="mt-2 font-headline text-xl font-bold leading-tight sm:text-2xl">
-                  Book a Dental Consultation Today
+                  Book a Dental Consultation in Mohali
                 </h2>
 
                 <p className="mt-3 text-sm leading-6 text-teal-50">
-                  Don&apos;t ignore bad breath, tartar, gum problems, or
-                  difficulty eating. Early dental care can help your pet stay
-                  comfortable and maintain better oral health. GreenCoatVets
-                  provides professional <strong>pet dental care in Mohali</strong>{" "}
-                  for dogs and cats.
+                  If your pet has bad breath, tartar, gum problems or difficulty eating, arrange a dental examination. Our veterinary team will explain whether professional cleaning, dental surgery or home-care changes may help.
                 </p>
 
                 <p className="mt-3 text-sm font-semibold text-white">
