@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const pageTitle = "Veterinary Eye Surgery in Mohali | GreenCoatVets";
+const pageTitle = "Veterinary Eye Surgery & Eye Care in Mohali | GreenCoatVets";
 
 const pageDescription =
-  "GreenCoatVets offers veterinary eye surgery and pet eye treatment for dogs and cats in Mohali. Book an eye consultation for your pet.";
+  "Veterinary eye surgery and pet eye treatment in Mohali at GreenCoatVets. Eye examination, medical and surgical care for pets. Book a consultation.";
 
 const pageUrl =
   "https://www.greencoatvets.com/eye-surgery-mohali/";
@@ -50,11 +50,11 @@ export const metadata: Metadata = {
 };
 
 const eyeConditions = [
-  { icon: "visibility", title: "Eye injuries" },
+  { icon: "healing", title: "Eye injuries" },
   { icon: "remove_red_eye", title: "Eyelid problems" },
-  { icon: "healing", title: "Eye infections or complications" },
-  { icon: "health_and_safety", title: "Eye surface conditions" },
-  { icon: "medical_services", title: "Conditions requiring surgical correction" },
+  { icon: "health_and_safety", title: "Infections and related complications" },
+  { icon: "visibility", title: "Conditions affecting the surface of the eye" },
+  { icon: "medical_services", title: "Problems that may need surgical correction" },
 ];
 
 const benefits = [
@@ -134,19 +134,34 @@ const services = [
 
 const faqs = [
   {
-    question: "When does a pet need eye surgery?",
+    question: "Do you provide eye surgery for pets in Mohali?",
     answer:
-      "Eye surgery may be recommended for certain injuries, eyelid problems, or eye conditions that require surgical correction.",
+      "Yes. GreenCoatVets provides veterinary eye assessment, treatment and surgical care for pets.",
   },
   {
-    question: "Do you provide dog eye surgery in Mohali?",
+    question: "What are signs of an eye problem in pets?",
     answer:
-      "Yes, GreenCoatVets provides evaluation and surgical care for dogs in Mohali based on their individual eye condition.",
+      "Redness, swelling, discharge, squinting, a cloudy look, rubbing the eye or signs of reduced vision can all indicate a problem.",
   },
   {
-    question: "Does every eye problem require surgery?",
+    question: "Does every eye problem need surgery?",
     answer:
-      "No. Some eye conditions can be managed with medication or other non-surgical treatment. Your veterinarian will recommend the most appropriate option after examination.",
+      "No. Many conditions are treated with medication, cleaning and monitoring. Surgery is advised only when needed.",
+  },
+  {
+    question: "How should I care for my pet after eye surgery?",
+    answer:
+      "Follow your veterinarian’s instructions. This usually includes prescribed medicines, preventing rubbing and attending follow-up visits.",
+  },
+  {
+    question: "Should I wait to see if the eye improves?",
+    answer:
+      "It is best to have eye problems checked early, especially after an injury or if your pet seems to be in pain.",
+  },
+  {
+    question: "Can I use human eye drops for my pet?",
+    answer:
+      "No. Some human eye drops can harm pets. Please speak to a veterinarian before using any medicine in your pet’s eyes.",
   },
 ];
 
@@ -316,7 +331,7 @@ export default function EyeSurgeryMohaliPage() {
             </span>
 
             <h1 className="mt-4 font-headline text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-[2.65rem]">
-              Eye Surgery in Mohali for Dogs &amp; Cats
+              Veterinary Eye Surgery and Eye Care in Mohali
             </h1>
 
             <h2 className="mt-3 text-base font-bold text-teal-800 sm:text-lg">
@@ -324,18 +339,14 @@ export default function EyeSurgeryMohaliPage() {
             </h2>
 
             <p className="mt-3 text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
-              Eye problems can be uncomfortable for pets and may sometimes
-              affect their vision. At GreenCoatVets, we provide specialized
-              eye care for dogs and cats in <strong>Mohali</strong>, with
-              careful examination, diagnosis, and treatment based on your
-              pet&apos;s condition.
+              Eye problems can be painful and can affect your pet’s vision, so they should not be left to settle on their own. At GreenCoatVets in Mohali, our veterinary team examines pets with eye concerns, recommends treatment and provides surgical care when it is needed.
             </p>
 
             <div className="mt-5 flex flex-wrap gap-3">
               <AppointmentButton />
 
               <Link
-                href="/contact"
+                href="/contact/"
                 className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:border-teal-500 hover:text-teal-800"
               >
                 Contact Our Team
@@ -363,7 +374,7 @@ export default function EyeSurgeryMohaliPage() {
 
           <Photo
             src={images.hero}
-            alt="Veterinary eye surgery and eye care for dogs and cats at GreenCoatVets in Mohali"
+            alt="Veterinarian examining a pet’s eye at GreenCoatVets in Mohali"
             priority
             className="aspect-[4/3] shadow-lg"
           />
@@ -382,19 +393,17 @@ export default function EyeSurgeryMohaliPage() {
           <div className="min-w-0">
             <SectionHeading
               eyebrow="Professional veterinary eye care"
-              title="Veterinary Eye Surgery in Mohali"
+              title="Eye Examination and Treatment Planning"
               description="Our veterinary eye surgery in Mohali helps treat eye conditions that may require surgical care."
             />
 
             <p className="mt-3 text-sm leading-6 text-slate-700">
-              Before recommending surgery, our veterinary team carefully
-              examines your pet and evaluates the condition to determine
-              the most appropriate treatment.
+              The veterinarian will ask about your pet’s history and symptoms and examine the eyes carefully. If more information is needed, further tests may be advised through our{" "}
+              <Link href="/veterinary-diagnostics-mohali/" className="font-semibold text-teal-800 underline underline-offset-4 hover:text-teal-950">veterinary diagnostics service</Link>. You will then be given a clear treatment plan.
             </p>
 
             <p className="mt-3 text-sm leading-6 text-slate-700">
-              Our focus is on protecting your pet&apos;s eye health,
-              comfort, and quality of life.
+              Many eye conditions are managed with medication, cleaning and careful monitoring. Surgery is recommended only when it is the best option for your pet, and your veterinarian will explain why.
             </p>
 
             <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
@@ -412,8 +421,8 @@ export default function EyeSurgeryMohaliPage() {
           <div>
             <SectionHeading
               eyebrow="Recognize the warning signs"
-              title="Eye Conditions We Assess"
-              description="Our pet eye surgery services may be considered for conditions such as:"
+              title="Eye Problems We Assess"
+              description="Our veterinary team examines a range of eye concerns and recommends care based on your pet’s symptoms and examination."
             />
 
             <div className="mt-5 grid grid-cols-1 gap-x-5 gap-y-3 sm:grid-cols-2">
@@ -443,6 +452,108 @@ export default function EyeSurgeryMohaliPage() {
             alt="Dog receiving a careful veterinary eye examination"
             className="aspect-[4/3]"
           />
+        </div>
+      </section>
+
+      {/* Warning signs */}
+      <section className="py-8 sm:py-11">
+        <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:gap-10 lg:px-8">
+          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 sm:p-7">
+            <SectionHeading
+              eyebrow="Know the warning signs"
+              title="Warning Signs to Watch For"
+              description="Please have your pet seen promptly if you notice any of these signs, particularly after an injury."
+            />
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {[
+                "Redness or swelling",
+                "Discharge from the eye",
+                "Squinting or keeping the eye closed",
+                "A cloudy or changed appearance",
+                "Rubbing or pawing at the eye",
+                "Signs of reduced vision, such as bumping into things",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm leading-6 text-slate-700">
+                  <span className="material-symbols-outlined mt-0.5 shrink-0 text-lg text-amber-800" aria-hidden="true">warning</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="min-w-0">
+            <Photo
+              src={images.treatment}
+              alt="Veterinarian carefully examining a pet's eye at GreenCoatVets in Mohali"
+              className="aspect-[4/3] shadow-md"
+            />
+            <p className="mt-3 text-sm leading-6 text-slate-600">
+              Avoid using human eye drops or leftover medicines unless a veterinarian advises you to. Early assessment can help identify the right treatment.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Treatment planning and recovery */}
+      <section className="bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-8 sm:py-11">
+        <div className="mx-auto grid max-w-7xl gap-5 px-4 sm:px-6 md:grid-cols-2 lg:gap-7 lg:px-8">
+          <article className="rounded-2xl border border-teal-100 bg-white p-5 shadow-sm sm:p-7">
+            <SectionHeading
+              eyebrow="Care tailored to your pet"
+              title="Not Every Eye Problem Needs Surgery"
+              description="Many eye conditions can be managed without an operation."
+            />
+            <p className="mt-4 text-sm leading-6 text-slate-700">
+              Depending on the condition, treatment may include medication, cleaning and careful monitoring. Surgery is recommended only when it is the best option for your pet. Your veterinarian will explain the reasons for the recommendation and the available options.
+            </p>
+          </article>
+          <article className="rounded-2xl border border-emerald-100 bg-white p-5 shadow-sm sm:p-7">
+            <SectionHeading
+              eyebrow="Aftercare matters"
+              title="Eye Surgery and Recovery"
+              description="Follow your veterinarian’s instructions to help support healing."
+            />
+            <ul className="mt-4 space-y-3">
+              {[
+                "Give prescribed medicines exactly as instructed.",
+                "Prevent your pet from rubbing or scratching the eye.",
+                "Keep the area clean as advised by your veterinarian.",
+                "Attend follow-up visits so healing can be checked.",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm leading-6 text-slate-700">
+                  <span className="material-symbols-outlined mt-0.5 text-lg text-teal-700" aria-hidden="true">check_circle</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      {/* Eye protection */}
+      <section className="py-8 sm:py-11">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Everyday prevention"
+            title="Protecting Your Pet’s Eyes"
+            description="Simple precautions can help protect eye health and make changes easier to notice."
+          />
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              "Do not use human eye drops or leftover medicines without veterinary advice.",
+              "Keep sharp objects, plants and chemicals away from your pet’s face.",
+              "Gently wipe away discharge only as your veterinarian advises.",
+              "Have eye changes checked early and include eye checks in regular health visits.",
+            ].map((item, index) => (
+              <div key={item} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <span className="flex size-9 items-center justify-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-800">{index + 1}</span>
+                <p className="mt-3 text-sm leading-6 text-slate-700">{item}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-sm leading-6 text-slate-600">
+            For general consultations, visit our{" "}
+            <Link href="/specialized-opd-mohali/" className="font-semibold text-teal-800 underline underline-offset-4 hover:text-teal-950">Specialized OPD</Link>.
+          </p>
         </div>
       </section>
 
@@ -529,7 +640,7 @@ export default function EyeSurgeryMohaliPage() {
                 </p>
 
                 <h2 className="mt-2 font-headline text-xl font-bold leading-tight sm:text-2xl">
-                  Book an Eye Consultation Today
+                  Book an Eye Consultation in Mohali
                 </h2>
 
                 <p className="mt-3 text-sm leading-6 text-teal-50">
@@ -559,8 +670,8 @@ export default function EyeSurgeryMohaliPage() {
           <div>
             <SectionHeading
               eyebrow="Frequently asked questions"
-              title="Eye Surgery FAQs"
-              description="Learn more about veterinary eye surgery and pet eye treatment in Mohali."
+              title="Veterinary Eye Care FAQs"
+              description="Answers to common questions about pet eye symptoms, treatment, surgery and recovery in Mohali."
             />
           </div>
 
