@@ -15,7 +15,7 @@ const pageUrl =
 
 const heroImage = "/soft-tissue-assessment.png";
 const dogImage = "/soft-tissue-recovery.png";
-const catImage = "/orthopedic-cat-care.png";
+const catImage = "/veterinary-diagnostics-hero.jpg";
 const appointmentImage = "/orthopedic-appointment-dog.png";
 const bookingUrl = "https://www.greencoatvets.com/book/";
 const contact = "https://www.greencoatvets.com/contact/";
