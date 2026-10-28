@@ -202,25 +202,25 @@ const faqSchema = {
 
 function ServiceCard({ service }: { service: ServiceItem }) {
   return (
-    <article className="group flex h-full min-w-0 flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-teal-200 hover:shadow-lg sm:p-6">
-      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 text-teal-800">
+    <article className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-3xl border border-emerald-100 bg-white p-5 shadow-[0_8px_30px_rgba(15,80,55,0.05)] transition duration-300 hover:-translate-y-1.5 hover:border-emerald-300 hover:shadow-[0_18px_45px_rgba(15,80,55,0.12)] sm:p-6">
+      <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-100 text-emerald-800 ring-1 ring-emerald-100 transition-colors group-hover:from-emerald-700 group-hover:to-teal-700 group-hover:text-white">
         <span className="material-symbols-outlined text-2xl" aria-hidden="true">
           {service.icon}
         </span>
       </div>
-      <h3 className="font-headline text-lg font-bold leading-snug text-slate-950">
+      <h3 className="font-headline text-lg font-bold leading-snug text-slate-950 sm:text-xl">
         <Link
           href={`/${service.slug}/`}
-          className="rounded-sm outline-none transition-colors hover:text-teal-800 focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2"
+          className="rounded-sm outline-none transition-colors hover:text-emerald-800 focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2"
         >
           {service.title}
         </Link>
       </h3>
-      <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">{service.description}</p>
+      <p className="mt-3 flex-1 text-sm leading-7 text-slate-600">{service.description}</p>
       <Link
         href={`/${service.slug}/`}
         aria-label={`Learn more about ${service.title}`}
-        className="mt-5 inline-flex min-h-10 items-center gap-2 self-start text-sm font-bold text-teal-800 transition-colors hover:text-teal-950"
+        className="mt-6 inline-flex min-h-10 items-center gap-2 self-start text-sm font-bold text-emerald-800 transition-colors hover:text-emerald-950"
       >
         Learn more
         <span
@@ -276,7 +276,7 @@ export default async function ServicesPage() {
   ];
 
   return (
-    <main className="overflow-hidden bg-slate-50 pb-12 text-slate-800 sm:pb-16">
+    <main className="overflow-hidden bg-[#f6faf8] pb-16 text-slate-800 sm:pb-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -284,8 +284,8 @@ export default async function ServicesPage() {
         }}
       />
 
-      <nav aria-label="Breadcrumb" className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-4 py-3 sm:px-6 lg:px-8">
+      <nav aria-label="Breadcrumb" className="border-b border-emerald-100 bg-white/90">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-4 py-4 sm:px-6 lg:px-8">
           <Link href="/" className="text-sm text-slate-600 hover:text-teal-800">
             Home
           </Link>
@@ -299,19 +299,19 @@ export default async function ServicesPage() {
       </nav>
 
       {/* Hero content is editable in the existing CMS; fallback copy follows the SEO brief. */}
-      <section className="bg-gradient-to-br from-teal-50 via-white to-emerald-50">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-16">
+      <section className="relative isolate overflow-hidden border-b border-emerald-100 bg-gradient-to-br from-[#e8f5ef] via-white to-[#e1f3eb]">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:py-20">
           <div className="min-w-0">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-teal-100 bg-white px-3 py-2 text-xs font-bold uppercase tracking-wider text-teal-800 shadow-sm sm:text-sm">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/90 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-emerald-800 shadow-sm sm:text-sm sm:text-sm">
               <span className="material-symbols-outlined text-base" aria-hidden="true">
                 health_and_safety
               </span>
               {t(s.eyebrow, "Veterinary care in Mohali")}
             </span>
-            <h1 className="font-headline text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+            <h1 className="font-headline text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
               Veterinary Services in Mohali
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg sm:leading-8">
               {t(
                 s.subtitle,
                 "GreenCoatVets offers a wide range of veterinary services for pets under one roof in Mohali, and we are open 24 hours. Choose a service below to learn more, or contact our team if you are not sure what your pet needs.",
@@ -320,7 +320,7 @@ export default async function ServicesPage() {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/book/"
-                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-teal-700 px-5 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-teal-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2 sm:w-auto"
+                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-900/15 transition-all hover:-translate-y-0.5 hover:bg-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2 sm:w-auto"
               >
                 <span className="material-symbols-outlined text-lg" aria-hidden="true">
                   calendar_month
@@ -329,7 +329,7 @@ export default async function ServicesPage() {
               </Link>
               <Link
                 href="/contact/"
-                className="inline-flex min-h-12 w-full items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 transition-colors hover:border-teal-600 hover:text-teal-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2 sm:w-auto"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-xl border border-emerald-200 bg-white/90 px-6 py-3.5 text-sm font-bold text-slate-800 shadow-sm transition-all hover:-translate-y-0.5 hover:border-emerald-600 hover:text-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2 sm:w-auto"
               >
                 Contact Our Team
               </Link>
@@ -398,7 +398,7 @@ export default async function ServicesPage() {
       {/* Helpful care principles, without repeating service names already listed below. */}
       {!services?.length && (
         <section className="mx-auto mt-10 max-w-7xl px-4 sm:mt-14 sm:px-6 lg:px-8">
-          <div className="overflow-hidden rounded-3xl border border-teal-100 bg-white shadow-sm">
+          <div className="overflow-hidden rounded-3xl border border-emerald-100 bg-white shadow-[0_12px_40px_rgba(15,80,55,0.06)]">
             <div className="grid gap-6 bg-gradient-to-br from-teal-50 via-white to-amber-50 p-5 sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-10 lg:p-10">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-teal-800">
@@ -417,7 +417,7 @@ export default async function ServicesPage() {
                 {carePrinciples.map((principle) => (
                   <article
                     key={principle.number}
-                    className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5"
+                    className="rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5"
                   >
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-amber-800">
                       <span className="material-symbols-outlined text-xl" aria-hidden="true">
@@ -457,9 +457,9 @@ export default async function ServicesPage() {
             {services.map((service) => (
               <article
                 key={service.id}
-                className="group flex min-w-0 flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-teal-200 hover:shadow-md sm:p-6"
+                className="group flex min-w-0 flex-col rounded-3xl border border-emerald-100 bg-white p-5 shadow-[0_8px_30px_rgba(15,80,55,0.05)] transition duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg sm:p-6"
               >
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-800">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-800 ring-1 ring-emerald-100">
                   <span className="material-symbols-outlined text-xl" aria-hidden="true">
                     medical_services
                   </span>
@@ -494,7 +494,7 @@ export default async function ServicesPage() {
         <div className="space-y-10 sm:space-y-12">
           {serviceGroups.map((group) => (
             <section key={group.title} aria-labelledby={`group-${group.title.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}`}>
-              <div className="mb-5 border-l-4 border-teal-600 pl-4">
+              <div className="mb-5 border-l-4 border-emerald-600 pl-5">
                 <h3
                   id={`group-${group.title.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}`}
                   className="font-headline text-xl font-bold text-slate-950 sm:text-2xl"
@@ -514,7 +514,7 @@ export default async function ServicesPage() {
       </section>
 
       <section className="mx-auto mt-14 max-w-7xl px-4 sm:mt-20 sm:px-6 lg:px-8">
-        <div className="grid gap-6 rounded-3xl border border-teal-100 bg-white p-5 shadow-sm sm:p-8 lg:grid-cols-2 lg:items-center lg:gap-10 lg:p-10">
+        <div className="grid gap-6 rounded-3xl border border-emerald-100 bg-white p-5 shadow-[0_12px_40px_rgba(15,80,55,0.06)] sm:p-8 lg:grid-cols-2 lg:items-center lg:gap-10 lg:p-10">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-teal-800">
               Coordinated care
@@ -550,7 +550,7 @@ export default async function ServicesPage() {
       </section>
 
       <section className="mx-auto mt-14 max-w-7xl px-4 sm:mt-20 sm:px-6 lg:px-8">
-        <div className="grid gap-6 overflow-hidden rounded-3xl bg-slate-950 p-5 text-white sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-10 lg:p-10">
+        <div className="grid gap-6 overflow-hidden rounded-3xl bg-gradient-to-br from-[#123b2d] via-[#145743] to-[#087e67] p-5 text-white shadow-xl shadow-emerald-950/10 sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-10 lg:p-10">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-teal-300">
               Need help choosing?
@@ -613,7 +613,7 @@ export default async function ServicesPage() {
         </div>
         <div className="mt-7 space-y-3">
           {faqs.map((faq, index) => (
-            <details key={faq.question} className="group rounded-xl border border-slate-200 bg-white p-4 open:border-teal-200 open:shadow-sm sm:p-5">
+            <details key={faq.question} className="group rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm transition-all open:border-emerald-300 open:shadow-md sm:p-5">
               <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left text-sm font-bold leading-6 text-slate-900 marker:hidden sm:text-base">
                 <span>
                   <span className="mr-2 text-teal-800">Q{index + 1}.</span>
@@ -630,7 +630,7 @@ export default async function ServicesPage() {
       </section>
 
       <section className="mx-auto mt-14 max-w-7xl px-4 sm:mt-20 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-teal-800 to-emerald-700 p-6 text-white shadow-lg sm:p-10 lg:p-12">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#145743] via-emerald-700 to-teal-600 p-6 text-white shadow-lg sm:p-10 lg:p-12">
           <div className="pointer-events-none absolute -right-12 -top-12 h-56 w-56 rounded-full bg-white/10 blur-2xl" aria-hidden="true" />
           <div className="pointer-events-none absolute -bottom-16 -left-10 h-56 w-56 rounded-full bg-emerald-300/10 blur-2xl" aria-hidden="true" />
           <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
