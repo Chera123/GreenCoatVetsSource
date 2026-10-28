@@ -15,6 +15,7 @@ const images = {
   cat: "/cat-spay-neuter.jpg",
   banner: "/spay-neuter-pets.jpg",
   newtreat: "/surgery-prep.png",
+  aftercareimg: "veterinary-diagnostics-hero.jpg",
 };
 
 export const metadata: Metadata = {
@@ -315,7 +316,7 @@ export default function SpayNeuterMohaliPage() {
               Contact us if you notice swelling, discharge, bleeding or if your pet is unusually tired or not eating.
             </p>
           </div>
-          <Photo src={images.banner} alt="Pets representing supportive veterinary aftercare" className="aspect-[4/3] rounded-2xl shadow-lg" />
+          <Photo src={images.aftercareimg} alt="Pets representing supportive veterinary aftercare" className="aspect-[4/3] rounded-2xl shadow-lg" />
         </div>
       </section>
 
