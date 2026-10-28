@@ -12,7 +12,15 @@ const NAV = [
   {
     href: "/services",
     label: "Services",
-    children: [
+   children: [
+      { href: "/pet-vaccination-mohali/", label: "Pet Vaccination" },
+      { href: "/pet-health-checkup-mohali/", label: "Pet Health Checkup" },
+      { href: "/soft-tissue-surgery-mohali/", label: "Soft Tissue Surgery" },
+      { href: "/veterinary-skin-treatment-mohali/", label: "Veterinary Skin Treatment"  },
+        
+        
+     
+      { href: "/pet-shop-mohali/", label: "Pet Shop" },
       { href: "/specialized-opd-mohali/", label: "Specialized OPD" },
       { href: "/orthopedic-surgery-mohali/", label: "Orthopedic Surgery" },
       { href: "/emergency-care-mohali/", label: "Emergency Care" },
@@ -24,6 +32,7 @@ const NAV = [
       },
       { href: "/spay-neuter-mohali/", label: "Spay & Neuter" },
       { href: "/equine-services-mohali/", label: "Equine Services" },
+      { href: "/pet-grooming-mohali/", label: "Pet Grooming" },
     ],
   },
   { href: "/locations", label: "Locations" },
