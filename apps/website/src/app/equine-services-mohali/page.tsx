@@ -15,7 +15,7 @@ const contactUrl = "https://www.greencoatvets.com/contact/";
  * filenames, retain those original src values here.
  */
 const images = {
-  hero: "/team.jpg",
+  hero: "/horse-treatment.jpeg",
   assessment: "/veterinary-diagnostics-hero.jpg",
   care: "/surgery-prep.png",
 };
