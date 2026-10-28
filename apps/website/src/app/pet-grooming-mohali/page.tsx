@@ -6,7 +6,7 @@ import Link from "next/link";
 const pageTitle = "Pet Grooming in Mohali at a Vet Hospital | GreenCoatVets";
 const pageDescription = "Pet grooming in Mohali at GreenCoatVets, a veterinary hospital open 24 hours. Coat and hygiene care for pets with veterinary support nearby. Book today.";
 const pageUrl = "https://www.greencoatvets.com/pet-grooming-mohali/";
-const heroImage = "/pet-grooming-mohali-greencoatvets.jpg";
+const heroImage = "/pet-grooming.jpg";
 
 export const metadata: Metadata = {
   title: pageTitle,
