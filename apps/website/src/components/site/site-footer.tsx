@@ -243,13 +243,14 @@ export function SiteFooter({
 
                 {/* Improved Address Card */}
                 <div className="mt-6 rounded-2xl border border-teal-100 bg-white/90 p-5 shadow-sm transition-shadow duration-300 hover:shadow-md dark:border-teal-900 dark:bg-slate-900/80">
-                  {/* Clinic Name and Icon */}
-                  <div className="flex items-center gap-3">
-                    
+                  {/* Location Icon */}
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-600 text-white shadow-sm">
+                    <span className="material-symbols-outlined text-xl">
+                      location_on
+                    </span>
+                  </div>
 
-                    
-
-                  {/* Full-Width Address */}
+                  {/* Address */}
                   <div className="mt-5 border-t border-teal-100 pt-4 dark:border-teal-900">
                     <p className="font-body text-sm leading-6 text-slate-600 dark:text-slate-300">
                       SCO 20, Near Bestech Mall,
