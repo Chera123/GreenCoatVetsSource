@@ -14,7 +14,7 @@ const images = {
   dog: "/pet-ultrasound.jpg",
   cat: "/cat-spay-neuter.jpg",
   banner: "/spay-neuter-pets.jpg",
-  newtreat: "/dog-spay-neuter.png",
+  newtreat: "/surgery-prep.png",
 };
 
 export const metadata: Metadata = {
