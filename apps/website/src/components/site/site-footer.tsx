@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -70,8 +71,7 @@ export function SiteFooter({
     website_url: websiteUrl,
   } = socialLinks;
 
-  const mapsUrl =
-    "https://maps.app.goo.gl/DJ53GyoU3PB1FU4b7";  
+  const mapsUrl = "https://maps.app.goo.gl/DJ53GyoU3PB1FU4b7";
 
   return (
     <footer
@@ -82,9 +82,7 @@ export function SiteFooter({
       {/* Main Footer */}
       <div className="mx-auto max-w-7xl px-6 pb-12 pt-16 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.15fr_1.85fr] lg:gap-20">
-          {/* =========================================================
-              BRAND SECTION
-          ========================================================== */}
+          {/* Brand Section */}
           <div>
             <div className="max-w-md">
               <div className="inline-flex items-center">
@@ -204,9 +202,7 @@ export function SiteFooter({
             </div>
           </div>
 
-          {/* =========================================================
-              RIGHT SECTION
-          ========================================================== */}
+          {/* Right Section */}
           <div>
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
               {/* Dynamic Footer Navigation */}
@@ -245,40 +241,46 @@ export function SiteFooter({
 
                 <div className="mt-4 h-0.5 w-8 rounded-full bg-teal-600" />
 
-                <div className="mt-6 rounded-2xl border border-teal-100 bg-white/80 p-5 shadow-sm dark:border-teal-900 dark:bg-slate-900/80">
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-600 text-white">
-                      <span className="material-symbols-outlined text-lg">
+                {/* Improved Address Card */}
+                <div className="mt-6 rounded-2xl border border-teal-100 bg-white/90 p-5 shadow-sm transition-shadow duration-300 hover:shadow-md dark:border-teal-900 dark:bg-slate-900/80">
+                  {/* Clinic Name and Icon */}
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal-600 text-white shadow-sm">
+                      <span className="material-symbols-outlined text-xl">
                         location_on
                       </span>
                     </div>
 
-                    <div>
-                      <p className="font-headline text-sm font-bold text-slate-950 dark:text-white">
+                    <div className="min-w-0 flex-1">
+                      <p className="font-headline text-base font-bold text-slate-950 dark:text-white">
                         {clinicName}
                       </p>
-
-                      <p className="mt-2 font-body text-sm leading-6 text-slate-500 dark:text-slate-400">
-                        SCO-20,Near Bestech Mall,
-                        <br />
-                        Industrial Area Phase 9,
-                        <br />
-                        Mohali,
-                        <br />
-                        Punjab 160062
+                      <p className="mt-1 text-xs font-medium uppercase tracking-wider text-teal-700 dark:text-teal-300">
+                        Visit our clinic
                       </p>
                     </div>
                   </div>
 
+                  {/* Full-Width Address */}
+                  <div className="mt-5 border-t border-teal-100 pt-4 dark:border-teal-900">
+                    <p className="font-body text-sm leading-6 text-slate-600 dark:text-slate-300">
+                      SCO 20, Near Bestech Mall,
+                      <br />
+                      Industrial Area, Phase 9,
+                      <br />
+                      Mohali, Punjab 160062
+                    </p>
+                  </div>
+
+                  {/* Directions Button */}
                   <a
                     href={mapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 flex items-center justify-between rounded-xl bg-teal-50 px-4 py-3 text-sm font-bold text-teal-700 transition-colors hover:bg-teal-600 hover:text-white dark:bg-teal-950/60 dark:text-teal-300"
+                    className="mt-5 flex w-full items-center justify-between gap-3 rounded-xl bg-teal-50 px-4 py-3 text-sm font-bold text-teal-800 transition-colors hover:bg-teal-600 hover:text-white dark:bg-teal-950/60 dark:text-teal-300 dark:hover:bg-teal-700 dark:hover:text-white"
                   >
                     <span>Get directions</span>
-
-                    <span className="material-symbols-outlined text-base">
+                    <span className="material-symbols-outlined text-xl">
                       arrow_forward
                     </span>
                   </a>
@@ -286,9 +288,7 @@ export function SiteFooter({
               </div>
             </div>
 
-            {/* =========================================================
-                APP DOWNLOAD CARD
-            ========================================================== */}
+            {/* App Download Card */}
             <div className="mt-12 rounded-[26px] border border-teal-100 bg-gradient-to-r from-teal-50 to-emerald-50 p-6 shadow-sm dark:border-teal-900 dark:from-teal-950/60 dark:to-emerald-950/40">
               <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
                 <div className="flex items-start gap-4">
@@ -341,16 +341,13 @@ export function SiteFooter({
         </div>
       </div>
 
-      {/* =========================================================
-          BOTTOM TRUST BAR
-      ========================================================== */}
+      {/* Bottom Trust Bar */}
       <div className="border-y border-teal-900/30 bg-teal-950 text-white">
         <div className="mx-auto grid max-w-7xl gap-0 px-6 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
           <div className="flex items-center gap-3 border-b border-white/10 py-5 sm:border-r sm:px-6 lg:border-b-0 lg:pl-0">
             <span className="material-symbols-outlined text-2xl text-teal-300">
               verified_user
             </span>
-
             <div>
               <p className="text-sm font-bold">Trusted Care</p>
               <p className="mt-1 text-xs text-teal-200">
@@ -363,7 +360,6 @@ export function SiteFooter({
             <span className="material-symbols-outlined text-2xl text-teal-300">
               medical_services
             </span>
-
             <div>
               <p className="text-sm font-bold">Modern Facilities</p>
               <p className="mt-1 text-xs text-teal-200">
@@ -376,7 +372,6 @@ export function SiteFooter({
             <span className="material-symbols-outlined text-2xl text-teal-300">
               favorite
             </span>
-
             <div>
               <p className="text-sm font-bold">Convenient Access</p>
               <p className="mt-1 text-xs text-teal-200">
@@ -389,7 +384,6 @@ export function SiteFooter({
             <span className="material-symbols-outlined text-2xl text-teal-300">
               groups
             </span>
-
             <div>
               <p className="text-sm font-bold">Happier Pets</p>
               <p className="mt-1 text-xs text-teal-200">
@@ -400,9 +394,7 @@ export function SiteFooter({
         </div>
       </div>
 
-      {/* =========================================================
-          COPYRIGHT
-      ========================================================== */}
+      {/* Copyright */}
       <div className="bg-slate-950">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left lg:px-8">
           <p className="font-body text-sm text-slate-400">
