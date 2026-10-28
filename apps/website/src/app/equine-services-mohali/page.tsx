@@ -445,11 +445,19 @@ export default function EquineServicesMohaliPage() {
       {/* Treatment and prevention */}
       <section className="bg-[#edf5f0] py-12 sm:py-16">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
-          <Photo
-            src={images.care}
-            alt="Veterinary team preparing care and treatment for an animal"
-            className="aspect-[4/3] shadow-lg"
-          />
+          <div className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-lg">
+            <video
+              className="absolute inset-0 h-full w-full object-cover"
+              controls
+              playsInline
+              preload="metadata"
+              poster="/horse-ongoing-treatment.jpeg"
+              aria-label="Video showing ongoing veterinary treatment and care for a horse"
+            >
+              <source src="/horse-ongoing-treatment.mp4" type="video/mp4" />
+              Your browser does not support HTML video. Please use a modern browser to view this video.
+            </video>
+          </div>
           <div>
             <SectionHeading
               eyebrow="Treatment and follow-up"
