@@ -15,7 +15,8 @@ const images = {
   cat: "/cat-spay-neuter.jpg",
   banner: "/spay-neuter-pets.jpg",
   newtreat: "/surgery-prep.png",
-  aftercareimg: "veterinary-diagnostics-hero.jpg",
+  aftercareimg: "/ortho-sergery-dog.jpg",
+  community : "dog-spay-neuter.jpg",
 };
 
 export const metadata: Metadata = {
@@ -328,7 +329,7 @@ export default function SpayNeuterMohaliPage() {
               Visit our community page <span className="material-symbols-outlined text-lg">arrow_forward</span>
             </Link>
           </div>
-          <Photo src={images.newtreat} alt="Pets representing community animal welfare" className="aspect-[4/3] rounded-2xl shadow-lg" />
+          <Photo src={images.community} alt="Pets representing community animal welfare" className="aspect-[4/3] rounded-2xl shadow-lg" />
         </div>
       </section>
 
