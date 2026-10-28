@@ -16,7 +16,6 @@ const images = {
   banner: "/spay-neuter-pets.jpg",
   newtreat: "/surgery-prep.png",
   aftercareimg: "/ortho-sergery-dog.jpg",
-  community : "dog-spay-neuter.jpg",
 };
 
 export const metadata: Metadata = {
@@ -322,14 +321,38 @@ export default function SpayNeuterMohaliPage() {
       </section>
 
       <section className="bg-white py-12 sm:py-16">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-8">
-          <div>
-            <SectionHeading eyebrow="Care beyond the clinic" title="Supporting Community Animal Welfare" description="GreenCoatVets also supports spay and neuter work for community dogs. Learn more about our community work and related initiatives." />
-            <Link href="/community/" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-teal-800 hover:text-emerald-700">
-              Visit our community page <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="overflow-hidden rounded-3xl border border-emerald-100 bg-gradient-to-br from-[#f2f7f4] via-white to-emerald-50 p-6 sm:p-9 lg:p-12">
+            <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
+              <div className="max-w-3xl">
+                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-teal-800">
+                  <span className="material-symbols-outlined text-base">volunteer_activism</span>
+                  Care beyond the clinic
+                </span>
+                <h2 className="mt-4 font-headline text-2xl font-bold leading-tight text-slate-950 sm:text-3xl">
+                  Supporting Community Animal Welfare
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
+                  GreenCoatVets also supports spay and neuter work for community dogs. Responsible sterilisation can be part of a wider approach to community animal welfare. Learn more about our community work and related initiatives.
+                </p>
+                <Link href="/community/" className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-teal-800 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-teal-900 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2">
+                  Visit our community page <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 gap-3 lg:w-64">
+                <div className="rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm">
+                  <span className="material-symbols-outlined text-2xl text-teal-800">pets</span>
+                  <p className="mt-3 text-sm font-bold text-slate-900">Community dogs</p>
+                  <p className="mt-1 text-xs leading-5 text-slate-600">Care and welfare support</p>
+                </div>
+                <div className="rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm">
+                  <span className="material-symbols-outlined text-2xl text-emerald-700">favorite</span>
+                  <p className="mt-3 text-sm font-bold text-slate-900">Responsible care</p>
+                  <p className="mt-1 text-xs leading-5 text-slate-600">A compassionate approach</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <Photo src={images.community} alt="Pets representing community animal welfare" className="aspect-[4/3] rounded-2xl shadow-lg" />
         </div>
       </section>
 
