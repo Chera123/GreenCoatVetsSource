@@ -43,15 +43,15 @@ export async function buildMarketingSitemapEntries(): Promise<MetadataRoute.Site
   // Existing static website pages
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: "/", changeFrequency: "daily", priority: 1 },
-    { url: "/about", changeFrequency: "monthly", priority: 0.7 },
-    { url: "/community", changeFrequency: "monthly", priority: 0.7 },
-    { url: "/contact", changeFrequency: "monthly", priority: 0.7 },
-    { url: "/locations", changeFrequency: "monthly", priority: 0.8 },
-    { url: "/services", changeFrequency: "weekly", priority: 0.8 },
-    { url: "/team", changeFrequency: "monthly", priority: 0.7 },
-    { url: "/faq", changeFrequency: "monthly", priority: 0.7 },
-    { url: "/blog", changeFrequency: "daily", priority: 0.8 },
-    { url: "/book", changeFrequency: "daily", priority: 0.9 },
+    { url: "/about/", changeFrequency: "monthly", priority: 0.7 },
+    { url: "/community/", changeFrequency: "monthly", priority: 0.7 },
+    { url: "/contact/", changeFrequency: "monthly", priority: 0.7 },
+    { url: "/locations/", changeFrequency: "monthly", priority: 0.8 },
+    { url: "/services/", changeFrequency: "weekly", priority: 0.8 },
+    { url: "/team/", changeFrequency: "monthly", priority: 0.7 },
+    { url: "/faq/", changeFrequency: "monthly", priority: 0.7 },
+    { url: "/blog/", changeFrequency: "daily", priority: 0.8 },
+    { url: "/book/", changeFrequency: "daily", priority: 0.9 },
   ];
 
   if (storeEnabled) {
