@@ -37,7 +37,7 @@ const visitTips = ["Tell us about your pet's coat, size and temperament.", "Ment
 
 function Button({ href, children, light = false }: { href: string; children: ReactNode; light?: boolean }) {
   return <Link href={href} className={`inline-flex min-h-12 items-center justify-center gap-3 rounded-xl px-5 py-3 text-sm font-bold transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-200 ${light ? "border border-white/35 bg-white/10 text-white hover:bg-white/20" : "bg-amber-400 text-slate-950 shadow-sm hover:bg-amber-300"}`}>{children}<span aria-hidden="true">↗</span></Link>;
-}
+}    
 function InlineLink({ href, children }: { href: string; children: ReactNode }) {
   return <Link href={href} className="font-semibold text-emerald-800 underline decoration-emerald-300 underline-offset-4 hover:text-emerald-950">{children}</Link>;
 }
