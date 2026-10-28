@@ -15,7 +15,7 @@ const contactUrl = "https://www.greencoatvets.com/contact/";
  * filenames, retain those original src values here.
  */
 const images = {
-  hero: "/horse-treatment.jpeg",
+  hero: "/team.jpg",
   assessment: "/veterinary-diagnostics-hero.jpg",
   care: "/surgery-prep.png",
 };
@@ -426,11 +426,19 @@ export default function EquineServicesMohaliPage() {
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
             </Link>
           </div>
-          <Photo
-            src={images.assessment}
-            alt="Veterinary assessment and diagnostic care"
-            className="aspect-[4/3] shadow-lg"
-          />
+          <div className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border border-emerald-100 bg-[#edf5f0] shadow-lg">
+            <video
+              className="absolute inset-0 h-full w-full object-cover"
+              controls
+              playsInline
+              preload="metadata"
+              poster={images.assessment}
+              aria-label="Video showing horse assessment and veterinary care"
+            >
+              <source src="/horse-access.mp4" type="video/mp4" />
+              Your browser does not support HTML video. Please use a modern browser to view this video.
+            </video>
+          </div>
         </div>
       </section>
 
