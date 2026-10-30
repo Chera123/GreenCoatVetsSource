@@ -67,7 +67,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     ...baseMetadata,
-    title,
+    // Use an absolute title so a parent layout title template cannot append
+    // another brand suffix and create a page-title mismatch.
+    title: { absolute: title },
     description: HOMEPAGE_DESCRIPTION,
     alternates: {
       ...baseMetadata.alternates,
@@ -180,12 +182,25 @@ export default async function Home() {
     },
   ].filter((card) => card.loc);
 
+  // One entity with both types makes the hospital identifiable as an
+  // Organization as well as a VeterinaryCare / LocalBusiness entity.
+  // This avoids creating two disconnected entities for the same clinic.
   const localBusinessLd = {
     "@context": "https://schema.org",
-    "@type": "VeterinaryCare",
-    "@id": `${SITE_URL}/#veterinarycare`,
+    "@type": ["Organization", "VeterinaryCare"],
+    "@id": `${SITE_URL}/#organization`,
     name: clinic.name || "GreenCoatVets",
     url: HOMEPAGE_URL,
+    description: HOMEPAGE_DESCRIPTION,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "SCO 20, Near Bestech Mall, Industrial Area Phase 9",
+      addressLocality: "Sahibzada Ajit Singh Nagar (Mohali)",
+      addressRegion: "Punjab",
+      postalCode: "160062",
+      addressCountry: "IN",
+    },
+    sameAs: [instagramUrl, facebookUrl].filter(Boolean),
     areaServed: [
       { "@type": "City", name: "Mohali" },
       { "@type": "City", name: "Kharar" },
