@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 const diagnosticImages = {
-  hero: "/veterinary-diagnostics-hero.jpg",
-  lab: "/veterinary-diagnostics-hero.jpg",
+  hero: "/veterinary-diagnostics-hero.jpeg",
+  lab: "/veterinary-diagnostics-hero.jpge",
   ultrasound: "/pet-ultrasound.jpg",
   xray: "/veterinary-xray.jpg",
   consultation: "/veterinary-diagnostics-hero.jpeg",
