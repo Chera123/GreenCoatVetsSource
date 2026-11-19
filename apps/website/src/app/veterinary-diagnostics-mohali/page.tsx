@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const diagnosticImages = {
   hero: "/veterinary-diagnostics-hero.jpeg",
-  lab: "/veterinary-diagnostics-hero.jpge",
+  lab: "/veterinary-diagnostics-hero.jpeg",
   ultrasound: "/pet-ultrasound.jpg",
   xray: "/veterinary-xray.jpg",
   consultation: "/veterinary-diagnostics-hero.jpeg",
