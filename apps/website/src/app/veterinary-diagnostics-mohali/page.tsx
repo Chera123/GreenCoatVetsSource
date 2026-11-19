@@ -6,7 +6,7 @@ const diagnosticImages = {
   lab: "/veterinary-diagnostics-hero.jpg",
   ultrasound: "/pet-ultrasound.jpg",
   xray: "/veterinary-xray.jpg",
-  consultation: "/veterinary-diagnostics-hero.jpg",
+  consultation: "/veterinary-diagnostics-hero.jpeg",
 };
 
 const pageTitle = "Veterinary Diagnostics in Mohali | GreenCoatVets";
