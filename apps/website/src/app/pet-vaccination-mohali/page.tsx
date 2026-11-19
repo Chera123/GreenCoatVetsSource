@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    images: ["/pet-vaccination.jpg"],
+    images: ["/pet-vaccinations.jpeg"],
   },
 };
 
@@ -127,7 +127,7 @@ export default function PetVaccinationMohaliPage() {
           </div>
           <div className="relative mx-auto w-full max-w-2xl">
             <div className="absolute -inset-3 rounded-[30px] bg-teal-200/50 blur-2xl" />
-            <div className="relative overflow-hidden rounded-3xl border border-white bg-white p-2 shadow-2xl shadow-slate-900/10"><Image src="/specialized-opd-veterinary.jpg" alt={imageAlt} width={1536} height={1024} priority sizes="(max-width: 1024px) 100vw, 600px" className="aspect-[4/3] w-full rounded-[20px] object-cover" /></div>
+            <div className="relative overflow-hidden rounded-3xl border border-white bg-white p-2 shadow-2xl shadow-slate-900/10"><Image src="/pet-vaccinations.jpeg" alt={imageAlt} width={1536} height={1024} priority sizes="(max-width: 1024px) 100vw, 600px" className="aspect-[4/3] w-full rounded-[20px] object-cover" /></div>
             <div className="relative mx-4 -mt-5 rounded-2xl border border-teal-100 bg-white px-5 py-4 shadow-lg sm:mx-7"><div className="flex items-start gap-3"><span className="material-symbols-outlined rounded-xl bg-teal-50 p-2 text-2xl text-teal-700">health_and_safety</span><div><p className="font-headline font-bold text-slate-900">Care tailored to your pet</p><p className="mt-1 text-sm leading-6 text-slate-600">Your veterinarian will guide you on an appropriate vaccination plan.</p></div></div></div>
           </div>
         </div>
