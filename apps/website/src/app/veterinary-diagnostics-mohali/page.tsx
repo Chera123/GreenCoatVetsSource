@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const images = {
-  hero: "/veterinary-diagnostics-hero.jpg",
-  lab: "/veterinary-diagnostics-hero.jpg",
+  hero: "/veterinary-diagnostics-hero.jpeg",
+  lab: "/veterinary-diagnostics-hero.jpeg",
   ultrasound: "/pet-ultrasound.jpg",
   xray: "/veterinary-xray.jpg",
 };
