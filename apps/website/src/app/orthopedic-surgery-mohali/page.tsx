@@ -69,6 +69,18 @@ const benefits = [
   { icon: "pets", title: "Compassionate pet care" },
 ];
 
+const orthopedicProcedures = [
+  { number: "01", title: "External Fixation", description: "Stabilisation of selected fractures using an external fixation frame." },
+  { number: "02", title: "Intramedullary Pinning", description: "Fracture stabilisation using a pin placed within the bone's medullary canal." },
+  { number: "03", title: "Titanium Plating", description: "Internal fracture fixation using suitable bone plates and screws, including titanium implants where indicated." },
+  { number: "04", title: "K-Wire and Interlocking Screw Fixation", description: "Use of Kirschner wires and interlocking screw systems for selected fracture patterns." },
+  { number: "05", title: "Pelvic and Acetabular Fracture Repair", description: "Assessment and surgical repair of selected fractures involving the pelvis and hip socket." },
+  { number: "06", title: "Mandibular and Maxillary Fracture Repair", description: "Stabilisation and repair of selected fractures of the lower and upper jaw." },
+  { number: "07", title: "Femoral Head and Neck Ostectomy (FHO)", description: "A procedure considered for certain hip conditions to help relieve pain and improve comfort." },
+  { number: "08", title: "Total Hip Replacement (THR)", description: "Hip joint replacement considered for selected patients with significant hip disease or damage." },
+  { number: "09", title: "Spinal Fracture Fixation and Stabilisation", description: "Surgical stabilisation considered for selected spinal fractures following specialist assessment." },
+];
+
 const faqs = [
   {
     question: "When does a pet need orthopedic surgery?",
@@ -519,7 +531,44 @@ export default function OrthopedicSurgeryMohaliPage() {
         </div>
       </section>
 
-      {/* 5. Benefits: stronger contrast and readable cards */}
+      {/* 5. Orthopedic surgical procedures */}
+      <section className="bg-gradient-to-br from-teal-50 via-white to-emerald-50 py-10 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Specialised orthopedic techniques"
+            title="Orthopedic Surgical Procedures"
+            description="Depending on the type, location and severity of the injury, our veterinary team may recommend one of the following surgical techniques."
+            centered
+          />
+
+          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {orthopedicProcedures.map((procedure) => (
+              <article
+                key={procedure.number}
+                className="flex h-full gap-3 rounded-xl border border-teal-100 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-md sm:p-5"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-xs font-extrabold text-teal-800">
+                  {procedure.number}
+                </span>
+                <div className="min-w-0">
+                  <h3 className="text-sm font-bold leading-5 text-slate-900 sm:text-base">
+                    {procedure.title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
+                    {procedure.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <p className="mx-auto mt-5 max-w-3xl text-center text-xs leading-5 text-slate-600 sm:text-sm">
+            The most suitable procedure is determined after a veterinary examination and diagnostic assessment. Not every injury requires surgery, and the recommended approach depends on each pet&apos;s individual condition.
+          </p>
+        </div>
+      </section>
+
+      {/* 6. Benefits: stronger contrast and readable cards */}
       <section className="border-y border-slate-100 bg-white py-7 sm:py-9">
         <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 sm:px-6 md:grid-cols-[0.8fr_1.2fr] lg:gap-8 lg:px-8">
           <div>
@@ -548,7 +597,7 @@ export default function OrthopedicSurgeryMohaliPage() {
         </div>
       </section>
 
-      {/* Orthopedic symptoms and safe recovery guidance */}
+      {/* 7. Orthopedic symptoms and safe recovery guidance */}
       <section className="bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-10 sm:py-14">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
           <div className="rounded-2xl border border-emerald-100 bg-white p-5 shadow-sm sm:p-7">
@@ -610,7 +659,7 @@ export default function OrthopedicSurgeryMohaliPage() {
         </div>
       </section>
 
-      {/* 6. Appointment banner with a dedicated dog image */}
+      {/* 8. Appointment banner with a dedicated dog image */}
       <section className="py-6 sm:py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid overflow-hidden rounded-2xl bg-gradient-to-r from-teal-900 to-emerald-800 text-white shadow-lg md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
@@ -651,7 +700,7 @@ export default function OrthopedicSurgeryMohaliPage() {
         </div>
       </section>
 
-      {/* 7. FAQs: use the available page width */}
+      {/* 9. FAQs: use the available page width */}
       <section className="bg-slate-50 py-7 sm:py-9">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
