@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: pageDescription,
     siteName: "GreenCoatVets",
     locale: "en_IN",
-    images: [{ url: "/pet-shop-mohali.jpg", alt: "Pet food, toys, leashes and accessories at the GreenCoatVets pet shop in Mohali" }],
+    images: [{ url: "/pet-shop-mohali.jpeg", alt: "Pet food, toys, leashes and accessories at the GreenCoatVets pet shop in Mohali" }],
   },
   twitter: {
     card: "summary_large_image",
