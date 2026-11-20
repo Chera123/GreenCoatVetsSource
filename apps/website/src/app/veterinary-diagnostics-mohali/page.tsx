@@ -40,7 +40,8 @@ const diagnostics = [
   {
     number: "01",
     icon: "biotech",
-    title: "Blood and laboratory tests",
+    title: "Blood & Laboratory Tests",
+    shortTitle: "Laboratory testing",
     description:
       "Laboratory tests help assess your pet’s general health and look for signs of infection, inflammation or problems with organs. They may be used for sick pets, before surgery and to monitor ongoing conditions.",
     points: [
@@ -50,12 +51,12 @@ const diagnostics = [
     ],
     image: diagnosticImages.lab,
     imageAlt: "Veterinary laboratory diagnostics at GreenCoatVets",
-    tag: "Laboratory testing",
   },
   {
     number: "02",
     icon: "monitor_heart",
-    title: "Pet ultrasound",
+    title: "Pet Ultrasound",
+    shortTitle: "Internal imaging",
     description:
       "Ultrasound allows the veterinarian to look at internal organs and soft tissues without surgery. It is commonly used to investigate abdominal problems and other concerns that cannot be assessed from the outside alone.",
     points: [
@@ -65,12 +66,12 @@ const diagnostics = [
     ],
     image: diagnosticImages.ultrasound,
     imageAlt: "Pet ultrasound diagnostic examination",
-    tag: "Imaging and scanning",
   },
   {
     number: "03",
     icon: "radiology",
     title: "Veterinary X-ray",
+    shortTitle: "Diagnostic imaging",
     description:
       "X-ray imaging helps examine bones, joints, the chest and other areas. It can help veterinarians assess injuries, suspected fractures and many illnesses as part of a wider clinical examination.",
     points: [
@@ -80,16 +81,40 @@ const diagnostics = [
     ],
     image: diagnosticImages.xray,
     imageAlt: "Veterinary X-ray diagnostic imaging",
-    tag: "Digital imaging",
   },
 ];
 
 const signs = [
-  "Vomiting, weakness, coughing or loss of appetite",
-  "An injury, limping or suspected fracture",
-  "Checks before surgery or anaesthesia",
-  "Monitoring an ongoing health condition",
-  "Routine health checks, particularly for older pets",
+  {
+    icon: "sick",
+    title: "Changes in behaviour",
+    description:
+      "Vomiting, weakness, coughing or loss of appetite may need further investigation.",
+  },
+  {
+    icon: "healing",
+    title: "Injuries and mobility",
+    description:
+      "Limping, suspected fractures or injuries may require diagnostic imaging.",
+  },
+  {
+    icon: "medical_services",
+    title: "Before surgery",
+    description:
+      "Some diagnostic checks help assess your pet before surgery or anaesthesia.",
+  },
+  {
+    icon: "monitor_heart",
+    title: "Ongoing conditions",
+    description:
+      "Testing can help monitor a known health condition and assess changes.",
+  },
+  {
+    icon: "elderly",
+    title: "Routine health checks",
+    description:
+      "Additional investigations may be useful during health checks, particularly for older pets.",
+  },
 ];
 
 const faqs = [
@@ -125,13 +150,43 @@ const faqs = [
   },
 ];
 
+const relatedServices = [
+  {
+    title: "Specialized OPD",
+    description: "Veterinary consultations and clinical assessment.",
+    href: "/specialized-opd-mohali/",
+    icon: "medical_services",
+  },
+  {
+    title: "Emergency Care",
+    description: "Veterinary attention for urgent health concerns.",
+    href: "/emergency-care-mohali/",
+    icon: "emergency",
+  },
+  {
+    title: "Orthopedic Surgery",
+    description: "Care for bone, joint and mobility conditions.",
+    href: "/orthopedic-surgery-mohali/",
+    icon: "orthopedics",
+  },
+  {
+    title: "Veterinary Skin Treatment",
+    description: "Assessment and treatment of skin conditions.",
+    href: "/veterinary-skin-treatment-mohali/",
+    icon: "dermatology",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqs.map((faq) => ({
     "@type": "Question",
     name: faq.question,
-    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
   })),
 };
 
@@ -139,15 +194,17 @@ function SectionHeading({
   eyebrow,
   title,
   description,
+  centered = false,
   light = false,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
+  centered?: boolean;
   light?: boolean;
 }) {
   return (
-    <div className="max-w-3xl">
+    <div className={`${centered ? "mx-auto text-center" : ""} max-w-3xl`}>
       {eyebrow && (
         <p
           className={`mb-3 text-xs font-extrabold uppercase tracking-[0.2em] ${
@@ -190,10 +247,7 @@ function BookButton({
       className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-teal-700 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-teal-900/15 transition hover:-translate-y-0.5 hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2"
     >
       {children}
-      <span
-        aria-hidden="true"
-        className="material-symbols-outlined text-lg"
-      >
+      <span className="material-symbols-outlined text-lg" aria-hidden="true">
         arrow_forward
       </span>
     </Link>
@@ -210,67 +264,52 @@ export default function VeterinaryDiagnosticsMohaliPage() {
         }}
       />
 
-      {/* Breadcrumb */}
+      {/* BREADCRUMB */}
       <nav
         aria-label="Breadcrumb"
         className="border-b border-slate-100 bg-white"
       >
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-4 py-4 sm:px-6 lg:px-8">
-          <Link
-            href="/"
-            className="text-sm text-slate-500 transition hover:text-teal-700"
-          >
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-4 py-3 sm:px-6 lg:px-8">
+          <Link href="/" className="text-sm text-slate-500 hover:text-teal-700">
             Home
           </Link>
-
           <span className="material-symbols-outlined text-base text-slate-400">
             chevron_right
           </span>
-
           <Link
             href="/#services"
-            className="text-sm text-slate-500 transition hover:text-teal-700"
+            className="text-sm text-slate-500 hover:text-teal-700"
           >
             Services
           </Link>
-
           <span className="material-symbols-outlined text-base text-slate-400">
             chevron_right
           </span>
-
-          <span
-            aria-current="page"
-            className="text-sm font-semibold text-teal-800"
-          >
+          <span className="text-sm font-semibold text-teal-800">
             Veterinary Diagnostics
           </span>
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#e9fbf6] via-white to-[#e8f7f5]">
-        <div
-          aria-hidden="true"
-          className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-teal-200/30 blur-3xl"
-        />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-14 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
-          <div className="relative z-10">
-            <span className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-teal-800 shadow-sm">
-              <span className="material-symbols-outlined text-lg">
+      {/* HERO SECTION - PRESERVED */}
+      <section className="relative bg-gradient-to-br from-teal-50 via-white to-emerald-100">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-16">
+          <div className="min-w-0">
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/90 px-3 py-2 text-xs font-bold text-emerald-800 shadow-sm">
+              <span
+                aria-hidden="true"
+                className="material-symbols-outlined text-base"
+              >
                 biotech
               </span>
               Veterinary Diagnostics · Mohali
             </span>
 
-            <h1 className="mt-7 font-headline text-4xl font-extrabold leading-[1.12] tracking-tight text-slate-950 sm:text-5xl lg:text-[58px]">
-              Better Answers.
-              <span className="mt-2 block text-teal-700">
-                Better Care for Your Pet.
-              </span>
+            <h1 className="mt-5 font-headline text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+              Veterinary Diagnostics in Mohali
             </h1>
 
-            <p className="mt-7 max-w-xl text-lg leading-8 text-slate-600">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
               Accurate diagnosis is the starting point for good treatment.
               GreenCoatVets provides diagnostic services in Mohali to help our
               veterinarians understand what is affecting your pet and decide
@@ -278,162 +317,165 @@ export default function VeterinaryDiagnosticsMohaliPage() {
               veterinarian after an examination.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <BookButton />
               <Link
                 href="/contact/"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-bold text-slate-800 transition hover:border-teal-500 hover:text-teal-800"
+                className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 transition hover:border-emerald-500 hover:text-emerald-800"
               >
                 Contact Our Team
               </Link>
             </div>
 
-            <div className="mt-10 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-3">
-              {[
-                { icon: "biotech", label: "Blood & lab tests" },
-                { icon: "monitor_heart", label: "Pet ultrasound" },
-                { icon: "radiology", label: "Veterinary X-ray" },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="flex items-center gap-2 rounded-xl border border-teal-100 bg-white/80 p-3"
-                >
-                  <span className="material-symbols-outlined text-xl text-teal-700">
-                    {item.icon}
-                  </span>
-                  <span className="text-xs font-bold text-slate-700">
-                    {item.label}
-                  </span>
-                </div>
-              ))}
+            <div className="mt-6 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-3">
+              {["Blood & lab tests", "Pet ultrasound", "Veterinary X-ray"].map(
+                (item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-2 rounded-lg border border-emerald-100 bg-white/80 px-3 py-3 text-sm font-semibold text-slate-700"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="material-symbols-outlined text-xl text-emerald-700"
+                    >
+                      check_circle
+                    </span>
+                    {item}
+                  </div>
+                )
+              )}
             </div>
           </div>
 
-          {/* Hero image */}
-          <div className="relative mx-auto w-full max-w-2xl">
-            <div className="absolute -inset-4 rounded-[36px] bg-teal-200/50 blur-2xl" />
+          <div className="relative min-h-[300px] overflow-hidden rounded-3xl border border-emerald-100 bg-teal-50 shadow-xl sm:min-h-[390px]">
+            <Image
+              src={diagnosticImages.hero}
+              alt="Veterinary team caring for a pet during a clinical examination"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover"
+            />
 
-            <div className="relative overflow-hidden rounded-[28px] border-[8px] border-white bg-teal-50 shadow-2xl shadow-teal-950/10">
-              <div className="relative aspect-[4/3]">
-                <Image
-                  src={diagnosticImages.hero}
-                  alt="Veterinary team caring for a pet during a clinical examination"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 600px"
-                  className="object-cover"
-                />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/15 to-transparent" />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-
-                <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-3 py-2 text-xs font-bold backdrop-blur-md">
-                    <span className="material-symbols-outlined text-base">
-                      health_and_safety
-                    </span>
-                    Testing and imaging
-                  </span>
-
-                  <h2 className="mt-4 max-w-sm font-headline text-2xl font-extrabold leading-tight sm:text-3xl">
-                    Clearer answers for better care
-                  </h2>
-
-                  <p className="mt-2 max-w-md text-sm leading-6 text-white/90">
-                    Diagnostic tests help your veterinarian understand the
-                    problem and plan the next step.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute -bottom-5 -left-3 flex items-center gap-3 rounded-2xl border border-teal-100 bg-white px-5 py-4 shadow-xl sm:-left-7">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-700">
-                <span className="material-symbols-outlined text-2xl">
-                  pets
+            <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-3 py-1.5 text-xs font-bold backdrop-blur-sm">
+                <span className="material-symbols-outlined text-base">
+                  biotech
                 </span>
+                Testing and imaging
               </span>
-              <div>
-                <p className="text-sm font-extrabold text-slate-900">
-                  Care starts with understanding
-                </p>
-                <p className="mt-1 text-xs text-slate-500">
-                  A considered approach to diagnosis
-                </p>
-              </div>
+
+              <h2 className="mt-4 max-w-sm text-2xl font-extrabold leading-tight sm:text-3xl">
+                Clearer answers for better care
+              </h2>
+
+              <p className="mt-2 max-w-md text-sm leading-6 text-white/90">
+                Diagnostic tests help your veterinarian understand the problem
+                and plan the next step.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Diagnostic services */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+      {/* NEW DESIGN: INTRODUCTION / SERVICE OVERVIEW */}
+      <section className="relative overflow-hidden bg-white py-20 sm:py-28">
+        <div
+          aria-hidden="true"
+          className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-teal-50 blur-3xl"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid items-end gap-8 lg:grid-cols-[1fr_0.8fr]">
             <SectionHeading
-              eyebrow="Testing and imaging"
-              title="Diagnostic Services Available"
-              description="The right test depends on your pet’s symptoms, examination and medical history. Your veterinarian will explain which investigations may be helpful and why."
+              eyebrow="A closer look at your pet's health"
+              title="Understanding What Your Pet Cannot Tell You"
+              description="Pets cannot explain what is hurting or making them uncomfortable. Diagnostic investigations give veterinarians additional information to understand their condition and recommend appropriate care."
             />
 
-            <Link
-              href="/book/"
-              className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-teal-800 transition hover:gap-3"
-            >
-              Book a consultation
-              <span className="material-symbols-outlined">
-                arrow_forward
-              </span>
-            </Link>
+            <div className="lg:pb-1">
+              <p className="border-l-4 border-teal-600 pl-5 text-sm leading-8 text-slate-600">
+                From laboratory investigations to imaging, each test has a
+                purpose. Your veterinarian will help determine which
+                investigation is appropriate for your pet.
+              </p>
+            </div>
           </div>
 
-          <div className="mt-12 grid gap-7 md:grid-cols-3">
-            {diagnostics.map((item) => (
+          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+            {diagnostics.map((item, index) => (
               <article
                 key={item.number}
-                className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-2 hover:border-teal-200 hover:shadow-xl"
+                className={`group relative overflow-hidden rounded-[28px] ${
+                  index === 1
+                    ? "bg-teal-800 text-white"
+                    : "border border-slate-200 bg-slate-50 text-slate-900"
+                }`}
               >
-                <div className="relative aspect-[5/3] overflow-hidden bg-teal-50">
-                  <Image
-                    src={item.image}
-                    alt={item.imageAlt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 to-transparent" />
-
-                  <span className="absolute left-5 top-5 rounded-full bg-white px-4 py-2 text-xs font-extrabold text-teal-800 shadow">
-                    {item.tag}
+                <div className="flex items-center justify-between p-7 pb-3">
+                  <span
+                    className={`flex h-14 w-14 items-center justify-center rounded-2xl ${
+                      index === 1
+                        ? "bg-white/10 text-teal-100"
+                        : "bg-teal-100 text-teal-800"
+                    }`}
+                  >
+                    <span className="material-symbols-outlined text-3xl">
+                      {item.icon}
+                    </span>
                   </span>
 
-                  <span className="absolute bottom-4 right-5 font-headline text-4xl font-extrabold text-white/80">
+                  <span
+                    className={`font-headline text-5xl font-extrabold ${
+                      index === 1 ? "text-white/15" : "text-teal-800/10"
+                    }`}
+                  >
                     {item.number}
                   </span>
                 </div>
 
-                <div className="p-6 sm:p-7">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-100 to-emerald-50 text-teal-800">
-                    <span className="material-symbols-outlined text-3xl">
-                      {item.icon}
-                    </span>
-                  </div>
+                <div className="px-7 pb-8 pt-4">
+                  <p
+                    className={`text-xs font-bold uppercase tracking-[0.16em] ${
+                      index === 1 ? "text-teal-200" : "text-teal-700"
+                    }`}
+                  >
+                    {item.shortTitle}
+                  </p>
 
-                  <h3 className="mt-6 font-headline text-xl font-extrabold text-slate-950">
+                  <h3 className="mt-3 font-headline text-2xl font-extrabold">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                  <p
+                    className={`mt-4 text-sm leading-8 ${
+                      index === 1 ? "text-teal-50/90" : "text-slate-600"
+                    }`}
+                  >
                     {item.description}
                   </p>
 
-                  <ul className="mt-6 space-y-3 border-t border-slate-100 pt-5">
+                  <div
+                    className={`mt-7 h-px ${
+                      index === 1 ? "bg-white/15" : "bg-slate-200"
+                    }`}
+                  />
+
+                  <ul className="mt-5 space-y-3">
                     {item.points.map((point) => (
                       <li
                         key={point}
-                        className="flex items-start gap-2 text-sm text-slate-700"
+                        className={`flex items-start gap-2 text-sm ${
+                          index === 1 ? "text-white" : "text-slate-700"
+                        }`}
                       >
-                        <span className="material-symbols-outlined mt-0.5 text-lg text-teal-700">
+                        <span
+                          className={`material-symbols-outlined text-lg ${
+                            index === 1 ? "text-teal-200" : "text-teal-700"
+                          }`}
+                        >
                           check_circle
                         </span>
                         {point}
@@ -444,160 +486,215 @@ export default function VeterinaryDiagnosticsMohaliPage() {
               </article>
             ))}
           </div>
-
-          <div className="mt-8 flex items-start gap-3 rounded-2xl border border-teal-100 bg-teal-50/70 p-5">
-            <span className="material-symbols-outlined text-2xl text-teal-700">
-              info
-            </span>
-            <p className="text-sm leading-7 text-slate-700">
-              In-house pathology, ultrasound and X-ray help our team make
-              informed decisions without unnecessary delay. The tests
-              recommended will depend on your pet’s individual needs.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* When testing may help */}
-      <section className="bg-[#f0faf7] py-20 sm:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:px-8">
+      {/* NEW DESIGN: WHEN TESTING MAY HELP */}
+      <section className="bg-[#eaf8f4] py-20 sm:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:px-8">
           <div>
-            <SectionHeading
-              eyebrow="When testing may help"
-              title="When Might Your Pet Need Tests?"
-              description="Your veterinarian may recommend diagnostic testing when symptoms or an examination suggest that more information is needed."
-            />
+            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-teal-800 shadow-sm">
+              <span className="material-symbols-outlined text-3xl">
+                health_and_safety
+              </span>
+            </span>
+
+            <div className="mt-7">
+              <SectionHeading
+                eyebrow="Recognising the signs"
+                title="When Might Your Pet Need Diagnostic Tests?"
+                description="Some health concerns need more than an external examination. Your veterinarian may recommend testing when additional information is needed to understand your pet's condition."
+              />
+            </div>
 
             <Link
               href="/pet-health-checkup-mohali/"
-              className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-teal-800 underline decoration-teal-300 underline-offset-4 transition hover:text-emerald-800"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-teal-800 shadow-sm transition hover:bg-teal-800 hover:text-white"
             >
-              Learn about pet health checkups
+              Explore Pet Health Checkups
               <span className="material-symbols-outlined text-lg">
                 arrow_forward
               </span>
             </Link>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            {signs.map((sign, index) => (
-              <div
-                key={sign}
-                className={`flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-5 shadow-sm transition hover:shadow-md ${
-                  index === signs.length - 1 ? "sm:col-span-2" : ""
-                }`}
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-100 font-headline font-extrabold text-teal-800">
-                  0{index + 1}
-                </span>
-                <p className="text-sm leading-7 text-slate-700">{sign}</p>
-              </div>
-            ))}
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-[32px] bg-teal-200/40 blur-2xl" />
+
+            <div className="relative grid gap-3 sm:grid-cols-2">
+              {signs.map((sign, index) => (
+                <article
+                  key={sign.title}
+                  className={`rounded-2xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${
+                    index === signs.length - 1 ? "sm:col-span-2" : ""
+                  }`}
+                >
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 text-teal-800">
+                    <span className="material-symbols-outlined text-2xl">
+                      {sign.icon}
+                    </span>
+                  </span>
+
+                  <h3 className="mt-5 font-headline text-lg font-extrabold text-slate-900">
+                    {sign.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    {sign.description}
+                  </p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* What to expect */}
-      <section className="py-20 sm:py-24">
+      {/* NEW DESIGN: DIAGNOSTIC PROCESS */}
+      <section className="bg-white py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Your pet's diagnostic journey"
-            title="What Happens During the Process?"
-            description="We believe pet owners should understand why a test is recommended and how the findings can help guide their pet's care."
+            centered
+            eyebrow="A simple and considered approach"
+            title="Your Pet's Diagnostic Journey"
+            description="Every investigation begins with understanding your pet. Here is how the diagnostic process can help guide the next step in their care."
           />
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <article className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 sm:p-9">
-              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-teal-50" />
+          <div className="relative mt-16">
+            <div
+              aria-hidden="true"
+              className="absolute left-[10%] right-[10%] top-10 hidden h-px border-t-2 border-dashed border-teal-200 lg:block"
+            />
 
-              <div className="relative">
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-50 text-teal-800">
-                  <span className="material-symbols-outlined text-3xl">
-                    assignment
-                  </span>
-                </span>
+            <div className="grid gap-10 md:grid-cols-3">
+              {[
+                {
+                  number: "01",
+                  icon: "stethoscope",
+                  title: "Clinical assessment",
+                  description:
+                    "Your veterinarian examines your pet and reviews their symptoms and medical history.",
+                },
+                {
+                  number: "02",
+                  icon: "biotech",
+                  title: "Recommended testing",
+                  description:
+                    "If further information is needed, appropriate laboratory tests or imaging may be recommended.",
+                },
+                {
+                  number: "03",
+                  icon: "assignment_turned_in",
+                  title: "Results and next steps",
+                  description:
+                    "Your veterinarian explains the findings and discusses treatment or monitoring options.",
+                },
+              ].map((step) => (
+                <article
+                  key={step.number}
+                  className="relative text-center"
+                >
+                  <div className="relative z-10 mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border-4 border-white bg-teal-800 text-white shadow-xl shadow-teal-900/15">
+                    <span className="material-symbols-outlined text-3xl">
+                      {step.icon}
+                    </span>
+                  </div>
 
-                <h2 className="mt-6 font-headline text-2xl font-extrabold text-slate-950">
-                  What to Expect
-                </h2>
+                  <p className="mt-6 text-xs font-extrabold tracking-[0.2em] text-teal-700">
+                    STEP {step.number}
+                  </p>
 
-                <p className="mt-4 text-sm leading-8 text-slate-600">
-                  Your veterinarian will explain which tests are recommended
-                  and why. Some tests need your pet to fast beforehand, and you
-                  will be told if that applies. Results are explained in plain
-                  language and used to plan treatment, whether that is
-                  medicine, surgery or monitoring.
-                </p>
+                  <h3 className="mt-3 font-headline text-xl font-extrabold text-slate-950">
+                    {step.title}
+                  </h3>
+
+                  <p className="mx-auto mt-3 max-w-sm text-sm leading-8 text-slate-600">
+                    {step.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW DESIGN: IMAGE + RESULTS SECTION */}
+      <section className="overflow-hidden bg-slate-950 py-20 sm:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-[32px] bg-teal-500/20 blur-2xl" />
+
+            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-800 p-2">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
+                <Image
+                  src={diagnosticImages.consultation}
+                  alt="Veterinary professional discussing diagnostic care for a pet"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 550px"
+                  className="object-cover"
+                />
               </div>
-            </article>
+            </div>
 
-            <article className="relative overflow-hidden rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50 to-white p-7 sm:p-9">
-              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/80" />
-
-              <div className="relative">
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-teal-800 shadow-sm">
-                  <span className="material-symbols-outlined text-3xl">
+            <div className="absolute -bottom-5 -right-3 rounded-2xl border border-teal-100 bg-white p-5 shadow-xl sm:-right-7">
+              <div className="flex items-center gap-3">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-800">
+                  <span className="material-symbols-outlined text-2xl">
                     fact_check
                   </span>
                 </span>
-
-                <h2 className="mt-6 font-headline text-2xl font-extrabold text-slate-950">
-                  How Test Results Guide Treatment
-                </h2>
-
-                <p className="mt-4 text-sm leading-8 text-slate-600">
-                  Test results are only useful when they are explained clearly.
-                  Your veterinarian will go through what was found, what it
-                  means for your pet and the next step. A test result does not
-                  always lead to surgery. Many results lead to medicine, a
-                  change in diet or monitoring, and some confirm that nothing
-                  serious is wrong.
-                </p>
+                <div>
+                  <p className="text-sm font-extrabold text-slate-900">
+                    Informed decisions
+                  </p>
+                  <p className="mt-1 text-xs text-slate-500">
+                    Understanding the findings
+                  </p>
+                </div>
               </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* Understand your results */}
-      <section className="bg-slate-950 py-20 text-white sm:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-800">
-            <div className="relative aspect-[4/3]">
-              <Image
-                src={diagnosticImages.consultation}
-                alt="Veterinary professional discussing diagnostic care for a pet"
-                fill
-                sizes="(max-width: 1024px) 100vw, 550px"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
             </div>
           </div>
 
-          <div>
+          <div className="pt-5 lg:pt-0">
             <SectionHeading
               light
-              eyebrow="Clear guidance at every step"
-              title="Understand Your Pet’s Results"
-              description="Your veterinarian will explain which tests are recommended, what the results show and how they help guide your pet’s care."
+              eyebrow="Beyond the test"
+              title="Understanding Results Is Just as Important"
+              description="A diagnostic test is one part of your pet's care. Understanding the findings helps your veterinarian discuss what should happen next."
             />
 
-            <div className="mt-8 space-y-4">
+            <div className="mt-8 space-y-5">
               {[
-                "You will be told why a test is recommended.",
-                "Your team will explain any preparation, including fasting if needed.",
-                "Results help guide medicine, surgery, dietary changes or monitoring.",
-                "Not every test result means surgery is needed.",
+                {
+                  icon: "lightbulb",
+                  title: "Understand the findings",
+                  text: "Your veterinarian will explain what the results show and what they may mean for your pet.",
+                },
+                {
+                  icon: "medication",
+                  title: "Discuss treatment options",
+                  text: "Depending on the findings, options may include medicine, surgery or other care.",
+                },
+                {
+                  icon: "monitoring",
+                  title: "Plan ongoing monitoring",
+                  text: "Some conditions may need follow-up examinations or repeat testing.",
+                },
               ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4"
-                >
-                  <span className="material-symbols-outlined mt-0.5 text-xl text-teal-300">
-                    check_circle
+                <div key={item.title} className="flex items-start gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10 text-teal-300">
+                    <span className="material-symbols-outlined text-2xl">
+                      {item.icon}
+                    </span>
                   </span>
-                  <p className="text-sm leading-7 text-slate-200">{item}</p>
+
+                  <div>
+                    <h3 className="font-headline font-bold text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-7 text-slate-300">
+                      {item.text}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -605,55 +702,123 @@ export default function VeterinaryDiagnosticsMohaliPage() {
         </div>
       </section>
 
-      {/* Related services */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      {/* WHAT TO EXPECT */}
+      <section className="bg-white py-20 sm:py-24">
+        <div className="mx-auto grid max-w-7xl items-start gap-10 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-8">
           <SectionHeading
-            eyebrow="Connected veterinary care"
-            title="Diagnostics Across Our Services"
-            description="Diagnostic testing can support consultations, urgent assessment and treatment planning across several veterinary services."
+            eyebrow="Before your visit"
+            title="Preparing Your Pet for Diagnostic Testing"
+            description="The preparation required depends on the investigation your veterinarian recommends."
           />
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                title: "Specialized OPD",
-                href: "/specialized-opd-mohali/",
-                icon: "medical_services",
-              },
-              {
-                title: "Emergency Care",
-                href: "/emergency-care-mohali/",
-                icon: "emergency",
-              },
-              {
-                title: "Orthopedic Surgery",
-                href: "/orthopedic-surgery-mohali/",
-                icon: "orthopedics",
-              },
-              {
-                title: "Veterinary Skin Treatment",
-                href: "/veterinary-skin-treatment-mohali/",
-                icon: "dermatology",
-              },
-            ].map((service) => (
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl bg-[#edf9f5] p-7">
+              <span className="material-symbols-outlined text-3xl text-teal-800">
+                description
+              </span>
+              <h3 className="mt-4 font-headline text-lg font-extrabold text-slate-900">
+                Bring previous records
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Previous test results, prescriptions and medical records can
+                help your veterinarian understand your pet's history.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-7">
+              <span className="material-symbols-outlined text-3xl text-teal-800">
+                restaurant
+              </span>
+              <h3 className="mt-4 font-headline text-lg font-extrabold text-slate-900">
+                Ask about fasting
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Some investigations require fasting, while others do not.
+                Follow the preparation instructions provided by your
+                veterinarian.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-7">
+              <span className="material-symbols-outlined text-3xl text-teal-800">
+                history
+              </span>
+              <h3 className="mt-4 font-headline text-lg font-extrabold text-slate-900">
+                Share recent changes
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Tell your veterinarian about your pet's symptoms, behaviour
+                and any recent changes in appetite or activity.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-[#edf9f5] p-7">
+              <span className="material-symbols-outlined text-3xl text-teal-800">
+                support_agent
+              </span>
+              <h3 className="mt-4 font-headline text-lg font-extrabold text-slate-900">
+                Ask your questions
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Our team can explain the recommended test and any preparation
+                you should know about before your visit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* RELATED SERVICES */}
+      <section className="bg-[#edf8f5] py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <SectionHeading
+              eyebrow="Complete veterinary care"
+              title="Explore More Veterinary Services"
+              description="Diagnostic testing can support consultations, urgent assessment and treatment planning across several veterinary services."
+            />
+
+            <Link
+              href="/#services"
+              className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-teal-800 hover:gap-3"
+            >
+              View all services
+              <span className="material-symbols-outlined">
+                arrow_forward
+              </span>
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {relatedServices.map((service, index) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-teal-200 hover:bg-teal-50/50 hover:shadow-lg"
+                className="group relative overflow-hidden rounded-2xl border border-white bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-800">
-                  <span className="material-symbols-outlined text-2xl">
+                <span className="absolute right-4 top-4 font-headline text-4xl font-extrabold text-teal-50">
+                  0{index + 1}
+                </span>
+
+                <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-50 text-teal-800 transition group-hover:bg-teal-800 group-hover:text-white">
+                  <span className="material-symbols-outlined text-3xl">
                     {service.icon}
                   </span>
                 </span>
 
-                <span className="flex-1 text-sm font-bold text-slate-800">
+                <h3 className="relative mt-6 font-headline text-lg font-extrabold text-slate-900">
                   {service.title}
-                </span>
+                </h3>
 
-                <span className="material-symbols-outlined text-lg text-teal-700 transition group-hover:translate-x-1">
-                  arrow_forward
+                <p className="mt-2 text-sm leading-7 text-slate-600">
+                  {service.description}
+                </p>
+
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-teal-800">
+                  Explore service
+                  <span className="material-symbols-outlined text-lg transition group-hover:translate-x-1">
+                    arrow_forward
+                  </span>
                 </span>
               </Link>
             ))}
@@ -661,32 +826,40 @@ export default function VeterinaryDiagnosticsMohaliPage() {
         </div>
       </section>
 
-      {/* Booking CTA */}
-      <section className="px-6 pb-20 lg:px-8">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[32px] bg-gradient-to-br from-teal-900 via-teal-800 to-emerald-800 px-6 py-12 shadow-xl sm:px-12 sm:py-16">
+      {/* LARGE BOOKING CTA */}
+      <section className="bg-white px-6 py-20 sm:py-24 lg:px-8">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[32px] bg-gradient-to-br from-teal-900 via-teal-800 to-emerald-800 px-7 py-12 sm:px-12 sm:py-16">
           <div
             aria-hidden="true"
-            className="absolute -right-20 -top-28 h-80 w-80 rounded-full border-[40px] border-white/5"
+            className="absolute -right-24 -top-32 h-96 w-96 rounded-full border-[55px] border-white/5"
           />
 
-          <div className="relative grid items-center gap-8 md:grid-cols-[1fr_auto]">
-            <div>
-              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-teal-200">
-                Veterinary diagnostics in Mohali
-              </p>
+          <div
+            aria-hidden="true"
+            className="absolute -bottom-40 right-1/3 h-80 w-80 rounded-full bg-emerald-400/10 blur-3xl"
+          />
 
-              <h2 className="mt-4 font-headline text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-                Book a Diagnostic Consultation
+          <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
+            <div className="max-w-3xl">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-wider text-teal-100">
+                <span className="material-symbols-outlined text-base">
+                  pets
+                </span>
+                GreenCoatVets · Mohali
+              </span>
+
+              <h2 className="mt-6 font-headline text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+                Your Pet Deserves Answers. Let's Find the Right Next Step.
               </h2>
 
-              <p className="mt-5 max-w-3xl text-sm leading-8 text-teal-50 sm:text-base">
-                Talk to our team about your pet’s symptoms and whether
+              <p className="mt-5 max-w-2xl text-sm leading-8 text-teal-50 sm:text-base">
+                Talk to our team about your pet's symptoms and whether
                 diagnostic tests may be helpful. Your veterinarian will
                 explain the recommended tests and next steps.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3 md:flex-col">
+            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <BookButton>Book an Appointment</BookButton>
 
               <Link
@@ -700,34 +873,35 @@ export default function VeterinaryDiagnosticsMohaliPage() {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="bg-[#f5faf9] py-20 sm:py-24">
-        <div className="mx-auto grid max-w-7xl items-start gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:px-8">
-          <div className="lg:sticky lg:top-24">
+      {/* FAQ */}
+      <section className="bg-[#f4f9f7] py-20 sm:py-28">
+        <div className="mx-auto grid max-w-7xl items-start gap-12 px-6 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:px-8">
+          <div>
             <SectionHeading
-              eyebrow="Frequently asked questions"
+              eyebrow="Questions answered"
               title="Veterinary Diagnostics FAQs"
-              description="Answers to common questions about pet blood tests, ultrasound and X-ray services in Mohali."
+              description="Find answers to common questions about pet blood tests, ultrasound and X-ray services in Mohali."
             />
 
-            <div className="mt-8 rounded-2xl border border-teal-100 bg-white p-6">
-              <span className="material-symbols-outlined text-3xl text-teal-700">
-                support_agent
+            <div className="mt-8 rounded-2xl bg-teal-800 p-7 text-white">
+              <span className="material-symbols-outlined text-3xl text-teal-200">
+                contact_support
               </span>
 
-              <h3 className="mt-4 font-headline text-lg font-bold text-slate-900">
-                Still have questions?
+              <h3 className="mt-4 font-headline text-xl font-extrabold">
+                Need more information?
               </h3>
 
-              <p className="mt-2 text-sm leading-7 text-slate-600">
-                Speak with our team about your pet's diagnostic needs.
+              <p className="mt-3 text-sm leading-7 text-teal-50">
+                Contact our team if you have questions about diagnostic
+                testing or your pet's health.
               </p>
 
               <Link
                 href="/contact/"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-teal-800 hover:text-teal-950"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-white underline decoration-teal-300 underline-offset-4"
               >
-                Contact us
+                Contact GreenCoatVets
                 <span className="material-symbols-outlined text-lg">
                   arrow_forward
                 </span>
@@ -735,14 +909,20 @@ export default function VeterinaryDiagnosticsMohaliPage() {
             </div>
           </div>
 
-          <div className="space-y-4">
-            {faqs.map((faq) => (
+          <div className="space-y-3">
+            {faqs.map((faq, index) => (
               <details
                 key={faq.question}
-                className="group rounded-2xl border border-slate-200 bg-white p-5 transition open:border-teal-200 open:shadow-md sm:p-6"
+                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition open:border-teal-200 open:shadow-md"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-headline text-sm font-bold leading-7 text-slate-900 marker:hidden sm:text-base">
-                  <span>{faq.question}</span>
+                <summary className="flex cursor-pointer list-none items-center gap-4 px-5 py-5 marker:hidden sm:px-6">
+                  <span className="font-headline text-sm font-extrabold text-teal-700">
+                    0{index + 1}
+                  </span>
+
+                  <span className="flex-1 font-headline text-sm font-bold leading-7 text-slate-900 sm:text-base">
+                    {faq.question}
+                  </span>
 
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-50 text-teal-800 transition group-open:rotate-180">
                     <span className="material-symbols-outlined">
@@ -751,13 +931,17 @@ export default function VeterinaryDiagnosticsMohaliPage() {
                   </span>
                 </summary>
 
-                <p className="mt-4 border-t border-slate-100 pt-4 text-sm leading-8 text-slate-600">
-                  {faq.answer}
-                </p>
+                <div className="px-5 pb-5 sm:px-6">
+                  <div className="ml-8 border-t border-slate-100 pt-4">
+                    <p className="text-sm leading-8 text-slate-600">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
               </details>
             ))}
 
-            <div className="pt-4">
+            <div className="pt-5">
               <BookButton>Book an Appointment</BookButton>
             </div>
           </div>
