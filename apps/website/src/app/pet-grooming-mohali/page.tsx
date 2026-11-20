@@ -83,6 +83,34 @@ export default function PetGroomingMohaliPage() {
       <div className="h-2 bg-amber-400" />
     </section>
 
+    {/* GreenCoatVets grooming video */}
+    <section className="bg-[#eef2e9] py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-extrabold uppercase tracking-[.2em] text-emerald-800">A look inside GreenCoatVets</p>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">See Our Pet Grooming in Action</h2>
+          <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">Take a look at the grooming care provided by the GreenCoatVets team. See our approach to helping pets feel clean, comfortable and well cared for.</p>
+        </div>
+
+        <div className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl border border-emerald-900/10 bg-[#123f35] shadow-2xl shadow-emerald-950/10 sm:mt-12 sm:rounded-3xl">
+          <video
+            className="block aspect-video h-auto w-full bg-black object-contain"
+            controls
+            playsInline
+            preload="metadata"
+            aria-label="Pet grooming promotional video by GreenCoatVets"
+          >
+            <source src="/grooming.mp4" type="video/mp4" />
+            Your browser does not support HTML video.
+          </video>
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <Button href="/book/">Book Pet Grooming</Button>
+        </div>
+      </div>
+    </section>
+
     {/* Services */}
     <section className="py-20 sm:py-24 lg:py-28"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
       <div className="grid gap-6 md:grid-cols-[.8fr_1.2fr] md:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[.2em] text-emerald-800">Clean coat, comfortable pet</p><h2 className="mt-4 max-w-xl text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">What Does Pet Grooming Include?</h2></div><p className="max-w-2xl leading-8 text-slate-600">Professional grooming usually covers bathing and drying, brushing, trimming and nail care, with ear cleaning where needed. The right approach depends on your pet&apos;s size, coat type and condition. Contact us to confirm which services are available.</p></div>
