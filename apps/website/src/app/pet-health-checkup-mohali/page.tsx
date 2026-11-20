@@ -40,7 +40,7 @@ const faqs = [
   {
     question: "How often should my pet have a health checkup?",
     answer:
-      "Many veterinarians suggest at least one checkup a year for healthy adult pets. Young and senior pets may need more frequent visits. Your veterinarian will advise what suits your pet.",
+      "Many veterinarians suggest at least 4 checkups a year for healthy adult pets. Young and senior pets may need more frequent visits. Your veterinarian will advise what suits your pet.",
   },
   {
     question: "How is a health checkup different from an OPD consultation?",
@@ -392,7 +392,7 @@ export default function PetHealthCheckupMohaliPage() {
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {[
               {
-                title: "Young pets",
+                title: "Young pets (Puppies)",
                 icon: "pets",
                 text: "Early visits focus on growth, development, nutrition and vaccination planning. They are also a good time to ask about training, socialisation and parasite prevention.",
               },
@@ -402,7 +402,7 @@ export default function PetHealthCheckupMohaliPage() {
                 text: "Many veterinarians suggest at least one wellness visit a year for healthy adult pets. These visits track weight, teeth, skin and general condition over time.",
               },
               {
-                title: "Senior pets",
+                title: "Senior pets (Geriatric pets)",
                 icon: "elderly",
                 text: "Older pets can develop conditions such as joint discomfort, dental problems or changes in organ function. Your veterinarian may recommend more frequent checkups and, where appropriate, additional tests.",
               },
