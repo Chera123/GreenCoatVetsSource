@@ -245,7 +245,7 @@ export default function PetVaccinationMohaliPage() {
                 height={1024}
                 priority
                 sizes="(max-width: 1024px) 100vw, 600px"
-                className="aspect-[4/3] w-full rounded-[20px] object-cover"
+                className="aspect-[4/3] w-full rounded-[20px] object-cover object-top"
               />
             </div>
             <div className="relative mx-4 -mt-5 rounded-2xl border border-teal-100 bg-white px-5 py-4 shadow-lg sm:mx-7">
@@ -365,7 +365,7 @@ export default function PetVaccinationMohaliPage() {
                 width={1200}
                 height={900}
                 sizes="(max-width: 1024px) 100vw, 550px"
-                className="aspect-[4/3] w-full rounded-[20px] object-cover"
+               className="aspect-[4/3] w-full rounded-[20px] object-cover object-top"
               />
             </div>
             <div className="absolute bottom-5 left-5 rounded-xl bg-white/95 px-5 py-3 shadow-lg backdrop-blur-sm sm:bottom-7 sm:left-7">
