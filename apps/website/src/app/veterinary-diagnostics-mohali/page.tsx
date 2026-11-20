@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const images = {
-  hero: "/veterinary-diagnostics-hero.jpg",
-  lab: "/veterinary-diagnostics-hero.jpg",
+  hero: "/veterinary-diagnostics-hero.jpeg",
+  lab: "/veterinary-diagnostics-hero.jpeg",
   ultrasound: "/pet-ultrasound.jpg",
   xray: "/veterinary-xray.jpg",
 };
@@ -508,9 +508,7 @@ export default function VeterinaryDiagnosticsMohaliPage() {
             </div>
             <div className="absolute -bottom-5 -right-3 rounded-2xl border border-teal-100 bg-white p-5 shadow-xl sm:-right-7">
               <div className="flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-800">
-                  <span className="material-symbols-outlined text-2xl">ultrasound</span>
-                </span>
+               
                 <div>
                   <p className="text-sm font-extrabold text-slate-900">Veterinary ultrasound</p>
                   <p className="mt-1 text-xs text-slate-500">Diagnostic imaging and examination</p>
