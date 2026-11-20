@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    images: ["/pet-shop-mohali.jpg"],
+    images: ["/pet-shop-mohali.jpeg"],
   },
 };
 
@@ -273,7 +273,7 @@ export default function PetShopMohaliPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
           <div className="relative min-h-[280px] overflow-hidden rounded-3xl bg-teal-100 shadow-lg sm:min-h-[380px]">
             <Image
-              src="/pet-shop-veterinary-team.jpg"
+              src="/pet-shop-veterinary-team.jpeg"
               alt="Pet owner discussing everyday pet care with the GreenCoatVets team"
               fill
               sizes="(max-width: 1023px) 100vw, 50vw"
@@ -308,7 +308,7 @@ export default function PetShopMohaliPage() {
           </div>
           <div className="relative min-h-[280px] overflow-hidden rounded-3xl bg-teal-100 shadow-lg sm:min-h-[380px]">
             <Image
-              src="/pet-food-supplies.jpg"
+              src="/pet-food-supplies.jpeg"
               alt="Pet food and everyday feeding supplies"
               fill
               sizes="(max-width: 1023px) 100vw, 50vw"
