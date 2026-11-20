@@ -207,7 +207,7 @@ export default function PetShopMohaliPage() {
             <div className="absolute -inset-3 hidden rounded-[2rem] border border-teal-200 lg:block" />
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-teal-100 shadow-2xl shadow-teal-950/15">
               <Image
-                src="/pet-shop-mohali.jpg"
+                src="/pet-shop-mohali.jpeg"
                 alt="Pet food, toys, leashes and accessories on display at the GreenCoatVets pet shop in Mohali"
                 fill
                 priority
