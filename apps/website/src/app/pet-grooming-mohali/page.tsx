@@ -83,40 +83,42 @@ export default function PetGroomingMohaliPage() {
       <div className="h-2 bg-amber-400" />
     </section>
 
-    {/* GreenCoatVets grooming video */}
-    <section className="bg-[#eef2e9] py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-extrabold uppercase tracking-[.2em] text-emerald-800">A look inside GreenCoatVets</p>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">See Our Pet Grooming in Action</h2>
-          <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">Take a look at the grooming care provided by the GreenCoatVets team. See our approach to helping pets feel clean, comfortable and well cared for.</p>
-        </div>
-
-        <div className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl border border-emerald-900/10 bg-[#123f35] shadow-2xl shadow-emerald-950/10 sm:mt-12 sm:rounded-3xl">
-          <video
-            className="block aspect-video h-auto w-full bg-black object-contain"
-            controls
-            playsInline
-            preload="metadata"
-            aria-label="Pet grooming promotional video by GreenCoatVets"
-          >
-            <source src="/grooming.mp4" type="video/mp4" />
-            Your browser does not support HTML video.
-          </video>
-        </div>
-
-        <div className="mt-8 flex justify-center">
-          <Button href="/book/">Book Pet Grooming</Button>
-        </div>
-      </div>
-    </section>
-
     {/* Services */}
     <section className="py-20 sm:py-24 lg:py-28"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
       <div className="grid gap-6 md:grid-cols-[.8fr_1.2fr] md:items-end"><div><p className="text-xs font-extrabold uppercase tracking-[.2em] text-emerald-800">Clean coat, comfortable pet</p><h2 className="mt-4 max-w-xl text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">What Does Pet Grooming Include?</h2></div><p className="max-w-2xl leading-8 text-slate-600">Professional grooming usually covers bathing and drying, brushing, trimming and nail care, with ear cleaning where needed. The right approach depends on your pet&apos;s size, coat type and condition. Contact us to confirm which services are available.</p></div>
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4">{services.map((service) => <article key={service.number} className="group rounded-2xl border border-[#e5e8df] bg-white p-6 transition hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-950/5 sm:p-7"><div className="flex items-center justify-between"><span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#eaf2e9] text-emerald-900 transition group-hover:bg-[#123f35] group-hover:text-white"><span className="material-symbols-outlined text-2xl">{service.icon}</span></span><span className="text-sm font-bold tracking-widest text-slate-300">{service.number}</span></div><h3 className="mt-7 text-xl font-bold text-slate-950">{service.title}</h3><p className="mt-3 text-sm leading-7 text-slate-600">{service.text}</p></article>)}</div>
       <p className="mt-6 text-center text-sm text-slate-500">Please confirm available grooming options with our team when arranging your visit.</p>
     </div></section>
+
+    {/* GreenCoatVets grooming video */}
+    <section className="bg-[#eef2e9] py-14 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_.95fr] lg:gap-12">
+          <div className="overflow-hidden rounded-2xl border border-emerald-900/10 bg-[#123f35] shadow-xl shadow-emerald-950/10 sm:rounded-3xl">
+            <video
+              className="block aspect-video h-auto w-full bg-black object-contain"
+              controls
+              playsInline
+              preload="metadata"
+              aria-label="Pet grooming promotional video by GreenCoatVets"
+            >
+              <source src="/grooming.mp4" type="video/mp4" />
+              Your browser does not support HTML video.
+            </video>
+          </div>
+
+          <div className="py-2 lg:py-4">
+            <p className="text-xs font-extrabold uppercase tracking-[.2em] text-emerald-800">A look inside GreenCoatVets</p>
+            <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-slate-950 sm:text-4xl">See Our Pet Grooming in Action</h2>
+            <p className="mt-5 max-w-xl text-base leading-8 text-slate-600">Take a look at the grooming care provided by the GreenCoatVets team. See our approach to helping pets feel clean, comfortable and well cared for.</p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Button href="/book/">Book Pet Grooming</Button>
+              <Link href="/contact/" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 transition hover:border-emerald-700 hover:text-emerald-900">Contact Our Team</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     {/* Veterinary difference */}
     <section className="bg-[#eef2e9] py-20 sm:py-24"><div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[.92fr_1.08fr] lg:items-center lg:gap-16 lg:px-10">
