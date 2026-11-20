@@ -149,10 +149,7 @@ export default function PetVaccinationMohaliPage() {
               </span>
             </li>
             <li>
-              <Link
-                href="/services/"
-                className="transition hover:text-teal-700"
-              >
+              <Link href="/services/" className="transition hover:text-teal-700">
                 Services
               </Link>
             </li>
@@ -235,8 +232,10 @@ export default function PetVaccinationMohaliPage() {
             </div>
           </div>
 
+          {/* Hero Image - Full photograph visible */}
           <div className="relative mx-auto w-full max-w-2xl">
             <div className="absolute -inset-3 rounded-[30px] bg-teal-200/50 blur-2xl" />
+
             <div className="relative overflow-hidden rounded-3xl border border-white bg-white p-2 shadow-2xl shadow-slate-900/10">
               <Image
                 src="/pet-vaccinations.jpeg"
@@ -245,9 +244,10 @@ export default function PetVaccinationMohaliPage() {
                 height={1024}
                 priority
                 sizes="(max-width: 1024px) 100vw, 600px"
-                className="aspect-[4/3] w-full rounded-[20px] object-cover"
+                className="h-auto w-full rounded-[20px] object-contain"
               />
             </div>
+
             <div className="relative mx-4 -mt-5 rounded-2xl border border-teal-100 bg-white px-5 py-4 shadow-lg sm:mx-7">
               <div className="flex items-start gap-3">
                 <span className="material-symbols-outlined rounded-xl bg-teal-50 p-2 text-2xl text-teal-700">
@@ -353,11 +353,13 @@ export default function PetVaccinationMohaliPage() {
         </div>
       </section>
 
-      {/* Young pets - second image added here */}
+      {/* Young pets - Second Image */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+          {/* Second image - Full photograph visible */}
           <div className="relative">
             <div className="absolute -inset-3 rounded-[30px] bg-teal-100 blur-2xl" />
+
             <div className="relative overflow-hidden rounded-3xl border border-slate-100 bg-white p-2 shadow-xl">
               <Image
                 src="/pet-vaccination2.jpeg"
@@ -365,9 +367,10 @@ export default function PetVaccinationMohaliPage() {
                 width={1200}
                 height={900}
                 sizes="(max-width: 1024px) 100vw, 550px"
-                className="aspect-[4/3] w-full rounded-[20px] object-cover"
+                className="h-auto w-full rounded-[20px] object-contain"
               />
             </div>
+
             <div className="absolute bottom-5 left-5 rounded-xl bg-white/95 px-5 py-3 shadow-lg backdrop-blur-sm sm:bottom-7 sm:left-7">
               <p className="flex items-center gap-2 text-sm font-bold text-teal-800">
                 <span className="material-symbols-outlined">favorite</span>
@@ -396,6 +399,7 @@ export default function PetVaccinationMohaliPage() {
               with us before taking your young pet to public places where
               unvaccinated animals may be present.
             </p>
+
             <div className="mt-8 rounded-2xl border border-teal-100 bg-gradient-to-br from-teal-50 to-emerald-50 p-7 sm:p-8">
               <span className="material-symbols-outlined text-4xl text-teal-700">
                 pets
@@ -436,6 +440,7 @@ export default function PetVaccinationMohaliPage() {
               will advise on the best way forward.
             </p>
           </div>
+
           <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
             <span className="material-symbols-outlined text-4xl text-teal-300">
               event_repeat
@@ -489,6 +494,7 @@ export default function PetVaccinationMohaliPage() {
               .
             </p>
           </div>
+
           <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 sm:p-8">
             <div className="flex items-start gap-3">
               <span className="material-symbols-outlined text-2xl text-amber-700">
@@ -526,6 +532,7 @@ export default function PetVaccinationMohaliPage() {
             title="Vaccination as Part of Everyday Pet Care"
             description="Vaccination works best alongside regular veterinary attention."
           />
+
           <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200 bg-white p-7 shadow-sm sm:p-10">
             <p className="leading-8 text-slate-600">
               A routine{" "}
@@ -547,6 +554,7 @@ export default function PetVaccinationMohaliPage() {
               can examine your pet first and advise whether vaccination should
               wait.
             </p>
+
             <div className="mt-7 grid gap-4 sm:grid-cols-2">
               <Link
                 href="/specialized-opd-mohali/"
@@ -565,6 +573,7 @@ export default function PetVaccinationMohaliPage() {
                   </span>
                 </span>
               </Link>
+
               <Link
                 href="/pet-health-checkup-mohali/"
                 className="group rounded-xl border border-slate-200 p-5 transition hover:border-teal-300 hover:bg-teal-50/50"
@@ -625,6 +634,7 @@ export default function PetVaccinationMohaliPage() {
             title="Pet Vaccination FAQs"
             description="Common questions about pet vaccination and booster guidance in Mohali."
           />
+
           <div className="space-y-4">
             {faqs.map((faq) => (
               <details
@@ -646,6 +656,7 @@ export default function PetVaccinationMohaliPage() {
               </details>
             ))}
           </div>
+
           <div className="mt-10 text-center">
             <p className="mb-5 text-slate-600">
               Have questions about your pet’s vaccination history?
