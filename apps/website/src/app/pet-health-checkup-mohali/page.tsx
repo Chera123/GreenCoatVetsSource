@@ -8,7 +8,7 @@ const pageDescription =
   "Routine pet health checkup in Mohali at GreenCoatVets. Preventive care, age-based wellness exams and early detection of health concerns for pets.";
 const pageUrl =
   "https://www.greencoatvets.com/pet-health-checkup-mohali/";
-const heroImage = "/soft-tissue.jpeg";
+const heroImage = "/specialized-opd-veterinary.jpg";
 
 export const metadata: Metadata = {
   title: pageTitle,
