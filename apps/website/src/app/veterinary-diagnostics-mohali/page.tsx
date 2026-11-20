@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const images = {
-  hero: "/veterinary-diagnostics-hero.jpeg",
-  lab: "/veterinary-diagnostics-hero.jpeg",
+  hero: "/veterinary-diagnostics-hero.jpg",
+  lab: "/veterinary-diagnostics-hero.jpg",
   ultrasound: "/pet-ultrasound.jpg",
   xray: "/veterinary-xray.jpg",
 };
@@ -485,30 +485,35 @@ export default function VeterinaryDiagnosticsMohaliPage() {
         </div>
       </section>
 
-      {/* Results and treatment */}
+      {/* Results and treatment - video */}
       <section className="overflow-hidden bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
           <div className="relative">
             <div className="absolute -inset-4 rounded-[32px] bg-teal-500/20 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-800 p-2">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
-                <Image
-                  src={images.hero}
-                  alt="Veterinary professional caring for a pet"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 550px"
-                  className="object-cover"
-                />
+            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-800 p-2 shadow-2xl">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-slate-900">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label="Veterinary ultrasound examination of a dog"
+                  className="absolute inset-0 h-full w-full object-cover"
+                >
+                  <source src="/xray.mp4" type="video/mp4" />
+                  Your browser does not support HTML video.
+                </video>
               </div>
             </div>
             <div className="absolute -bottom-5 -right-3 rounded-2xl border border-teal-100 bg-white p-5 shadow-xl sm:-right-7">
               <div className="flex items-center gap-3">
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-800">
-                  <span className="material-symbols-outlined text-2xl">fact_check</span>
+                  <span className="material-symbols-outlined text-2xl">ultrasound</span>
                 </span>
                 <div>
-                  <p className="text-sm font-extrabold text-slate-900">Informed decisions</p>
-                  <p className="mt-1 text-xs text-slate-500">Understanding the findings</p>
+                  <p className="text-sm font-extrabold text-slate-900">Veterinary ultrasound</p>
+                  <p className="mt-1 text-xs text-slate-500">Diagnostic imaging and examination</p>
                 </div>
               </div>
             </div>
