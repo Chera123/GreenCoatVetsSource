@@ -219,14 +219,26 @@ export default function EducationTrainingMohaliPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1.05fr_.95fr] lg:gap-12">
           <div className="overflow-hidden rounded-2xl border border-emerald-900/10 bg-black shadow-xl sm:rounded-3xl">
             <video
-              className="block aspect-video h-auto w-full bg-black object-contain"
+              className="block aspect-video w-full bg-black object-contain"
               controls
               playsInline
               preload="metadata"
+              poster={`${imageBase}/training1.jpeg`}
               aria-label="GreenCoatVets education and training event video"
             >
-              <source src={`${imageBase}/trainingvid.mp4`} type="video/mp4" />
-              Your browser does not support HTML video.
+              <source src="/training/trainingvid.mp4" type="video/mp4" />
+              <p className="p-4 text-sm text-white">
+                Your browser cannot play this video.{" "}
+                <a
+                  href="/training/trainingvid.mp4"
+                  className="font-semibold underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open the video directly
+                </a>
+                .
+              </p>
             </video>
           </div>
           <div>
@@ -296,19 +308,21 @@ export default function EducationTrainingMohaliPage() {
             </div>
             <p className="max-w-xl text-sm leading-7 text-slate-600">A collection of photographs from GreenCoatVets&apos; educational sessions, workshops and training activities.</p>
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {galleryImages.map((image, index) => (
-              <figure key={image.src} className={`group relative overflow-hidden rounded-xl bg-[#eaf2e9] ${index % 5 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
+              <figure
+                key={image.src}
+                className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#e2e9df] bg-[#eef2e9] shadow-sm"
+              >
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
                   loading="lazy"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="object-cover transition duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-contain p-1 transition-transform duration-300 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-transparent opacity-70" />
-                <figcaption className="absolute bottom-2 left-2 rounded-full border border-white/30 bg-slate-950/45 px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur-sm sm:bottom-3 sm:left-3 sm:text-xs">
+                <figcaption className="absolute bottom-3 left-3 rounded-full border border-white/30 bg-slate-950/75 px-3 py-1.5 text-xs font-semibold text-white shadow-sm">
                   Training moment {index + 1}
                 </figcaption>
               </figure>
