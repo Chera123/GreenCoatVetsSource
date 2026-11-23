@@ -223,14 +223,14 @@ export default function EducationTrainingMohaliPage() {
               controls
               playsInline
               preload="metadata"
-              poster={`${imageBase}/training1.jpeg`}
+              poster={`${imageBase}/trainigvid.png`}
               aria-label="GreenCoatVets education and training event video"
             >
-              <source src="/training/trainingvid.mp4" type="video/mp4" />
+              <source src="/training/trainigvid.mp4" type="video/mp4" />
               <p className="p-4 text-sm text-white">
                 Your browser cannot play this video.{" "}
                 <a
-                  href="/training/trainingvid.mp4"
+                  href="/training/trainigvid.mp4"
                   className="font-semibold underline"
                   target="_blank"
                   rel="noreferrer"
