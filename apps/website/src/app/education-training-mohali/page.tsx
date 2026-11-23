@@ -209,7 +209,7 @@ export default function EducationTrainingMohaliPage() {
           </div>
           <div className="space-y-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
             <p>Veterinary learning continues beyond textbooks. Workshops, demonstrations and practical sessions create opportunities to discuss clinical approaches, share experience and build professional skills.</p>
-            <p>GreenCoatVets' education and training themes cover diagnostic areas, surgical learning, exotic animal care, staff development and dermatology. The photographs and video on this page offer a glimpse of our training activities.</p>
+            <p>GreenCoatVets&apos; education and training themes cover diagnostic areas, surgical learning, exotic animal care, staff development and dermatology. The photographs and video on this page offer a glimpse of our training activities.</p>
           </div>
         </div>
       </section>
@@ -247,7 +247,7 @@ export default function EducationTrainingMohaliPage() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-extrabold uppercase tracking-[.2em] text-emerald-800">Our learning themes</p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Education & Training Programmes</h2>
-            <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">Explore the key areas identified for GreenCoatVets' educational sessions and practical workshops.</p>
+            <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">Explore the key areas identified for GreenCoatVets&apos; educational sessions and practical workshops.</p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {programmes.map((programme) => (
@@ -294,7 +294,7 @@ export default function EducationTrainingMohaliPage() {
               <p className="text-xs font-extrabold uppercase tracking-[.2em] text-emerald-800">Moments from our events</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Training & Workshop Gallery</h2>
             </div>
-            <p className="max-w-xl text-sm leading-7 text-slate-600">A collection of photographs from GreenCoatVets' educational sessions, workshops and training activities.</p>
+            <p className="max-w-xl text-sm leading-7 text-slate-600">A collection of photographs from GreenCoatVets&apos; educational sessions, workshops and training activities.</p>
           </div>
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
             {galleryImages.map((image, index) => (
