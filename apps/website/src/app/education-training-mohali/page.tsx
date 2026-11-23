@@ -221,24 +221,19 @@ export default function EducationTrainingMohaliPage() {
             <video
               className="block aspect-video w-full bg-black object-contain"
               controls
+              autoPlay
+              muted
+              loop
               playsInline
-              preload="metadata"
-              poster={`${imageBase}/training1.jpeg`}
+              preload="auto"
+              poster="/training/training1.jpeg"
               aria-label="GreenCoatVets education and training event video"
             >
-              <source src="/training/trainingvid.mp4" type="video/mp4" />
-              <p className="p-4 text-sm text-white">
-                Your browser cannot play this video.{" "}
-                <a
-                  href="/training/trainingvid.mp4"
-                  className="font-semibold underline"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Open the video directly
-                </a>
-                .
-              </p>
+              <source
+                src="/training/trainingvid.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support HTML video.
             </video>
           </div>
           <div>
