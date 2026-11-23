@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: `${imageBase}/training1.jpg`,
+        url: `${imageBase}/training1.jpeg`,
         alt: "Veterinary education and training session at GreenCoatVets",
       },
     ],
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    images: [`${imageBase}/training1.jpg`],
+    images: [`${imageBase}/training1.jpeg`],
   },
 };
 
@@ -91,7 +91,7 @@ const programmes = [
 ];
 
 const galleryImages = Array.from({ length: 20 }, (_, index) => ({
-  src: `${imageBase}/training${index + 1}.jpg`,
+  src: `${imageBase}/training${index + 1}.jpeg`,
   alt: `GreenCoatVets veterinary education and training event photograph ${index + 1}`,
 }));
 
@@ -182,7 +182,7 @@ export default function EducationTrainingMohaliPage() {
             <div className="absolute -inset-3 rotate-2 rounded-[2rem] bg-emerald-100/15 sm:-inset-4" />
             <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] border border-white/15 bg-emerald-950 shadow-2xl sm:rounded-[2rem]">
               <Image
-                src={`${imageBase}/training1.jpg`}
+                src={`${imageBase}/training1.jpeg`}
                 alt="Veterinary professionals taking part in a GreenCoatVets training event"
                 fill
                 priority
