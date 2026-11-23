@@ -15,7 +15,7 @@ const pageUrl =
 
 const heroImage = "/soft-tissue-assessment.png";
 const dogImage = "/soft-tissue-recovery.png";
-const catImage = "/veterinary-diagnostics-hero.jpg";
+const catImage = "/dog-spay-neuter.jpeg";
 const fcatImage = "orthopedic-cat-care.png";
 const appointmentImage = "/orthopedic-appointment-dog.png";
 const bookingUrl = "https://www.greencoatvets.com/book/";
@@ -88,7 +88,7 @@ const faqs = [
       "It depends on the injury or condition. Your veterinarian will examine your pet, may recommend imaging, and explain whether surgery or another approach is best.",
   },
   {
-    question: "Do you treat fractures in Mohali?",
+    question: "Do you treat fractures at GreenCoatVets in Mohali?",
     answer:
       "Yes. GreenCoatVets assesses and treats fractures. Treatment depends on the type and severity of the injury.",
   },
