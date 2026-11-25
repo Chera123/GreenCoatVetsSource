@@ -355,7 +355,7 @@ export default function SpecialSpeciesVeterinaryCarePage() {
             </p>
           </div>
 
-          {/* Compact portrait video; cropped poster matches the 9:16 player ratio */}
+          {/* Compact portrait video with the original poster thumbnail */}
           <div className="mx-auto w-full max-w-[300px] min-w-0 lg:mx-0">
             <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl bg-slate-950 shadow-lg ring-1 ring-slate-900/10">
               <video
@@ -363,7 +363,7 @@ export default function SpecialSpeciesVeterinaryCarePage() {
                 controls
                 playsInline
                 preload="metadata"
-                poster="/turtle-shell-repair-poster-portrait.png"
+                poster="/turtle-shell-repair-poster.png"
                 aria-label="Video showing veterinary turtle carapace repair"
               >
                 <source src="/turtle-shell-repair.mp4" type="video/mp4" />
