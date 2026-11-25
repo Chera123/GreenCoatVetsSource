@@ -12,7 +12,7 @@ const images = {
   hero: "/special-species-vet-hero.png",
  consultation: "/guinea-pig-ear.png",
   examination: "/birds.jpeg",
-};
+};   
 
 export const metadata: Metadata = {
   title: pageTitle,
