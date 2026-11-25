@@ -10,7 +10,7 @@ const pageUrl =
 
 const images = {
   hero: "/special-species-vet-hero.png",
-  consultation: "/specialized-opd-veterinary.jpg",
+ consultation: "/guinea-pig-ear.png",
   examination: "/pet-ultrasound.jpg",
 };
 
@@ -338,18 +338,20 @@ export default function SpecialSpeciesVeterinaryCarePage() {
               Shell injuries require veterinary assessment. If your turtle has a damaged shell, contact the clinic for advice and to confirm the appropriate appointment.
             </p>
           </div>
-          <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950 shadow-xl">
-            <video
-              className="aspect-video w-full"
-              controls
-              playsInline
-              preload="metadata"
-              poster="/turtle-shell-repair-poster.png"
-              aria-label="Video showing veterinary turtle carapace repair"
-            >
-              <source src="/turtle-shell-repair.mp4" type="video/mp4" />
-              Your browser does not support the video element.
-            </video>
+          <div className="flex min-w-0 justify-center">
+            <div className="w-full max-w-[360px] overflow-hidden rounded-[1.5rem] border border-slate-200 bg-transparent shadow-xl">
+              <video
+                className="block h-auto w-full aspect-[9/16] bg-transparent object-cover"
+                controls
+                playsInline
+                preload="metadata"
+                poster="/turtle-shell-repair-poster.png"
+                aria-label="Video showing veterinary turtle carapace repair"
+              >
+                <source src="/turtle-shell-repair.mp4" type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </div>
           </div>
         </div>
       </section>
