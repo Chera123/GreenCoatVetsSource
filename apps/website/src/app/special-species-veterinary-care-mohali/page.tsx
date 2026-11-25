@@ -327,7 +327,7 @@ export default function SpecialSpeciesVeterinaryCarePage() {
 
       {/* Turtle shell repair video */}
       <section className="bg-[#f3f7f3] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-16">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
           <div>
             <SectionHeading
               eyebrow="Clinical case highlight"
@@ -338,10 +338,12 @@ export default function SpecialSpeciesVeterinaryCarePage() {
               Shell injuries require veterinary assessment. If your turtle has a damaged shell, contact the clinic for advice and to confirm the appropriate appointment.
             </p>
           </div>
-          <div className="flex min-w-0 justify-center">
-            <div className="w-full max-w-[360px] overflow-hidden rounded-[1.5rem] border border-slate-200 bg-transparent shadow-xl">
+
+          {/* Portrait video: wider container and video fills the frame */}
+          <div className="flex min-w-0 justify-center lg:justify-end">
+            <div className="relative w-full max-w-[500px] aspect-[9/16] overflow-hidden rounded-[1.5rem] border border-slate-200 bg-[#f3f7f3] shadow-xl">
               <video
-                className="block h-auto w-full aspect-[9/16] bg-transparent object-cover"
+                className="absolute inset-0 block h-full w-full object-cover"
                 controls
                 playsInline
                 preload="metadata"
