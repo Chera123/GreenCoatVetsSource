@@ -343,8 +343,8 @@ export default function SpecialSpeciesVeterinaryCarePage() {
 
       {/* Turtle shell repair video */}
       <section className="bg-[#f3f7f3] px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-14">
-          <div className="min-w-0 max-w-2xl">
+        <div className="mx-auto grid max-w-[1000px] grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,640px)_300px] lg:gap-10">
+          <div className="min-w-0 max-w-[640px]">
             <SectionHeading
               eyebrow="Clinical case highlight"
               title="Turtle Carapace Fracture Repair"
@@ -355,18 +355,16 @@ export default function SpecialSpeciesVeterinaryCarePage() {
             </p>
           </div>
 
-          {/* Fixed desktop grid track prevents the video column from collapsing */}
-          <div className="flex w-full min-w-0 justify-center lg:justify-end">
-            <div className="w-full max-w-[320px] overflow-hidden rounded-2xl bg-slate-950 shadow-lg ring-1 ring-slate-900/10">
+          {/* Compact portrait video; cropped poster matches the 9:16 player ratio */}
+          <div className="mx-auto w-full max-w-[300px] min-w-0 lg:mx-0">
+            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl bg-slate-950 shadow-lg ring-1 ring-slate-900/10">
               <video
-                className="block h-auto w-full aspect-[9/16] object-contain"
+                className="absolute inset-0 block h-full w-full object-cover object-center"
                 controls
                 playsInline
                 preload="metadata"
-                poster="/turtle-shell-repair-poster.png"
+                poster="/turtle-shell-repair-poster-portrait.png"
                 aria-label="Video showing veterinary turtle carapace repair"
-                width="320"
-                height="569"
               >
                 <source src="/turtle-shell-repair.mp4" type="video/mp4" />
                 Your browser does not support the video element.
