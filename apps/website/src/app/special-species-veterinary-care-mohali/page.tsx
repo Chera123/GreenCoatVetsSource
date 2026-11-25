@@ -11,7 +11,7 @@ const pageUrl =
 const images = {
   hero: "/special-species-vet-hero.png",
  consultation: "/guinea-pig-ear.png",
-  examination: "/pet-ultrasound.jpg",
+  examination: "/birds.jpeg",
 };
 
 export const metadata: Metadata = {
