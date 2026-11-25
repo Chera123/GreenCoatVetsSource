@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const pageTitle = "Special Species Veterinary Care in Mohali | GreenCoatVets";
+const pageTitle = "Exotic Animal & Bird Veterinary Care in Mohali | GreenCoatVets";
 const pageDescription =
-  "Veterinary care and health assessment for special species and exotic companion animals in Mohali. Contact GreenCoatVets to discuss care for birds, rabbits, guinea pigs, reptiles and other small animals.";
+  "Veterinary care and health assessment for exotic animals and birds in Mohali. Contact GreenCoatVets to discuss special species care for birds, rabbits, guinea pigs, reptiles and other small companion animals.";
 const pageUrl =
   "https://www.greencoatvets.com/special-species-veterinary-care-mohali/";
 
@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   keywords: [
+    "exotic animal veterinary care Mohali",
+    "exotic animals and birds Mohali",
+    "exotic bird vet Mohali",
     "special species veterinary care Mohali",
     "exotic pet vet Mohali",
     "avian veterinary care Mohali",
@@ -130,6 +133,11 @@ const faqs = [
       "Special species veterinary care refers to health assessment and advice for companion animals other than the commonly seen dogs and cats. This can include birds, rabbits, small mammals and reptiles, depending on the clinic’s experience and appointment availability.",
   },
   {
+    question: "Does GreenCoatVets provide care for exotic animals and birds?",
+    answer:
+      "GreenCoatVets can discuss veterinary assessment for exotic companion animals and birds. Please contact the clinic before travelling with your animal and share the species and concern so the team can confirm whether an appropriate appointment and clinical support are available.",
+  },
+  {
     question: "Can I bring my bird, rabbit or tortoise to GreenCoatVets?",
     answer:
       "Please contact GreenCoatVets before travelling and tell us the species and the reason for the visit. The team can confirm whether an appointment is available and advise you about bringing your animal safely.",
@@ -169,9 +177,15 @@ const faqSchema = {
   })),
 };
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
+function Eyebrow({
+  children,
+  dark = false,
+}: {
+  children: React.ReactNode;
+  dark?: boolean;
+}) {
   return (
-    <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-700">
+    <p className={`text-xs font-bold uppercase tracking-[0.18em] ${dark ? "text-emerald-200" : "text-emerald-700"}`}>
       {children}
     </p>
   );
@@ -182,20 +196,22 @@ function SectionHeading({
   title,
   description,
   centered = false,
+  dark = false,
 }: {
   eyebrow: string;
   title: string;
   description?: string;
   centered?: boolean;
+  dark?: boolean;
 }) {
   return (
     <div className={centered ? "mx-auto max-w-3xl text-center" : "max-w-2xl"}>
-      <Eyebrow>{eyebrow}</Eyebrow>
-      <h2 className="mt-3 font-headline text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl">
+      <Eyebrow dark={dark}>{eyebrow}</Eyebrow>
+      <h2 className={`mt-3 font-headline text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl ${dark ? "text-white" : "text-slate-950"}`}>
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+        <p className={`mt-4 text-base leading-7 sm:text-lg sm:leading-8 ${dark ? "text-white/85" : "text-slate-600"}`}>
           {description}
         </p>
       )}
@@ -326,9 +342,9 @@ export default function SpecialSpeciesVeterinaryCarePage() {
       </section>
 
       {/* Turtle shell repair video */}
-      <section className="bg-[#f3f7f3] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
-          <div>
+      <section className="bg-[#f3f7f3] px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1fr_auto] lg:gap-14">
+          <div className="max-w-2xl">
             <SectionHeading
               eyebrow="Clinical case highlight"
               title="Turtle Carapace Fracture Repair"
@@ -339,11 +355,10 @@ export default function SpecialSpeciesVeterinaryCarePage() {
             </p>
           </div>
 
-          {/* Portrait video: wider container and video fills the frame */}
-          <div className="flex min-w-0 justify-center lg:justify-end">
-            <div className="relative w-full max-w-[500px] aspect-[9/16] overflow-hidden rounded-[1.5rem] border border-slate-200 bg-[#f3f7f3] shadow-xl">
+          <div className="mx-auto w-full max-w-[270px] lg:mx-0">
+            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl bg-black shadow-lg ring-1 ring-slate-900/10">
               <video
-                className="absolute inset-0 block h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
                 controls
                 playsInline
                 preload="metadata"
@@ -363,8 +378,8 @@ export default function SpecialSpeciesVeterinaryCarePage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Who we may be able to help"
-            title="Care for Special Species"
-            description="Every species has its own anatomy, behaviour and care requirements. Contact us with your animal’s species and concern so our team can confirm the appropriate appointment."
+            title="Care for Special Species, Exotic Animals & Birds"
+            description="We provide species-aware veterinary assessment for exotic companion animals and birds, alongside other special species. Every animal has its own anatomy, behaviour and care requirements. Contact us with your animal’s species and concern so our team can confirm the appropriate appointment."
             centered
           />
           <div className="mt-11 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
@@ -451,13 +466,14 @@ export default function SpecialSpeciesVeterinaryCarePage() {
             title="What to Expect at a Consultation"
             description="A little preparation can help the veterinary team understand your animal’s needs and plan a calm, appropriate assessment."
             centered
+            dark
           />
           <div className="mt-11 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {consultationSteps.map((step) => (
-              <article key={step.number} className="rounded-3xl border border-white/15 bg-white/10 p-6">
+              <article key={step.number} className="rounded-3xl border border-white/20 bg-white/10 p-6 shadow-sm">
                 <span className="text-sm font-extrabold tracking-[0.18em] text-emerald-200">{step.number}</span>
-                <h3 className="mt-4 text-lg font-bold leading-snug">{step.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-emerald-50/80">{step.description}</p>
+                <h3 className="mt-4 text-lg font-bold leading-snug text-white">{step.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-white/90">{step.description}</p>
               </article>
             ))}
           </div>
@@ -528,8 +544,8 @@ export default function SpecialSpeciesVeterinaryCarePage() {
         <div className="mx-auto grid max-w-7xl items-start gap-10 lg:grid-cols-[.75fr_1.25fr] lg:gap-16">
           <SectionHeading
             eyebrow="Helpful answers"
-            title="Special Species Care FAQs"
-            description="Common questions about veterinary care for birds, rabbits, small mammals and reptiles."
+            title="Exotic Animal & Bird Care FAQs"
+            description="Common questions about veterinary care for exotic animals, birds, rabbits, small mammals and reptiles."
           />
           <div className="space-y-3">
             {faqs.map((faq) => (
