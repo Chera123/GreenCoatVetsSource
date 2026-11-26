@@ -78,6 +78,10 @@ export async function buildMarketingSitemapEntries(): Promise<MetadataRoute.Site
     "/spay-neuter-mohali/",
     "/equine-services-mohali/",
     "/pet-grooming-mohali/",
+
+    // Newly added service pages
+    "/education-training-mohali/",
+    "/special-species-veterinary-care-mohali/",
   ].map((url) => ({
     url,
     changeFrequency: "monthly" as const,
