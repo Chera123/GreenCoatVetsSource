@@ -8,7 +8,7 @@ import { createClient } from "@/lib/supabase/server";
 
 const pageTitle = "Veterinary Services in Mohali for Pets | GreenCoatVets";
 const pageDescription =
-  "Explore GreenCoatVets veterinary services in Mohali: consultations, vaccination, diagnostics, surgery, dental, eye care, emergency care and more.";
+  "Explore GreenCoatVets veterinary services in Mohali, including consultations, vaccination, diagnostics, surgery, emergency care, specialist species information and education.";
 const canonicalUrl = "https://www.greencoatvets.com/services/";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -138,6 +138,24 @@ const serviceGroups: { title: string; intro: string; services: ServiceItem[] }[]
     ],
   },
   {
+    title: "Specialist Care & Education",
+    intro: "Explore specialist care information and learning opportunities at GreenCoatVets.",
+    services: [
+      {
+        title: "Education & Training",
+        slug: "education-training-mohali",
+        description: "Explore veterinary education, training and learning opportunities at GreenCoatVets.",
+        icon: "school",
+      },
+      {
+        title: "Special Species Veterinary Care",
+        slug: "special-species-veterinary-care-mohali",
+        description: "Learn about care considerations for exotic animals and companion birds.",
+        icon: "flutter_dash",
+      },
+    ],
+  },
+  {
     title: "Other Services",
     intro: "Additional services for pets and horses, along with everyday pet essentials.",
     services: [
@@ -167,7 +185,7 @@ const faqs = [
   {
     question: "What veterinary services does GreenCoatVets offer in Mohali?",
     answer:
-      "GreenCoatVets offers consultations, vaccination, health checkups, diagnostics, emergency care, orthopedic, soft tissue and eye surgery, dental care, skin treatment, spay and neuter, equine services and a pet shop.",
+      "GreenCoatVets offers consultations, vaccination, health checkups, diagnostics, emergency care, orthopedic, soft tissue and eye surgery, dental care, skin treatment, spay and neuter, equine services, a pet shop, special species veterinary information, and education and training resources.",
   },
   {
     question: "Is GreenCoatVets open 24 hours?",
