@@ -12,6 +12,8 @@ const images = {
   hero: "/special-species-vet-hero.png",
  consultation: "/guinea-pig-ear.png",
   examination: "/birds.jpeg",
+  birdGalleryOne: "/exotic-birds-1.png",
+  birdGalleryTwo: "/exotic-birds-2.png",
 };
 
 export const metadata: Metadata = {
@@ -400,6 +402,56 @@ export default function SpecialSpeciesVeterinaryCarePage() {
                 <p className="mt-4 text-sm leading-7 text-slate-600">{item.description}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Exotic bird image gallery */}
+      <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Birds & avian patients"
+            title="Special Care for Pet Birds"
+            description="Birds have unique health, behaviour and environmental needs. Contact GreenCoatVets before travelling so our team can confirm whether an appropriate avian consultation is available."
+            centered
+          />
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <article className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+              <div className="relative aspect-[4/3] overflow-hidden bg-emerald-50">
+                <Image
+                  src={images.birdGalleryOne}
+                  alt="Pet bird receiving species-specific veterinary attention"
+                  fill
+                  sizes="(max-width: 767px) 100vw, 50vw"
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-slate-950">Bird Health & Wellbeing</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  Changes in appetite, activity, breathing, droppings or feather condition may need veterinary attention.
+                </p>
+              </div>
+            </article>
+
+            <article className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+              <div className="relative aspect-[4/3] overflow-hidden bg-emerald-50">
+                <Image
+                  src={images.birdGalleryTwo}
+                  alt="Companion birds illustrating exotic and avian veterinary care"
+                  fill
+                  sizes="(max-width: 767px) 100vw, 50vw"
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-slate-950">Care for Different Bird Species</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  Parrots, budgies, cockatiels and other companion birds can have different handling and husbandry requirements.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
