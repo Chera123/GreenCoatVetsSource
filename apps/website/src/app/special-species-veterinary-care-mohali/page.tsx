@@ -630,7 +630,7 @@ export default function SpecialSpeciesVeterinaryCarePage() {
                 </p>
               </details>
             ))}
-          </div>
+          </div>  
         </div>
       </section>
     </main>
