@@ -406,49 +406,62 @@ export default function SpecialSpeciesVeterinaryCarePage() {
         </div>
       </section>
 
-      {/* Exotic bird image gallery */}
-      <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading
-            eyebrow="Birds & avian patients"
-            title="Special Care for Pet Birds"
-            description="Birds have unique health, behaviour and environmental needs. Contact GreenCoatVets before travelling so our team can confirm whether an appropriate avian consultation is available."
-            centered
-          />
+      {/* Bird care gallery - compact editorial layout */}
+      <section className="bg-[#f3f7f3] px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
+          <div className="max-w-xl">
+            <Eyebrow>Birds & avian patients</Eyebrow>
+            <h2 className="mt-3 font-headline text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl">
+              Special Care for Pet Birds
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Birds have unique health, behaviour and environmental needs. Changes in appetite, activity, breathing, droppings or feather condition may need veterinary attention.
+            </p>
+            <p className="mt-3 text-sm leading-6 text-slate-500">
+              Contact GreenCoatVets before travelling so our team can confirm whether an appropriate avian consultation is available.
+            </p>
+            <div className="mt-6">
+              <BookButton>Enquire About Bird Care</BookButton>
+            </div>
+          </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <article className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-              <div className="relative aspect-[4/3] overflow-hidden bg-emerald-50">
+          <div className="grid grid-cols-2 gap-3 sm:gap-5">
+            <article className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="relative aspect-[16/10] overflow-hidden bg-emerald-100">
                 <Image
                   src={images.birdGalleryOne}
-                  alt="Pet bird receiving species-specific veterinary attention"
+                  alt="Budgerigar being cared for"
                   fill
-                  sizes="(max-width: 767px) 100vw, 50vw"
-                  className="object-cover transition duration-500 group-hover:scale-105"
+                  sizes="(max-width: 767px) 50vw, (max-width: 1023px) 35vw, 300px"
+                  className="object-cover object-center transition duration-500 hover:scale-105"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-950">Bird Health & Wellbeing</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Changes in appetite, activity, breathing, droppings or feather condition may need veterinary attention.
+              <div className="p-3 sm:p-4">
+                <h3 className="text-sm font-bold leading-5 text-slate-950 sm:text-base">
+                  Bird Health & Wellbeing
+                </h3>
+                <p className="mt-2 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
+                  Notice changes in behaviour, appetite or general condition.
                 </p>
               </div>
             </article>
 
-            <article className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-              <div className="relative aspect-[4/3] overflow-hidden bg-emerald-50">
+            <article className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="relative aspect-[16/10] overflow-hidden bg-emerald-100">
                 <Image
                   src={images.birdGalleryTwo}
-                  alt="Companion birds illustrating exotic and avian veterinary care"
+                  alt="Bird resting during veterinary care"
                   fill
-                  sizes="(max-width: 767px) 100vw, 50vw"
-                  className="object-cover transition duration-500 group-hover:scale-105"
+                  sizes="(max-width: 767px) 50vw, (max-width: 1023px) 35vw, 300px"
+                  className="object-cover object-center transition duration-500 hover:scale-105"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-950">Care for Different Bird Species</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Parrots, budgies, cockatiels and other companion birds can have different handling and husbandry requirements.
+              <div className="p-3 sm:p-4">
+                <h3 className="text-sm font-bold leading-5 text-slate-950 sm:text-base">
+                  Care for Different Bird Species
+                </h3>
+                <p className="mt-2 text-xs leading-5 text-slate-600 sm:text-sm sm:leading-6">
+                  Species-specific handling and husbandry are important.
                 </p>
               </div>
             </article>
