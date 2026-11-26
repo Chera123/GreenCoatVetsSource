@@ -33,6 +33,11 @@ const NAV = [
       { href: "/spay-neuter-mohali/", label: "Spay & Neuter" },
       { href: "/equine-services-mohali/", label: "Equine Services" },
       { href: "/pet-grooming-mohali/", label: "Pet Grooming" },
+      { href: "/education-training-mohali/", label: "Education & Training" },
+      {
+        href: "/special-species-veterinary-care-mohali/",
+        label: "Special Species Veterinary Care",
+      },
     ],
   },
   { href: "/locations", label: "Locations" },
