@@ -179,8 +179,8 @@ export function SiteHeader({
                   </div>
 
                   {desktopServicesOpen ? (
-                    <div className="absolute left-0 top-full z-50 w-64 pt-2">
-                      <div className="rounded-xl border border-slate-200 bg-white p-2 shadow-xl">
+                    <div className="absolute left-0 top-full z-50 w-72 pt-2">
+                      <div className="max-h-[calc(100dvh-6rem)] overflow-y-auto rounded-xl border border-slate-200 bg-white p-2 shadow-xl">
                         {item.children.map((child) => {
                           const childActive =
                             normalizePath(pathname) ===
