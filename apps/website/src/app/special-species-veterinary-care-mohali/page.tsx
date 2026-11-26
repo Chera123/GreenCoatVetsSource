@@ -433,7 +433,7 @@ export default function SpecialSpeciesVeterinaryCarePage() {
                   alt="Budgerigar being cared for"
                   fill
                   sizes="(max-width: 767px) 50vw, (max-width: 1023px) 35vw, 300px"
-                  className="object-cover object-center transition duration-500 hover:scale-105"
+                  className="object-cover object-[center_78%] transition duration-500 hover:scale-105"
                 />
               </div>
               <div className="p-3 sm:p-4">
